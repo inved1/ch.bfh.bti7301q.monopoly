@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly", "monopoly\monopoly.csproj", "{EB5E8CEE-88E2-49F6-BF68-8C673C26224E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.tester", "monopoly.tester\monopoly.tester.csproj", "{0702D0D8-D67C-41D0-953A-42EBC8D66962}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB5E8CEE-88E2-49F6-BF68-8C673C26224E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5E8CEE-88E2-49F6-BF68-8C673C26224E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5E8CEE-88E2-49F6-BF68-8C673C26224E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5E8CEE-88E2-49F6-BF68-8C673C26224E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0702D0D8-D67C-41D0-953A-42EBC8D66962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0702D0D8-D67C-41D0-953A-42EBC8D66962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0702D0D8-D67C-41D0-953A-42EBC8D66962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0702D0D8-D67C-41D0-953A-42EBC8D66962}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
