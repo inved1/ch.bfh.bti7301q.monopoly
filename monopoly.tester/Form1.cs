@@ -10,19 +10,51 @@ using System.Windows.Forms;
 
 namespace monopoly.tester
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        
+
+        public frmMain()
         {
             InitializeComponent();
+            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnStartServer_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("dani rockt");
-            MessageBox.Show("new test 2");
-            MessageBox.Show("test 3");
+            try
+            {
+                monopoly.server.Program srv = new server.Program();
+                this.txtInfo.Text += "Server gestartet..." + System.Environment.NewLine;
+                
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+                            
+        }
+
+        private void btnStartClient_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                this.txtInfo.Text += "Client gestartet..." + System.Environment.NewLine;
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            this.txtInfo.Text = "";
 
         }
+
     }
 }

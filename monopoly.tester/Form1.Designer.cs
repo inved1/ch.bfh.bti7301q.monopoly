@@ -1,6 +1,6 @@
 ﻿namespace monopoly.tester
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnStartServer = new System.Windows.Forms.Button();
+            this.btnStartClient = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Form1
+            // btnStartServer
+            // 
+            this.btnStartServer.Location = new System.Drawing.Point(12, 12);
+            this.btnStartServer.Name = "btnStartServer";
+            this.btnStartServer.Size = new System.Drawing.Size(251, 58);
+            this.btnStartServer.TabIndex = 0;
+            this.btnStartServer.Text = "Start Server";
+            this.btnStartServer.UseVisualStyleBackColor = true;
+            this.btnStartServer.Click += new System.EventHandler(this.btnStartServer_Click);
+            // 
+            // btnStartClient
+            // 
+            this.btnStartClient.Location = new System.Drawing.Point(12, 76);
+            this.btnStartClient.Name = "btnStartClient";
+            this.btnStartClient.Size = new System.Drawing.Size(251, 58);
+            this.btnStartClient.TabIndex = 1;
+            this.btnStartClient.Text = "Start Client";
+            this.btnStartClient.UseVisualStyleBackColor = true;
+            this.btnStartClient.Click += new System.EventHandler(this.btnStartClient_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Copyright by Michael Fankhauser und Daniel Inversini";
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.Location = new System.Drawing.Point(13, 141);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.Size = new System.Drawing.Size(250, 199);
+            this.txtInfo.TabIndex = 3;
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ClientSize = new System.Drawing.Size(275, 365);
+            this.Controls.Add(this.txtInfo);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnStartClient);
+            this.Controls.Add(this.btnStartServer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmMain";
+            this.Text = "bfh.Monopoly";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnStartServer;
+        private System.Windows.Forms.Button btnStartClient;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtInfo;
     }
 }
 
