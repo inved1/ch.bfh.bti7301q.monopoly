@@ -21,6 +21,7 @@ namespace monopoly.tester
         {
             MessageBox.Show("dani rockt");
             MessageBox.Show("new test 2");
+            MessageBox.Show("test 3");
 
         }
     }
