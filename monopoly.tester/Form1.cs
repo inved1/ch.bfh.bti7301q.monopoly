@@ -20,6 +20,7 @@ namespace monopoly.tester
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("dani rockt");
+            MessageBox.Show("new test 2");
 
         }
     }
