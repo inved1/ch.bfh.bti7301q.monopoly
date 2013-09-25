@@ -15,6 +15,7 @@ namespace monopoly
         public Form1()
         {
             InitializeComponent();
+
         }
     }
 }
