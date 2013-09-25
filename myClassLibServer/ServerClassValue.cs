@@ -15,7 +15,9 @@ namespace myClassLibServer
     {
         public void HelloMethod(ForwardMe o)
         {
+            Console.WriteLine("value before call: " + o.testValue.ToString());
             o.CallMe();
+            Console.WriteLine("value after call: " + o.testValue.ToString());
         }
 
 
@@ -24,10 +26,25 @@ namespace myClassLibServer
     [Serializable]
     public class ForwardMe
     {
+                
+        
+        private int myTestVal;
+        
+        public  ForwardMe()
+        {
+            this.myTestVal = 0;
+        }
+
 
         public  void CallMe()
         {   
  	        Console.WriteLine("CallMe was executed in: " + Process.GetCurrentProcess().ProcessName.ToString());
+
+        }
+        public int testValue
+        {
+            get {return this.myTestVal ;}
+            set {this.myTestVal = value; }
 
         }
     }

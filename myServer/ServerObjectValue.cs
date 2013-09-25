@@ -17,7 +17,7 @@ namespace myServer
             ChannelServices.RegisterChannel(chan,false );
 
             RemotingConfiguration.RegisterWellKnownServiceType(Type.GetType("myClassLibServer.HelloServer, myClassLibServer"), "RemoteTestRef", WellKnownObjectMode.SingleCall);
-
+            
             Console.WriteLine("Zum Beenden <Eingabetaste> drücken");
             Console.ReadLine();
         }

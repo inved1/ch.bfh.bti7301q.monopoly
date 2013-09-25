@@ -19,6 +19,8 @@ namespace myClient
             ChannelServices.RegisterChannel(chan,false );
             ForwardMe objForwardMe = new ForwardMe();
 
+            objForwardMe.testValue = 10;
+
             HelloServer objHelloServer;
 
             objHelloServer = (HelloServer)Activator.GetObject(
