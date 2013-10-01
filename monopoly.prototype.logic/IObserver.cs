@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace monopoly.prototype.logic
 {
-    public class Class1
+    public interface IObserver
     {
-    }
+        void Notify(dummyAction o);
+        
+        
+      }
 }
