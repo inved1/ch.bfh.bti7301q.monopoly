@@ -26,6 +26,7 @@ namespace monopoly.prototype.server
             remoteAction = new myRemoteAction();
 
             TcpChannel channel = new TcpChannel(8080);
+
             ChannelServices.RegisterChannel(channel);
 
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(myRemoteAction), "test", WellKnownObjectMode.Singleton);
