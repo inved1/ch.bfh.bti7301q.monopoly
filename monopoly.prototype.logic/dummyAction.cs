@@ -9,8 +9,17 @@ namespace monopoly.prototype.logic
     [Serializable] 
     public class dummyAction
     {
+        public enum ActionType
+        {
+            Buy = 1,
+            Pay = 2,
+            Roll = 3
+        }
+
         private String myVal1;
         private int myVal2;
+        private ActionType myType;
+
         public String val1
         {
             get {return this.myVal1;}
@@ -21,6 +30,12 @@ namespace monopoly.prototype.logic
         {
             get {return this.myVal2;}
             set { this.myVal2 = value; }
+        }
+
+        public ActionType type
+        {
+            get { return this.myType; }
+            set { this.myType = value; }
         }
 
         public dummyAction() { }
