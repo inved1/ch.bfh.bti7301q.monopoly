@@ -40,24 +40,9 @@ namespace monopoly.prototype.server
         {
 
             textBox1.Text += o.val1 + "\r\n" + o.val2.ToString();
-            handleNotify(o);
+
         }
 
-        private void handleNotify(monopoly.prototype.logic.dummyAction o)
-        {
-            switch (o.type)
-            {
-                case dummyAction.ActionType.Buy:
-                    o.val2 = o.val2 - 10;
-                    break;
-                case dummyAction.ActionType.Pay:
-                    o.val2 = 0;
-                    break;
-                case dummyAction.ActionType.Roll:
-                    o.val2 = new Random().Next(12);
-                    break;
-            }
-        }
 
         [STAThread]
         static void Main()
