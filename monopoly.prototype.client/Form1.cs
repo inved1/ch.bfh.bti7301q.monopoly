@@ -27,6 +27,7 @@ namespace monopoly.prototype.client
             ChannelServices.RegisterChannel(channel );
 
 
+
             remoteAction = (myRemoteAction)Activator.GetObject(typeof(myRemoteAction), "tcp://localhost:8080/test");
             tmpObject = new monopoly.prototype.logic.dummyAction();
 
