@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using monopoly.prototype.logic.interfaces;
 
 namespace monopoly.prototype.logic
 {
@@ -31,7 +32,7 @@ namespace monopoly.prototype.logic
             myObserver = obs;
         }
 
-        public dummyAction setObject
+        public List<IAction> setObject
         {
             set
             {

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
+using monopoly.prototype.logic.interfaces;
 
 namespace monopoly.prototype.logic
 {
@@ -10,9 +12,9 @@ namespace monopoly.prototype.logic
 
         public myRemoteAction() { }
 
-        public void setObject(dummyAction o)
+        public void setObject(List<IAction>  lst)
         {
-            Cache.getInstance().setObject = o;
+            Cache.getInstance().setObject = lst;
         }
 
     }

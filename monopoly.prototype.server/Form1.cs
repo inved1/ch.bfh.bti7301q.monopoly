@@ -11,6 +11,8 @@ using monopoly.prototype.logic;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
+using monopoly.prototype.logic.interfaces;
+using monopoly.prototype.logic.classes;
 
 
 namespace monopoly.prototype.server
@@ -19,9 +21,17 @@ namespace monopoly.prototype.server
     {
         private myRemoteAction remoteAction;
 
+        private cGameBoard myGameBoard;
+
         public Form1()
         {
             InitializeComponent();
+
+
+            this.myGameBoard = new cGameBoard();
+            List<cAvatar> lst = new List<monopoly.prototype.logic.classes.cAvatar>();
+            lst.Add(new cAvatar());
+            this.myGameBoard.lstAvatars = lst;
 
             remoteAction = new myRemoteAction();
 
@@ -35,19 +45,34 @@ namespace monopoly.prototype.server
 
         }
 
-        /*from interface */
-        public void Notify(monopoly.prototype.logic.dummyAction  o)
-        {
 
-            textBox1.Text += o.val1 + "\r\n" + o.val2.ToString();
 
-        }
 
 
         [STAThread]
         static void Main()
         {
             Application.Run(new Form1 ());
+        }
+
+        /*from interface */
+        public void Notify(List<logic.interfaces.IAction> lst)
+        {
+            foreach (IAction o in lst)
+            {
+                this.textBox1.Text += "run Action - " + o.Name.ToString() +"\r\n";
+                
+                o.runAction();
+                if (o.GetType() == typeof(cActionRoll))
+                {
+                    cActionRoll oActionRoll = (cActionRoll)o;
+                    this.myGameBoard.lstAvatars[0].position += oActionRoll.val;
+                    this.textBox1.Text += "position [0] - " + oActionRoll.val.ToString() + "\r\n";
+                }
+
+                
+            }
+
         }
     }
 }

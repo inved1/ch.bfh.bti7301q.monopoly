@@ -40,8 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache.cs" />
-    <Compile Include="dummyAction.cs" />
-    <Compile Include="IObserver.cs" />
+    <Compile Include="classes\cActionGiveUp.cs" />
+    <Compile Include="classes\cActionRoll.cs" />
+    <Compile Include="classes\cAvatar.cs" />
+    <Compile Include="classes\cGameBoard.cs" />
+    <Compile Include="interfaces\IAction.cs" />
+    <Compile Include="interfaces\IObserver.cs" />
     <Compile Include="myRemoteAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
