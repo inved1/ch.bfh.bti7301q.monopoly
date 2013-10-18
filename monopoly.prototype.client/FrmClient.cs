@@ -27,7 +27,7 @@ namespace monopoly.prototype.client
             TcpChannel channel = new TcpChannel();
             ChannelServices.RegisterChannel(channel );
 
-            remoteAction = (myRemoteAction)Activator.GetObject(typeof(myRemoteAction), "tcp://localhost:8080/test");
+            remoteAction = (myRemoteAction)Activator.GetObject(typeof(myRemoteAction), "tcp://localhost:8080/remoteAction");
             Game.getInstance().Attach(this);
 
             login();
