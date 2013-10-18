@@ -1,6 +1,6 @@
 ﻿namespace monopoly.prototype.server
 {
-    partial class Form1
+    partial class FrmServer
     {
         /// <summary>
         /// Required designer variable.

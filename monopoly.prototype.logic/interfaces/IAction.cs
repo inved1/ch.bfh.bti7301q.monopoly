@@ -10,7 +10,5 @@ namespace monopoly.prototype.logic.interfaces
     {
         string Name { get; set; }
         void runAction();
-
-
     }
 }

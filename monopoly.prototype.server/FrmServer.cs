@@ -17,30 +17,31 @@ using monopoly.prototype.logic.classes;
 
 namespace monopoly.prototype.server
 {
-    public partial class Form1 : Form , monopoly.prototype.logic.IObserver  
+    public partial class FrmServer : Form //, monopoly.prototype.logic.IObserver  
     {
-        private myRemoteAction remoteAction;
+        //private myRemoteAction remoteAction;
 
-        private cGameBoard myGameBoard;
+        private Game game; 
+        //private cGameBoard myGameBoard;
 
-        public Form1()
+        public FrmServer()
         {
             InitializeComponent();
 
-
-            this.myGameBoard = new cGameBoard();
-            List<cAvatar> lst = new List<monopoly.prototype.logic.classes.cAvatar>();
+            game = Game.getInstance();
+            /*this.myGameBoard = new cGameBoard();
+            List<cAvatar> lst = new List<cAvatar>();
             lst.Add(new cAvatar());
-            this.myGameBoard.lstAvatars = lst;
+            this.myGameBoard.lstAvatars = lst;*/
 
-            remoteAction = new myRemoteAction();
+            //remoteAction = new myRemoteAction();
 
             TcpChannel channel = new TcpChannel(8080);
 
             ChannelServices.RegisterChannel(channel);
 
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(myRemoteAction), "test", WellKnownObjectMode.Singleton);
-            monopoly.prototype.logic.Cache.Attach(this);
+            //monopoly.prototype.logic.Cache.Attach(this);
 
 
         }
@@ -52,7 +53,7 @@ namespace monopoly.prototype.server
         [STAThread]
         static void Main()
         {
-            Application.Run(new Form1 ());
+            Application.Run(new FrmServer ());
         }
 
         /*from interface */
@@ -66,7 +67,7 @@ namespace monopoly.prototype.server
                 if (o.GetType() == typeof(cActionRoll))
                 {
                     cActionRoll oActionRoll = (cActionRoll)o;
-                    this.myGameBoard.lstAvatars[0].position += oActionRoll.val;
+                    //this.myGameBoard.lstAvatars[0].position += oActionRoll.val;
                     this.textBox1.Text += "position [0] - " + oActionRoll.val.ToString() + "\r\n";
                 }
 

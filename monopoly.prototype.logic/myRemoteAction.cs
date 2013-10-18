@@ -9,12 +9,12 @@ namespace monopoly.prototype.logic
 
     public class myRemoteAction : MarshalByRefObject
     {
-
         public myRemoteAction() { }
 
-        public void setObject(List<IAction>  lst)
+        public void setObject(List<IAction> lst)
         {
-            Cache.getInstance().setObject = lst;
+            //Cache.getInstance().setObject = lst;
+            Game.getInstance().playAction(lst);
         }
 
     }

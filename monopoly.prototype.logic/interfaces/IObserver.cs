@@ -9,8 +9,6 @@ namespace monopoly.prototype.logic
 {
     public interface IObserver
     {
-        void Notify(List<IAction> lst);
-        
-        
-      }
+        void Update(List<IAction> lst);
+    }
 }

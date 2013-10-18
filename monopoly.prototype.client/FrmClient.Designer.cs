@@ -1,6 +1,6 @@
 ﻿namespace monopoly.prototype.client
 {
-    partial class Form1
+    partial class FrmClient
     {
         /// <summary>
         /// Required designer variable.

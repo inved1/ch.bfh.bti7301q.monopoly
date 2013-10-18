@@ -36,7 +36,7 @@ namespace monopoly.prototype.logic
         {
             set
             {
-                myObserver.Notify(value);
+                //myObserver.Notify(value);
             }
         }
     }

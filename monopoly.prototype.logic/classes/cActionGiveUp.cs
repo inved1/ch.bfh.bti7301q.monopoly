@@ -10,6 +10,7 @@ namespace monopoly.prototype.logic.classes
     [Serializable] 
     public class cActionGiveUp:IAction
     {
+        const string ACTION_NAME = "Zug beenden";
         string myName;
         public string Name
         {
@@ -27,7 +28,5 @@ namespace monopoly.prototype.logic.classes
         {
            
         }
- 
-
     }
 }

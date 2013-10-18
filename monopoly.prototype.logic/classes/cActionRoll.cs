@@ -11,6 +11,7 @@ namespace monopoly.prototype.logic.classes
     [Serializable] 
     public class cActionRoll: IAction 
     {
+        const string ACTION_NAME = "Würfeln"; 
         string myName;
         int myValue;
         public string Name

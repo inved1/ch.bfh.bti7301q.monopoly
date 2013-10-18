@@ -16,23 +16,28 @@ using monopoly.prototype.logic.classes;
 
 namespace monopoly.prototype.client
 {
-    public partial class Form1 : Form
+    public partial class FrmClient : Form, IObserver
     {
-        myRemoteAction remoteAction;
+        private myRemoteAction remoteAction;
         
-        
-        public Form1()
+        public FrmClient()
         {
             InitializeComponent();
 
             TcpChannel channel = new TcpChannel();
             ChannelServices.RegisterChannel(channel );
 
-
-
             remoteAction = (myRemoteAction)Activator.GetObject(typeof(myRemoteAction), "tcp://localhost:8080/test");
-           
+            Game.getInstance().Attach(this);
 
+            login();
+        }
+
+        private void login()
+        {
+            List<IAction> actions = new List<IAction>();
+            actions.Add(new cActionLogin());
+            remoteAction.setObject(actions);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +64,12 @@ namespace monopoly.prototype.client
             
         }
 
-        
+        public void Update(List<IAction> actions)
+        {
+            foreach (IAction action in actions)
+            {
+                MessageBox.Show(action.Name);
+            }
+        }
     }
 }
