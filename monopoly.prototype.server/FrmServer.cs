@@ -29,21 +29,10 @@ namespace monopoly.prototype.server
             InitializeComponent();
 
             game = Game.getInstance();
-            /*this.myGameBoard = new cGameBoard();
-            List<cAvatar> lst = new List<cAvatar>();
-            lst.Add(new cAvatar());
-            this.myGameBoard.lstAvatars = lst;*/
-
-            //remoteAction = new myRemoteAction();
-
-            TcpChannel channel = new TcpChannel(8080);
-
+            TcpChannel channel = new TcpChannel(9999);
             ChannelServices.RegisterChannel(channel);
 
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(myRemoteAction), "test", WellKnownObjectMode.Singleton);
-            //monopoly.prototype.logic.Cache.Attach(this);
-
-
         }
 
 
