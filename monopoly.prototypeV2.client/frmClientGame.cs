@@ -23,6 +23,7 @@ namespace monopoly.prototypeV2.client
         private String myIP = "";
         private String myPort = "";
         private cGame game;
+        private cPlayer player;
 
 
         public frmClientGame(String ip, String Port)
@@ -37,7 +38,8 @@ namespace monopoly.prototypeV2.client
         {
             this.game = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
             this.game.attach(this);
-            this.game.addPlayer(new cPlayer("Player" + this.game.getPlayers().Count+1, "hat", 0));
+            player = new cPlayer("Player" + this.game.Players.Count + 1, "hat", 0);
+            this.game.addPlayer(player);
         }
 
         public void updateAll()
@@ -48,19 +50,30 @@ namespace monopoly.prototypeV2.client
 
         public void updateActions()
         {
-            foreach (IAction action in this.game.getActions())
-            {
-                Button btn = new Button();
-                btn.Text = action.getName();
-                //btn.Click += action.runAction();
-                this.pnlAction.Controls.Add(btn);
-            }
+            //if (this.game.CurPlayer == this.player)
+            //{
+                foreach (IAction action in this.game.Actions)
+                {
+                    Button btn = new Button();
+                    btn.Text = action.getName();
+                    btn.Tag = action;
+                    btn.Click += new EventHandler(runAction);
+                    this.pnlAction.Controls.Add(btn);
+                }
+            //}            
+        }
+
+        private void runAction(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            IAction action = (IAction)btn.Tag;
+            action.runAction();
         }
 
         public void updatePlayerList()
         {
             this.lstPlayers.Items.Clear();
-            foreach (cPlayer player in this.game.getPlayers())
+            foreach (cPlayer player in this.game.Players)
             {
                 this.lstPlayers.Items.Add(player.Name);
             }
@@ -74,7 +87,7 @@ namespace monopoly.prototypeV2.client
             //PictureBox box;
             FlowLayoutPanel field;
 
-            foreach (cPlayer player in this.game.getPlayers())
+            foreach (cPlayer player in this.game.Players)
             {
                 rm = Resources.ResourceManager;
                 bmp = (Bitmap)rm.GetObject(player.Avatar.Token);

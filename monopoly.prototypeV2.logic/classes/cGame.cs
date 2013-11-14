@@ -30,16 +30,21 @@ namespace monopoly.prototypeV2.logic.classes
         public void initGame()
         {
             cPlayer player;
-            for (int i = 0; i < 4; i++)
+            /*for (int i = 0; i < 4; i++)
             {
-                player = new cPlayer("Player" + this.getPlayers().Count + 1, "ship", 0);
+                player = new cPlayer("Player" + this.Players.Count + 1, "ship", 0);
                 this.players.Add(player);
-            }
+            }*/
         }
 
-        public cGameBoard getGameBoard()
+        public cGameBoard GameBoard
         {
-            return this.gameBoard;
+            get{return this.gameBoard;}
+        }
+
+        public cPlayer CurPlayer
+        {
+            get { return this.curPlayer; }
         }
 
         public void attach(IObserverGUI observerGui)
@@ -53,12 +58,12 @@ namespace monopoly.prototypeV2.logic.classes
             players.Add(player);
             curPlayer = player;
             notifyGuis();
-            notifyCurGui();
+            notifyCurPlayer();
         }
 
-        public List<cPlayer> getPlayers()
+        public List<cPlayer> Players
         {
-            return players;
+            get { return players; }
         }
 
         public void createActions()
@@ -67,14 +72,15 @@ namespace monopoly.prototypeV2.logic.classes
             actions.Add(new cActionGiveUp(this));
         }
 
-        public List<IAction> getActions()
+        public List<IAction> Actions
         {
-            return actions;
+            get { return actions; }
         }
 
         public void moveCurPlayer(int value)
         {
             curPlayer.CurPos += value;
+            notifyGuis();
         }
 
         public void notifyGuis()
@@ -85,7 +91,7 @@ namespace monopoly.prototypeV2.logic.classes
             }
         }
 
-        public void notifyCurGui()
+        public void notifyCurPlayer()
         {
             createActions();
             curGui.updateActions();
