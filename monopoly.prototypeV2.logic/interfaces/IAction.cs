@@ -9,9 +9,7 @@ namespace monopoly.prototypeV2.logic.interfaces
 {
     public interface IAction
     {
-        string Name {get; set;}
-        void runAction(bool yes);
-        cPlayer owner {get;set;}
-
+        string getName();
+        void runAction();
     }
 }

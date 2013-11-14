@@ -8,6 +8,6 @@ namespace monopoly.prototypeV2.logic.interfaces
 {
     public interface IObserverAction
     {
-        void notify(List<IAction> lst);
+        void updateActions();
     }
 }

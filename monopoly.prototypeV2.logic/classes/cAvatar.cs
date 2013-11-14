@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace monopoly.prototypeV2.logic.classes
 {
+    [Serializable]
     public class cAvatar
     {
-        int myPosition;
-        public int position
+        private string token = ""; 
+
+        public cAvatar(string token)
         {
-            get
-            {
-                return this.myPosition;
-            }
-            set
-            {
-                this.myPosition = value;
-            }
+            this.token = token;
         }
-        public cAvatar() { }
+
+        public string Token
+        {
+            get { return this.token; }
+            set { this.token = value; }
+        }
     }
 }

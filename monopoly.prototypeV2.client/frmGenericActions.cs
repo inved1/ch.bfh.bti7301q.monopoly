@@ -12,9 +12,9 @@ using monopoly.prototypeV2.logic.classes;
 
 namespace monopoly.prototypeV2.client
 {
-    public partial class frmGenericActions : Form, monopoly.prototypeV2.logic.interfaces.IObserverAction
+    public partial class frmGenericActions : Form
     {
-        public frmGenericActions(cRemoteAction oRemote)
+        public frmGenericActions()
         {
             InitializeComponent();
 
