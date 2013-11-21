@@ -14,6 +14,7 @@ using System.Runtime.Remoting.Channels.Http;
 using monopoly.prototypeV2.logic;
 using monopoly.prototypeV2.logic.classes;
 using monopoly.prototypeV2.logic.interfaces;
+using monopoly.prototypeV2.logic.util; 
 using System.Runtime.Serialization.Formatters;
 using System.Collections;
 
@@ -33,6 +34,9 @@ namespace monopoly.prototypeV2.server
 
         private void init()
         {
+            LogWriter w = LogWriter.Instance;
+            w.WriteLogQueue("Server started");
+
             BinaryServerFormatterSinkProvider tpfProvider = new BinaryServerFormatterSinkProvider();
             tpfProvider.TypeFilterLevel = TypeFilterLevel.Full;
             BinaryClientFormatterSinkProvider clientProv = new BinaryClientFormatterSinkProvider();
@@ -41,8 +45,8 @@ namespace monopoly.prototypeV2.server
             TcpChannel tcpChannel = new TcpChannel(props, clientProv, tpfProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), "sharedGame", WellKnownObjectMode.Singleton);
-
-            this.txtInfo.Text+="Server started";
+            
+            w.WriteLogQueue("Server registered");
            
         }
         /// <summary>

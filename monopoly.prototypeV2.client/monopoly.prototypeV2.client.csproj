@@ -51,22 +51,76 @@
     <Compile Include="ctrlGenericAction.designer.cs">
       <DependentUpon>ctrlGenericAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClient.cs">
+    <Compile Include="ctrl\ctrlActionSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlActionSquare.Designer.cs">
+      <DependentUpon>ctrlActionSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlCommunitySquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlCommunitySquare.Designer.cs">
+      <DependentUpon>ctrlCommunitySquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlFreeParkSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlFreeParkSquare.Designer.cs">
+      <DependentUpon>ctrlFreeParkSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonSquare.Designer.cs">
+      <DependentUpon>ctrlPrisonSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlRegularSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlRegularSquare.Designer.cs">
+      <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlStartSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlStartSquare.Designer.cs">
+      <DependentUpon>ctrlStartSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlTaxSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlTaxSquare.Designer.cs">
+      <DependentUpon>ctrlTaxSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlTrainStationSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlTrainStationSquare.Designer.cs">
+      <DependentUpon>ctrlTrainStationSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlWaterPowerSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlWaterPowerSquare.Designer.cs">
+      <DependentUpon>ctrlWaterPowerSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClient.designer.cs">
+    <Compile Include="form\frmClient.designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientGame.cs">
+    <Compile Include="form\frmClientGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientGame.designer.cs">
+    <Compile Include="form\frmClientGame.designer.cs">
       <DependentUpon>frmClientGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGenericActions.cs">
+    <Compile Include="form\frmGenericActions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGenericActions.designer.cs">
+    <Compile Include="form\frmGenericActions.designer.cs">
       <DependentUpon>frmGenericActions.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -74,13 +128,16 @@
     <EmbeddedResource Include="ctrlGenericAction.resx">
       <DependentUpon>ctrlGenericAction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClient.resx">
+    <EmbeddedResource Include="ctrl\ctrlRegularSquare.resx">
+      <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientGame.resx">
+    <EmbeddedResource Include="form\frmClientGame.resx">
       <DependentUpon>frmClientGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGenericActions.resx">
+    <EmbeddedResource Include="form\frmGenericActions.resx">
       <DependentUpon>frmGenericActions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
