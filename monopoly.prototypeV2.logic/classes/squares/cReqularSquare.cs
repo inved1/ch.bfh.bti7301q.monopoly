@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class ReqularSquare : ISquare
+    class cReqularSquare : ISquare
     {
         private string name = "";
         private cPlayer owner = null;
@@ -16,7 +16,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private int priceHotel = 0;
         private int rent = 0;
 
-        public ReqularSquare(string name)
+        public cReqularSquare(string name)
         {
             this.name = name;
         }

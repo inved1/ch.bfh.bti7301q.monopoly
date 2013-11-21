@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class StartSquare : ISquare
+    class cTrainStationSquare:ISquare
     {
-        private string name = "Start";
+        private string name = "";
 
-        public string Name
+        public cTrainStationSquare(string name)
         {
-            get { return this.name; }
-            set { this.name = value; }
+            this.name = name;
         }
 
         public void playAction()

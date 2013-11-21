@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\cGUIWrapper.cs" />
     <Compile Include="ctrlGenericAction.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +118,12 @@
     <Compile Include="form\frmClientGame.designer.cs">
       <DependentUpon>frmClientGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frmClientGame_V02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmClientGame_V02.Designer.cs">
+      <DependentUpon>frmClientGame_V02.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frmGenericActions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmClientGame.resx">
       <DependentUpon>frmClientGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmClientGame_V02.resx">
+      <DependentUpon>frmClientGame_V02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmGenericActions.resx">
       <DependentUpon>frmGenericActions.cs</DependentUpon>

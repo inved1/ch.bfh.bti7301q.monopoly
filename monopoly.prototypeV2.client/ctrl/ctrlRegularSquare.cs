@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace monopoly.prototypeV2.client.ctrl
 {
+    
+
     public partial class ctrlRegularSquare : UserControl
     {
-        private String myStreet;
+        private String myStreetColor;
         private String myName;
 
 
@@ -20,13 +22,15 @@ namespace monopoly.prototypeV2.client.ctrl
         public ctrlRegularSquare()
         {
             InitializeComponent();
+            this.Name = "init";
+            this.StreetColor = "yellow";
         }
 
-        public String Street
+        public String StreetColor
         {
-            get {return this.myStreet;}
+            get {return this.myStreetColor;}
             set {
-                this.myStreet = value;
+                this.myStreetColor = value;
                 this.con.Panel1.BackColor = Color.FromName(value);
                 //draw on panel, dont want a label 
 
@@ -34,7 +38,7 @@ namespace monopoly.prototypeV2.client.ctrl
                 System.Drawing.Font oFont = new Font("Arial", 10);
                 System.Drawing.SolidBrush oBrush = new SolidBrush(System.Drawing.Color.Black);
 
-                form.DrawString(value, oFont, oBrush, new Point(10, 10));
+                form.DrawString(this.Name , oFont, oBrush, new Point(10, 10));
 
                 oFont.Dispose();
                 oBrush.Dispose();
@@ -42,12 +46,19 @@ namespace monopoly.prototypeV2.client.ctrl
 
             }
         }
+
+
         public String Name
         {
             get { return this.myName;}
             set { this.myName = value; }
         }
 
+        public System.Windows.Forms.Orientation orientation
+        {
+            get { return this.con.Orientation; }
+            set { this.con.Orientation = value; }
+        }
         
 
     }

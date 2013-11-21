@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class TaxSquare:ISquare
+    class cTaxSquare:ISquare
     {
         private string name = "";
 
-        public TaxSquare(string name)
+        public cTaxSquare(string name)
         {
             this.name = name;
         }

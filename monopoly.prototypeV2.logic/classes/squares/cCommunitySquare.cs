@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class TrainStationSquare:ISquare
+    class cCommunitySquare:ISquare
     {
         private string name = "";
 
-        public TrainStationSquare(string name)
+        public cCommunitySquare(string name)
         {
             this.name = name;
         }
@@ -21,5 +21,6 @@ namespace monopoly.prototypeV2.logic.classes.squares
         {
             throw new NotImplementedException();
         }
+
     }
 }

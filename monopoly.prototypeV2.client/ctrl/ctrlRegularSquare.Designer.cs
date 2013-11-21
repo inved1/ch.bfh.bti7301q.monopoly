@@ -41,7 +41,7 @@
             this.con.Location = new System.Drawing.Point(0, 0);
             this.con.Name = "con";
             this.con.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.con.Size = new System.Drawing.Size(150, 150);
+            this.con.Size = new System.Drawing.Size(117, 167);
             this.con.TabIndex = 0;
             // 
             // ctrlRegularSquare
@@ -50,6 +50,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.con);
             this.Name = "ctrlRegularSquare";
+            this.Size = new System.Drawing.Size(117, 167);
             ((System.ComponentModel.ISupportInitialize)(this.con)).EndInit();
             this.con.ResumeLayout(false);
             this.ResumeLayout(false);
