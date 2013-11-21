@@ -38,7 +38,7 @@ namespace monopoly.prototypeV2.client.ctrl
                 System.Drawing.Font oFont = new Font("Arial", 10);
                 System.Drawing.SolidBrush oBrush = new SolidBrush(System.Drawing.Color.Black);
 
-                form.DrawString(this.Name , oFont, oBrush, new Point(10, 10));
+                form.DrawString(this.ctrlName , oFont, oBrush, new Point(10, 10));
 
                 oFont.Dispose();
                 oBrush.Dispose();
@@ -48,7 +48,7 @@ namespace monopoly.prototypeV2.client.ctrl
         }
 
 
-        public String Name
+        public String ctrlName
         {
             get { return this.myName;}
             set { this.myName = value; }

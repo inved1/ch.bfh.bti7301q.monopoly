@@ -10,7 +10,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
     [Serializable]
     class cReqularSquare : ISquare
     {
-        private string name = "";
+        private string myName = "";
         private cPlayer owner = null;
         private int priceHouse = 0;
         private int priceHotel = 0;
@@ -18,13 +18,13 @@ namespace monopoly.prototypeV2.logic.classes.squares
 
         public cReqularSquare(string name)
         {
-            this.name = name;
+            this.myName = name;
         }
 
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this.myName; }
+            set { this.myName = value; }
         }
 
         public cPlayer Owner

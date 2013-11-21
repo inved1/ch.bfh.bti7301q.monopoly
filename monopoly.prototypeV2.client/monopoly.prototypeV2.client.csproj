@@ -52,6 +52,18 @@
     <Compile Include="ctrlGenericAction.designer.cs">
       <DependentUpon>ctrlGenericAction.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrl\ctrGoToPrison.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrGoToPrison.Designer.cs">
+      <DependentUpon>ctrGoToPrison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonVisitorSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonVisitorSquare.Designer.cs">
+      <DependentUpon>ctrlPrisonVisitorSquare.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrl\ctrlActionSquare.cs">
       <SubType>UserControl</SubType>
     </Compile>

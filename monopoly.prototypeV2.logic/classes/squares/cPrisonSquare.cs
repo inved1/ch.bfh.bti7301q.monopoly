@@ -7,7 +7,19 @@ using monopoly.prototypeV2.logic.interfaces;
 
 namespace monopoly.prototypeV2.logic.classes.squares
 {
+    [Serializable]
     class cPrisonSquare : ISquare
     {
+        private string myName = "";
+
+        public cPrisonSquare(string name)
+        {
+            this.myName = name;
+        }
+
+        public void playAction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

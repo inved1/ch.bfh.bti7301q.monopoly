@@ -10,17 +10,24 @@ namespace monopoly.prototypeV2.logic.classes.squares
     [Serializable]
     class cStartSquare : ISquare
     {
-        private string name = "Start";
+        private string myName;
+
+        public cStartSquare(String name)
+        {
+            this.myName = name;
+        }
 
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this.myName; }
         }
 
         public void playAction()
         {
             throw new NotImplementedException();
         }
+
+
+      
     }
 }

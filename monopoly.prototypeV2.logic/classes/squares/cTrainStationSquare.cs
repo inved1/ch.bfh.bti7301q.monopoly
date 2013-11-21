@@ -10,11 +10,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
     [Serializable]
     class cTrainStationSquare:ISquare
     {
-        private string name = "";
+        private string myName = "";
 
         public cTrainStationSquare(string name)
         {
-            this.name = name;
+            this.myName = name;
         }
 
         public void playAction()

@@ -7,7 +7,20 @@ using monopoly.prototypeV2.logic.interfaces;
 
 namespace monopoly.prototypeV2.logic.classes.squares
 {
+    [Serializable]
     class cPayTaxesSquare :ISquare
     {
+
+        private string myName = "";
+
+        public cPayTaxesSquare(string name)
+        {
+            this.myName = name;
+        }
+
+        public void playAction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

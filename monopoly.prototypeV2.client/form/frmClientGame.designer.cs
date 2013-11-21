@@ -42,8 +42,8 @@
             this.field6 = new System.Windows.Forms.FlowLayoutPanel();
             this.field0 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pnlAction = new System.Windows.Forms.FlowLayoutPanel();
             this.lstPlayers = new System.Windows.Forms.ListBox();
+            this.pnlAction = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.spltContainerLeft)).BeginInit();
             this.spltContainerLeft.Panel1.SuspendLayout();
             this.spltContainerLeft.Panel2.SuspendLayout();
@@ -91,7 +91,7 @@
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tblLayPnl.Controls.Add(this.field1, 9, 10);
             this.tblLayPnl.Controls.Add(this.field2, 8, 10);
             this.tblLayPnl.Controls.Add(this.field3, 7, 10);
@@ -122,49 +122,49 @@
             // 
             // field1
             // 
-            this.field1.Location = new System.Drawing.Point(587, 647);
+            this.field1.Location = new System.Drawing.Point(586, 647);
             this.field1.Name = "field1";
             this.field1.Size = new System.Drawing.Size(51, 100);
             this.field1.TabIndex = 3;
             // 
             // field2
             // 
-            this.field2.Location = new System.Drawing.Point(525, 647);
+            this.field2.Location = new System.Drawing.Point(524, 647);
             this.field2.Name = "field2";
             this.field2.Size = new System.Drawing.Size(56, 100);
             this.field2.TabIndex = 4;
             // 
             // field3
             // 
-            this.field3.Location = new System.Drawing.Point(465, 647);
+            this.field3.Location = new System.Drawing.Point(464, 647);
             this.field3.Name = "field3";
             this.field3.Size = new System.Drawing.Size(54, 100);
             this.field3.TabIndex = 5;
             // 
             // field4
             // 
-            this.field4.Location = new System.Drawing.Point(406, 647);
+            this.field4.Location = new System.Drawing.Point(405, 647);
             this.field4.Name = "field4";
             this.field4.Size = new System.Drawing.Size(53, 100);
             this.field4.TabIndex = 6;
             // 
             // field5
             // 
-            this.field5.Location = new System.Drawing.Point(347, 647);
+            this.field5.Location = new System.Drawing.Point(346, 647);
             this.field5.Name = "field5";
             this.field5.Size = new System.Drawing.Size(53, 100);
             this.field5.TabIndex = 7;
             // 
             // field7
             // 
-            this.field7.Location = new System.Drawing.Point(228, 647);
+            this.field7.Location = new System.Drawing.Point(227, 647);
             this.field7.Name = "field7";
             this.field7.Size = new System.Drawing.Size(55, 100);
             this.field7.TabIndex = 9;
             // 
             // field8
             // 
-            this.field8.Location = new System.Drawing.Point(168, 647);
+            this.field8.Location = new System.Drawing.Point(167, 647);
             this.field8.Name = "field8";
             this.field8.Size = new System.Drawing.Size(54, 100);
             this.field8.TabIndex = 10;
@@ -173,7 +173,7 @@
             // 
             this.field9.Location = new System.Drawing.Point(105, 647);
             this.field9.Name = "field9";
-            this.field9.Size = new System.Drawing.Size(57, 100);
+            this.field9.Size = new System.Drawing.Size(56, 100);
             this.field9.TabIndex = 11;
             // 
             // field10
@@ -185,14 +185,14 @@
             // 
             // field6
             // 
-            this.field6.Location = new System.Drawing.Point(289, 647);
+            this.field6.Location = new System.Drawing.Point(288, 647);
             this.field6.Name = "field6";
             this.field6.Size = new System.Drawing.Size(52, 100);
             this.field6.TabIndex = 14;
             // 
             // field0
             // 
-            this.field0.Location = new System.Drawing.Point(644, 647);
+            this.field0.Location = new System.Drawing.Point(643, 647);
             this.field0.Name = "field0";
             this.field0.Size = new System.Drawing.Size(100, 100);
             this.field0.TabIndex = 15;
@@ -215,6 +215,14 @@
             this.splitContainer1.SplitterDistance = 384;
             this.splitContainer1.TabIndex = 0;
             // 
+            // lstPlayers
+            // 
+            this.lstPlayers.FormattingEnabled = true;
+            this.lstPlayers.Location = new System.Drawing.Point(3, 3);
+            this.lstPlayers.Name = "lstPlayers";
+            this.lstPlayers.Size = new System.Drawing.Size(148, 121);
+            this.lstPlayers.TabIndex = 0;
+            // 
             // pnlAction
             // 
             this.pnlAction.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -223,14 +231,6 @@
             this.pnlAction.Name = "pnlAction";
             this.pnlAction.Size = new System.Drawing.Size(154, 386);
             this.pnlAction.TabIndex = 0;
-            // 
-            // lstPlayers
-            // 
-            this.lstPlayers.FormattingEnabled = true;
-            this.lstPlayers.Location = new System.Drawing.Point(3, 3);
-            this.lstPlayers.Name = "lstPlayers";
-            this.lstPlayers.Size = new System.Drawing.Size(148, 121);
-            this.lstPlayers.TabIndex = 0;
             // 
             // frmClientGame
             // 

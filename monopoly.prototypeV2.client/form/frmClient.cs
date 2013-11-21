@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using monopoly.prototypeV2.client.form;
 using monopoly.prototypeV2.logic.util;
 
 namespace monopoly.prototypeV2.client
@@ -35,7 +36,7 @@ namespace monopoly.prototypeV2.client
             LogWriter w = LogWriter.Instance;
             w.WriteLogQueue(string.Format("Client connect to {0}, {1}",this.textBox1.Text,this.textBox2.Text)   );
 
-            frmClientGame f = new frmClientGame(this.textBox1.Text,this.textBox2.Text );
+            frmClientGame_V02 f = new frmClientGame_V02(this.textBox1.Text,this.textBox2.Text );
             f.Show();
         }
 
