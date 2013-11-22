@@ -72,13 +72,19 @@
             this.ctrlTrainStationSquare4 = new monopoly.prototypeV2.client.ctrl.ctrlTrainStationSquare();
             this.ctrlActionSquare3 = new monopoly.prototypeV2.client.ctrl.ctrlActionSquare();
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lstPlayers = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
             this.con1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.con2)).BeginInit();
             this.con2.Panel1.SuspendLayout();
+            this.con2.Panel2.SuspendLayout();
             this.con2.SuspendLayout();
             this.tlp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // con1
@@ -110,6 +116,10 @@
             // con2.Panel1
             // 
             this.con2.Panel1.Controls.Add(this.tlp);
+            // 
+            // con2.Panel2
+            // 
+            this.con2.Panel2.Controls.Add(this.splitContainer1);
             this.con2.Size = new System.Drawing.Size(1264, 786);
             this.con2.SplitterDistance = 1024;
             this.con2.TabIndex = 0;
@@ -307,7 +317,6 @@
             this.ctrlRegularSquare7.Size = new System.Drawing.Size(152, 54);
             this.ctrlRegularSquare7.StreetColor = "yellow";
             this.ctrlRegularSquare7.TabIndex = 8;
-            this.ctrlRegularSquare7.Load += new System.EventHandler(this.ctrlRegularSquare7_Load);
             // 
             // ctrlRegularSquare8
             // 
@@ -650,10 +659,37 @@
             this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 54);
             this.ctrlTaxSquare2.TabIndex = 39;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lstPlayers);
+            this.splitContainer1.Size = new System.Drawing.Size(236, 786);
+            this.splitContainer1.SplitterDistance = 419;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // lstPlayers
+            // 
+            this.lstPlayers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstPlayers.FormattingEnabled = true;
+            this.lstPlayers.Location = new System.Drawing.Point(0, 0);
+            this.lstPlayers.Name = "lstPlayers";
+            this.lstPlayers.Size = new System.Drawing.Size(234, 417);
+            this.lstPlayers.TabIndex = 0;
+            // 
             // frmClientGame_V02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1264, 990);
             this.Controls.Add(this.con1);
             this.Name = "frmClientGame_V02";
@@ -662,9 +698,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.con1)).EndInit();
             this.con1.ResumeLayout(false);
             this.con2.Panel1.ResumeLayout(false);
+            this.con2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.con2)).EndInit();
             this.con2.ResumeLayout(false);
             this.tlp.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -715,5 +755,7 @@
         private ctrl.ctrlTrainStationSquare ctrlTrainStationSquare4;
         private ctrl.ctrlActionSquare ctrlActionSquare3;
         private ctrl.ctrlTaxSquare ctrlTaxSquare2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ListBox lstPlayers;
     }
 }

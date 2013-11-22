@@ -44,11 +44,13 @@
     <Compile Include="classes\actions\cActionLogin.cs" />
     <Compile Include="classes\actions\cActionRoll.cs" />
     <Compile Include="classes\cAvatar.cs" />
+    <Compile Include="classes\cCardDeck.cs" />
     <Compile Include="classes\cGame.cs" />
     <Compile Include="classes\cGameBoard.cs" />
     <Compile Include="classes\cHotel.cs" />
     <Compile Include="classes\cHouse.cs" />
     <Compile Include="classes\cPlayer.cs" />
+    <Compile Include="classes\cStreet.cs" />
     <Compile Include="classes\squares\cActionSquare.cs" />
     <Compile Include="classes\squares\cCommunitySquare.cs" />
     <Compile Include="classes\squares\cFreeParkSquare.cs" />

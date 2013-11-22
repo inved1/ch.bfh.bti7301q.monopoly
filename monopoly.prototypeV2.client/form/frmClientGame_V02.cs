@@ -38,8 +38,16 @@ namespace monopoly.prototypeV2.client.form
 
         private void init()
         {
-            TcpChannel tcpChannel = new TcpChannel(0);
+            //attentione !!!!
+#if DEBUG
+            //TcpChannel tcpChannel = new TcpChannel(0);
+            //ChannelServices.RegisterChannel(tcpChannel, false);
+#else
+                        TcpChannel tcpChannel = new TcpChannel(0);
             ChannelServices.RegisterChannel(tcpChannel, false);
+#endif
+            //TcpChannel tcpChannel = new TcpChannel(0);
+            //ChannelServices.RegisterChannel(tcpChannel, false);
             this.game = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
             this.game.attach(this);
             player = new cPlayer("Player" + this.game.Players.Count + 1, "hat", 0);
@@ -137,13 +145,19 @@ namespace monopoly.prototypeV2.client.form
 
         public void updateAll()
         {
-            //refreshAvatarPositions();
-            //updatePlayerList();
-        }
+        //    refreshAvatarPositions();
+            updatePlayerList();
+       }
 
-        private void ctrlRegularSquare7_Load(object sender, EventArgs e)
+        public void updatePlayerList()
         {
-
+            this.lstPlayers.Items.Clear();
+            foreach (cPlayer player in this.game.Players)
+            {
+                this.lstPlayers.Items.Add(player.Name);
+            }
         }
+
+
     }
 }
