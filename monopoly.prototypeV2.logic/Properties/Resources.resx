@@ -133,6 +133,12 @@
   <data name="iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="monopoly_hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monopoly_hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monopoly_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monopoly_house.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ship" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ship.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

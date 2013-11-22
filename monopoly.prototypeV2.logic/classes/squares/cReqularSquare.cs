@@ -15,17 +15,30 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private int priceHouse = 0;
         private int priceHotel = 0;
         private int rent = 0;
+        private string myColor = "grey"; // default
+        
+        String getName()
+        {
+            return this.myName;
+        }
 
-        public cReqularSquare(string name)
+        public cReqularSquare(string name, String color)
         {
             this.myName = name;
+            this.myColor = color;
         }
 
-        public string Name
+        public String colorStreet
         {
-            get { return this.myName; }
-            set { this.myName = value; }
+            get { return this.myColor; }
+            set { this.myColor = value; }
         }
+
+
+        public String ctrlName
+        { get { return this.myName; } }
+
+
 
         public cPlayer Owner
         {

@@ -88,6 +88,21 @@ namespace monopoly.prototypeV2.client.form
             this.mySquares.Add(40, new cGUIWrapper(this.ctrlTaxSquare2,this.game.GameBoard.getSpecificSquare(40)));
             this.mySquares.Add(41, new cGUIWrapper(this.ctrlRegularSquare22, this.game.GameBoard.getSpecificSquare(41)));
 
+            foreach(KeyValuePair<int, cGUIWrapper> entry in this.mySquares)
+            {
+                //set streetname on gui
+                entry.Value.GUICtrl.ctrlName = entry.Value.oSquare.ctrlName;
+
+                //set color on streets
+                if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare))
+                {
+                    ctrl.ctrlRegularSquare o = (ctrl.ctrlRegularSquare)entry.Value.GUICtrl;
+                    o.StreetColor = entry.Value.oSquare.colorStreet;
+
+                }
+
+            }
+
 
         }
 

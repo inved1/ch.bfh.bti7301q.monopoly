@@ -10,13 +10,24 @@ namespace monopoly.prototypeV2.logic.classes.squares
     [Serializable]
     class cFreeParkSquare : ISquare
     {
-       
-        private string myName = "";
 
-        public cFreeParkSquare(string name)
+        private string myName = "";
+        private string myColor = "grey"; // default
+
+        public cFreeParkSquare(String name,String color)
         {
             this.myName = name;
+            this.myColor = color;
         }
+
+        public String colorStreet
+        {
+            get { return this.myColor; }
+            set { this.myColor = value; }
+        }
+        public String ctrlName
+        { get { return this.myName; } }
+
 
         public void playAction()
         {

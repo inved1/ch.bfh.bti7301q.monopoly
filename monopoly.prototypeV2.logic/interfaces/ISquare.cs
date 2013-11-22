@@ -8,7 +8,10 @@ namespace monopoly.prototypeV2.logic.interfaces
 {
     public interface ISquare
     {
-     
+        String ctrlName { get; }
+
+        String colorStreet { get; set; }
+
 
         void playAction();
     }

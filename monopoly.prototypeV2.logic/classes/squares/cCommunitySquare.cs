@@ -11,11 +11,23 @@ namespace monopoly.prototypeV2.logic.classes.squares
     class cCommunitySquare:ISquare
     {
         private string myName = "";
+        private string myColor = "grey"; // default
 
-        public cCommunitySquare(string name)
+        public cCommunitySquare(string name,String color)
         {
             this.myName = name;
+            this.myColor = color;
         }
+
+        public String colorStreet
+        {
+            get { return this.myColor; }
+            set { this.myColor = value; }
+        }
+
+        public String ctrlName
+        { get { return this.myName; } }
+
 
         public void playAction()
         {

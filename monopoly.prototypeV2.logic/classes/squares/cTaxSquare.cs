@@ -11,15 +11,26 @@ namespace monopoly.prototypeV2.logic.classes.squares
     class cTaxSquare:ISquare
     {
         private string myName = "";
+        private string myColor = "grey"; // default
 
-        public cTaxSquare(string name)
+        public cTaxSquare(string name, string color)
         {
             this.myName = name;
+            this.myColor = color;
         }
 
         public void playAction()
         {
             throw new NotImplementedException();
         }
+
+        public String colorStreet
+        {
+            get { return this.myColor; }
+            set { this.myColor = value; }
+        }
+
+        public String ctrlName
+        { get { return this.myName; } }
     }
 }

@@ -11,16 +11,28 @@ namespace monopoly.prototypeV2.logic.classes.squares
     class cWaterPowerSquare : ISquare
     {
         private string myName = "";
+        private string myColor = "grey"; // default
 
-        public cWaterPowerSquare(string name)
+        public cWaterPowerSquare(string name, string color)
         {
             this.myName = name;
+            this.myColor = color;
         }
 
         public void playAction()
         {
             throw new NotImplementedException();
         }
+
+        public String colorStreet 
+        { 
+            get {return this.myColor;}
+            set { this.myColor = value; }
+        }
+
+
+        public String ctrlName
+        { get { return this.myName; } }
 
     }
 }

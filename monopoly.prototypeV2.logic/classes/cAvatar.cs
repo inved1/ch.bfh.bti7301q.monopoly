@@ -10,11 +10,16 @@ namespace monopoly.prototypeV2.logic.classes
     [Serializable]
     public class cAvatar
     {
-        private string token = ""; 
+        private string token = "";
+        private Image myImage = null;
 
         public cAvatar(string token)
         {
             this.token = token;
+
+            System.Resources.ResourceManager rm = monopoly.prototypeV2.logic.Properties.Resources.ResourceManager;
+            this.myImage = (Image)rm.GetObject(token);
+            
         }
 
         public string Token
@@ -25,7 +30,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public Image getImage()
         {
-            return null;
+            return this.myImage ;
         }
     }
 }

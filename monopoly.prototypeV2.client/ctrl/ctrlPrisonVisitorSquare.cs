@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using monopoly.prototypeV2.client.interfaces;
+
 
 namespace monopoly.prototypeV2.client.ctrl
 {
-    public partial class ctrlPrisonVisitorSquare : UserControl
+    public partial class ctrlPrisonVisitorSquare : UserControl, IctrlSquare
     {
+        private String myName;
+
         public ctrlPrisonVisitorSquare()
         {
             InitializeComponent();
+        }
+        public String ctrlName
+        {
+            get { return this.myName; }
+            set { this.myName = value; }
         }
     }
 }

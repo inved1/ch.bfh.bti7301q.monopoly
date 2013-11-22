@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using monopoly.prototypeV2.logic.classes;
 using monopoly.prototypeV2.logic.interfaces;
+using monopoly.prototypeV2.client.interfaces;
 
 namespace monopoly.prototypeV2.client.ctrl
 {
     
 
-    public partial class ctrlRegularSquare : UserControl
+    public partial class ctrlRegularSquare : UserControl, IctrlSquare
     {
         private String myStreetColor;
         private String myName;
@@ -39,8 +40,6 @@ namespace monopoly.prototypeV2.client.ctrl
         public ctrlRegularSquare()
         {
             InitializeComponent();
-            this.Name = "init";
-            this.StreetColor = "yellow";
             initPointLists();
 
             this.myAvatars = new List<cAvatar>();
@@ -88,17 +87,17 @@ namespace monopoly.prototypeV2.client.ctrl
                 this.con.Panel1.BackColor = Color.FromName(value);
                 //draw on panel, dont want a label 
 
-                System.Drawing.Graphics form = this.con.Panel1.CreateGraphics();
-                System.Drawing.Font oFont = new Font("Arial", 10);
-                System.Drawing.SolidBrush oBrush = new SolidBrush(System.Drawing.Color.Black);
-
-                form.DrawString(this.ctrlName , oFont, oBrush, new Point(10, 10));
-
-                oFont.Dispose();
-                oBrush.Dispose();
-                form.Dispose();
 
             }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            
+            e.Graphics.DrawString (this.ctrlName,new Font("Arial", 10), Brushes.Black, new PointF(1, 1));
+            
         }
 
 
