@@ -45,6 +45,8 @@ namespace monopoly.prototypeV2.server
             TcpChannel tcpChannel = new TcpChannel(props, clientProv, tpfProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), "sharedGame", WellKnownObjectMode.Singleton);
+
+            RemotingConfiguration.CustomErrorsMode = CustomErrorsModes.Off;
             
             w.WriteLogQueue("Server registered");
            

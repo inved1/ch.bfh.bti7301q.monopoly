@@ -49,16 +49,16 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void attach(IObserverGUI observerGui)
         {
-            observerGuis.Add(observerGui);
-            curGui = observerGui;
+            this.observerGuis.Add(observerGui);
+            //curGui = observerGui;
         }
 
         public void addPlayer(cPlayer player)
         {
             players.Add(player);
-            curPlayer = player;
+            //curPlayer = player;
             notifyGuis();
-            notifyCurPlayer();
+            //notifyCurPlayer();
         }
 
         public List<cPlayer> Players
@@ -85,7 +85,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void notifyGuis()
         {
-            foreach (IObserverGUI obs in observerGuis)
+            foreach (IObserverGUI obs in this.observerGuis)
             {
                 obs.updateAll();
             }
