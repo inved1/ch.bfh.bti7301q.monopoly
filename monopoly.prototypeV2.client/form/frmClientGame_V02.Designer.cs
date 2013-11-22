@@ -83,8 +83,9 @@
             // 
             // con1
             // 
+            this.con1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.con1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.con1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.con1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.con1.IsSplitterFixed = true;
             this.con1.Location = new System.Drawing.Point(0, 0);
             this.con1.Name = "con1";
@@ -99,8 +100,9 @@
             // 
             // con2
             // 
+            this.con2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.con2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.con2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.con2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.con2.IsSplitterFixed = true;
             this.con2.Location = new System.Drawing.Point(0, 0);
             this.con2.Name = "con2";
@@ -188,95 +190,104 @@
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.976746F));
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp.Size = new System.Drawing.Size(1024, 786);
+            this.tlp.Size = new System.Drawing.Size(1022, 784);
             this.tlp.TabIndex = 0;
             // 
             // ctrlStart
             // 
             this.tlp.SetColumnSpan(this.ctrlStart, 2);
+            this.ctrlStart.ctrlName = null;
             this.ctrlStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlStart.Location = new System.Drawing.Point(872, 663);
             this.ctrlStart.Name = "ctrlStart";
             this.tlp.SetRowSpan(this.ctrlStart, 2);
-            this.ctrlStart.Size = new System.Drawing.Size(149, 120);
+            this.ctrlStart.Size = new System.Drawing.Size(147, 118);
             this.ctrlStart.TabIndex = 0;
             // 
             // ctrlRegularSquare1
             // 
+            this.ctrlRegularSquare1.ctrlName = null;
             this.ctrlRegularSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare1.Location = new System.Drawing.Point(793, 663);
             this.ctrlRegularSquare1.Name = "ctrlRegularSquare1";
             this.ctrlRegularSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlRegularSquare1, 2);
-            this.ctrlRegularSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlRegularSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlRegularSquare1.StreetColor = "yellow";
             this.ctrlRegularSquare1.TabIndex = 1;
             // 
             // ctrlRegularSquare2
             // 
+            this.ctrlRegularSquare2.ctrlName = null;
             this.ctrlRegularSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare2.Location = new System.Drawing.Point(635, 663);
             this.ctrlRegularSquare2.Name = "ctrlRegularSquare2";
             this.ctrlRegularSquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlRegularSquare2, 2);
-            this.ctrlRegularSquare2.Size = new System.Drawing.Size(73, 120);
+            this.ctrlRegularSquare2.Size = new System.Drawing.Size(73, 118);
             this.ctrlRegularSquare2.StreetColor = "yellow";
             this.ctrlRegularSquare2.TabIndex = 1;
             // 
             // ctrlRegularSquare3
             // 
+            this.ctrlRegularSquare3.ctrlName = null;
             this.ctrlRegularSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare3.Location = new System.Drawing.Point(398, 663);
             this.ctrlRegularSquare3.Name = "ctrlRegularSquare3";
             this.ctrlRegularSquare3.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlRegularSquare3, 2);
-            this.ctrlRegularSquare3.Size = new System.Drawing.Size(73, 120);
+            this.ctrlRegularSquare3.Size = new System.Drawing.Size(73, 118);
             this.ctrlRegularSquare3.StreetColor = "yellow";
             this.ctrlRegularSquare3.TabIndex = 2;
             // 
             // ctrlRegularSquare5
             // 
+            this.ctrlRegularSquare5.ctrlName = null;
             this.ctrlRegularSquare5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare5.Location = new System.Drawing.Point(161, 663);
             this.ctrlRegularSquare5.Name = "ctrlRegularSquare5";
             this.ctrlRegularSquare5.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlRegularSquare5, 2);
-            this.ctrlRegularSquare5.Size = new System.Drawing.Size(73, 120);
+            this.ctrlRegularSquare5.Size = new System.Drawing.Size(73, 118);
             this.ctrlRegularSquare5.StreetColor = "yellow";
             this.ctrlRegularSquare5.TabIndex = 3;
             // 
             // ctrlRegularSquare4
             // 
+            this.ctrlRegularSquare4.ctrlName = null;
             this.ctrlRegularSquare4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare4.Location = new System.Drawing.Point(240, 663);
             this.ctrlRegularSquare4.Name = "ctrlRegularSquare4";
             this.ctrlRegularSquare4.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlRegularSquare4, 2);
-            this.ctrlRegularSquare4.Size = new System.Drawing.Size(73, 120);
+            this.ctrlRegularSquare4.Size = new System.Drawing.Size(73, 118);
             this.ctrlRegularSquare4.StreetColor = "yellow";
             this.ctrlRegularSquare4.TabIndex = 4;
             // 
             // ctrlPrisonVisitorSquare1
             // 
+            this.ctrlPrisonVisitorSquare1.ctrlName = null;
             this.ctrlPrisonVisitorSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonVisitorSquare1.Location = new System.Drawing.Point(3, 663);
             this.ctrlPrisonVisitorSquare1.Name = "ctrlPrisonVisitorSquare1";
             this.tlp.SetRowSpan(this.ctrlPrisonVisitorSquare1, 2);
-            this.ctrlPrisonVisitorSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlPrisonVisitorSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlPrisonVisitorSquare1.TabIndex = 5;
             // 
             // ctrlPrisonSquare1
             // 
+            this.ctrlPrisonSquare1.ctrlName = null;
             this.ctrlPrisonSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonSquare1.Location = new System.Drawing.Point(82, 663);
             this.ctrlPrisonSquare1.Name = "ctrlPrisonSquare1";
             this.tlp.SetRowSpan(this.ctrlPrisonSquare1, 2);
-            this.ctrlPrisonSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlPrisonSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlPrisonSquare1.TabIndex = 6;
             // 
             // ctrlRegularSquare6
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare6, 2);
+            this.ctrlRegularSquare6.ctrlName = null;
             this.ctrlRegularSquare6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare6.Location = new System.Drawing.Point(3, 603);
             this.ctrlRegularSquare6.Name = "ctrlRegularSquare6";
@@ -288,6 +299,7 @@
             // ctrlRegularSquare7
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare7, 2);
+            this.ctrlRegularSquare7.ctrlName = null;
             this.ctrlRegularSquare7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare7.Location = new System.Drawing.Point(3, 483);
             this.ctrlRegularSquare7.Name = "ctrlRegularSquare7";
@@ -300,6 +312,7 @@
             // ctrlRegularSquare8
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare8, 2);
+            this.ctrlRegularSquare8.ctrlName = null;
             this.ctrlRegularSquare8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare8.Location = new System.Drawing.Point(3, 423);
             this.ctrlRegularSquare8.Name = "ctrlRegularSquare8";
@@ -311,6 +324,7 @@
             // ctrlRegularSquare9
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare9, 2);
+            this.ctrlRegularSquare9.ctrlName = null;
             this.ctrlRegularSquare9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare9.Location = new System.Drawing.Point(3, 303);
             this.ctrlRegularSquare9.Name = "ctrlRegularSquare9";
@@ -322,6 +336,7 @@
             // ctrlRegularSquare10
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare10, 2);
+            this.ctrlRegularSquare10.ctrlName = null;
             this.ctrlRegularSquare10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare10.Location = new System.Drawing.Point(3, 183);
             this.ctrlRegularSquare10.Name = "ctrlRegularSquare10";
@@ -333,6 +348,7 @@
             // ctrlRegularSquare11
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare11, 2);
+            this.ctrlRegularSquare11.ctrlName = null;
             this.ctrlRegularSquare11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare11.Location = new System.Drawing.Point(3, 123);
             this.ctrlRegularSquare11.Name = "ctrlRegularSquare11";
@@ -344,6 +360,7 @@
             // ctrlFreeParkSquare1
             // 
             this.tlp.SetColumnSpan(this.ctrlFreeParkSquare1, 2);
+            this.ctrlFreeParkSquare1.ctrlName = null;
             this.ctrlFreeParkSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlFreeParkSquare1.Location = new System.Drawing.Point(3, 3);
             this.ctrlFreeParkSquare1.Name = "ctrlFreeParkSquare1";
@@ -353,6 +370,7 @@
             // 
             // ctrlRegularSquare12
             // 
+            this.ctrlRegularSquare12.ctrlName = null;
             this.ctrlRegularSquare12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare12.Location = new System.Drawing.Point(161, 3);
             this.ctrlRegularSquare12.Name = "ctrlRegularSquare12";
@@ -364,6 +382,7 @@
             // 
             // ctrlRegularSquare13
             // 
+            this.ctrlRegularSquare13.ctrlName = null;
             this.ctrlRegularSquare13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare13.Location = new System.Drawing.Point(319, 3);
             this.ctrlRegularSquare13.Name = "ctrlRegularSquare13";
@@ -375,6 +394,7 @@
             // 
             // ctrlRegularSquare14
             // 
+            this.ctrlRegularSquare14.ctrlName = null;
             this.ctrlRegularSquare14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare14.Location = new System.Drawing.Point(398, 3);
             this.ctrlRegularSquare14.Name = "ctrlRegularSquare14";
@@ -386,6 +406,7 @@
             // 
             // ctrlRegularSquare15
             // 
+            this.ctrlRegularSquare15.ctrlName = null;
             this.ctrlRegularSquare15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare15.Location = new System.Drawing.Point(556, 3);
             this.ctrlRegularSquare15.Name = "ctrlRegularSquare15";
@@ -397,6 +418,7 @@
             // 
             // ctrlRegularSquare16
             // 
+            this.ctrlRegularSquare16.ctrlName = null;
             this.ctrlRegularSquare16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare16.Location = new System.Drawing.Point(635, 3);
             this.ctrlRegularSquare16.Name = "ctrlRegularSquare16";
@@ -408,6 +430,7 @@
             // 
             // ctrlRegularSquare17
             // 
+            this.ctrlRegularSquare17.ctrlName = null;
             this.ctrlRegularSquare17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare17.Location = new System.Drawing.Point(793, 3);
             this.ctrlRegularSquare17.Name = "ctrlRegularSquare17";
@@ -420,106 +443,117 @@
             // ctrlGoToPrison1
             // 
             this.tlp.SetColumnSpan(this.ctrlGoToPrison1, 2);
+            this.ctrlGoToPrison1.ctrlName = null;
             this.ctrlGoToPrison1.Location = new System.Drawing.Point(872, 3);
             this.ctrlGoToPrison1.Name = "ctrlGoToPrison1";
             this.tlp.SetRowSpan(this.ctrlGoToPrison1, 2);
-            this.ctrlGoToPrison1.Size = new System.Drawing.Size(149, 114);
+            this.ctrlGoToPrison1.Size = new System.Drawing.Size(147, 114);
             this.ctrlGoToPrison1.TabIndex = 20;
             // 
             // ctrlRegularSquare18
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare18, 2);
+            this.ctrlRegularSquare18.ctrlName = null;
             this.ctrlRegularSquare18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare18.Location = new System.Drawing.Point(872, 123);
             this.ctrlRegularSquare18.Name = "ctrlRegularSquare18";
             this.ctrlRegularSquare18.orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.ctrlRegularSquare18.Size = new System.Drawing.Size(149, 54);
+            this.ctrlRegularSquare18.Size = new System.Drawing.Size(147, 54);
             this.ctrlRegularSquare18.StreetColor = "yellow";
             this.ctrlRegularSquare18.TabIndex = 21;
             // 
             // ctrlRegularSquare19
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare19, 2);
+            this.ctrlRegularSquare19.ctrlName = null;
             this.ctrlRegularSquare19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare19.Location = new System.Drawing.Point(872, 183);
             this.ctrlRegularSquare19.Name = "ctrlRegularSquare19";
             this.ctrlRegularSquare19.orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.ctrlRegularSquare19.Size = new System.Drawing.Size(149, 54);
+            this.ctrlRegularSquare19.Size = new System.Drawing.Size(147, 54);
             this.ctrlRegularSquare19.StreetColor = "yellow";
             this.ctrlRegularSquare19.TabIndex = 22;
             // 
             // ctrlRegularSquare20
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare20, 2);
+            this.ctrlRegularSquare20.ctrlName = null;
             this.ctrlRegularSquare20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare20.Location = new System.Drawing.Point(872, 303);
             this.ctrlRegularSquare20.Name = "ctrlRegularSquare20";
             this.ctrlRegularSquare20.orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.ctrlRegularSquare20.Size = new System.Drawing.Size(149, 54);
+            this.ctrlRegularSquare20.Size = new System.Drawing.Size(147, 54);
             this.ctrlRegularSquare20.StreetColor = "yellow";
             this.ctrlRegularSquare20.TabIndex = 23;
             // 
             // ctrlRegularSquare21
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare21, 2);
+            this.ctrlRegularSquare21.ctrlName = null;
             this.ctrlRegularSquare21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare21.Location = new System.Drawing.Point(872, 483);
             this.ctrlRegularSquare21.Name = "ctrlRegularSquare21";
             this.ctrlRegularSquare21.orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.ctrlRegularSquare21.Size = new System.Drawing.Size(149, 54);
+            this.ctrlRegularSquare21.Size = new System.Drawing.Size(147, 54);
             this.ctrlRegularSquare21.StreetColor = "yellow";
             this.ctrlRegularSquare21.TabIndex = 24;
             // 
             // ctrlRegularSquare22
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare22, 2);
+            this.ctrlRegularSquare22.ctrlName = null;
             this.ctrlRegularSquare22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare22.Location = new System.Drawing.Point(872, 603);
             this.ctrlRegularSquare22.Name = "ctrlRegularSquare22";
             this.ctrlRegularSquare22.orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.ctrlRegularSquare22.Size = new System.Drawing.Size(149, 54);
+            this.ctrlRegularSquare22.Size = new System.Drawing.Size(147, 54);
             this.ctrlRegularSquare22.StreetColor = "yellow";
             this.ctrlRegularSquare22.TabIndex = 25;
             // 
             // ctrlCommunitySquare1
             // 
+            this.ctrlCommunitySquare1.ctrlName = null;
             this.ctrlCommunitySquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare1.Location = new System.Drawing.Point(714, 663);
             this.ctrlCommunitySquare1.Name = "ctrlCommunitySquare1";
             this.tlp.SetRowSpan(this.ctrlCommunitySquare1, 2);
-            this.ctrlCommunitySquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlCommunitySquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlCommunitySquare1.TabIndex = 26;
             // 
             // ctrlTaxSquare1
             // 
+            this.ctrlTaxSquare1.ctrlName = null;
             this.ctrlTaxSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare1.Location = new System.Drawing.Point(556, 663);
             this.ctrlTaxSquare1.Name = "ctrlTaxSquare1";
             this.tlp.SetRowSpan(this.ctrlTaxSquare1, 2);
-            this.ctrlTaxSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlTaxSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlTaxSquare1.TabIndex = 27;
             // 
             // ctrlTrainStationSquare1
             // 
+            this.ctrlTrainStationSquare1.ctrlName = null;
             this.ctrlTrainStationSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare1.Location = new System.Drawing.Point(477, 663);
             this.ctrlTrainStationSquare1.Name = "ctrlTrainStationSquare1";
             this.tlp.SetRowSpan(this.ctrlTrainStationSquare1, 2);
-            this.ctrlTrainStationSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlTrainStationSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlTrainStationSquare1.TabIndex = 28;
             // 
             // ctrlActionSquare1
             // 
+            this.ctrlActionSquare1.ctrlName = null;
             this.ctrlActionSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare1.Location = new System.Drawing.Point(319, 663);
             this.ctrlActionSquare1.Name = "ctrlActionSquare1";
             this.tlp.SetRowSpan(this.ctrlActionSquare1, 2);
-            this.ctrlActionSquare1.Size = new System.Drawing.Size(73, 120);
+            this.ctrlActionSquare1.Size = new System.Drawing.Size(73, 118);
             this.ctrlActionSquare1.TabIndex = 29;
             // 
             // ctrlWaterPowerSquare1
             // 
             this.tlp.SetColumnSpan(this.ctrlWaterPowerSquare1, 2);
+            this.ctrlWaterPowerSquare1.ctrlName = null;
             this.ctrlWaterPowerSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare1.Location = new System.Drawing.Point(3, 543);
             this.ctrlWaterPowerSquare1.Name = "ctrlWaterPowerSquare1";
@@ -529,6 +563,7 @@
             // ctrlTrainStationSquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlTrainStationSquare2, 2);
+            this.ctrlTrainStationSquare2.ctrlName = null;
             this.ctrlTrainStationSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare2.Location = new System.Drawing.Point(3, 363);
             this.ctrlTrainStationSquare2.Name = "ctrlTrainStationSquare2";
@@ -538,6 +573,7 @@
             // ctrlCommunitySquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlCommunitySquare2, 2);
+            this.ctrlCommunitySquare2.ctrlName = null;
             this.ctrlCommunitySquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare2.Location = new System.Drawing.Point(3, 243);
             this.ctrlCommunitySquare2.Name = "ctrlCommunitySquare2";
@@ -546,6 +582,7 @@
             // 
             // ctrlActionSquare2
             // 
+            this.ctrlActionSquare2.ctrlName = null;
             this.ctrlActionSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare2.Location = new System.Drawing.Point(240, 3);
             this.ctrlActionSquare2.Name = "ctrlActionSquare2";
@@ -555,6 +592,7 @@
             // 
             // ctrlTrainStationSquare3
             // 
+            this.ctrlTrainStationSquare3.ctrlName = null;
             this.ctrlTrainStationSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare3.Location = new System.Drawing.Point(477, 3);
             this.ctrlTrainStationSquare3.Name = "ctrlTrainStationSquare3";
@@ -564,6 +602,7 @@
             // 
             // ctrlWaterPowerSquare2
             // 
+            this.ctrlWaterPowerSquare2.ctrlName = null;
             this.ctrlWaterPowerSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare2.Location = new System.Drawing.Point(714, 3);
             this.ctrlWaterPowerSquare2.Name = "ctrlWaterPowerSquare2";
@@ -574,37 +613,41 @@
             // ctrlCommunitySquare3
             // 
             this.tlp.SetColumnSpan(this.ctrlCommunitySquare3, 2);
+            this.ctrlCommunitySquare3.ctrlName = null;
             this.ctrlCommunitySquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare3.Location = new System.Drawing.Point(872, 243);
             this.ctrlCommunitySquare3.Name = "ctrlCommunitySquare3";
-            this.ctrlCommunitySquare3.Size = new System.Drawing.Size(149, 54);
+            this.ctrlCommunitySquare3.Size = new System.Drawing.Size(147, 54);
             this.ctrlCommunitySquare3.TabIndex = 36;
             // 
             // ctrlTrainStationSquare4
             // 
             this.tlp.SetColumnSpan(this.ctrlTrainStationSquare4, 2);
+            this.ctrlTrainStationSquare4.ctrlName = null;
             this.ctrlTrainStationSquare4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare4.Location = new System.Drawing.Point(872, 363);
             this.ctrlTrainStationSquare4.Name = "ctrlTrainStationSquare4";
-            this.ctrlTrainStationSquare4.Size = new System.Drawing.Size(149, 54);
+            this.ctrlTrainStationSquare4.Size = new System.Drawing.Size(147, 54);
             this.ctrlTrainStationSquare4.TabIndex = 37;
             // 
             // ctrlActionSquare3
             // 
             this.tlp.SetColumnSpan(this.ctrlActionSquare3, 2);
+            this.ctrlActionSquare3.ctrlName = null;
             this.ctrlActionSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare3.Location = new System.Drawing.Point(872, 423);
             this.ctrlActionSquare3.Name = "ctrlActionSquare3";
-            this.ctrlActionSquare3.Size = new System.Drawing.Size(149, 54);
+            this.ctrlActionSquare3.Size = new System.Drawing.Size(147, 54);
             this.ctrlActionSquare3.TabIndex = 38;
             // 
             // ctrlTaxSquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlTaxSquare2, 2);
+            this.ctrlTaxSquare2.ctrlName = null;
             this.ctrlTaxSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare2.Location = new System.Drawing.Point(872, 543);
             this.ctrlTaxSquare2.Name = "ctrlTaxSquare2";
-            this.ctrlTaxSquare2.Size = new System.Drawing.Size(149, 54);
+            this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 54);
             this.ctrlTaxSquare2.TabIndex = 39;
             // 
             // frmClientGame_V02
@@ -613,7 +656,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 990);
             this.Controls.Add(this.con1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmClientGame_V02";
             this.Text = "Monopoly";
             this.con1.Panel1.ResumeLayout(false);

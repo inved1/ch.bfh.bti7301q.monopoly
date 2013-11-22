@@ -93,12 +93,23 @@ namespace monopoly.prototypeV2.client.form
                 //set streetname on gui
                 entry.Value.GUICtrl.ctrlName = entry.Value.oSquare.ctrlName;
 
+                
                 //set color on streets
                 if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare))
                 {
                     ctrl.ctrlRegularSquare o = (ctrl.ctrlRegularSquare)entry.Value.GUICtrl;
                     o.StreetColor = entry.Value.oSquare.colorStreet;
+                    o.BorderStyle = BorderStyle.FixedSingle;
 
+                }
+
+                if (entry.Key >= 13 && entry.Key <=21 || entry.Key >= 33 && entry.Key <= 41)
+                {
+                    if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare))
+                    {
+                        ctrl.ctrlRegularSquare o = (ctrl.ctrlRegularSquare)entry.Value.GUICtrl;
+                        o.orientation = Orientation.Vertical;
+                    }
                 }
 
             }

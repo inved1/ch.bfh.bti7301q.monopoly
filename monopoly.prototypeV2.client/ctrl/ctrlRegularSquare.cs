@@ -44,6 +44,9 @@ namespace monopoly.prototypeV2.client.ctrl
 
             this.myAvatars = new List<cAvatar>();
             this.myRealEstates = new List<IRealEstate>();
+
+            this.con.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.ctrl_paint);
+            //this.con.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.ctrl_paint);
         }
 
         private void initPointLists()
@@ -85,19 +88,18 @@ namespace monopoly.prototypeV2.client.ctrl
             set {
                 this.myStreetColor = value;
                 this.con.Panel1.BackColor = Color.FromName(value);
-                //draw on panel, dont want a label 
-
-
             }
         }
 
+
+        private void ctrl_paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            e.Graphics.DrawString(this.ctrlName, new Font("Arial", 8), Brushes.Black, new PointF(2, 2));
+        }
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
-            
-            e.Graphics.DrawString (this.ctrlName,new Font("Arial", 10), Brushes.Black, new PointF(1, 1));
-            
+            //not used anymore            
         }
 
 
