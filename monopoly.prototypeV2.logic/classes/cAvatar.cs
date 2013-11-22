@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace monopoly.prototypeV2.logic.classes
 {
@@ -20,6 +21,11 @@ namespace monopoly.prototypeV2.logic.classes
         {
             get { return this.token; }
             set { this.token = value; }
+        }
+
+        public Image getImage()
+        {
+            return null;
         }
     }
 }
