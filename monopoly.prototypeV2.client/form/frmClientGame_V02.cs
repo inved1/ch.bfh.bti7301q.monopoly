@@ -13,6 +13,7 @@ using monopoly.prototypeV2.client.classes;
 using monopoly.prototypeV2.client.Properties;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
+using System.Diagnostics;
 
 namespace monopoly.prototypeV2.client.form
 {
@@ -40,8 +41,8 @@ namespace monopoly.prototypeV2.client.form
         {
             //attentione !!!!
 #if DEBUG
-            //TcpChannel tcpChannel = new TcpChannel(0);
-            //ChannelServices.RegisterChannel(tcpChannel, false);
+           // TcpChannel tcpChannel = new TcpChannel(0);
+           // ChannelServices.RegisterChannel(tcpChannel, false);
 #else
                         TcpChannel tcpChannel = new TcpChannel(0);
             ChannelServices.RegisterChannel(tcpChannel, false);
@@ -151,9 +152,10 @@ namespace monopoly.prototypeV2.client.form
 
         public void updatePlayerList()
         {
-            this.lstPlayers.Items.Clear();
+            //this.lstPlayers.Items.Clear();
             foreach (cPlayer player in this.game.Players)
             {
+                Debug.WriteLine(String.Format("player_{0}",player.Name));
                 this.lstPlayers.Items.Add(player.Name);
             }
         }
