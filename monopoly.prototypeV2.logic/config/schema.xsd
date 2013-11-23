@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="System"/>
+        <xs:element ref="Server"/>
+        <xs:element ref="Client"/>
+        <xs:element ref="Game"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="System">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Logger"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LoggerLevel"/>
+        <xs:element ref="LoggerDirectory"/>
+        <xs:element ref="LoggerFilename"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoggerLevel" type="xs:integer"/>
+  <xs:element name="LoggerDirectory" type="xs:NCName"/>
+  <xs:element name="LoggerFilename" type="xs:NCName"/>
+  <xs:element name="Server">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ServerPort"/>
+        <xs:element ref="ServerSharedGameName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerPort" type="xs:integer"/>
+  <xs:element name="ServerSharedGameName" type="xs:NCName"/>
+  <xs:element name="Client">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ClientLastServer"/>
+        <xs:element ref="ClientHistoryServers"/>
+        <xs:element ref="ClientLastName"/>
+        <xs:element ref="ClientHistoryNames"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientLastServer" type="xs:NMTOKEN"/>
+  <xs:element name="ClientHistoryServers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ClientHistoryServer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientHistoryServer" type="xs:NMTOKEN"/>
+  <xs:element name="ClientLastName" type="xs:NCName"/>
+  <xs:element name="ClientHistoryNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ClientHistoryName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientHistoryName" type="xs:NCName"/>
+  <xs:element name="Game">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GameStartMoney"/>
+        <xs:element ref="Streets"/>
+        <xs:element ref="RegularSquares"/>
+        <xs:element ref="TrainSquares"/>
+        <xs:element ref="WaterPowerSquares"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameStartMoney" type="xs:integer"/>
+  <xs:element name="Streets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Street"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Street">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Color"/>
+        <xs:element ref="Squares"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Squares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ID"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ID" type="xs:integer"/>
+  <xs:element name="RegularSquares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="RegularSquare"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegularSquare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Color"/>
+        <xs:element ref="cost"/>
+        <xs:element ref="priceHouse"/>
+        <xs:element ref="priceHotel"/>
+        <xs:element ref="deposit"/>
+        <xs:element ref="rents"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="priceHouse" type="xs:integer"/>
+  <xs:element name="priceHotel" type="xs:integer"/>
+  <xs:element name="TrainSquares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="TrainSquare"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrainSquare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Color"/>
+        <xs:element ref="cost"/>
+        <xs:element ref="deposit"/>
+        <xs:element ref="rents"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaterPowerSquares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="WaterPowerSquare"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaterPowerSquare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Color"/>
+        <xs:element ref="cost"/>
+        <xs:element ref="deposit"/>
+        <xs:element ref="rents"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Color" type="xs:NCName"/>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="cost" type="xs:integer"/>
+  <xs:element name="deposit" type="xs:integer"/>
+  <xs:element name="rents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="level"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="id" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

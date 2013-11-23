@@ -43,8 +43,11 @@
     <Compile Include="classes\actions\cActionGiveUp.cs" />
     <Compile Include="classes\actions\cActionLogin.cs" />
     <Compile Include="classes\actions\cActionRoll.cs" />
+    <Compile Include="classes\cActionCard.cs" />
     <Compile Include="classes\cAvatar.cs" />
     <Compile Include="classes\cCardDeck.cs" />
+    <Compile Include="classes\cCommunityCard.cs" />
+    <Compile Include="classes\cConfig.cs" />
     <Compile Include="classes\cGame.cs" />
     <Compile Include="classes\cGameBoard.cs" />
     <Compile Include="classes\cHotel.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="classes\squares\cTrainStationSquare.cs" />
     <Compile Include="classes\squares\cWaterPowerSquare.cs" />
     <Compile Include="interfaces\IAction.cs" />
+    <Compile Include="interfaces\ICard.cs" />
     <Compile Include="interfaces\IObserverAction.cs" />
     <Compile Include="interfaces\IObserverGUI.cs" />
     <Compile Include="interfaces\IRealEstate.cs" />
@@ -73,6 +77,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="util\LogEntry.cs" />
     <Compile Include="util\LogWriter.cs" />
@@ -84,13 +93,27 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="config\schema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="doc\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\monopoly_hotel.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\monopoly_house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

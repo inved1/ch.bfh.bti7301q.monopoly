@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="monopoly.prototypeV2.logic.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="myCFGFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">config/cfg.xml</Value>
+    </Setting>
+    <Setting Name="mySchemaFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">config/schema.xsd</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

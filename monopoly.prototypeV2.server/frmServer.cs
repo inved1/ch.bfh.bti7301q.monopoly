@@ -23,10 +23,15 @@ namespace monopoly.prototypeV2.server
 {
     public partial class frmServer : Form
     {
+
+        private cConfig myConfig;
+
         public frmServer()
         {
             InitializeComponent();
-            
+
+            this.myConfig = cConfig.getInstance();
+
             // create game
 
             //init();
@@ -37,6 +42,9 @@ namespace monopoly.prototypeV2.server
             LogWriter w = LogWriter.Instance;
             w.WriteLogQueue("Server started");
 
+            this.txtPort.Text = this.myConfig.Server["ServerPort"];
+
+
             BinaryServerFormatterSinkProvider tpfProvider = new BinaryServerFormatterSinkProvider();
             tpfProvider.TypeFilterLevel = TypeFilterLevel.Full;
             BinaryClientFormatterSinkProvider clientProv = new BinaryClientFormatterSinkProvider();
@@ -44,7 +52,7 @@ namespace monopoly.prototypeV2.server
             props["port"] = Convert.ToInt32(this.txtPort.Text);
             TcpChannel tcpChannel = new TcpChannel(props, clientProv, tpfProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), "sharedGame", WellKnownObjectMode.Singleton);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), this.myConfig.Server["ServerSharedGameName"], WellKnownObjectMode.Singleton);
 
             RemotingConfiguration.CustomErrorsMode = CustomErrorsModes.Off;
             

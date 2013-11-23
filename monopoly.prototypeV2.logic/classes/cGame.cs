@@ -16,10 +16,12 @@ namespace monopoly.prototypeV2.logic.classes
         private IObserverGUI curGui;
         private cPlayer curPlayer;
         private int counter = 0;
+        private cConfig myConfig;
 
         public cGame()
         {
-            this.gameBoard = new cGameBoard();
+            this.myConfig = cConfig.getInstance();
+            this.gameBoard = cGameBoard.getInstance();
             this.observerGuis = new List<IObserverGUI>();
             this.players = new List<cPlayer>();
             this.actions = new List<IAction>();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using monopoly.prototypeV2.logic.classes;
 
 namespace monopoly.prototypeV2.logic.util
 {
@@ -12,6 +13,7 @@ namespace monopoly.prototypeV2.logic.util
         private static Queue<LogEntry> myQueue;
         private static String myLogDir ;
         private static String myLogFile;
+        private static cConfig myConfig;
 
 
         //singelton
@@ -24,11 +26,20 @@ namespace monopoly.prototypeV2.logic.util
             {
                 if (instance == null)
                 {
+
                     instance  = new LogWriter();
                     myQueue = new Queue<LogEntry>();
+                    myConfig = cConfig.getInstance();
 
-                    myLogDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    myLogFile = String.Format("log_monopoly_{0}.txt", DateTime.Now.ToString("ddMMyyyy"));
+                    if (myConfig.Logger["LoggerDirectory"] == "Desktop")
+                    {
+                        myLogDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    }
+                    else
+                    {
+                        myLogDir = myConfig.Logger["LoggerDirectory"];
+                    }
+                    myLogFile = String.Format("{0}_{1}.txt", myConfig.Logger["LoggerFilename"] ,DateTime.Now.ToString("ddMMyyyy"));
 
                 }
                 return instance;

@@ -54,6 +54,7 @@ namespace monopoly.prototypeV2.client.form
             player = new cPlayer("Player" + this.game.Players.Count + 1, "hat", 0);
             this.game.addPlayer(player);
 
+            ISquare o2 = this.game.GameBoard.getSpecificSquare(0);
 
             this.mySquares = new Dictionary<int,classes.cGUIWrapper>();
             this.mySquares.Add(1, new cGUIWrapper(this.ctrlStart,this.game.GameBoard.getSpecificSquare(1)));
