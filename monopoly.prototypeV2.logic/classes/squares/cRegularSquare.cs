@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class cReqularSquare : ISquare
+    class cRegularSquare : ISquare
     {
         #region "vars"
         private string myName = "";
@@ -28,7 +28,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
 
 
         #region "constructors"
-        public cReqularSquare(string name, String color,int cost,int priceHouse,int priceHotel,int deposit,Dictionary<int,int> rents )
+        public cRegularSquare(string name, String color,int cost,int priceHouse,int priceHotel,int deposit,Dictionary<int,int> rents )
         {
             this.myName = name;
             this.myColor = color;

@@ -11,7 +11,9 @@ namespace monopoly.prototypeV2.logic.classes
     {
         private string name = "";
         private cAvatar avatar = null;
+        private int amount = 0;
         private int curPos = 0;
+        private int rolledDoubles = 0;
 
         public cPlayer(string name, string avatorToken, int curPos)
         {
@@ -32,10 +34,38 @@ namespace monopoly.prototypeV2.logic.classes
             set { this.avatar = value; }
         }
 
+        public int Amount
+        {
+            get { return this.amount; }
+        }
+
         public int CurPos
         {
             get { return this.curPos; }
             set { this.curPos = value; }
+        }
+
+        public int RolledDoubles
+        {
+            get { return this.rolledDoubles; }
+            set { this.rolledDoubles = value; }
+        }
+
+        public void addMoney(int value)
+        {
+            this.amount += value;
+        }
+
+        public void spendMoney(int value)
+        {
+            if ((this.amount - value) >= 0)
+            {
+                this.amount -= value;
+            }
+            else
+            {
+                throw new Exception("Zuwenig Geld vorhanden.");
+            }
         }
     }
 }

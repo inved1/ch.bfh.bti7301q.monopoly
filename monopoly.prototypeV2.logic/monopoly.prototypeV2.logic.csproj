@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\actions\cActionBuySquare.cs" />
+    <Compile Include="classes\actions\cActionEndTurn.cs" />
     <Compile Include="classes\actions\cActionGiveUp.cs" />
     <Compile Include="classes\actions\cActionLogin.cs" />
     <Compile Include="classes\actions\cActionRoll.cs" />
@@ -61,7 +63,7 @@
     <Compile Include="classes\squares\cPayTaxesSquare.cs" />
     <Compile Include="classes\squares\cPrisonSquare.cs" />
     <Compile Include="classes\squares\cPrisonVisitorSquare.cs" />
-    <Compile Include="classes\squares\cReqularSquare.cs" />
+    <Compile Include="classes\squares\cRegularSquare.cs" />
     <Compile Include="classes\squares\cStartSquare.cs" />
     <Compile Include="classes\squares\cTaxSquare.cs" />
     <Compile Include="classes\squares\cTrainStationSquare.cs" />
