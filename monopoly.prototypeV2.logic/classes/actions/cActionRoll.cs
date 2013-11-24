@@ -30,6 +30,18 @@ namespace monopoly.prototypeV2.logic.classes
             int dice1 = rnd.Next(1, 6);
             int dice2 = rnd.Next(1, 6);
             int value = dice1 + dice2;
+            if (dice1 == dice2)
+            {
+                if (this.game.CurPlayer.RolledDoubles == 3)
+                {
+                    this.game.CurPlayer.RolledDoubles = 0;
+                    this.game.CurPlayer.CurPos = 0; //tbd -> go to prison
+                }
+                else
+                {
+                    this.game.CurPlayer.RolledDoubles++;
+                }
+            }
             this.game.moveCurPlayer(value);
         }
     }

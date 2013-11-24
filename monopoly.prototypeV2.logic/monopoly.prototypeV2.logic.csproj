@@ -43,7 +43,6 @@
     <Compile Include="classes\actions\cActionBuySquare.cs" />
     <Compile Include="classes\actions\cActionEndTurn.cs" />
     <Compile Include="classes\actions\cActionGiveUp.cs" />
-    <Compile Include="classes\actions\cActionLogin.cs" />
     <Compile Include="classes\actions\cActionRoll.cs" />
     <Compile Include="classes\cActionCard.cs" />
     <Compile Include="classes\cAvatar.cs" />

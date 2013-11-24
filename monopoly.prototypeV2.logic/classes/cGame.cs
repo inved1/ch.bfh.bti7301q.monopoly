@@ -1,6 +1,7 @@
 ﻿using monopoly.prototypeV2.logic.classes.actions;
 using monopoly.prototypeV2.logic.classes.squares;
 using monopoly.prototypeV2.logic.interfaces;
+using monopoly.prototypeV2.logic.util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,29 +19,22 @@ namespace monopoly.prototypeV2.logic.classes
         private List<IObserverGUI> observerGuis;
         private List<cPlayer> players;
         private List<IAction> actions;
-        private IObserverGUI curGui;
         private cPlayer curPlayer;
-        private int counter = 0;
         private cConfig myConfig;
+        private LogWriter logWriter;
         #endregion
 
         #region "constructor"
         public cGame()
         {
-            this.myConfig = cConfig.getInstance;
+            this.myConfig = cConfig.getInstance();
             this.gameBoard = cGameBoard.getInstance();
             this.observerGuis = new List<IObserverGUI>();
             this.players = new List<cPlayer>();
             this.actions = new List<IAction>();
-
-            initGame();
+            this.logWriter = LogWriter.Instance;
         }
         #endregion
-
-        public void initGame()
-        {
-
-        }
 
         public cGameBoard GameBoard
         {
@@ -55,9 +49,7 @@ namespace monopoly.prototypeV2.logic.classes
         public void addPlayer(cPlayer player)
         {
             players.Add(player);
-            //curPlayer = player;
             notifyGuis();
-            //notifyCurPlayer();
         }
 
         public List<cPlayer> Players
@@ -71,7 +63,12 @@ namespace monopoly.prototypeV2.logic.classes
         }
 
         #region "game control functions"
-        public void controlGame()
+        public void initGame()
+        {
+            curPlayer = players[0];
+        }
+
+        public void setActionsAfterMoving()
         {
             actions.Clear();
             ISquare curSquare = gameBoard.getSpecificSquare(curPlayer.CurPos);
@@ -83,6 +80,10 @@ namespace monopoly.prototypeV2.logic.classes
                 {
                     actions.Add(new cActionBuySquare(this));
                 }
+                else
+                {
+                    payRent();
+                }
             }
             else if (curSquare.GetType() == typeof(cCommunitySquare) ||
                      curSquare.GetType() == typeof(cActionSquare))
@@ -92,7 +93,19 @@ namespace monopoly.prototypeV2.logic.classes
             else if (curSquare.GetType() == typeof(cTaxSquare))
             {
 
+            } else if (curSquare.GetType() == typeof(cStartSquare) ||
+                       curSquare.GetType() == typeof(cPrisonVisitorSquare) ||
+                       curSquare.GetType() == typeof(cFreeParkSquare)) {
+                actions.Add(new cActionEndTurn(this));
             }
+            actions.Add(new cActionGiveUp(this));
+            //notifyCurPlayer();
+        }
+
+        public void setDefaultActions()
+        {
+            actions.Clear();
+            actions.Add(new cActionRoll(this));
             actions.Add(new cActionGiveUp(this));
         }
 
@@ -104,8 +117,21 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 curPlayer.addMoney(9999); // tbd
             }
+            logWriter.WriteLogQueue("Player " + curPlayer.Name + " moved to " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             notifyGuis();
-            controlGame();
+            setActionsAfterMoving();
+        }
+
+        public void payRent()
+        {
+            ISquare curSquare = gameBoard.getSpecificSquare(curPlayer.CurPos);
+            int rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
+            cPlayer owner = (cPlayer)curSquare.GetType().GetProperty("Owner").GetValue(curSquare);
+
+            curPlayer.spendMoney(rent);
+            owner.addMoney(rent);
+            logWriter.WriteLogQueue("Player " + curPlayer.Name + " paid rent to " + owner.Name + " for " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
+            notifyGuis();
         }
 
         public void playerBuysSquare()
@@ -115,18 +141,28 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 curPlayer.spendMoney(Convert.ToInt32(curSquare.GetType().GetProperty("Cost").GetValue(curSquare)));
                 curSquare.GetType().GetProperty("Owner").SetValue(curSquare, curPlayer);
+                logWriter.WriteLogQueue("Player " + curPlayer.Name + " has bought " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e);
             }
+            notifyGuis();
         }
 
         public void playerEndsTurn()
         {
             curPlayer.RolledDoubles = 0;
-            curPlayer = players[players.IndexOf(curPlayer) + 1];
+            curPlayer = players[((players.IndexOf(curPlayer) + 1) % players.Count)];
             setDefaultActions();
+            logWriter.WriteLogQueue("Player " + curPlayer.Name + " has ended his turn.");
+            notifyGuis();
+            //notifyCurPlayer();
+        }
+
+        public void playerGivesUp()
+        {
+            //set owner of the squares to null 
         }
 
         public bool checkSquareAvailability(ISquare curSquare)
@@ -145,13 +181,6 @@ namespace monopoly.prototypeV2.logic.classes
                 return true;
             }
             return false;
-        }
-
-        public void setDefaultActions()
-        {
-            actions.Clear();
-            actions.Add(new cActionRoll(this));
-            actions.Add(new cActionGiveUp(this));
         }
         #endregion
 

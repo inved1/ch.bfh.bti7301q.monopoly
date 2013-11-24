@@ -25,7 +25,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "constructor/singelton"
         private cGameBoard()
         {
-            this.myConfig = cConfig.getInstance;
+            this.myConfig = cConfig.getInstance();
 
             initStreets();
             
@@ -120,6 +120,16 @@ namespace monopoly.prototypeV2.logic.classes
         public ISquare getSpecificSquare(int pos)
         {
             return this.mySquares[pos];
+        }
+
+        public Dictionary<string, cCardDeck> getCardDecks()
+        {
+            return this.myCardDecks;
+        }
+
+        public cCardDeck getSpecificCardDeck(string type)
+        {
+            return this.myCardDecks[type];
         }
 
         public void refreshPlayerPositions()
