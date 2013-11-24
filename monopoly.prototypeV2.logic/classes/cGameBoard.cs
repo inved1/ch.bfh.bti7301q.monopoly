@@ -25,7 +25,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "constructor/singelton"
         private cGameBoard()
         {
-            this.myConfig = cConfig.getInstance();
+            this.myConfig = cConfig.getInstance;
 
             initStreets();
             
@@ -81,8 +81,14 @@ namespace monopoly.prototypeV2.logic.classes
                         d.Add(Convert.ToInt32(e2.Key), Convert.ToInt32 (e2.Value));
                     }
                 }
-                this.mySquares.Add(Convert.ToInt32(entry.Value["id"]),new cRegularSquare(entry.Value["Name"], entry.Value["Color"],Convert.ToInt32 (entry.Value["cost"]),Convert.ToInt32 (entry.Value["priceHouse"]),
-                                    Convert.ToInt32 (entry.Value["priceHotel"]),Convert.ToInt32 (entry.Value["deposit"]),d));
+                this.mySquares.Add(Convert.ToInt32(entry.Value["id"]),
+                                    new cRegularSquare(entry.Value["Name"], 
+                                                        entry.Value["Color"],
+                                                        Convert.ToInt32 (entry.Value["cost"]),
+                                                        Convert.ToInt32 (entry.Value["priceHouse"]),
+                                                        Convert.ToInt32 (entry.Value["priceHotel"]),
+                                                        Convert.ToInt32 (entry.Value["deposit"]),
+                                                        d));
             }
             this.mySquares.Add(1,new cStartSquare("Start","grey"));
             this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
