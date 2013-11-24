@@ -13,13 +13,15 @@
         <ServerSharedGameName>sharedGame</ServerSharedGameName>
     </Server>    
     <Client>
-        <ClientLastServer>127.0.0.1</ClientLastServer>
+        <ClientLastServer>127.0.0.1:27015</ClientLastServer>
         <ClientHistoryServers>
-            <ClientHistoryServer>127.0.0.1:27015</ClientHistoryServer>
+            <ClientHistoryServer id='1'>127.0.0.1:27015</ClientHistoryServer>
+            <ClientHistoryServer id='2'>147.87.46.255:27015</ClientHistoryServer>
         </ClientHistoryServers>
         <ClientLastName>Dani</ClientLastName>
         <ClientHistoryNames>
-            <ClientHistoryName>Dani</ClientHistoryName>
+            <ClientHistoryName id='1'>Dani</ClientHistoryName>
+            <ClientHistoryName id='2'>Fanky</ClientHistoryName>
         </ClientHistoryNames>
     </Client>
     <Game>

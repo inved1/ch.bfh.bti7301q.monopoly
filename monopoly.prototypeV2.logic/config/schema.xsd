@@ -53,20 +53,36 @@
   <xs:element name="ClientHistoryServers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ClientHistoryServer"/>
+        <xs:element maxOccurs="unbounded" ref="ClientHistoryServer"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ClientHistoryServer" type="xs:NMTOKEN"/>
+  <xs:element name="ClientHistoryServer">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NMTOKEN">
+          <xs:attribute name="id" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ClientLastName" type="xs:NCName"/>
   <xs:element name="ClientHistoryNames">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ClientHistoryName"/>
+        <xs:element maxOccurs="unbounded" ref="ClientHistoryName"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ClientHistoryName" type="xs:NCName"/>
+  <xs:element name="ClientHistoryName">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="id" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Game">
     <xs:complexType>
       <xs:sequence>

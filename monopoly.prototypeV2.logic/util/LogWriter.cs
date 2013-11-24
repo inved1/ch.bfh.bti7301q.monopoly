@@ -29,7 +29,7 @@ namespace monopoly.prototypeV2.logic.util
 
                     instance  = new LogWriter();
                     myQueue = new Queue<LogEntry>();
-                    myConfig = cConfig.getInstance();
+                    myConfig = cConfig.getInstance;
 
                     if (myConfig.Logger["LoggerDirectory"] == "Desktop")
                     {
@@ -70,13 +70,21 @@ namespace monopoly.prototypeV2.logic.util
                     System.IO.Directory.CreateDirectory(System.IO.Path.Combine(myLogDir, "Monopoly_log"));
                 }
 
-                using (System.IO.FileStream f = System.IO.File.OpenWrite(sFullFilename))
+                if (!System.IO.File.Exists(sFullFilename))
                 {
-                    using (System.IO.StreamWriter w = new System.IO.StreamWriter(f))
+                    using (System.IO.StreamWriter sw = System.IO.File.CreateText(sFullFilename))
                     {
-                        w.WriteLine(String.Format("{0} | {1} | {2}", l.LogDate, l.LogTime, l.Msg));
+                        sw.WriteLine(String.Format("{0} | {1} | {2}", l.LogDate, l.LogTime, l.Msg));
                     }
                 }
+                else
+                {
+                    using (System.IO.StreamWriter sw = System.IO.File.AppendText (sFullFilename))
+                    {
+                        sw.WriteLine(String.Format("{0} | {1} | {2}", l.LogDate, l.LogTime, l.Msg));
+                    }
+                }
+                
             }
         }
 

@@ -30,7 +30,7 @@ namespace monopoly.prototypeV2.server
         {
             InitializeComponent();
 
-            this.myConfig = cConfig.getInstance();
+            this.myConfig = cConfig.getInstance;
 
             // create game
 

@@ -20,7 +20,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public cGame()
         {
-            this.myConfig = cConfig.getInstance();
+            this.myConfig = cConfig.getInstance;
             this.gameBoard = cGameBoard.getInstance();
             this.observerGuis = new List<IObserverGUI>();
             this.players = new List<cPlayer>();
