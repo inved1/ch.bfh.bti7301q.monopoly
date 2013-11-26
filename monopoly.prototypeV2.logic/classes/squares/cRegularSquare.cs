@@ -38,6 +38,12 @@ namespace monopoly.prototypeV2.logic.classes.squares
             this.myDeposit = deposit;
             this.myRents = rents;
         }
+        public cRegularSquare(string name, String color)//, int cost, int priceHouse, int priceHotel, int deposit, Dictionary<int, int> rents)
+        {
+            this.myName = name;
+            this.myColor = color;
+
+        }
         #endregion
 
 
