@@ -12,6 +12,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
     {
         private string myName = "";
         private string myColor = "grey"; // default
+        private cPlayer myOwner = null;
 
         public cWaterPowerSquare(string name, string color)
         {
@@ -33,6 +34,12 @@ namespace monopoly.prototypeV2.logic.classes.squares
 
         public String ctrlName
         { get { return this.myName; } }
+
+        public cPlayer Owner
+        {
+            get { return this.myOwner; }
+            set { this.myOwner = value; }
+        }
 
     }
 }

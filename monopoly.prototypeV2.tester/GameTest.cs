@@ -1,0 +1,65 @@
+﻿using monopoly.prototypeV2.logic.classes;
+using monopoly.prototypeV2.logic.classes.actions;
+using monopoly.prototypeV2.logic.interfaces;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace monopoly.prototypeV2.tester
+{
+    public partial class GameTest : Form
+    {
+        private cGame game;
+        public GameTest()
+        {
+            game = new cGame();
+            InitializeComponent();
+            init();
+        }
+
+        public void init()
+        {
+            cPlayer player;
+            player = new cPlayer("Player1", "hat", 0);
+            player.addMoney(10000);
+            this.game.Players.Add(player);
+
+            player = new cPlayer("Player2", "ship", 0);
+            player.addMoney(10000);
+            this.game.Players.Add(player);
+
+            player = new cPlayer("Player3", "dog", 0);
+            player.addMoney(10000);
+            this.game.Players.Add(player);
+            this.game.CurPlayer = this.game.Players[0];
+
+            btnRoll.Tag = new cActionRoll(this.game);
+            btnRoll.Click += new EventHandler(runAction);
+            
+            btnBuySquare.Tag = new cActionBuySquare(this.game);
+            btnBuySquare.Click += new EventHandler(runAction);
+
+            btnPayRent.Tag = new cActionPayRent(this.game);
+            btnPayRent.Click += new EventHandler(runAction);
+
+            btnPayTax.Tag = new cActionPayTax(this.game);
+            btnPayTax.Click += new EventHandler(runAction);
+
+            btnEndTurn.Tag = new cActionEndTurn(this.game);
+            btnEndTurn.Click += new EventHandler(runAction);
+        }
+
+        public void runAction(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            IAction action = (IAction)btn.Tag;
+            action.runAction();
+        }
+    }
+}

@@ -1,5 +1,4 @@
-﻿using monopoly.prototypeV2.logic.interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace monopoly.prototypeV2.logic.classes.actions
 {
-    public class cActionEndTurn : IAction
+    [Serializable]
+    public class cActionPayTax
     {
-        const string ACTION_NAME = "Zug beenden";
-        private cGame game;
+        #region "vars"
+        const string ACTION_NAME = "Kaufen";
+        private cGame game = null;
+        #endregion
 
-        public cActionEndTurn(cGame game)
+        public cActionPayTax(cGame game)
         {
             this.game = game;
         }
@@ -24,7 +26,7 @@ namespace monopoly.prototypeV2.logic.classes.actions
 
         public void runAction()
         {
-            this.game.playerEndsTurn();
+            this.game.playerPaysTax();
         }
     }
 }

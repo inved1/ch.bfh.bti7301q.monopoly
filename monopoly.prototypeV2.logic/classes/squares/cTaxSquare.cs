@@ -12,6 +12,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
     {
         private string myName = "";
         private string myColor = "grey"; // default
+        private int myTax = 0;
 
         public cTaxSquare(string name, string color)
         {
@@ -32,5 +33,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
 
         public String ctrlName
         { get { return this.myName; } }
+
+        public int Tax
+        {
+            get { return this.myTax; }
+            set { this.myTax = value; }
+        }
     }
 }

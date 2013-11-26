@@ -115,6 +115,12 @@ namespace monopoly.prototypeV2.logic.classes.squares
             get { return this.myRents; }
             set { this.myRents = value; }
         }
+
+        public int Cost
+        {
+            get { return this.myCost; }
+            set { this.myCost = value; }
+        }
         #endregion
 
         #region "functions"

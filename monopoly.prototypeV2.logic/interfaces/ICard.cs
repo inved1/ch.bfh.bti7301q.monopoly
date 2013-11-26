@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace monopoly.prototypeV2.logic.interfaces
 {
-    interface ICard
+    public interface ICard
     {
         void playAction();
     }

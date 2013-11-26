@@ -8,7 +8,7 @@ using monopoly.prototypeV2.logic.interfaces;
 namespace monopoly.prototypeV2.logic.classes
 {
     [Serializable]
-    class cCardDeck
+    public class cCardDeck
     {
 
         private List<ICard> myCards;
