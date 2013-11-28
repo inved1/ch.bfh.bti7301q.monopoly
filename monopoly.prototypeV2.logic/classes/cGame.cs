@@ -57,7 +57,7 @@ namespace monopoly.prototypeV2.logic.classes
             else
             {
                 throw new Exception("Max. 8 Spieler möglich.");
-            }            
+            }
         }
 
         public List<cPlayer> Players
@@ -75,7 +75,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             curPlayer = players[0];
 
-            
+
         }
 
 
@@ -83,6 +83,7 @@ namespace monopoly.prototypeV2.logic.classes
         public void setActionsAfterMoving()
         {
             actions.Clear();
+            cCardDeck cardDeck;
             ISquare curSquare = getCurSquare();
             if (curSquare.GetType() == typeof(cRegularSquare) ||
                 curSquare.GetType() == typeof(cTrainStationSquare) ||
@@ -98,9 +99,18 @@ namespace monopoly.prototypeV2.logic.classes
                     actions.Add(new cActionEndTurn(this));
                 }
             }
-            else if (curSquare.GetType() == typeof(cCommunitySquare) ||
-                     curSquare.GetType() == typeof(cActionSquare))
+            else if (curSquare.GetType() == typeof(cCommunitySquare))
             {
+                cardDeck = gameBoard.getSpecificCardDeck(cCardDeck.cardType.Communitycard);
+                ICard card = cardDeck.getNextCard();
+                // !!! show card somehow !!!
+                actions.Add(new cActionEndTurn(this));
+            }
+            else if (curSquare.GetType() == typeof(cActionSquare))
+            {
+                cardDeck = gameBoard.getSpecificCardDeck(cCardDeck.cardType.Actioncard);
+                ICard card = cardDeck.getNextCard();
+                // !!! show card somehow !!!
                 actions.Add(new cActionEndTurn(this));
             }
             else if (curSquare.GetType() == typeof(cTaxSquare))
@@ -130,21 +140,22 @@ namespace monopoly.prototypeV2.logic.classes
             int tmpCurPos = curPlayer.CurPos; //remember for checking if player passed start
 
             Debug.Write(curPlayer.Name + ", tmpCurPos: " + tmpCurPos);
-            
+
             curPlayer.CurPos = ((curPlayer.CurPos + valueToMove) % 41);
 
             Debug.Write(", curPos: " + curPlayer.CurPos + " (" + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName + ")");
-            
+
             if (checkPlayerPassingStart(tmpCurPos, valueToMove))
             {
                 Debug.Write(", passingStart: true");
-                curPlayer.addMoney(9999); // tbd
+                // !!! define amount for passing start !!!
+                curPlayer.addMoney(9999);
             }
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " moved to " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             notifyGuis();
             Debug.WriteLine("");
             setActionsAfterMoving();
-            
+
         }
 
         public void playerPaysRent()
@@ -153,7 +164,8 @@ namespace monopoly.prototypeV2.logic.classes
             int rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
             cPlayer owner = (cPlayer)curSquare.GetType().GetProperty("Owner").GetValue(curSquare);
 
-            Debug.Write("oldAmountCurPlayer: " + curPlayer.Amount + ", oldAmountOwner: " + owner.Amount);
+            Debug.WriteLine("owner: " + owner.Name);
+            Debug.WriteLine("oldAmountCurPlayer: " + curPlayer.Amount + ", oldAmountOwner: " + owner.Amount);
             curPlayer.spendMoney(rent);
             owner.addMoney(rent);
             Debug.WriteLine("newAmountCurPlayer: " + curPlayer.Amount + ", newAmountOwner: " + owner.Amount);
@@ -164,10 +176,13 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerPaysTax()
         {
             ISquare curSquare = getCurSquare();
-            int tax = Convert.ToInt32(curSquare.GetType().GetProperty("Tax").GetValue(curSquare));
-            Debug.WriteLine("oldAmount: " + curPlayer.Amount);
+
+            // !!! define tax on tax squares !!!
+            //int tax = Convert.ToInt32(curSquare.GetType().GetProperty("Tax").GetValue(curSquare));
+            int tax = 4000;
+            Debug.Write("oldAmount: " + curPlayer.Amount);
             curPlayer.spendMoney(tax);
-            Debug.WriteLine("newAmount: " + curPlayer.Amount);
+            Debug.WriteLine(", newAmount: " + curPlayer.Amount);
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " paid tax of " + tax);
             notifyGuis();
         }
@@ -175,11 +190,18 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerBuysSquare()
         {
             ISquare curSquare = getCurSquare();
+            int cost;
+            cPlayer owner; // for debugging
             try
             {
-                curPlayer.spendMoney(Convert.ToInt32(curSquare.GetType().GetProperty("Cost").GetValue(curSquare)));
+                cost = Convert.ToInt32(curSquare.GetType().GetProperty("Cost").GetValue(curSquare));
+                Debug.Write("oldAmount: " + curPlayer.Amount + ", cost: " + cost);
+                curPlayer.spendMoney(cost);
+                Debug.Write(", newAmount: " + curPlayer.Amount);
                 curSquare.GetType().GetProperty("Owner").SetValue(curSquare, curPlayer);
-                Debug.WriteLine("newOwner: " + curSquare.GetType().GetProperty("Owner").GetValue(curSquare));
+                // player for debugging
+                owner = (cPlayer)curSquare.GetType().GetProperty("Owner").GetValue(curSquare);
+                Debug.WriteLine(", newOwner: " + owner.Name);
                 logWriter.WriteLogQueue("Player " + curPlayer.Name + " has bought " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
             catch (Exception e)
@@ -195,7 +217,7 @@ namespace monopoly.prototypeV2.logic.classes
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " has ended his turn.");
             Debug.Write("oldPlayer: " + curPlayer.Name);
             curPlayer = players[((players.IndexOf(curPlayer) + 1) % players.Count)];
-            Debug.WriteLine("newPlayer: " + curPlayer.Name);
+            Debug.WriteLine(", newPlayer: " + curPlayer.Name);
             setDefaultActions();
             notifyGuis();
             //notifyCurPlayer();
@@ -230,7 +252,10 @@ namespace monopoly.prototypeV2.logic.classes
 
         public bool checkPlayerPassingStart(int prevPos, int valueToMove)
         {
-            if (((curPlayer.CurPos + valueToMove) % 41) < prevPos)
+            //this check runs after moving to the new position
+            Debug.WriteLine(", prevPos: " + prevPos + ", valueToMove: " + valueToMove);
+            Debug.WriteLine("(" + curPlayer.CurPos + " + " + valueToMove + " % 41 < " + prevPos + ")");
+            if (((prevPos + valueToMove) % 41) < prevPos)
             {
                 return true;
             }

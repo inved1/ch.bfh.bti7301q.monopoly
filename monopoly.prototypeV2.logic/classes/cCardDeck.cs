@@ -55,6 +55,11 @@ namespace monopoly.prototypeV2.logic.classes
 
         }
 
+        public cardType CardType
+        {
+            get { return this.myType; }
+        }
+
         public List<ICard> getCards()
         {
             return this.myCards;

@@ -35,7 +35,8 @@ namespace monopoly.prototypeV2.logic.classes
                 if (this.game.CurPlayer.RolledDoubles == 3)
                 {
                     this.game.CurPlayer.RolledDoubles = 0;
-                    this.game.CurPlayer.CurPos = 0; //tbd -> go to prison
+                    // !!! set correct prison sqare !!!
+                    this.game.CurPlayer.CurPos = 0;
                 }
                 else
                 {

@@ -45,14 +45,11 @@ namespace monopoly.prototypeV2.tester
             btnBuySquare.Tag = new cActionBuySquare(this.game);
             btnBuySquare.Click += new EventHandler(runAction);
 
-            btnPayRent.Tag = new cActionPayRent(this.game);
-            btnPayRent.Click += new EventHandler(runAction);
-
-            btnPayTax.Tag = new cActionPayTax(this.game);
-            btnPayTax.Click += new EventHandler(runAction);
-
             btnEndTurn.Tag = new cActionEndTurn(this.game);
             btnEndTurn.Click += new EventHandler(runAction);
+
+            //btnGiveUp.Tag = new cActionGiveUp(this.game);
+            //btnGiveUp.Click += new EventHandler(runAction);
         }
 
         public void runAction(object sender, EventArgs e)

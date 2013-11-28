@@ -15,7 +15,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "vars"
         private static cGameBoard myInstance;
         private Dictionary<int,ISquare>  mySquares;
-        private Dictionary<String, cCardDeck> myCardDecks;
+        private Dictionary<cCardDeck.cardType, cCardDeck> myCardDecks;
         private Dictionary<String, cStreet> myStreets;
         private cConfig myConfig;
 
@@ -49,9 +49,9 @@ namespace monopoly.prototypeV2.logic.classes
         #region "functions"
         private void initCardDecks()
         {
-            this.myCardDecks = new Dictionary<string, cCardDeck>();
-            this.myCardDecks.Add("Action", new cCardDeck(cCardDeck.cardType.Actioncard));
-            this.myCardDecks.Add("Community", new cCardDeck(cCardDeck.cardType.Communitycard));
+            this.myCardDecks = new Dictionary<cCardDeck.cardType, cCardDeck>();
+            this.myCardDecks.Add(cCardDeck.cardType.Actioncard, new cCardDeck(cCardDeck.cardType.Actioncard));
+            this.myCardDecks.Add(cCardDeck.cardType.Communitycard, new cCardDeck(cCardDeck.cardType.Communitycard));
 
         }
 
@@ -165,12 +165,12 @@ namespace monopoly.prototypeV2.logic.classes
             return this.mySquares[pos];
         }
 
-        public Dictionary<string, cCardDeck> getCardDecks()
+        public Dictionary<cCardDeck.cardType, cCardDeck> getCardDecks()
         {
             return this.myCardDecks;
         }
 
-        public cCardDeck getSpecificCardDeck(string type)
+        public cCardDeck getSpecificCardDeck(cCardDeck.cardType type)
         {
             return this.myCardDecks[type];
         }
