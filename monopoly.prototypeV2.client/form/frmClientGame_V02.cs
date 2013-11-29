@@ -78,9 +78,9 @@ namespace monopoly.prototypeV2.client.form
             //TcpChannel tcpChannel = new TcpChannel(0);
             //ChannelServices.RegisterChannel(tcpChannel, false);
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            this.myGame .attach(this);
+            //this.myGame.attach(this);
             this.myPlayer = new cPlayer(this.myPlayerName ,this.myAvatar, 0);
-            this.myGame.addPlayer(this.myPlayer );
+            this.myGame.addPlayer(this.myPlayer, this );
 
             
             this.mySquares.Add(1, new cGUIWrapper(this.ctrlStart, getSpecificSquare(1)));

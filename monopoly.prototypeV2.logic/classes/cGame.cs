@@ -16,12 +16,12 @@ namespace monopoly.prototypeV2.logic.classes
     {
         #region "vars"
         private cGameBoard gameBoard;
-        private List<IObserverGUI> observerGuis;
-        private List<cPlayer> players;
+       // private List<IObserverGUI> observerGuis;
         private List<IAction> actions;
         private cPlayer curPlayer;
         private cConfig myConfig;
         private LogWriter logWriter;
+        private Dictionary<cPlayer, IObserverGUI> playerObservers;
         #endregion
 
         #region "constructor"
@@ -29,10 +29,10 @@ namespace monopoly.prototypeV2.logic.classes
         {
             this.myConfig = cConfig.getInstance;
             this.gameBoard = cGameBoard.getInstance();
-            this.observerGuis = new List<IObserverGUI>();
-            this.players = new List<cPlayer>();
+           // this.observerGuis = new List<IObserverGUI>();
             this.actions = new List<IAction>();
             this.logWriter = LogWriter.Instance;
+            this.playerObservers = new Dictionary<cPlayer, IObserverGUI>();
         }
         #endregion
 
@@ -47,11 +47,12 @@ namespace monopoly.prototypeV2.logic.classes
             set { this.curPlayer = value; }
         }
 
-        public void addPlayer(cPlayer player)
+        public void addPlayer(cPlayer player, IObserverGUI obs)
         {
-            if (players.Count < 8)
+            if (this.playerObservers.Keys.Count < 8)
             {
-                players.Add(player);
+                this.playerObservers.Add(player, obs);
+
                 notifyGuis();
             }
             else
@@ -62,7 +63,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public List<cPlayer> Players
         {
-            get { return players; }
+            get { return this.playerObservers.Keys.ToList(); }
         }
 
         public List<IAction> Actions
@@ -73,7 +74,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "game control functions"
         public void initGame()
         {
-            curPlayer = players[0];
+            curPlayer = this.playerObservers.Keys.First();
 
 
         }
@@ -220,7 +221,9 @@ namespace monopoly.prototypeV2.logic.classes
             curPlayer.RolledDoubles = 0;
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " has ended his turn.");
             Debug.Write("oldPlayer: " + curPlayer.Name);
-            curPlayer = players[((players.IndexOf(curPlayer) + 1) % players.Count)];
+            // use here dictionary
+            
+            //curPlayer = this.playerObservers.Keys.ToList()[((players.IndexOf(curPlayer) + 1) % players.Count)];
             Debug.WriteLine(", newPlayer: " + curPlayer.Name);
             setDefaultActions();
             notifyGuis();
@@ -273,27 +276,25 @@ namespace monopoly.prototypeV2.logic.classes
         #endregion
 
         #region "observer functions"
-        public void attach(IObserverGUI observerGui)
-        {
-            this.observerGuis.Add(observerGui);
-            //curGui = observerGui;
-        }
+        // is not used anymore because of function addplayer (which will pass "this")
+
+        //public void attach(IObserverGUI observerGui)
+        //{
+        //    this.observerGuis.Add(observerGui);
+        //    //curGui = observerGui;
+        //}
 
         public void notifyGuis()
         {
-            foreach (IObserverGUI obs in this.observerGuis)
+            foreach (KeyValuePair<cPlayer,IObserverGUI> entry in this.playerObservers )
             {
-                obs.updateAll();
+                entry.Value.updateAll();
             }
         }
 
         public void notifyCurPlayer()
         {
-            //possibly with a wrapper? curPlayer -> IObserverGUI
-            foreach (IObserverGUI obs in this.observerGuis)
-            {
-                obs.updateActions();
-            }
+            this.playerObservers[curPlayer].updateActions();
         }
         #endregion
 
