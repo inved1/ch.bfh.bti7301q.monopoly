@@ -25,7 +25,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "constructor/singelton"
         private cGameBoard()
         {
-            this.myConfig = cConfig.getInstance();
+            this.myConfig = cConfig.getInstance;
 
             initStreets();
             

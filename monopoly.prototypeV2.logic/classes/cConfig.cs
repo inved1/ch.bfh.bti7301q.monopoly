@@ -70,7 +70,6 @@ namespace monopoly.prototypeV2.logic.classes
 
             this.myDTS = new DataSet();
             this.myDTS.ReadXmlSchema(this.mySchemaFile);
-            this.myDTS.EnforceConstraints = false;
 
 
             System.IO.FileStream fsRead = new System.IO.FileStream(this.myFile, System.IO.FileMode.Open);
@@ -96,13 +95,19 @@ namespace monopoly.prototypeV2.logic.classes
             fillWaterPowerSqaureValues();
 
         }
-        public static cConfig getInstance()
+        public static cConfig getInstance
         {
-            if (myInstance == null)
-            {
-                myInstance = new cConfig ();
-            }
-            return myInstance;
+             get
+              {
+
+                if (myInstance == null)
+                {
+                    myInstance = new cConfig ();
+                }
+                return myInstance;
+                 }
+
+            
         }
 
 
@@ -165,20 +170,19 @@ namespace monopoly.prototypeV2.logic.classes
         private void fillClientHistoryServersValues()
         {
             String ClientID = this.myClientValues["Client_Id"];
-            DataRow r = this.myDTS.Tables["ClientHistoryServers"].Select(String.Format("Client_Id = {0}", ClientID))[0];
-            foreach (DataColumn c in this.myDTS.Tables["ClientHistoryServers"].Columns)
+            foreach (DataRow r in this.myDTS.Tables["ClientHistoryServer"].Select(String.Format("ClientHistoryServers_Id = {0}", 0)))
             {
-                this.myClientHistoryServers.Add(c.ColumnName, r[c].ToString());
+                this.myClientHistoryServers.Add(r["id"].ToString() , r["ClientHistoryServer_text"].ToString());  
             }
         }
         
         private void fillClientHistoryNamesValues()
         {
             String ClientID = this.myClientValues["Client_Id"];
-            DataRow r = this.myDTS.Tables["ClientHistoryNames"].Select(String.Format("Client_Id = {0}", ClientID))[0];
-            foreach (DataColumn c in this.myDTS.Tables["ClientHistoryNames"].Columns)
+            foreach (DataRow r in this.myDTS.Tables["ClientHistoryName"].Select(String.Format("ClientHistoryNames_Id = {0}", 0))) 
             {
-                this.myClientHistoryNames.Add(c.ColumnName, r[c].ToString());
+                this.myClientHistoryNames.Add(r["id"].ToString(), r["ClientHistoryName_text"].ToString());  
+
             }
         }
 
