@@ -77,6 +77,10 @@ namespace monopoly.prototypeV2.logic.classes
 
 
         }
+        public ISquare getSpecificSquare(int pos)
+        {
+            return this.gameBoard.getSpecificSquare(pos);
+        }
 
 
         // !!! initialize all actions in config? !!!

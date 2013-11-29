@@ -70,7 +70,7 @@ namespace monopoly.prototypeV2.logic.classes
         private void initSquares()
         {
             this.mySquares = new Dictionary<int, ISquare>();
-
+            /*
             this.mySquares.Add(1, new cStartSquare("Start", "grey"));
             this.mySquares.Add(2, new cRegularSquare("Chur Kornplatz", "purple"));
             this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
@@ -112,46 +112,46 @@ namespace monopoly.prototypeV2.logic.classes
             this.mySquares.Add(39, new cRegularSquare("Lausanne Place", "blue"));
             this.mySquares.Add(40, new cPayTaxesSquare("Nachsteuer zahlen", "grey"));
             this.mySquares.Add(41, new cRegularSquare("Zürich Paradeplatz", "blue"));
-            
-            //foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.RegularSquares)
-            //{
-            //    //ugly workaround so far
-            //    Dictionary<int, int> d = new Dictionary<int, int>();
-            //    foreach (KeyValuePair<string, string> e2 in entry.Value)
-            //    {
-            //        if (e2.Key == "0" || e2.Key == "1" || e2.Key == "2" || e2.Key == "3" || e2.Key == "4" || e2.Key == "5")
-            //        {
-            //            d.Add(Convert.ToInt32(e2.Key), Convert.ToInt32 (e2.Value));
-            //        }
-            //    }
-            //    this.mySquares.Add(Convert.ToInt32(entry.Value["id"]),
-            //                        new cRegularSquare(entry.Value["Name"], 
-            //                                            entry.Value["Color"],
-            //                                            Convert.ToInt32 (entry.Value["cost"]),
-            //                                            Convert.ToInt32 (entry.Value["priceHouse"]),
-            //                                            Convert.ToInt32 (entry.Value["priceHotel"]),
-            //                                            Convert.ToInt32 (entry.Value["deposit"]),
-            //                                            d));
-            //}
-            //this.mySquares.Add(1,new cStartSquare("Start","grey"));
-            //this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
-            //this.mySquares.Add(5, new cTaxSquare("Einkommenssteuer", "grey"));
-            //this.mySquares.Add(6, new cTrainStationSquare("Vereinigte Privatbahnen Union", "grey"));
-            //this.mySquares.Add(8, new cActionSquare("Chance", "grey"));
-            //this.mySquares.Add(11, new cPrisonVisitorSquare("Gefägniss Besuch", "grey"));
-            //this.mySquares.Add(12,new cPrisonSquare ("Gefängniss","orange"));
-            //this.mySquares.Add(14, new cWaterPowerSquare("Elektrizitätswerke", "grey"));
-            //this.mySquares.Add(17, new cTrainStationSquare("Vereinigte Bergbahnen AG", "grey"));
-            //this.mySquares.Add(19, new cActionSquare("Kanzlei", "grey"));
-            //this.mySquares.Add(22, new cFreeParkSquare("Freier Parkplatz", "grey"));
-            //this.mySquares.Add(24, new cCommunitySquare("Chance", "grey"));
-            //this.mySquares.Add(27, new cTrainStationSquare("Überlandbahnen", "grey"));
-            //this.mySquares.Add(30, new cWaterPowerSquare("Wasserwerke", "grey"));
-            //this.mySquares.Add(32, new cGoToPrisonSquare("Ins Gefängniss", "grey"));
-            //this.mySquares.Add(35, new cCommunitySquare("Kanzlei", "grey"));
-            //this.mySquares.Add(37, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
-            //this.mySquares.Add(38, new cCommunitySquare("Chance", "grey"));
-            //this.mySquares.Add(40, new cPayTaxesSquare("Nachsteuer zahlen", "grey"));
+            */
+            foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.RegularSquares)
+            {
+                //ugly workaround so far
+                Dictionary<int, int> d = new Dictionary<int, int>();
+                foreach (KeyValuePair<string, string> e2 in entry.Value)
+                {
+                    if (e2.Key == "0" || e2.Key == "1" || e2.Key == "2" || e2.Key == "3" || e2.Key == "4" || e2.Key == "5")
+                    {
+                        d.Add(Convert.ToInt32(e2.Key), Convert.ToInt32(e2.Value));
+                    }
+                }
+                this.mySquares.Add(Convert.ToInt32(entry.Value["id"]),
+                                    new cRegularSquare(entry.Value["Name"],
+                                                        entry.Value["Color"],
+                                                        Convert.ToInt32(entry.Value["cost"]),
+                                                        Convert.ToInt32(entry.Value["priceHouse"]),
+                                                        Convert.ToInt32(entry.Value["priceHotel"]),
+                                                        Convert.ToInt32(entry.Value["deposit"]),
+                                                        d));
+            }
+            this.mySquares.Add(1, new cStartSquare("Start", "grey"));
+            this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
+            this.mySquares.Add(5, new cTaxSquare("Einkommenssteuer", "grey"));
+            this.mySquares.Add(6, new cTrainStationSquare("Vereinigte Privatbahnen Union", "grey"));
+            this.mySquares.Add(8, new cActionSquare("Chance", "grey"));
+            this.mySquares.Add(11, new cPrisonVisitorSquare("Gefägniss Besuch", "grey"));
+            this.mySquares.Add(12, new cPrisonSquare("Gefängniss", "orange"));
+            this.mySquares.Add(14, new cWaterPowerSquare("Elektrizitätswerke", "grey"));
+            this.mySquares.Add(17, new cTrainStationSquare("Vereinigte Bergbahnen AG", "grey"));
+            this.mySquares.Add(19, new cActionSquare("Kanzlei", "grey"));
+            this.mySquares.Add(22, new cFreeParkSquare("Freier Parkplatz", "grey"));
+            this.mySquares.Add(24, new cCommunitySquare("Chance", "grey"));
+            this.mySquares.Add(27, new cTrainStationSquare("Überlandbahnen", "grey"));
+            this.mySquares.Add(30, new cWaterPowerSquare("Wasserwerke", "grey"));
+            this.mySquares.Add(32, new cGoToPrisonSquare("Ins Gefängniss", "grey"));
+            this.mySquares.Add(35, new cCommunitySquare("Kanzlei", "grey"));
+            this.mySquares.Add(37, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
+            this.mySquares.Add(38, new cCommunitySquare("Chance", "grey"));
+            this.mySquares.Add(40, new cPayTaxesSquare("Nachsteuer zahlen", "grey"));
             
         }
 
