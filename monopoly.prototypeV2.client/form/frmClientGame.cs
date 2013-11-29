@@ -37,9 +37,8 @@ namespace monopoly.prototypeV2.client
         public void init()
         {
             this.game = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            this.game.attach(this);
             player = new cPlayer("Player" + this.game.Players.Count + 1, "hat", 0);
-            this.game.addPlayer(player);
+            this.game.addPlayer(player, this );
         }
 
         public void updateAll()

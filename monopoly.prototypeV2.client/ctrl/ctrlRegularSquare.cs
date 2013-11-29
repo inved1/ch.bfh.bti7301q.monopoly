@@ -17,6 +17,8 @@ namespace monopoly.prototypeV2.client.ctrl
 
     public partial class ctrlRegularSquare : UserControl, IctrlSquare
     {
+
+        #region "vars"
         private String myStreetColor;
         private String myName;
 
@@ -36,6 +38,9 @@ namespace monopoly.prototypeV2.client.ctrl
         private List<cAvatar> myAvatars = null;
         private List<IRealEstate> myRealEstates = null;
 
+        #endregion
+
+        #region "constructor"
 
         public ctrlRegularSquare()
         {
@@ -48,6 +53,9 @@ namespace monopoly.prototypeV2.client.ctrl
             this.con.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.ctrl_paint);
             //this.con.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.ctrl_paint);
         }
+
+        #endregion
+
 
         private void initPointLists()
         {
@@ -94,8 +102,9 @@ namespace monopoly.prototypeV2.client.ctrl
 
         private void ctrl_paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
-            e.Graphics.DrawString(this.ctrlName, new Font("Arial", 8), Brushes.Black, new PointF(2, 2));
+            e.Graphics.DrawString(this.ctrlTopName, new Font("Arial", 8), Brushes.Black, new PointF(2, 2));
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -103,7 +112,7 @@ namespace monopoly.prototypeV2.client.ctrl
         }
 
 
-        public String ctrlName
+        public String ctrlTopName
         {
             get { return this.myName;}
             set { this.myName = value; }
@@ -118,7 +127,44 @@ namespace monopoly.prototypeV2.client.ctrl
                 this.myActiveListPositionsRealEstates = (value == Orientation.Horizontal) ? myListRealEstatesHorizontal : myListRealEstatesVertical;                  
             }
         }
-        
 
+
+
+
+        public string ctrlBackColor
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ctrlTopColor
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ctrlBottomName
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

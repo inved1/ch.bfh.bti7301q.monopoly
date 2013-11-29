@@ -52,7 +52,7 @@
             this.ctrlRegularSquare15 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare16 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare17 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
-            this.ctrlGoToPrison1 = new monopoly.prototypeV2.client.ctrl.ctrGoToPrison();
+            this.ctrlGoToPrison1 = new monopoly.prototypeV2.client.ctrl.ctrlGoToPrisonSquare();
             this.ctrlRegularSquare18 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare19 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare20 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
@@ -206,7 +206,7 @@
             // ctrlStart
             // 
             this.tlp.SetColumnSpan(this.ctrlStart, 2);
-            this.ctrlStart.ctrlName = null;
+            this.ctrlStart.ctrlTopName = null;
             this.ctrlStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlStart.Location = new System.Drawing.Point(872, 663);
             this.ctrlStart.Name = "ctrlStart";
@@ -216,7 +216,7 @@
             // 
             // ctrlRegularSquare1
             // 
-            this.ctrlRegularSquare1.ctrlName = null;
+            this.ctrlRegularSquare1.ctrlTopName = null;
             this.ctrlRegularSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare1.Location = new System.Drawing.Point(793, 663);
             this.ctrlRegularSquare1.Name = "ctrlRegularSquare1";
@@ -228,7 +228,7 @@
             // 
             // ctrlRegularSquare2
             // 
-            this.ctrlRegularSquare2.ctrlName = null;
+            this.ctrlRegularSquare2.ctrlTopName = null;
             this.ctrlRegularSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare2.Location = new System.Drawing.Point(635, 663);
             this.ctrlRegularSquare2.Name = "ctrlRegularSquare2";
@@ -240,7 +240,7 @@
             // 
             // ctrlRegularSquare3
             // 
-            this.ctrlRegularSquare3.ctrlName = null;
+            this.ctrlRegularSquare3.ctrlTopName = null;
             this.ctrlRegularSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare3.Location = new System.Drawing.Point(398, 663);
             this.ctrlRegularSquare3.Name = "ctrlRegularSquare3";
@@ -252,7 +252,7 @@
             // 
             // ctrlRegularSquare5
             // 
-            this.ctrlRegularSquare5.ctrlName = null;
+            this.ctrlRegularSquare5.ctrlTopName = null;
             this.ctrlRegularSquare5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare5.Location = new System.Drawing.Point(161, 663);
             this.ctrlRegularSquare5.Name = "ctrlRegularSquare5";
@@ -264,7 +264,7 @@
             // 
             // ctrlRegularSquare4
             // 
-            this.ctrlRegularSquare4.ctrlName = null;
+            this.ctrlRegularSquare4.ctrlTopName = null;
             this.ctrlRegularSquare4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare4.Location = new System.Drawing.Point(240, 663);
             this.ctrlRegularSquare4.Name = "ctrlRegularSquare4";
@@ -276,7 +276,7 @@
             // 
             // ctrlPrisonVisitorSquare1
             // 
-            this.ctrlPrisonVisitorSquare1.ctrlName = null;
+            this.ctrlPrisonVisitorSquare1.ctrlTopName = null;
             this.ctrlPrisonVisitorSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonVisitorSquare1.Location = new System.Drawing.Point(3, 663);
             this.ctrlPrisonVisitorSquare1.Name = "ctrlPrisonVisitorSquare1";
@@ -286,7 +286,7 @@
             // 
             // ctrlPrisonSquare1
             // 
-            this.ctrlPrisonSquare1.ctrlName = null;
+            this.ctrlPrisonSquare1.ctrlTopName = null;
             this.ctrlPrisonSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonSquare1.Location = new System.Drawing.Point(82, 663);
             this.ctrlPrisonSquare1.Name = "ctrlPrisonSquare1";
@@ -297,7 +297,7 @@
             // ctrlRegularSquare6
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare6, 2);
-            this.ctrlRegularSquare6.ctrlName = null;
+            this.ctrlRegularSquare6.ctrlTopName = null;
             this.ctrlRegularSquare6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare6.Location = new System.Drawing.Point(3, 603);
             this.ctrlRegularSquare6.Name = "ctrlRegularSquare6";
@@ -309,7 +309,7 @@
             // ctrlRegularSquare7
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare7, 2);
-            this.ctrlRegularSquare7.ctrlName = null;
+            this.ctrlRegularSquare7.ctrlTopName = null;
             this.ctrlRegularSquare7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare7.Location = new System.Drawing.Point(3, 483);
             this.ctrlRegularSquare7.Name = "ctrlRegularSquare7";
@@ -321,7 +321,7 @@
             // ctrlRegularSquare8
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare8, 2);
-            this.ctrlRegularSquare8.ctrlName = null;
+            this.ctrlRegularSquare8.ctrlTopName = null;
             this.ctrlRegularSquare8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare8.Location = new System.Drawing.Point(3, 423);
             this.ctrlRegularSquare8.Name = "ctrlRegularSquare8";
@@ -333,7 +333,7 @@
             // ctrlRegularSquare9
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare9, 2);
-            this.ctrlRegularSquare9.ctrlName = null;
+            this.ctrlRegularSquare9.ctrlTopName = null;
             this.ctrlRegularSquare9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare9.Location = new System.Drawing.Point(3, 303);
             this.ctrlRegularSquare9.Name = "ctrlRegularSquare9";
@@ -345,7 +345,7 @@
             // ctrlRegularSquare10
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare10, 2);
-            this.ctrlRegularSquare10.ctrlName = null;
+            this.ctrlRegularSquare10.ctrlTopName = null;
             this.ctrlRegularSquare10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare10.Location = new System.Drawing.Point(3, 183);
             this.ctrlRegularSquare10.Name = "ctrlRegularSquare10";
@@ -357,7 +357,7 @@
             // ctrlRegularSquare11
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare11, 2);
-            this.ctrlRegularSquare11.ctrlName = null;
+            this.ctrlRegularSquare11.ctrlTopName = null;
             this.ctrlRegularSquare11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare11.Location = new System.Drawing.Point(3, 123);
             this.ctrlRegularSquare11.Name = "ctrlRegularSquare11";
@@ -369,7 +369,7 @@
             // ctrlFreeParkSquare1
             // 
             this.tlp.SetColumnSpan(this.ctrlFreeParkSquare1, 2);
-            this.ctrlFreeParkSquare1.ctrlName = null;
+            this.ctrlFreeParkSquare1.ctrlTopName = null;
             this.ctrlFreeParkSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlFreeParkSquare1.Location = new System.Drawing.Point(3, 3);
             this.ctrlFreeParkSquare1.Name = "ctrlFreeParkSquare1";
@@ -379,7 +379,7 @@
             // 
             // ctrlRegularSquare12
             // 
-            this.ctrlRegularSquare12.ctrlName = null;
+            this.ctrlRegularSquare12.ctrlTopName = null;
             this.ctrlRegularSquare12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare12.Location = new System.Drawing.Point(161, 3);
             this.ctrlRegularSquare12.Name = "ctrlRegularSquare12";
@@ -391,7 +391,7 @@
             // 
             // ctrlRegularSquare13
             // 
-            this.ctrlRegularSquare13.ctrlName = null;
+            this.ctrlRegularSquare13.ctrlTopName = null;
             this.ctrlRegularSquare13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare13.Location = new System.Drawing.Point(319, 3);
             this.ctrlRegularSquare13.Name = "ctrlRegularSquare13";
@@ -403,7 +403,7 @@
             // 
             // ctrlRegularSquare14
             // 
-            this.ctrlRegularSquare14.ctrlName = null;
+            this.ctrlRegularSquare14.ctrlTopName = null;
             this.ctrlRegularSquare14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare14.Location = new System.Drawing.Point(398, 3);
             this.ctrlRegularSquare14.Name = "ctrlRegularSquare14";
@@ -415,7 +415,7 @@
             // 
             // ctrlRegularSquare15
             // 
-            this.ctrlRegularSquare15.ctrlName = null;
+            this.ctrlRegularSquare15.ctrlTopName = null;
             this.ctrlRegularSquare15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare15.Location = new System.Drawing.Point(556, 3);
             this.ctrlRegularSquare15.Name = "ctrlRegularSquare15";
@@ -427,7 +427,7 @@
             // 
             // ctrlRegularSquare16
             // 
-            this.ctrlRegularSquare16.ctrlName = null;
+            this.ctrlRegularSquare16.ctrlTopName = null;
             this.ctrlRegularSquare16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare16.Location = new System.Drawing.Point(635, 3);
             this.ctrlRegularSquare16.Name = "ctrlRegularSquare16";
@@ -439,7 +439,7 @@
             // 
             // ctrlRegularSquare17
             // 
-            this.ctrlRegularSquare17.ctrlName = null;
+            this.ctrlRegularSquare17.ctrlTopName = null;
             this.ctrlRegularSquare17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare17.Location = new System.Drawing.Point(793, 3);
             this.ctrlRegularSquare17.Name = "ctrlRegularSquare17";
@@ -452,7 +452,7 @@
             // ctrlGoToPrison1
             // 
             this.tlp.SetColumnSpan(this.ctrlGoToPrison1, 2);
-            this.ctrlGoToPrison1.ctrlName = null;
+            this.ctrlGoToPrison1.ctrlTopName = null;
             this.ctrlGoToPrison1.Location = new System.Drawing.Point(872, 3);
             this.ctrlGoToPrison1.Name = "ctrlGoToPrison1";
             this.tlp.SetRowSpan(this.ctrlGoToPrison1, 2);
@@ -462,7 +462,7 @@
             // ctrlRegularSquare18
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare18, 2);
-            this.ctrlRegularSquare18.ctrlName = null;
+            this.ctrlRegularSquare18.ctrlTopName = null;
             this.ctrlRegularSquare18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare18.Location = new System.Drawing.Point(872, 123);
             this.ctrlRegularSquare18.Name = "ctrlRegularSquare18";
@@ -474,7 +474,7 @@
             // ctrlRegularSquare19
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare19, 2);
-            this.ctrlRegularSquare19.ctrlName = null;
+            this.ctrlRegularSquare19.ctrlTopName = null;
             this.ctrlRegularSquare19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare19.Location = new System.Drawing.Point(872, 183);
             this.ctrlRegularSquare19.Name = "ctrlRegularSquare19";
@@ -486,7 +486,7 @@
             // ctrlRegularSquare20
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare20, 2);
-            this.ctrlRegularSquare20.ctrlName = null;
+            this.ctrlRegularSquare20.ctrlTopName = null;
             this.ctrlRegularSquare20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare20.Location = new System.Drawing.Point(872, 303);
             this.ctrlRegularSquare20.Name = "ctrlRegularSquare20";
@@ -498,7 +498,7 @@
             // ctrlRegularSquare21
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare21, 2);
-            this.ctrlRegularSquare21.ctrlName = null;
+            this.ctrlRegularSquare21.ctrlTopName = null;
             this.ctrlRegularSquare21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare21.Location = new System.Drawing.Point(872, 483);
             this.ctrlRegularSquare21.Name = "ctrlRegularSquare21";
@@ -510,7 +510,7 @@
             // ctrlRegularSquare22
             // 
             this.tlp.SetColumnSpan(this.ctrlRegularSquare22, 2);
-            this.ctrlRegularSquare22.ctrlName = null;
+            this.ctrlRegularSquare22.ctrlTopName = null;
             this.ctrlRegularSquare22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlRegularSquare22.Location = new System.Drawing.Point(872, 603);
             this.ctrlRegularSquare22.Name = "ctrlRegularSquare22";
@@ -521,7 +521,7 @@
             // 
             // ctrlCommunitySquare1
             // 
-            this.ctrlCommunitySquare1.ctrlName = null;
+            this.ctrlCommunitySquare1.ctrlTopName = null;
             this.ctrlCommunitySquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare1.Location = new System.Drawing.Point(714, 663);
             this.ctrlCommunitySquare1.Name = "ctrlCommunitySquare1";
@@ -531,7 +531,7 @@
             // 
             // ctrlTaxSquare1
             // 
-            this.ctrlTaxSquare1.ctrlName = null;
+            this.ctrlTaxSquare1.ctrlTopName = null;
             this.ctrlTaxSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare1.Location = new System.Drawing.Point(556, 663);
             this.ctrlTaxSquare1.Name = "ctrlTaxSquare1";
@@ -541,7 +541,7 @@
             // 
             // ctrlTrainStationSquare1
             // 
-            this.ctrlTrainStationSquare1.ctrlName = null;
+            this.ctrlTrainStationSquare1.ctrlTopName = null;
             this.ctrlTrainStationSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare1.Location = new System.Drawing.Point(477, 663);
             this.ctrlTrainStationSquare1.Name = "ctrlTrainStationSquare1";
@@ -551,7 +551,7 @@
             // 
             // ctrlActionSquare1
             // 
-            this.ctrlActionSquare1.ctrlName = null;
+            this.ctrlActionSquare1.ctrlTopName = null;
             this.ctrlActionSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare1.Location = new System.Drawing.Point(319, 663);
             this.ctrlActionSquare1.Name = "ctrlActionSquare1";
@@ -562,7 +562,7 @@
             // ctrlWaterPowerSquare1
             // 
             this.tlp.SetColumnSpan(this.ctrlWaterPowerSquare1, 2);
-            this.ctrlWaterPowerSquare1.ctrlName = null;
+            this.ctrlWaterPowerSquare1.ctrlTopName = null;
             this.ctrlWaterPowerSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare1.Location = new System.Drawing.Point(3, 543);
             this.ctrlWaterPowerSquare1.Name = "ctrlWaterPowerSquare1";
@@ -572,7 +572,7 @@
             // ctrlTrainStationSquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlTrainStationSquare2, 2);
-            this.ctrlTrainStationSquare2.ctrlName = null;
+            this.ctrlTrainStationSquare2.ctrlTopName = null;
             this.ctrlTrainStationSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare2.Location = new System.Drawing.Point(3, 363);
             this.ctrlTrainStationSquare2.Name = "ctrlTrainStationSquare2";
@@ -582,7 +582,7 @@
             // ctrlCommunitySquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlCommunitySquare2, 2);
-            this.ctrlCommunitySquare2.ctrlName = null;
+            this.ctrlCommunitySquare2.ctrlTopName = null;
             this.ctrlCommunitySquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare2.Location = new System.Drawing.Point(3, 243);
             this.ctrlCommunitySquare2.Name = "ctrlCommunitySquare2";
@@ -591,7 +591,7 @@
             // 
             // ctrlActionSquare2
             // 
-            this.ctrlActionSquare2.ctrlName = null;
+            this.ctrlActionSquare2.ctrlTopName = null;
             this.ctrlActionSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare2.Location = new System.Drawing.Point(240, 3);
             this.ctrlActionSquare2.Name = "ctrlActionSquare2";
@@ -601,7 +601,7 @@
             // 
             // ctrlTrainStationSquare3
             // 
-            this.ctrlTrainStationSquare3.ctrlName = null;
+            this.ctrlTrainStationSquare3.ctrlTopName = null;
             this.ctrlTrainStationSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare3.Location = new System.Drawing.Point(477, 3);
             this.ctrlTrainStationSquare3.Name = "ctrlTrainStationSquare3";
@@ -611,7 +611,7 @@
             // 
             // ctrlWaterPowerSquare2
             // 
-            this.ctrlWaterPowerSquare2.ctrlName = null;
+            this.ctrlWaterPowerSquare2.ctrlTopName = null;
             this.ctrlWaterPowerSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare2.Location = new System.Drawing.Point(714, 3);
             this.ctrlWaterPowerSquare2.Name = "ctrlWaterPowerSquare2";
@@ -622,7 +622,7 @@
             // ctrlCommunitySquare3
             // 
             this.tlp.SetColumnSpan(this.ctrlCommunitySquare3, 2);
-            this.ctrlCommunitySquare3.ctrlName = null;
+            this.ctrlCommunitySquare3.ctrlTopName = null;
             this.ctrlCommunitySquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare3.Location = new System.Drawing.Point(872, 243);
             this.ctrlCommunitySquare3.Name = "ctrlCommunitySquare3";
@@ -632,7 +632,7 @@
             // ctrlTrainStationSquare4
             // 
             this.tlp.SetColumnSpan(this.ctrlTrainStationSquare4, 2);
-            this.ctrlTrainStationSquare4.ctrlName = null;
+            this.ctrlTrainStationSquare4.ctrlTopName = null;
             this.ctrlTrainStationSquare4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare4.Location = new System.Drawing.Point(872, 363);
             this.ctrlTrainStationSquare4.Name = "ctrlTrainStationSquare4";
@@ -642,7 +642,7 @@
             // ctrlActionSquare3
             // 
             this.tlp.SetColumnSpan(this.ctrlActionSquare3, 2);
-            this.ctrlActionSquare3.ctrlName = null;
+            this.ctrlActionSquare3.ctrlTopName = null;
             this.ctrlActionSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare3.Location = new System.Drawing.Point(872, 423);
             this.ctrlActionSquare3.Name = "ctrlActionSquare3";
@@ -652,7 +652,7 @@
             // ctrlTaxSquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlTaxSquare2, 2);
-            this.ctrlTaxSquare2.ctrlName = null;
+            this.ctrlTaxSquare2.ctrlTopName = null;
             this.ctrlTaxSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare2.Location = new System.Drawing.Point(872, 543);
             this.ctrlTaxSquare2.Name = "ctrlTaxSquare2";
@@ -735,7 +735,7 @@
         private ctrl.ctrlRegularSquare ctrlRegularSquare15;
         private ctrl.ctrlRegularSquare ctrlRegularSquare16;
         private ctrl.ctrlRegularSquare ctrlRegularSquare17;
-        private ctrl.ctrGoToPrison ctrlGoToPrison1;
+        private ctrl.ctrlGoToPrisonSquare ctrlGoToPrison1;
         private ctrl.ctrlRegularSquare ctrlRegularSquare18;
         private ctrl.ctrlRegularSquare ctrlRegularSquare19;
         private ctrl.ctrlRegularSquare ctrlRegularSquare20;

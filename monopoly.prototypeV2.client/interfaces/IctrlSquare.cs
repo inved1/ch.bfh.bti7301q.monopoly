@@ -8,7 +8,13 @@ namespace monopoly.prototypeV2.client.interfaces
 {
     interface IctrlSquare
     {
-        String ctrlName { get; set; }
+        String ctrlTopName { get; set; }
+
+        String ctrlBackColor { get; set; }
+
+        String ctrlTopColor { get; set; }
+
+        String ctrlBottomName { get; set; }
 
     }
 }

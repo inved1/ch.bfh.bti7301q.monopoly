@@ -69,11 +69,11 @@
     <Compile Include="ctrlGenericAction.designer.cs">
       <DependentUpon>ctrlGenericAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrl\ctrGoToPrison.cs">
+    <Compile Include="ctrl\ctrlGoToPrisonSquare.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrl\ctrGoToPrison.Designer.cs">
-      <DependentUpon>ctrGoToPrison.cs</DependentUpon>
+    <Compile Include="ctrl\ctrlGoToPrisonSquare.Designer.cs">
+      <DependentUpon>ctrlGoToPrisonSquare.cs</DependentUpon>
     </Compile>
     <Compile Include="ctrl\ctrlPrisonVisitorSquare.cs">
       <SubType>UserControl</SubType>

@@ -1,6 +1,6 @@
 ﻿namespace monopoly.prototypeV2.client.ctrl
 {
-    partial class ctrGoToPrison
+    partial class ctrlGoToPrisonSquare
     {
         /// <summary> 
         /// Required designer variable.

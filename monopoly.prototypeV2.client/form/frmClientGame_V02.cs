@@ -78,7 +78,6 @@ namespace monopoly.prototypeV2.client.form
             //TcpChannel tcpChannel = new TcpChannel(0);
             //ChannelServices.RegisterChannel(tcpChannel, false);
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            //this.myGame.attach(this);
             this.myPlayer = new cPlayer(this.myPlayerName ,this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this );
 
@@ -128,7 +127,7 @@ namespace monopoly.prototypeV2.client.form
             foreach (KeyValuePair<int, cGUIWrapper> entry in this.mySquares)
             {
                 //set streetname on gui
-                entry.Value.GUICtrl.ctrlName = entry.Value.oSquare.ctrlName;
+                entry.Value.GUICtrl.ctrlTopName = entry.Value.oSquare.ctrlName;
 
 
                 //set color on streets
@@ -139,7 +138,22 @@ namespace monopoly.prototypeV2.client.form
                     o.BorderStyle = BorderStyle.FixedSingle;
 
                 }
+                else if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlStartSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlActionSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlFreeParkSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlGoToPrisonSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlPrisonSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlPrisonVisitorSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTaxSquare) || 
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTrainStationSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlWaterPowerSquare))
+                {
+                    UserControl  o = (UserControl )entry.Value.GUICtrl;
+                    
+                    o.BorderStyle = BorderStyle.FixedSingle;
+                }
 
+                //orientation
                 if (entry.Key >= 13 && entry.Key <= 21 || entry.Key >= 33 && entry.Key <= 41)
                 {
                     if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare))
