@@ -20,6 +20,8 @@ namespace monopoly.prototypeV2.client.form
     public partial class frmClientGame_V02 : Form, IObserverGUI
     {
 
+
+
         private String myIP = "";
         private String myPort = "";
         private String myAvatar = "";
@@ -144,13 +146,20 @@ namespace monopoly.prototypeV2.client.form
                         entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlGoToPrisonSquare) ||
                         entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlPrisonSquare) ||
                         entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlPrisonVisitorSquare) ||
-                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTaxSquare) || 
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTaxSquare) ||
                         entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTrainStationSquare) ||
-                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlWaterPowerSquare))
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlWaterPowerSquare) ||
+                        entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlCommunitySquare))
                 {
-                    UserControl  o = (UserControl )entry.Value.GUICtrl;
-                    
+                    UserControl o = (UserControl)entry.Value.GUICtrl;
+
                     o.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else
+                {
+                    Debug.Print(entry.Value.GUICtrl.ToString());
+                    Debug.Print(entry.Key.ToString());
+                        
                 }
 
                 //orientation
@@ -195,10 +204,12 @@ namespace monopoly.prototypeV2.client.form
         public void updatePlayerList()
         {
             this.lstPlayers.Items.Clear();
+            //this.tab_playerinfos.TabPages.Clear();
             foreach (cPlayer player in this.myGame.Players)
             {
                 Debug.WriteLine(String.Format("player_{0}",player.Name));
                 this.lstPlayers.Items.Add(player.Name);
+                this.tab_playerinfos.TabPages.Add(player.Name);
             }
         }
 
