@@ -180,7 +180,7 @@ namespace monopoly.prototypeV2.client.form
 
         public void updatePlayerList()
         {
-            //this.lstPlayers.Items.Clear();
+            this.lstPlayers.Items.Clear();
             foreach (cPlayer player in this.myGame.Players)
             {
                 Debug.WriteLine(String.Format("player_{0}",player.Name));
