@@ -17,6 +17,8 @@
         <ClientHistoryServers>
             <ClientHistoryServer id='1'>127.0.0.1:27015</ClientHistoryServer>
             <ClientHistoryServer id='2'>147.87.46.255:27015</ClientHistoryServer>
+            <ClientHistoryServer id='3'>147.87.47.252:27015</ClientHistoryServer>
+            <ClientHistoryServer id='4'>147.87.46.137:27015</ClientHistoryServer>
         </ClientHistoryServers>
         <ClientLastName>Dani</ClientLastName>
         <ClientHistoryNames>
