@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.tester", "monopoly.tester\monopoly.tester.csproj", "{0702D0D8-D67C-41D0-953A-42EBC8D66962}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.client", "monopoly.client\monopoly.client.csproj", "{E376B8A6-0F39-4D66-A815-BD1F5501F3C1}"
@@ -24,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.prototypeV2.tester", "monopoly.prototypeV2.tester\monopoly.prototypeV2.tester.csproj", "{061D9019-C5A1-437D-A177-E51FF9BCDEB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.prototypeV2.client", "monopoly.prototypeV2.client\monopoly.prototypeV2.client.csproj", "{4FB4B321-C987-4834-8BBB-AE70B2858FD8}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "monopoly.doc", "monopoly.doc\monopoly.doc.modelproj", "{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,10 @@ Global
 		{4FB4B321-C987-4834-8BBB-AE70B2858FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB4B321-C987-4834-8BBB-AE70B2858FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB4B321-C987-4834-8BBB-AE70B2858FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
