@@ -75,9 +75,9 @@ namespace monopoly.prototypeV2.logic.classes
         public void initGame()
         {
             curPlayer = this.playerObservers.Keys.First();
-
-
+            setDefaultActions();
         }
+
         public ISquare getSpecificSquare(int pos)
         {
             return this.gameBoard.getSpecificSquare(pos);

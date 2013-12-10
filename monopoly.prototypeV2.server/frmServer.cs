@@ -23,27 +23,22 @@ namespace monopoly.prototypeV2.server
 {
     public partial class frmServer : Form
     {
-
         private cConfig myConfig;
+        private cGame myGame;
 
         public frmServer()
         {
             InitializeComponent();
-
             this.myConfig = cConfig.getInstance;
-
-            // create game
-
-            //init();
         }
 
         private void init()
         {
             LogWriter w = LogWriter.Instance;
             w.WriteLogQueue("Server started");
+            this.txtInfo.AppendText("Server started\n");
 
             this.txtPort.Text = this.myConfig.Server["ServerPort"];
-
 
             BinaryServerFormatterSinkProvider tpfProvider = new BinaryServerFormatterSinkProvider();
             tpfProvider.TypeFilterLevel = TypeFilterLevel.Full;
@@ -53,6 +48,10 @@ namespace monopoly.prototypeV2.server
             TcpChannel tcpChannel = new TcpChannel(props, clientProv, tpfProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), this.myConfig.Server["ServerSharedGameName"], WellKnownObjectMode.Singleton);
+
+            this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://127.0.0.1:{0}/{1}", this.myConfig.Server["ServerPort"], this.myConfig.Server["ServerSharedGameName"]));
+            this.txtInfo.AppendText(String.Format("Connection to 'tcp://127.0.0.1:{0}/{1}' established\n", this.myConfig.Server["ServerPort"], this.myConfig.Server["ServerSharedGameName"]));
+            this.txtInfo.AppendText("Please start clients now.");
 
             RemotingConfiguration.CustomErrorsMode = CustomErrorsModes.Off;
             
@@ -73,6 +72,13 @@ namespace monopoly.prototypeV2.server
         private void button1_Click(object sender, EventArgs e)
         {
             init();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            this.myGame.initGame();
+            this.myGame.notifyCurPlayer();
         }
     }
 }

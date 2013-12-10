@@ -19,18 +19,14 @@ namespace monopoly.prototypeV2.client.form
 {
     public partial class frmClientGame_V02 : Form, IObserverGUI
     {
-
-
-
         private String myIP = "";
         private String myPort = "";
         private String myAvatar = "";
         private String myPlayerName = "";
         private cGame myGame;
-        private cPlayer myPlayer;        
-        Dictionary<int,classes.cGUIWrapper> mySquares;
-
-
+        private cPlayer myPlayer;
+        private frmGenericActions frmActions;
+        private Dictionary<int, classes.cGUIWrapper> mySquares;
 
         public frmClientGame_V02(String ip, String Port)
         {
@@ -45,12 +41,12 @@ namespace monopoly.prototypeV2.client.form
         {
             InitializeComponent();
 
-            this.myIP = IPandPort.Substring(0,IPandPort.IndexOf(":")) ;
-            this.myPort = IPandPort.Substring( IPandPort.IndexOf(":"),IPandPort.Length);
+            this.myIP = IPandPort.Substring(0, IPandPort.IndexOf(":"));
+            this.myPort = IPandPort.Substring(IPandPort.IndexOf(":"), IPandPort.Length);
             init();
         }
 
-        public frmClientGame_V02(string IPandPort,String playerName, String Avatar)
+        public frmClientGame_V02(string IPandPort, String playerName, String Avatar)
         {
             InitializeComponent();
 
@@ -58,11 +54,12 @@ namespace monopoly.prototypeV2.client.form
             this.myPort = IPandPort.Replace(this.myIP, "").Replace(":", "");
             this.myAvatar = Avatar;
             this.myPlayerName = playerName;
+            this.frmActions = new frmGenericActions();
             this.mySquares = new Dictionary<int, cGUIWrapper>();
             init();
         }
 
-        private ISquare  getSpecificSquare(int pos)
+        private ISquare getSpecificSquare(int pos)
         {
             return this.myGame.getSpecificSquare(pos);
         }
@@ -71,8 +68,8 @@ namespace monopoly.prototypeV2.client.form
         {
             //attentione !!!!
 #if DEBUG
-           // TcpChannel tcpChannel = new TcpChannel(0);
-           // ChannelServices.RegisterChannel(tcpChannel, false);
+            // TcpChannel tcpChannel = new TcpChannel(0);
+            // ChannelServices.RegisterChannel(tcpChannel, false);
 #else
                         TcpChannel tcpChannel = new TcpChannel(0);
             ChannelServices.RegisterChannel(tcpChannel, false);
@@ -80,10 +77,10 @@ namespace monopoly.prototypeV2.client.form
             //TcpChannel tcpChannel = new TcpChannel(0);
             //ChannelServices.RegisterChannel(tcpChannel, false);
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            this.myPlayer = new cPlayer(this.myPlayerName ,this.myAvatar, 0);
-            this.myGame.addPlayer(this.myPlayer, this );
+            this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
+            this.myGame.addPlayer(this.myPlayer, this);
 
-            
+
             this.mySquares.Add(1, new cGUIWrapper(this.ctrlStart, getSpecificSquare(1)));
             this.mySquares.Add(2, new cGUIWrapper(this.ctrlRegularSquare1, getSpecificSquare(2)));
             this.mySquares.Add(3, new cGUIWrapper(this.ctrlCommunitySquare1, getSpecificSquare(3)));
@@ -159,7 +156,7 @@ namespace monopoly.prototypeV2.client.form
                 {
                     Debug.Print(entry.Value.GUICtrl.ToString());
                     Debug.Print(entry.Key.ToString());
-                        
+
                 }
 
                 //orientation
@@ -174,32 +171,28 @@ namespace monopoly.prototypeV2.client.form
 
             }
 
-        
+
 
         }
 
         public void updateActions()
         {
-            //if (this.myGame.CurPlayer == this.player)
-            //{
             foreach (IAction action in this.myGame.Actions)
             {
-                //Button btn = new Button();
-                //btn.Text = action.getName();
-                //btn.Tag = action;
-                //btn.Click += new EventHandler(runAction);
-                //this.pnlAction.Controls.Add(btn);
+                Button btn = new Button();
+                btn.Text = action.getName();
+                btn.Tag = action;
+                btn.Click += new EventHandler(runAction);
+                this.frmActions.addControl(btn);
             }
-            //}            
+            this.frmActions.ShowDialog();
         }
-
-
 
         public void updateAll()
         {
-        //    refreshAvatarPositions();
+            //    refreshAvatarPositions();
             updatePlayerList();
-       }
+        }
 
         public void updatePlayerList()
         {
@@ -207,12 +200,17 @@ namespace monopoly.prototypeV2.client.form
             //this.tab_playerinfos.TabPages.Clear();
             foreach (cPlayer player in this.myGame.Players)
             {
-                Debug.WriteLine(String.Format("player_{0}",player.Name));
+                Debug.WriteLine(String.Format("player_{0}", player.Name));
                 this.lstPlayers.Items.Add(player.Name);
                 this.tab_playerinfos.TabPages.Add(player.Name);
             }
         }
 
-
+        public void runAction(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            IAction action = (IAction)btn.Tag;
+            action.runAction();
+        }
     }
 }

@@ -53,8 +53,10 @@ namespace monopoly.prototypeV2.client
             LogWriter w = LogWriter.Instance;
             w.WriteLogQueue(string.Format("Client connect to {0}",this.cbxServer.SelectedText)   );
 
-            frmClientGame_V02 f = new frmClientGame_V02(this.cbxServer.SelectedItem.ToString(), this.cbxPlayer.SelectedItem.ToString(), this.cbxAvatars.SelectedItem.ToString());
-            f.Show();
+            frmClientGame_V02 frmClient = new frmClientGame_V02(this.cbxServer.SelectedItem.ToString(), this.cbxPlayer.SelectedItem.ToString(), this.cbxAvatars.SelectedItem.ToString());
+            frmClient.FormClosed += new FormClosedEventHandler(frmClient_FormClosed);
+            frmClient.Show();
+            this.Hide();
         }
 
         private void cbxAvatars_DrawItem(object sender, DrawItemEventArgs e)
@@ -110,7 +112,10 @@ namespace monopoly.prototypeV2.client
 
         }
 
-        
+        public void frmClient_FormClosed(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         #endregion
 

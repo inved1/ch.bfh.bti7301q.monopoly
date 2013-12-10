@@ -17,9 +17,16 @@ namespace monopoly.prototypeV2.client
         public frmGenericActions()
         {
             InitializeComponent();
+        }
 
+        public void addControl(Button btn)
+        {
+            this.flp.Controls.Add(btn);
+        }
 
-
+        public void clearControls()
+        {
+            this.flp.Controls.Clear();
         }
 
         public void notify(List<IAction> lst)
