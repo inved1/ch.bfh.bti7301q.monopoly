@@ -16,23 +16,33 @@ namespace monopoly.prototypeV2.logic.classes
     {
         #region "vars"
         private cGameBoard gameBoard;
-       // private List<IObserverGUI> observerGuis;
         private List<IAction> actions;
+        private cPlayer startPlayer;
         private cPlayer curPlayer;
         private cConfig myConfig;
         private LogWriter logWriter;
-        private Dictionary<cPlayer, IObserverGUI> playerObservers;
+
+        // !!! only public for testing !!!
+        public SortedList<cPlayer, IObserverGUI> playerObservers;
+        private eGameStatus gameStatus = 0;
         #endregion
+
+        public enum eGameStatus
+        {
+            NotStarted = 0,
+            DetermineStartPlayer = 1,
+            Running = 2
+        }
 
         #region "constructor"
         public cGame()
         {
             this.myConfig = cConfig.getInstance;
             this.gameBoard = cGameBoard.getInstance();
-           // this.observerGuis = new List<IObserverGUI>();
+            // this.observerGuis = new List<IObserverGUI>();
             this.actions = new List<IAction>();
             this.logWriter = LogWriter.Instance;
-            this.playerObservers = new Dictionary<cPlayer, IObserverGUI>();
+            this.playerObservers = new SortedList<cPlayer, IObserverGUI>();
         }
         #endregion
 
@@ -41,10 +51,22 @@ namespace monopoly.prototypeV2.logic.classes
             get { return this.gameBoard; }
         }
 
+        public cPlayer StartPlayer
+        {
+            get { return this.startPlayer; }
+            set { this.startPlayer = value; }
+        }
+
         public cPlayer CurPlayer
         {
             get { return this.curPlayer; }
             set { this.curPlayer = value; }
+        }
+
+        public eGameStatus GameStatus
+        {
+            get { return this.gameStatus; }
+            set { this.gameStatus = value; }
         }
 
         public void addPlayer(cPlayer player, IObserverGUI obs)
@@ -52,7 +74,6 @@ namespace monopoly.prototypeV2.logic.classes
             if (this.playerObservers.Keys.Count < 8)
             {
                 this.playerObservers.Add(player, obs);
-
                 notifyGuis();
             }
             else
@@ -74,8 +95,17 @@ namespace monopoly.prototypeV2.logic.classes
         #region "game control functions"
         public void initGame()
         {
+            this.gameStatus = cGame.eGameStatus.DetermineStartPlayer;
             curPlayer = this.playerObservers.Keys.First();
             setDefaultActions();
+            notifyCurPlayer();
+        }
+
+        public void startGame()
+        {
+            this.gameStatus = cGame.eGameStatus.Running;
+            setDefaultActions();
+            notifyCurPlayer();
         }
 
         public ISquare getSpecificSquare(int pos)
@@ -83,6 +113,12 @@ namespace monopoly.prototypeV2.logic.classes
             return this.gameBoard.getSpecificSquare(pos);
         }
 
+        public void setNextCurPlayer()
+        {
+            Debug.Write("oldCurPlayer: " + curPlayer.Name);
+            curPlayer = playerObservers.Keys.ElementAt((playerObservers.IndexOfKey(curPlayer) + 1) % playerObservers.Count);
+            Debug.Write(", newCurPlayer: " + curPlayer.Name);
+        }
 
         // !!! initialize all actions in config? !!!
         public void setActionsAfterMoving()
@@ -138,6 +174,36 @@ namespace monopoly.prototypeV2.logic.classes
             actions.Clear();
             actions.Add(new cActionRoll(this));
             actions.Add(new cActionGiveUp(this));
+        }
+
+        public void determineStartPlayer(int rolledDots)
+        {
+            if (curPlayer.RolledInitDots != 0)
+            {
+                startGame();
+            }
+            else
+            {
+                curPlayer.RolledInitDots = rolledDots;
+                if (startPlayer == null)
+                {
+                    Debug.Write("oldStartPlayer: ");
+                    startPlayer = curPlayer;
+                    Debug.WriteLine(", newStartPlayer: " + startPlayer.Name);
+                }
+                else
+                {
+                    Debug.Write("oldStartPlayer: " + startPlayer.Name + ", startPlayer: " + startPlayer.RolledInitDots + ", curPlayer: " + curPlayer.RolledInitDots);
+                    if (curPlayer.RolledInitDots > startPlayer.RolledInitDots)
+                    {
+                        startPlayer = curPlayer;
+                    }
+                    Debug.WriteLine(", newStartPlayer: " + startPlayer.Name);
+                }
+                setNextCurPlayer();
+                setDefaultActions();
+                notifyCurPlayer();
+            }
         }
 
         public void moveCurPlayer(int valueToMove)
@@ -221,9 +287,8 @@ namespace monopoly.prototypeV2.logic.classes
             curPlayer.RolledDoubles = 0;
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " has ended his turn.");
             Debug.Write("oldPlayer: " + curPlayer.Name);
-            // use here dictionary
-            
             //curPlayer = this.playerObservers.Keys.ToList()[((players.IndexOf(curPlayer) + 1) % players.Count)];
+            setNextCurPlayer();
             Debug.WriteLine(", newPlayer: " + curPlayer.Name);
             setDefaultActions();
             notifyGuis();
@@ -286,7 +351,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void notifyGuis()
         {
-            foreach (KeyValuePair<cPlayer,IObserverGUI> entry in this.playerObservers )
+            foreach (KeyValuePair<cPlayer, IObserverGUI> entry in this.playerObservers)
             {
                 entry.Value.updateAll();
             }

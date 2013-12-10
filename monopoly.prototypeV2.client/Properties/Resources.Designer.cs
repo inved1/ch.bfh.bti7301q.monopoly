@@ -113,6 +113,16 @@ namespace monopoly.prototypeV2.client.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap monopoly_man {
+            get {
+                object obj = ResourceManager.GetObject("monopoly_man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monopoly_Spielbrett {
             get {
                 object obj = ResourceManager.GetObject("monopoly_Spielbrett", resourceCulture);

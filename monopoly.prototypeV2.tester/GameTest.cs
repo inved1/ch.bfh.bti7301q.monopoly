@@ -1,4 +1,6 @@
-﻿using monopoly.prototypeV2.logic.classes;
+﻿using monopoly.prototypeV2.client;
+using monopoly.prototypeV2.client.form;
+using monopoly.prototypeV2.logic.classes;
 using monopoly.prototypeV2.logic.classes.actions;
 using monopoly.prototypeV2.logic.interfaces;
 using System;
@@ -28,16 +30,16 @@ namespace monopoly.prototypeV2.tester
             cPlayer player;
             player = new cPlayer("Player1", "hat", 0);
             player.addMoney(10000);
-            this.game.Players.Add(player);
+            this.game.addPlayer(player, null);
 
             player = new cPlayer("Player2", "ship", 0);
             player.addMoney(10000);
-            this.game.Players.Add(player);
+            this.game.addPlayer(player, null);
 
             player = new cPlayer("Player3", "dog", 0);
             player.addMoney(10000);
-            this.game.Players.Add(player);
-            this.game.CurPlayer = this.game.Players[0];
+            this.game.addPlayer(player, null);
+            this.game.CurPlayer = this.game.playerObservers.Keys.First();
 
             btnRoll.Tag = new cActionRoll(this.game);
             btnRoll.Click += new EventHandler(runAction);
@@ -50,6 +52,8 @@ namespace monopoly.prototypeV2.tester
 
             //btnGiveUp.Tag = new cActionGiveUp(this.game);
             //btnGiveUp.Click += new EventHandler(runAction);
+
+            this.game.GameStatus = cGame.eGameStatus.DetermineStartPlayer;
         }
 
         public void runAction(object sender, EventArgs e)

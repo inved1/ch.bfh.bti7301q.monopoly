@@ -71,7 +71,7 @@ namespace monopoly.prototypeV2.client.form
             // TcpChannel tcpChannel = new TcpChannel(0);
             // ChannelServices.RegisterChannel(tcpChannel, false);
 #else
-                        TcpChannel tcpChannel = new TcpChannel(0);
+            TcpChannel tcpChannel = new TcpChannel(0);
             ChannelServices.RegisterChannel(tcpChannel, false);
 #endif
             //TcpChannel tcpChannel = new TcpChannel(0);
@@ -181,11 +181,12 @@ namespace monopoly.prototypeV2.client.form
             {
                 Button btn = new Button();
                 btn.Text = action.getName();
+                btn.AutoSize = true;
                 btn.Tag = action;
                 btn.Click += new EventHandler(runAction);
                 this.frmActions.addControl(btn);
             }
-            this.frmActions.ShowDialog();
+            //this.frmActions.ShowDialog();
         }
 
         public void updateAll()
@@ -210,6 +211,7 @@ namespace monopoly.prototypeV2.client.form
         {
             Button btn = (Button)sender;
             IAction action = (IAction)btn.Tag;
+            this.frmActions.close();
             action.runAction();
         }
     }

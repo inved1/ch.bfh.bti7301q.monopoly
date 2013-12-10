@@ -17,6 +17,7 @@ namespace monopoly.prototypeV2.client
         public frmGenericActions()
         {
             InitializeComponent();
+            //this.CenterToParent();
         }
 
         public void addControl(Button btn)
@@ -29,7 +30,13 @@ namespace monopoly.prototypeV2.client
             this.flp.Controls.Clear();
         }
 
-        public void notify(List<IAction> lst)
+        public void close()
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.Close();
+        }
+
+        /*public void notify(List<IAction> lst)
         {
             foreach (IAction o in lst)
             {
@@ -37,6 +44,6 @@ namespace monopoly.prototypeV2.client
                 c.Tag = o;
                 this.flp.Controls.Add(c);
             }
-        }
+        }*/
     }
 }

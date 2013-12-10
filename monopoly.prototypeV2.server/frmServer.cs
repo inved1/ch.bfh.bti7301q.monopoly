@@ -78,7 +78,6 @@ namespace monopoly.prototypeV2.server
         {
             this.WindowState = FormWindowState.Minimized;
             this.myGame.initGame();
-            this.myGame.notifyCurPlayer();
         }
     }
 }

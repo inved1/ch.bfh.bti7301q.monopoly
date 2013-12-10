@@ -14,6 +14,7 @@ namespace monopoly.prototypeV2.logic.classes
         private int amount = 0;
         private int curPos = 0;
         private int rolledDoubles = 0;
+        private int rolledInitDots = 0;
 
         public cPlayer(string name, string avatorToken, int curPos)
         {
@@ -49,6 +50,12 @@ namespace monopoly.prototypeV2.logic.classes
         {
             get { return this.rolledDoubles; }
             set { this.rolledDoubles = value; }
+        }
+
+        public int RolledInitDots
+        {
+            get { return this.rolledInitDots; }
+            set { this.rolledInitDots = value; }
         }
 
         public void addMoney(int value)
