@@ -25,7 +25,6 @@ namespace monopoly.prototypeV2.client.form
         private String myPlayerName = "";
         private cGame myGame;
         private cPlayer myPlayer;
-        private frmGenericActions frmActions;
         private Dictionary<int, classes.cGUIWrapper> mySquares;
 
         public frmClientGame_V02(String ip, String Port)
@@ -54,7 +53,6 @@ namespace monopoly.prototypeV2.client.form
             this.myPort = IPandPort.Replace(this.myIP, "").Replace(":", "");
             this.myAvatar = Avatar;
             this.myPlayerName = playerName;
-            this.frmActions = new frmGenericActions();
             this.mySquares = new Dictionary<int, cGUIWrapper>();
             init();
         }
@@ -177,6 +175,7 @@ namespace monopoly.prototypeV2.client.form
 
         public void updateActions()
         {
+            frmGenericActions f = new frmGenericActions();
             foreach (IAction action in this.myGame.Actions)
             {
                 Button btn = new Button();
@@ -184,34 +183,44 @@ namespace monopoly.prototypeV2.client.form
                 btn.AutoSize = true;
                 btn.Tag = action;
                 btn.Click += new EventHandler(runAction);
-                this.frmActions.addControl(btn);
+                btn.DialogResult = System.Windows.Forms.DialogResult.OK;
+                f.addControl(btn);
             }
-            //this.frmActions.ShowDialog();
+
+
+            if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                f.Hide();
+                f.Close(); }
+            f.Dispose();
+            
         }
 
         public void updateAll()
         {
-            //    refreshAvatarPositions();
-            updatePlayerList();
+
+            foreach (Control c in this.con1.Panel2.Controls)
+            {
+                if (c.GetType() == typeof (TabControl))
+                {
+                    TabControl tmpTP = (TabControl)c;
+                    tmpTP.Dispose();
+                }
+            }
+                TabControl tp = new TabControl();
+            foreach(cPlayer p in this.myGame.Players)
+            {
+                tp.TabPages.Add(p.Name);
+            }
+            this.con1.Panel2.Controls.Add(tp);
+            tp.Dock = DockStyle.Fill;
         }
 
-        public void updatePlayerList()
-        {
-            this.lstPlayers.Items.Clear();
-            //this.tab_playerinfos.TabPages.Clear();
-            foreach (cPlayer player in this.myGame.Players)
-            {
-                Debug.WriteLine(String.Format("player_{0}", player.Name));
-                this.lstPlayers.Items.Add(player.Name);
-                this.tab_playerinfos.TabPages.Add(player.Name);
-            }
-        }
 
         public void runAction(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
             IAction action = (IAction)btn.Tag;
-            this.frmActions.close();
             action.runAction();
         }
     }
