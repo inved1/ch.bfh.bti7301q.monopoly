@@ -18,6 +18,7 @@ namespace monopoly.prototypeV2.logic.classes
         private Dictionary<cCardDeck.cardType, cCardDeck> myCardDecks;
         private Dictionary<String, cStreet> myStreets;
         private cConfig myConfig;
+        private List<cRegularSquare> myRegularSquares; //easy access 
 
         #endregion
 
@@ -70,6 +71,7 @@ namespace monopoly.prototypeV2.logic.classes
         private void initSquares()
         {
             this.mySquares = new Dictionary<int, ISquare>();
+            this.myRegularSquares = new List<cRegularSquare>();
        
             foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.RegularSquares)
             {
@@ -90,6 +92,7 @@ namespace monopoly.prototypeV2.logic.classes
                                                         Convert.ToInt32(entry.Value["priceHotel"]),
                                                         Convert.ToInt32(entry.Value["deposit"]),
                                                         d));
+                
             }
             this.mySquares.Add(1, new cStartSquare("Start", "grey"));
             this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
@@ -110,12 +113,27 @@ namespace monopoly.prototypeV2.logic.classes
             this.mySquares.Add(37, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
             this.mySquares.Add(38, new cCommunitySquare("Chance", "grey"));
             this.mySquares.Add(40, new cPayTaxesSquare("Nachsteuer zahlen", "grey"));
-            
+
+
+
+            foreach (KeyValuePair<int, ISquare> entry in this.mySquares)
+            {
+                if (entry.Value.GetType() == typeof(cRegularSquare))
+                {
+                    this.myRegularSquares .Add((cRegularSquare)entry.Value);
+                }
+            }
+
         }
 
         public Dictionary<int, ISquare> getSquares()
         {
             return this.mySquares;
+        }
+
+        public List<cRegularSquare> getRegularSquares()
+        {
+            return this.myRegularSquares;
         }
 
         public ISquare getSpecificSquare(int pos)

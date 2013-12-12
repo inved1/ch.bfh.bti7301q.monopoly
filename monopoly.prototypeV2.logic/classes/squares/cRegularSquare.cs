@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class cRegularSquare : ISquare
+    public class cRegularSquare : ISquare
     {
         #region "vars"
         private string myName = "";

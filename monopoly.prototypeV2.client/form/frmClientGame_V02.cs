@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using monopoly.prototypeV2.logic.interfaces;
 using monopoly.prototypeV2.logic.classes;
+using monopoly.prototypeV2.logic.classes.squares ;
 using monopoly.prototypeV2.client.classes;
 using monopoly.prototypeV2.client.Properties;
+using monopoly.prototypeV2.client.ctrl; 
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Diagnostics;
@@ -19,6 +21,9 @@ namespace monopoly.prototypeV2.client.form
 {
     public partial class frmClientGame_V02 : Form, IObserverGUI
     {
+
+
+
         private String myIP = "";
         private String myPort = "";
         private String myAvatar = "";
@@ -54,8 +59,11 @@ namespace monopoly.prototypeV2.client.form
             this.myAvatar = Avatar;
             this.myPlayerName = playerName;
             this.mySquares = new Dictionary<int, cGUIWrapper>();
+
+
             init();
         }
+
 
         private ISquare getSpecificSquare(int pos)
         {
@@ -175,6 +183,8 @@ namespace monopoly.prototypeV2.client.form
 
         public void updateActions()
         {
+           
+
             frmGenericActions f = new frmGenericActions();
             foreach (IAction action in this.myGame.Actions)
             {
@@ -195,25 +205,43 @@ namespace monopoly.prototypeV2.client.form
             
         }
 
-        public void updateAll()
-        {
+        //public void updateAll()
+        //{
+        //    try
+        //    {
 
-            foreach (Control c in this.con1.Panel2.Controls)
-            {
-                if (c.GetType() == typeof (TabControl))
-                {
-                    TabControl tmpTP = (TabControl)c;
-                    tmpTP.Dispose();
-                }
-            }
-                TabControl tp = new TabControl();
-            foreach(cPlayer p in this.myGame.Players)
-            {
-                tp.TabPages.Add(p.Name);
-            }
-            this.con1.Panel2.Controls.Add(tp);
-            tp.Dock = DockStyle.Fill;
-        }
+
+        //        tp_players.TabPages.Clear();
+            
+        //        foreach(cPlayer p in this.myGame.Players)
+        //        {
+        //            tp_players.TabPages.Add(p.Name);
+
+        //            TabPage t = tp_players.SelectedTab;
+        //        }
+
+        //        foreach(cRegularSquare r in this.myGame.RegularSquares )
+        //        {
+               
+        //            if(r.Owner != null)
+        //            {
+        //                TabPage t = tp_players.TabPages[r.Owner.Name];
+        //                ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
+        //                c.setTopInfo(r.ctrlName);
+        //                c.setBottomInfo(r.PriceHouse.ToString());
+
+        //                t.Controls.Add(c);
+        //            }
+
+        //            tp.TabPages.Add(r.ctrlName);
+        //        }
+        //    }
+        //catch( Exception e)
+        //{
+        //    throw e;
+        //}
+                    
+        //}
 
 
         public void runAction(object sender, EventArgs e)
@@ -222,6 +250,45 @@ namespace monopoly.prototypeV2.client.form
             frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
             IAction action = (IAction)btn.Tag;
             action.runAction();
+        }
+
+        delegate void cbGUI(object sender, EventArgs e); //callback
+
+
+        public void onUpdateGUIEvent(object sender, EventArgs e)
+        {
+            if(tp_players.InvokeRequired )
+            {
+                cbGUI d = new cbGUI(onUpdateGUIEvent);
+
+                tp_players.Invoke(d, new object[] {sender,e} );
+            }
+            else
+            { 
+                tp_players.TabPages.Clear();
+
+                foreach (cPlayer p in this.myGame.Players)
+                {
+                    tp_players.TabPages.Add(p.Name,p.Name );
+
+                    TabPage t = tp_players.SelectedTab;
+                }
+
+                foreach (cRegularSquare r in this.myGame.RegularSquares)
+                {
+
+                    if (r.Owner != null)
+                    {
+                        TabPage t = tp_players.TabPages[r.Owner.Name];
+                        ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
+                        c.setTopInfo(r.ctrlName);
+                        c.setBottomInfo(r.PriceHouse.ToString());
+                        t.Controls.Add(c);
+                    }
+
+                    //tp.TabPages.Add(r.ctrlName);
+            }
+            }
         }
     }
 }

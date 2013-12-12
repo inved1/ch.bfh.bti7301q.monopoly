@@ -9,7 +9,9 @@ namespace monopoly.prototypeV2.logic.interfaces
 {
     public interface IObserverGUI
     {
-        void updateAll();
+
+        void onUpdateGUIEvent(object sender, EventArgs e);
+        //void updateAll();
         void updateActions();
     }
 }

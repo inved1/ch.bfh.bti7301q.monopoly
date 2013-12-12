@@ -21,6 +21,7 @@ namespace monopoly.prototypeV2.logic.classes
             this.name = name;
             this.curPos = curPos;
             this.avatar = new cAvatar(avatorToken);
+            this.amount = 10000;
         }
 
         public string Name

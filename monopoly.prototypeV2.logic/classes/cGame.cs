@@ -27,6 +27,9 @@ namespace monopoly.prototypeV2.logic.classes
         private eGameStatus gameStatus = 0;
         #endregion
 
+
+
+
         public enum eGameStatus
         {
             NotStarted = 0,
@@ -39,7 +42,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             this.myConfig = cConfig.getInstance;
             this.gameBoard = cGameBoard.getInstance();
-            // this.observerGuis = new List<IObserverGUI>();
+  
             this.actions = new List<IAction>();
             this.logWriter = LogWriter.Instance;
             this.playerObservers = new SortedList<cPlayer, IObserverGUI>();
@@ -69,12 +72,19 @@ namespace monopoly.prototypeV2.logic.classes
             set { this.gameStatus = value; }
         }
 
+        public delegate void updateGUIEventHandler(object sender, EventArgs e);
+        public event updateGUIEventHandler updateGUIEvent = delegate { };
+
         public void addPlayer(cPlayer player, IObserverGUI obs)
         {
             if (this.playerObservers.Keys.Count < 8)
             {
+
                 this.playerObservers.Add(player, obs);
-                notifyGuis();
+
+
+                this.updateGUIEvent += obs.onUpdateGUIEvent;
+                //notifyGuis();
             }
             else
             {
@@ -86,6 +96,13 @@ namespace monopoly.prototypeV2.logic.classes
         {
             get { return this.playerObservers.Keys.ToList(); }
         }
+
+
+        public List<cRegularSquare> RegularSquares
+        {
+            get { return gameBoard.getRegularSquares(); }
+        }
+
 
         public List<IAction> Actions
         {
@@ -106,6 +123,15 @@ namespace monopoly.prototypeV2.logic.classes
             this.gameStatus = cGame.eGameStatus.Running;
             setDefaultActions();
             notifyCurPlayer();
+
+            //test 
+            List<cRegularSquare> l =  this.gameBoard.getRegularSquares();
+            foreach(cRegularSquare c in l){
+                if(c.colorStreet == "purple"){
+                    c.Owner = this.curPlayer;
+                }
+            }
+            
         }
 
         public ISquare getSpecificSquare(int pos)
@@ -349,16 +375,31 @@ namespace monopoly.prototypeV2.logic.classes
         //    //curGui = observerGui;
         //}
 
+        public void FireEventAsynchronous()
+        {
+           
+            EventArgs  args = new EventArgs();
+
+            Delegate[] delegates = updateGUIEvent.GetInvocationList();
+            foreach (Delegate del in delegates)
+            {
+                updateGUIEventHandler handler = (updateGUIEventHandler) del;
+                handler.BeginInvoke(this, args, null, null);
+            }
+        }
+
         public void notifyGuis()
         {
-            foreach (KeyValuePair<cPlayer, IObserverGUI> entry in this.playerObservers)
-            {
-                entry.Value.updateAll();
-            }
+            FireEventAsynchronous();
+            //foreach (KeyValuePair<cPlayer, IObserverGUI> entry in this.playerObservers)
+            //{
+            //    entry.Value.updateAll();
+            //}
         }
 
         public void notifyCurPlayer()
         {
+
             this.playerObservers[curPlayer].updateActions();
         }
         #endregion

@@ -109,5 +109,10 @@ namespace monopoly.prototypeV2.client
                 field.Controls.Add(picBoxAvatar);
             }
         }
+
+        public void onUpdateGUIEvent(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

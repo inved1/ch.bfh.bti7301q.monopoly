@@ -31,6 +31,8 @@
             this.con1 = new System.Windows.Forms.SplitContainer();
             this.con2 = new System.Windows.Forms.SplitContainer();
             this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txt_history = new System.Windows.Forms.TextBox();
             this.ctrlStart = new monopoly.prototypeV2.client.ctrl.ctrlStartSquare();
             this.ctrlRegularSquare1 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
@@ -72,9 +74,12 @@
             this.ctrlTrainStationSquare4 = new monopoly.prototypeV2.client.ctrl.ctrlTrainStationSquare();
             this.ctrlActionSquare3 = new monopoly.prototypeV2.client.ctrl.ctrlActionSquare();
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tp_players = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
+            this.con1.Panel2.SuspendLayout();
             this.con1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.con2)).BeginInit();
             this.con2.Panel1.SuspendLayout();
@@ -82,7 +87,9 @@
             this.con2.SuspendLayout();
             this.tlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tp_players.SuspendLayout();
             this.SuspendLayout();
             // 
             // con1
@@ -98,6 +105,10 @@
             // con1.Panel1
             // 
             this.con1.Panel1.Controls.Add(this.con2);
+            // 
+            // con1.Panel2
+            // 
+            this.con1.Panel2.Controls.Add(this.tp_players);
             this.con1.Size = new System.Drawing.Size(1264, 774);
             this.con1.SplitterDistance = 570;
             this.con1.TabIndex = 0;
@@ -200,6 +211,32 @@
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlp.Size = new System.Drawing.Size(1022, 568);
             this.tlp.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.txt_history);
+            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
+            this.splitContainer1.SplitterDistance = 419;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // txt_history
+            // 
+            this.txt_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_history.Location = new System.Drawing.Point(0, 0);
+            this.txt_history.Multiline = true;
+            this.txt_history.Name = "txt_history";
+            this.txt_history.Size = new System.Drawing.Size(234, 417);
+            this.txt_history.TabIndex = 0;
             // 
             // ctrlStart
             // 
@@ -658,18 +695,36 @@
             this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 38);
             this.ctrlTaxSquare2.TabIndex = 39;
             // 
-            // splitContainer1
+            // tp_players
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
-            this.splitContainer1.SplitterDistance = 419;
-            this.splitContainer1.TabIndex = 0;
+            this.tp_players.Controls.Add(this.tabPage1);
+            this.tp_players.Controls.Add(this.tabPage2);
+            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_players.Location = new System.Drawing.Point(0, 0);
+            this.tp_players.Name = "tp_players";
+            this.tp_players.SelectedIndex = 0;
+            this.tp_players.Size = new System.Drawing.Size(1262, 198);
+            this.tp_players.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1254, 172);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // frmClientGame_V02
             // 
@@ -681,6 +736,7 @@
             this.Name = "frmClientGame_V02";
             this.Text = "MonopolyGame";
             this.con1.Panel1.ResumeLayout(false);
+            this.con1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.con1)).EndInit();
             this.con1.ResumeLayout(false);
             this.con2.Panel1.ResumeLayout(false);
@@ -688,8 +744,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.con2)).EndInit();
             this.con2.ResumeLayout(false);
             this.tlp.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tp_players.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -741,5 +800,9 @@
         private ctrl.ctrlActionSquare ctrlActionSquare3;
         private ctrl.ctrlTaxSquare ctrlTaxSquare2;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox txt_history;
+        private System.Windows.Forms.TabControl tp_players;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

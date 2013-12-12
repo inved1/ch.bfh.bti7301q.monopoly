@@ -75,6 +75,12 @@
     <Compile Include="ctrl\ctrlGoToPrisonSquare.Designer.cs">
       <DependentUpon>ctrlGoToPrisonSquare.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrl\ctrlPlayerInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPlayerInfoCard.Designer.cs">
+      <DependentUpon>ctrlPlayerInfoCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrl\ctrlPrisonVisitorSquare.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ctrlGenericAction.resx">
       <DependentUpon>ctrlGenericAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrl\ctrlPlayerInfoCard.resx">
+      <DependentUpon>ctrlPlayerInfoCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrl\ctrlRegularSquare.resx">
       <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
