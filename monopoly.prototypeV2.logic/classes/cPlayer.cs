@@ -12,7 +12,7 @@ namespace monopoly.prototypeV2.logic.classes
         private string name = "";
         private cAvatar avatar = null;
         private int amount = 0;
-        private int curPos = 0;
+        private int curPos = 1;
         private int rolledDoubles = 0;
         private int rolledInitDots = 0;
 
@@ -21,7 +21,7 @@ namespace monopoly.prototypeV2.logic.classes
             this.name = name;
             this.curPos = curPos;
             this.avatar = new cAvatar(avatorToken);
-            this.amount = 10000;
+            this.amount = Convert.ToInt32( cConfig.getInstance.Game["GameStartMoney"]);
         }
 
         public string Name
