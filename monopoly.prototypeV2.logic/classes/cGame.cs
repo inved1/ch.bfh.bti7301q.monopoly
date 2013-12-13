@@ -443,8 +443,8 @@ namespace monopoly.prototypeV2.logic.classes
         public void notifyCurPlayer()
         {
             
-            FireEventAsynchronousGUIAction();
-            //this.playerObservers[curPlayer].onUpdateGUIActionsEvent( );
+            //FireEventAsynchronousGUIAction();
+            this.playerObservers[curPlayer].onUpdateGUIActionsEvent(this,new EventArgs() );
             
         }
         #endregion
