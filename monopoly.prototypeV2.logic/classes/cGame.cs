@@ -343,7 +343,7 @@ namespace monopoly.prototypeV2.logic.classes
             Debug.WriteLine(", newPlayer: " + curPlayer.Name);
             setDefaultActions();
             notifyGuis();
-            //notifyCurPlayer();
+            notifyCurPlayer();
         }
 
         public void playerGivesUp()
