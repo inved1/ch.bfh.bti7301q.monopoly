@@ -21,6 +21,7 @@ namespace monopoly.prototypeV2.client.ctrl
         #region "vars"
         private String myStreetColor;
         private String myName;
+        
 
 
         // if regularsquare is vertical (top and bottom), then use lists "vertical"
@@ -65,24 +66,24 @@ namespace monopoly.prototypeV2.client.ctrl
             myListRealEstatesVertical = new List<Point>();
 
 
-            myListAvatarsHorizontal.Add(new Point(2, 2));
-            myListAvatarsHorizontal.Add(new Point(24, 2));
-            myListAvatarsHorizontal.Add(new Point(46, 2));
-            myListAvatarsHorizontal.Add(new Point(2, 24));
-            myListAvatarsHorizontal.Add(new Point(24, 24));
-            myListAvatarsHorizontal.Add(new Point(46, 24));
+            myListAvatarsHorizontal.Add(new Point(2, 18));
+            myListAvatarsHorizontal.Add(new Point(24, 18));
+            myListAvatarsHorizontal.Add(new Point(46, 18));
+            myListAvatarsHorizontal.Add(new Point(2, 40));
+            myListAvatarsHorizontal.Add(new Point(24, 40));
+            myListAvatarsHorizontal.Add(new Point(46, 40));
 
             myListRealEstatesHorizontal.Add(new Point(2, 2));
             myListRealEstatesHorizontal.Add(new Point(2, 24));
             myListRealEstatesHorizontal.Add(new Point(2, 46));
             myListRealEstatesHorizontal.Add(new Point(2, 68));
 
-            myListAvatarsVertical.Add(new Point(2, 2));
-            myListAvatarsVertical.Add(new Point(24, 2));
-            myListAvatarsVertical.Add(new Point(2, 24));
-            myListAvatarsVertical.Add(new Point(24, 24));
-            myListAvatarsVertical.Add(new Point(2, 46));
-            myListAvatarsVertical.Add(new Point(24, 46));
+            myListAvatarsVertical.Add(new Point(2, 18));
+            myListAvatarsVertical.Add(new Point(24, 18));
+            myListAvatarsVertical.Add(new Point(2, 40));
+            myListAvatarsVertical.Add(new Point(24, 40));
+            myListAvatarsVertical.Add(new Point(2, 62));
+            myListAvatarsVertical.Add(new Point(24, 62));
 
             myListRealEstatesVertical.Add(new Point(2, 2));
             myListRealEstatesVertical.Add(new Point(24, 2));
@@ -128,7 +129,19 @@ namespace monopoly.prototypeV2.client.ctrl
             }
         }
 
+        public void addAvatar(PictureBox avatar, cAvatar cAva)
+        {
+            this.myAvatars.Add(cAva);
+            avatar.Location = this.myActiveListPositionsAvatars[this.myAvatars.Count];
+            this.con.Panel2.Controls.Add(avatar);
 
+        }
+
+        public void clearAvatars()
+        {
+            this.myAvatars.Clear();
+
+        }
 
 
         public string ctrlBackColor

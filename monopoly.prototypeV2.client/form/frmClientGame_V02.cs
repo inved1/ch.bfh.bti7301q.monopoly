@@ -16,6 +16,7 @@ using monopoly.prototypeV2.client.ctrl;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Diagnostics;
+using System.Resources;
 
 namespace monopoly.prototypeV2.client.form
 {
@@ -267,11 +268,31 @@ namespace monopoly.prototypeV2.client.form
             { 
                 tp_players.TabPages.Clear();
 
+                ResourceManager rm;
+                Bitmap bmp;
+                PictureBox picBoxAvatar;
+
+                foreach (KeyValuePair<int, cGUIWrapper> entry in this.mySquares)
+                {
+                    entry.Value.GUICtrl.clearAvatars();
+                }
+
                 foreach (cPlayer p in this.myGame.Players)
                 {
                     tp_players.TabPages.Add(p.Name,p.Name );
 
                     TabPage t = tp_players.SelectedTab;
+
+                    rm = Resources.ResourceManager;
+                    bmp = (Bitmap)rm.GetObject(p.Avatar.Token);
+
+                    interfaces.IctrlSquare sq = this.mySquares[p.CurPos].GUICtrl;
+                    
+                    
+                    picBoxAvatar = new PictureBox();
+                    picBoxAvatar.Image = bmp;
+                    sq.addAvatar(picBoxAvatar,p.Avatar );
+
                 }
 
                 foreach (cRegularSquare r in this.myGame.RegularSquares)
@@ -282,13 +303,21 @@ namespace monopoly.prototypeV2.client.form
                         TabPage t = tp_players.TabPages[r.Owner.Name];
                         ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
                         c.setTopInfo(r.ctrlName);
+                        c.TopBackColor = r.colorStreet;
                         c.setBottomInfo(r.PriceHouse.ToString());
                         t.Controls.Add(c);
                     }
 
                     //tp.TabPages.Add(r.ctrlName);
+                }
             }
-            }
+        }
+
+        private void frmClientGame_V02_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //disconnect observer
+
+            this.myGame.removePlayer(this.myPlayer, this);
         }
     }
 }

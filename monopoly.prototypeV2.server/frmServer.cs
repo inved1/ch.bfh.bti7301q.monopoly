@@ -30,6 +30,7 @@ namespace monopoly.prototypeV2.server
         {
             InitializeComponent();
             this.myConfig = cConfig.getInstance;
+            this.button2.Enabled = false;
         }
 
         private void init()
@@ -56,6 +57,9 @@ namespace monopoly.prototypeV2.server
             RemotingConfiguration.CustomErrorsMode = CustomErrorsModes.Off;
             
             w.WriteLogQueue("Server registered");
+
+             
+
            
         }
         /// <summary>
@@ -72,12 +76,24 @@ namespace monopoly.prototypeV2.server
         private void button1_Click(object sender, EventArgs e)
         {
             init();
+            this.button2.Enabled = true;
+            this.button1.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            this.myGame.initGame();
+            try
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.myGame.initGame();
+            }
+            catch (Exception ex)
+            {
+                LogWriter.Instance.WriteLogQueue(ex.Message);
+                throw new Exception("Monopoly Server Exception", ex);
+                               
+            }
+            
         }
     }
 }

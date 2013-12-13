@@ -33,6 +33,7 @@
             this.tlp = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txt_history = new System.Windows.Forms.TextBox();
+            this.tp_players = new System.Windows.Forms.TabControl();
             this.ctrlStart = new monopoly.prototypeV2.client.ctrl.ctrlStartSquare();
             this.ctrlRegularSquare1 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
@@ -74,9 +75,6 @@
             this.ctrlTrainStationSquare4 = new monopoly.prototypeV2.client.ctrl.ctrlTrainStationSquare();
             this.ctrlActionSquare3 = new monopoly.prototypeV2.client.ctrl.ctrlActionSquare();
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
-            this.tp_players = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
             this.con1.Panel2.SuspendLayout();
@@ -89,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tp_players.SuspendLayout();
             this.SuspendLayout();
             // 
             // con1
@@ -237,6 +234,15 @@
             this.txt_history.Name = "txt_history";
             this.txt_history.Size = new System.Drawing.Size(234, 417);
             this.txt_history.TabIndex = 0;
+            // 
+            // tp_players
+            // 
+            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_players.Location = new System.Drawing.Point(0, 0);
+            this.tp_players.Name = "tp_players";
+            this.tp_players.SelectedIndex = 0;
+            this.tp_players.Size = new System.Drawing.Size(1262, 198);
+            this.tp_players.TabIndex = 0;
             // 
             // ctrlStart
             // 
@@ -695,37 +701,6 @@
             this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 38);
             this.ctrlTaxSquare2.TabIndex = 39;
             // 
-            // tp_players
-            // 
-            this.tp_players.Controls.Add(this.tabPage1);
-            this.tp_players.Controls.Add(this.tabPage2);
-            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tp_players.Location = new System.Drawing.Point(0, 0);
-            this.tp_players.Name = "tp_players";
-            this.tp_players.SelectedIndex = 0;
-            this.tp_players.Size = new System.Drawing.Size(1262, 198);
-            this.tp_players.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1254, 172);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // frmClientGame_V02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,6 +710,7 @@
             this.Controls.Add(this.con1);
             this.Name = "frmClientGame_V02";
             this.Text = "MonopolyGame";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmClientGame_V02_FormClosing);
             this.con1.Panel1.ResumeLayout(false);
             this.con1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.con1)).EndInit();
@@ -748,7 +724,6 @@
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tp_players.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -802,7 +777,5 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txt_history;
         private System.Windows.Forms.TabControl tp_players;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
     }
 }

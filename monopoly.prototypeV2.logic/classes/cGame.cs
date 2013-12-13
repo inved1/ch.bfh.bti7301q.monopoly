@@ -92,6 +92,12 @@ namespace monopoly.prototypeV2.logic.classes
             }
         }
 
+        public void removePlayer(cPlayer player, IObserverGUI obs)
+        {
+            this.playerObservers.Remove(player);
+            
+        }
+
         public List<cPlayer> Players
         {
             get { return this.playerObservers.Keys.ToList(); }
@@ -112,10 +118,22 @@ namespace monopoly.prototypeV2.logic.classes
         #region "game control functions"
         public void initGame()
         {
-            this.gameStatus = cGame.eGameStatus.DetermineStartPlayer;
-            curPlayer = this.playerObservers.Keys.First();
-            setDefaultActions();
-            notifyCurPlayer();
+            try
+            {
+                this.gameStatus = cGame.eGameStatus.DetermineStartPlayer;
+                if (this.playerObservers.Count < 1)
+                {
+                    throw new Exception("Keine Players registriert");
+                }
+                curPlayer = this.playerObservers.Keys.First();
+                setDefaultActions();
+                notifyCurPlayer();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public void startGame()

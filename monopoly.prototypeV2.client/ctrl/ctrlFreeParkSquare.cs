@@ -84,5 +84,16 @@ namespace monopoly.prototypeV2.client.ctrl
         }
         #endregion
 
+
+
+        public void addAvatar(PictureBox PBavatar, logic.classes.cAvatar oAvatar)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void clearAvatars()
+        {
+           // throw new NotImplementedException();
+        }
     }
 }

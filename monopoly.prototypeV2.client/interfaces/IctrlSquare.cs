@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using monopoly.prototypeV2.logic.classes;
 
 namespace monopoly.prototypeV2.client.interfaces
 {
@@ -15,6 +17,10 @@ namespace monopoly.prototypeV2.client.interfaces
         String ctrlTopColor { get; set; }
 
         String ctrlBottomName { get; set; }
+
+        void addAvatar(PictureBox PBavatar, cAvatar oAvatar);
+
+        void clearAvatars();
 
     }
 }

@@ -91,19 +91,8 @@ namespace monopoly.prototypeV2.client
                 rm = Resources.ResourceManager;
                 bmp = (Bitmap)rm.GetObject(player.Avatar.Token);
                 
-                //box = (PictureBox)this.tblLayPnl.Controls["field" + player.CurPos];
                 field = (FlowLayoutPanel) this.tblLayPnl.Controls["field" + player.CurPos];
-                /*if (box.Image != null)
-                {
-                    using (Graphics g = Graphics.FromImage(box.Image))
-                    {
-                        g.DrawImageUnscaled(bmp, 5, 5);
-                    }
-                }
-                else
-                {
-                    box.Image = bmp;
-                }*/
+
                 picBoxAvatar = new PictureBox();
                 picBoxAvatar.Image = bmp;
                 field.Controls.Add(picBoxAvatar);
