@@ -22,5 +22,7 @@ namespace monopoly.prototypeV2.client.interfaces
 
         void clearAvatars();
 
+        System.Windows.Forms.Orientation orientation { get; set; }
+
     }
 }

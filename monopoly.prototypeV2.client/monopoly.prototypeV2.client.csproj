@@ -177,6 +177,9 @@
     <EmbeddedResource Include="ctrl\ctrlRegularSquare.resx">
       <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctrl\ctrlTaxSquare.resx">
+      <DependentUpon>ctrlTaxSquare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
     </EmbeddedResource>

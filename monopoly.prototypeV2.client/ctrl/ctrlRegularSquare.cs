@@ -66,17 +66,20 @@ namespace monopoly.prototypeV2.client.ctrl
             myListRealEstatesVertical = new List<Point>();
 
 
+
+            myListRealEstatesHorizontal.Add(new Point(2, 2));
+            myListRealEstatesHorizontal.Add(new Point(2, 24));
+            myListRealEstatesHorizontal.Add(new Point(2, 46));
+            myListRealEstatesHorizontal.Add(new Point(2, 68));
+
+
+
             myListAvatarsHorizontal.Add(new Point(2, 18));
             myListAvatarsHorizontal.Add(new Point(24, 18));
             myListAvatarsHorizontal.Add(new Point(46, 18));
             myListAvatarsHorizontal.Add(new Point(2, 40));
             myListAvatarsHorizontal.Add(new Point(24, 40));
             myListAvatarsHorizontal.Add(new Point(46, 40));
-
-            myListRealEstatesHorizontal.Add(new Point(2, 2));
-            myListRealEstatesHorizontal.Add(new Point(2, 24));
-            myListRealEstatesHorizontal.Add(new Point(2, 46));
-            myListRealEstatesHorizontal.Add(new Point(2, 68));
 
             myListAvatarsVertical.Add(new Point(2, 18));
             myListAvatarsVertical.Add(new Point(24, 18));

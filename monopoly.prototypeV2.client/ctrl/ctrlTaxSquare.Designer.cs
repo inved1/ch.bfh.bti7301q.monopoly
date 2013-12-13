@@ -28,10 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.con = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.con)).BeginInit();
+            this.con.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // con
+            // 
+            this.con.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.con.Location = new System.Drawing.Point(0, 0);
+            this.con.Name = "con";
+            this.con.Size = new System.Drawing.Size(150, 150);
+            this.con.TabIndex = 0;
+            // 
+            // ctrlTaxSquare
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.con);
+            this.Name = "ctrlTaxSquare";
+            ((System.ComponentModel.ISupportInitialize)(this.con)).EndInit();
+            this.con.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.SplitContainer con;
     }
 }

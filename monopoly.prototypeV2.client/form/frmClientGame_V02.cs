@@ -261,7 +261,6 @@ namespace monopoly.prototypeV2.client.form
             if(tp_players.InvokeRequired )
             {
                 cbGUI d = new cbGUI(onUpdateGUIEvent);
-
                 tp_players.Invoke(d, new object[] {sender,e} );
             }
             else
@@ -280,15 +279,14 @@ namespace monopoly.prototypeV2.client.form
                 foreach (cPlayer p in this.myGame.Players)
                 {
                     tp_players.TabPages.Add(p.Name,p.Name );
-
                     TabPage t = tp_players.SelectedTab;
+
+
 
                     rm = Resources.ResourceManager;
                     bmp = (Bitmap)rm.GetObject(p.Avatar.Token);
 
                     interfaces.IctrlSquare sq = this.mySquares[p.CurPos].GUICtrl;
-                    
-                    
                     picBoxAvatar = new PictureBox();
                     picBoxAvatar.Image = bmp;
                     sq.addAvatar(picBoxAvatar,p.Avatar );

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using monopoly.prototypeV2.client.interfaces;
+using monopoly.prototypeV2.logic.classes; 
 
 namespace monopoly.prototypeV2.client.ctrl
 {
@@ -15,7 +16,13 @@ namespace monopoly.prototypeV2.client.ctrl
     {
         #region "vars"
 
-        private String myName;
+        private String myTopName;
+        private String myBottomName;
+
+        private List<cAvatar> myAvatars = null;
+        private List<Point> myActiveListPositionsAvatars = null;
+        private static List<Point> myListAvatarsHorizontal;
+        private static List<Point> myListAvatarsVertical;
         #endregion
 
         #region "constructor"
@@ -24,6 +31,26 @@ namespace monopoly.prototypeV2.client.ctrl
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(this.ctrl_paint);
+            this.myAvatars = new List<cAvatar>();
+            myListAvatarsHorizontal = new List<Point>();
+            myListAvatarsVertical = new List<Point>();
+
+
+            myListAvatarsHorizontal.Add(new Point(2, 18));
+            myListAvatarsHorizontal.Add(new Point(24, 18));
+            myListAvatarsHorizontal.Add(new Point(46, 18));
+            myListAvatarsHorizontal.Add(new Point(2, 40));
+            myListAvatarsHorizontal.Add(new Point(24, 40));
+            myListAvatarsHorizontal.Add(new Point(46, 40));
+
+            myListAvatarsVertical.Add(new Point(2, 18));
+            myListAvatarsVertical.Add(new Point(24, 18));
+            myListAvatarsVertical.Add(new Point(2, 40));
+            myListAvatarsVertical.Add(new Point(24, 40));
+            myListAvatarsVertical.Add(new Point(2, 62));
+            myListAvatarsVertical.Add(new Point(24, 62));
+
+            this.orientation = System.Windows.Forms.Orientation.Horizontal;
         }
 
         #endregion
@@ -40,8 +67,8 @@ namespace monopoly.prototypeV2.client.ctrl
         #region "properties"
         public String ctrlTopName
         {
-            get { return this.myName; }
-            set { this.myName = value; }
+            get { return this.myTopName; }
+            set { this.myTopName = value; }
         }
 
 
@@ -49,11 +76,13 @@ namespace monopoly.prototypeV2.client.ctrl
         {
             get
             {
-                throw new NotImplementedException();
+                return this.BackColor.Name; 
+                // throw new NotImplementedException();
             }
             set
             {
-                throw new NotImplementedException();
+                this.con.BackColor = Color.FromName(value);
+                //throw new NotImplementedException();
             }
         }
 
@@ -61,36 +90,47 @@ namespace monopoly.prototypeV2.client.ctrl
         {
             get
             {
-                throw new NotImplementedException();
+                return this.con.Panel1.BackColor.Name;
+                //throw new NotImplementedException();
             }
             set
             {
-                throw new NotImplementedException();
+                this.con.Panel1.BackColor = Color.FromName(value);
+                //throw new NotImplementedException();
             }
         }
 
         public string ctrlBottomName
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get            {                return this.myBottomName;                           }
+            set            {                this.myBottomName = value;}               
         }
         #endregion
 
 
-        public void addAvatar(PictureBox PBavatar, logic.classes.cAvatar oAvatar)
+        public void addAvatar(PictureBox avatar, cAvatar cAva)
         {
-            //throw new NotImplementedException();
+            this.myAvatars.Add(cAva);
+            avatar.Location = this.myActiveListPositionsAvatars[this.myAvatars.Count];
+            this.con.Panel2.Controls.Add(avatar);
+
         }
 
         public void clearAvatars()
         {
-            //throw new NotImplementedException();
+            this.myAvatars.Clear();
+
+        }
+
+        public System.Windows.Forms.Orientation orientation
+        {
+            get { return System.Windows.Forms.Orientation.Horizontal; }
+            set
+            {
+
+                this.myActiveListPositionsAvatars = (value == Orientation.Horizontal) ? myListAvatarsHorizontal : myListAvatarsVertical;
+
+            }
         }
     }
 }

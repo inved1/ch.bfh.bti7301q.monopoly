@@ -94,7 +94,6 @@
             this.con1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.con1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.con1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.con1.IsSplitterFixed = true;
             this.con1.Location = new System.Drawing.Point(0, 0);
             this.con1.Name = "con1";
             this.con1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -115,7 +114,6 @@
             this.con2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.con2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.con2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.con2.IsSplitterFixed = true;
             this.con2.Location = new System.Drawing.Point(0, 0);
             this.con2.Name = "con2";
             // 
