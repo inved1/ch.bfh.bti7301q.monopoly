@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes
 {
     [Serializable]
-    public class cPlayer
+    public class cPlayer : IComparable
     {
         private string name = "";
         private cAvatar avatar = null;
@@ -74,6 +74,19 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 throw new Exception("Zuwenig Geld vorhanden.");
             }
+        }
+
+        public int CompareTo(object otherPlayer)
+        {
+            if (this.Name == ((cPlayer)otherPlayer).Name)
+            {
+                return this.Name.CompareTo(((cPlayer)otherPlayer).Name);
+            }
+            else
+            {
+                return ((cPlayer)otherPlayer).Name.CompareTo(this.Name);
+            }
+     
         }
     }
 }
