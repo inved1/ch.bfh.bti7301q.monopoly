@@ -32,6 +32,7 @@ namespace monopoly.prototypeV2.client.form
         private cGame myGame;
         private cPlayer myPlayer;
         private Dictionary<int, classes.cGUIWrapper> mySquares;
+        private static List<Point> myTPCardLocations;
 
         public frmClientGame_V02(String ip, String Port)
         {
@@ -86,6 +87,14 @@ namespace monopoly.prototypeV2.client.form
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
             this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this);
+
+            myTPCardLocations = new List<Point>();
+
+            for(int i= 0; i<=26;i++){
+                myTPCardLocations.Add(new Point((i*200)+2, 2));
+                
+
+            }
 
 
             this.mySquares.Add(1, new cGUIWrapper(this.ctrlStart, getSpecificSquare(1)));
@@ -280,6 +289,8 @@ namespace monopoly.prototypeV2.client.form
                 {
                     tp_players.TabPages.Add(p.Name,p.Name );
                     TabPage t = tp_players.SelectedTab;
+                    t.Tag = myTPCardLocations;
+                    
 
 
 
@@ -293,6 +304,8 @@ namespace monopoly.prototypeV2.client.form
 
                 }
 
+
+                int itmp = 0;
                 foreach (cRegularSquare r in this.myGame.RegularSquares)
                 {
 
@@ -303,7 +316,9 @@ namespace monopoly.prototypeV2.client.form
                         c.setTopInfo(r.ctrlName);
                         c.TopBackColor = r.colorStreet;
                         c.setBottomInfo(r.PriceHouse.ToString());
+                        c.Location = myTPCardLocations[itmp];
                         t.Controls.Add(c);
+                        itmp += 1;
                     }
 
                     //tp.TabPages.Add(r.ctrlName);

@@ -145,15 +145,6 @@ namespace monopoly.prototypeV2.logic.classes
             setDefaultActions();
             notifyCurPlayer();
 
-            //test 
-            List<cRegularSquare> l = this.gameBoard.getRegularSquares();
-            foreach (cRegularSquare c in l)
-            {
-                if (c.colorStreet == "purple")
-                {
-                    c.Owner = this.curPlayer;
-                }
-            }
 
         }
 
