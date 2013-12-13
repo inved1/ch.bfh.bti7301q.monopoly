@@ -269,14 +269,15 @@ namespace monopoly.prototypeV2.client.form
 
         public void onUpdateGUIActionsEvent(object sender, EventArgs e)
         {
-            if (this.InvokeRequired) {
-                cbGUIAction d = new cbGUIAction(onUpdateGUIActionsEvent);
-                this.Invoke(d,new object[] {sender,e});
+            //MessageBox.Show("asd");
+            //if (this.InvokeRequired) {
+            //    cbGUIAction d = new cbGUIAction(onUpdateGUIActionsEvent);
+            //    this.Invoke(d,new object[] {sender,e});
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
                 frmGenericActions f = new frmGenericActions();
                 foreach (IAction action in this.myGame.Actions)
@@ -297,7 +298,7 @@ namespace monopoly.prototypeV2.client.form
                     f.Close();
                 }
                 f.Dispose();
-            }
+            //}
         }
         public void onUpdateGUIEvent(object sender, EventArgs e)
         {

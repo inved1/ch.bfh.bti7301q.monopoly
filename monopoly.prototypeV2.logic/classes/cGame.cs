@@ -420,11 +420,13 @@ namespace monopoly.prototypeV2.logic.classes
         public void FireEventAsynchronousGUIAction()
         {
 
+
             EventArgs args = new EventArgs();
 
             Delegate[] delegates = updateGUIActionEvent.GetInvocationList();
             foreach (Delegate del in delegates)
             {
+
                 updateGUIActionEventHandler handler = (updateGUIActionEventHandler)del;
                 handler.BeginInvoke(this, args, null, null);
             }
@@ -440,6 +442,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void notifyCurPlayer()
         {
+            
             FireEventAsynchronousGUIAction();
             //this.playerObservers[curPlayer].onUpdateGUIActionsEvent( );
             
