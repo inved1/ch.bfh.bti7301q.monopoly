@@ -75,6 +75,9 @@ namespace monopoly.prototypeV2.logic.classes
         public delegate void updateGUIEventHandler(object sender, EventArgs e);
         public event updateGUIEventHandler updateGUIEvent = delegate { };
 
+        public delegate void updateGUIActionEventHandler(object sender, EventArgs e);
+        public event updateGUIActionEventHandler updateGUIActionEvent = delegate { };
+
         public void addPlayer(cPlayer player, IObserverGUI obs)
         {
             if (this.playerObservers.Keys.Count < 8)
@@ -84,6 +87,7 @@ namespace monopoly.prototypeV2.logic.classes
 
 
                 this.updateGUIEvent += obs.onUpdateGUIEvent;
+                this.updateGUIActionEvent += obs.onUpdateGUIActionsEvent;
                 //notifyGuis();
             }
             else
@@ -400,7 +404,7 @@ namespace monopoly.prototypeV2.logic.classes
         //    //curGui = observerGui;
         //}
 
-        public void FireEventAsynchronous()
+        public void FireEventAsynchronousGUI()
         {
 
             EventArgs args = new EventArgs();
@@ -413,9 +417,21 @@ namespace monopoly.prototypeV2.logic.classes
             }
         }
 
+        public void FireEventAsynchronousGUIAction()
+        {
+
+            EventArgs args = new EventArgs();
+
+            Delegate[] delegates = updateGUIActionEvent.GetInvocationList();
+            foreach (Delegate del in delegates)
+            {
+                updateGUIActionEventHandler handler = (updateGUIActionEventHandler)del;
+                handler.BeginInvoke(this, args, null, null);
+            }
+        }
         public void notifyGuis()
         {
-            FireEventAsynchronous();
+            FireEventAsynchronousGUI();
             //foreach (KeyValuePair<cPlayer, IObserverGUI> entry in this.playerObservers)
             //{
             //    entry.Value.updateAll();
@@ -424,8 +440,9 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void notifyCurPlayer()
         {
-
-            this.playerObservers[curPlayer].updateActions();
+            FireEventAsynchronousGUIAction();
+            //this.playerObservers[curPlayer].onUpdateGUIActionsEvent( );
+            
         }
         #endregion
 

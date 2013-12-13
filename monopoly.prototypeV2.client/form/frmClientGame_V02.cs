@@ -85,7 +85,7 @@ namespace monopoly.prototypeV2.client.form
             //TcpChannel tcpChannel = new TcpChannel(0);
             //ChannelServices.RegisterChannel(tcpChannel, false);
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
+            this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 1);
             this.myGame.addPlayer(this.myPlayer, this);
 
             myTPCardLocations = new List<Point>();
@@ -264,7 +264,41 @@ namespace monopoly.prototypeV2.client.form
 
         delegate void cbGUI(object sender, EventArgs e); //callback
 
+        delegate void cbGUIAction(object sender, EventArgs e); //callback actions
 
+
+        public void onUpdateGUIActionsEvent(object sender, EventArgs e)
+        {
+            if (this.InvokeRequired) {
+                cbGUIAction d = new cbGUIAction(onUpdateGUIActionsEvent);
+                this.Invoke(d,new object[] {sender,e});
+
+
+            }
+            else
+            {
+
+                frmGenericActions f = new frmGenericActions();
+                foreach (IAction action in this.myGame.Actions)
+                {
+                    Button btn = new Button();
+                    btn.Text = action.getName();
+                    btn.AutoSize = true;
+                    btn.Tag = action;
+                    btn.Click += new EventHandler(runAction);
+                    btn.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    f.addControl(btn);
+                }
+
+
+                if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    f.Hide();
+                    f.Close();
+                }
+                f.Dispose();
+            }
+        }
         public void onUpdateGUIEvent(object sender, EventArgs e)
         {
             if(tp_players.InvokeRequired )
@@ -332,5 +366,8 @@ namespace monopoly.prototypeV2.client.form
 
             this.myGame.removePlayer(this.myPlayer, this);
         }
+
+
+
     }
 }

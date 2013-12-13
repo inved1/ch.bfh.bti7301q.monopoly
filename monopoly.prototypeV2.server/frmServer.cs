@@ -84,7 +84,8 @@ namespace monopoly.prototypeV2.server
         {
             try
             {
-                this.WindowState = FormWindowState.Minimized;
+                //this.WindowState = FormWindowState.Minimized;
+                
                 this.myGame.initGame();
             }
             catch (Exception ex)

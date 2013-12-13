@@ -99,7 +99,17 @@ namespace monopoly.prototypeV2.client
             }
         }
 
+        //public void onUpdateGUIEvent(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public void onUpdateGUIEvent(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void onUpdateGUIActionsEvent(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
