@@ -269,7 +269,6 @@ namespace monopoly.prototypeV2.client.form
 
         public void onUpdateGUIActionsEvent(object sender, EventArgs e)
         {
-            //  MessageBox.Show("asd");
             if (this.InvokeRequired) {
                 cbGUIAction d = new cbGUIAction(onUpdateGUIActionsEvent);
                 this.Invoke(d,new object[] {sender,e});

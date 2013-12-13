@@ -130,7 +130,12 @@ namespace monopoly.prototypeV2.logic.classes
                 {
                     throw new Exception("Keine Players registriert");
                 }
+                foreach (cPlayer p in this.playerObservers.Keys)
+                {
+                    logWriter.WriteLogQueue(p.Name + "asdasd");
+                }
                 curPlayer = this.playerObservers.Keys.First();
+                logWriter.WriteLogQueue(curPlayer.Name);
                 setDefaultActions();
                 notifyCurPlayer();
             }
@@ -422,11 +427,11 @@ namespace monopoly.prototypeV2.logic.classes
 
 
             EventArgs args = new EventArgs();
-
+            logWriter.WriteLogQueue(" + ");
             Delegate[] delegates = updateGUIActionEvent.GetInvocationList();
             foreach (Delegate del in delegates)
             {
-
+                logWriter.WriteLogQueue(del.Method.ToString() + " ");
                 updateGUIActionEventHandler handler = (updateGUIActionEventHandler)del;
                 handler.BeginInvoke(this, args, null, null);
             }
