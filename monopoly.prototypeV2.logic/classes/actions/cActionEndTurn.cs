@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace monopoly.prototypeV2.logic.classes.actions
 {
+    [Serializable]
     public class cActionEndTurn : IAction
     {
         const string ACTION_NAME = "Zug beenden";
