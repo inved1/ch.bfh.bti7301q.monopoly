@@ -30,16 +30,6 @@ namespace monopoly.prototypeV2.logic.classes
             int dice1 = rnd.Next(1, 6);
             int dice2 = rnd.Next(1, 6);
             int value = dice1 + dice2;
-            if (dice1 == dice2)
-            {
-                this.game.CurPlayer.RolledDoubles++;
-                if (this.game.CurPlayer.RolledDoubles == 3)
-                {
-                    this.game.CurPlayer.RolledDoubles = 0;
-                    // !!! set correct prison sqare !!!
-                    this.game.CurPlayer.CurPos = 0;
-                }
-            }
 
             if (this.game.GameStatus == cGame.eGameStatus.DetermineStartPlayer)
             {
@@ -47,8 +37,53 @@ namespace monopoly.prototypeV2.logic.classes
             }
             else if (this.game.GameStatus == cGame.eGameStatus.Running)
             {
-                this.game.moveCurPlayer(value);
+
+
+                if (this.game.CurPlayer.inPrison)
+                {
+                    if (dice1 == dice2)
+                    {
+                        this.game.CurPlayer.inPrison = false;
+                        this.game.moveCurPlayer(value);
+                    }
+
+                }
+                else
+                {
+
+                    if (dice1 == dice2)
+                    {
+                        this.game.CurPlayer.RolledDoubles++;
+
+                        //2nd time
+                        //roll 2nd time
+                        dice1 = rnd.Next(1, 6);
+                        dice2 = rnd.Next(1, 6);
+                        value = value + dice1 + dice2;
+                        if (dice1 == dice2)
+                        {
+                            this.game.CurPlayer.RolledDoubles++;
+
+                            //3rd time
+                            dice1 = rnd.Next(1, 6);
+                            dice2 = rnd.Next(1, 6);
+                            value = value + dice1 + dice2;
+
+                            if (dice1 == dice2)
+                            {
+                                this.game.CurPlayer.RolledDoubles = 0;
+                                // !!! set correct prison sqare !!!
+                                this.game.CurPlayer.CurPos = 99;
+                                this.game.CurPlayer.inPrison = true;
+                            }
+                        }
+                    }
+                    this.game.moveCurPlayer(value);
+                }
+
             }
+
+
         }
     }
 }

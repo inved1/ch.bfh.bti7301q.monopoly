@@ -35,6 +35,8 @@ namespace monopoly.prototypeV2.logic.classes
         private Dictionary<String, Dictionary<String, String>> myTrainSquareValues;
         private Dictionary<String, String> myWaterPowerSquaresValues;
         private Dictionary<String, Dictionary<String, String>> myWaterPowerSquareValues;
+        private Dictionary<String, String> myTaxSquaresValues;
+        private Dictionary<String, Dictionary<String, String>> myTaxSquareValues;
         
         #endregion
 
@@ -61,7 +63,9 @@ namespace monopoly.prototypeV2.logic.classes
             this.myTrainSquareValues = new Dictionary<string, Dictionary<String, String>>();
             this.myWaterPowerSquaresValues = new Dictionary<string, string>();
             this.myWaterPowerSquareValues = new Dictionary<string, Dictionary<String, String>>();
-
+            this.myTaxSquaresValues = new Dictionary<string, string>();
+            this.myTaxSquareValues = new Dictionary<string, Dictionary<String, String>>();
+            
 
             this.myFile = Properties.Settings.Default.myCFGFile;
 
@@ -93,6 +97,8 @@ namespace monopoly.prototypeV2.logic.classes
             fillTrainSquareValues();
             fillWaterPowerSqauresValues();
             fillWaterPowerSqaureValues();
+            fillTaxSqauresValues();
+            fillTaxSqaureValues();
 
         }
         public static cConfig getInstance
@@ -347,6 +353,37 @@ namespace monopoly.prototypeV2.logic.classes
 
         }
 
+        private void fillTaxSqauresValues()
+        {
+            String GameID = this.myGameValues["Game_Id"];
+            DataRow r = this.myDTS.Tables["TaxSquares"].Select(String.Format("Game_Id = {0}", GameID))[0];
+            foreach (DataColumn c in this.myDTS.Tables["TaxSquares"].Columns)
+            {
+                this.myTaxSquaresValues.Add(c.ColumnName, r[c].ToString());
+            }
+        }
+
+        private void fillTaxSqaureValues()
+        {
+            String TaxSquaresID = this.myTaxSquaresValues["TaxSquares_Id"];
+            foreach (DataRow r in this.myDTS.Tables["TaxSquare"].Select(String.Format("TaxSquares_Id = {0}", TaxSquaresID)))
+            {
+
+                String ID = "";
+                Dictionary<String, String> dict = new Dictionary<string, string>();
+                foreach (DataColumn c in this.myDTS.Tables["TaxSquare"].Columns)
+                {
+                    dict.Add(c.ColumnName, r[c].ToString());
+                    if (c.ColumnName.ToLower() == "id") ID = r[c].ToString();
+                    
+                }
+
+               
+                this.myTaxSquareValues.Add(ID, dict);
+            }
+
+        }
+
         #endregion
 
 
@@ -364,6 +401,8 @@ namespace monopoly.prototypeV2.logic.classes
         public Dictionary<String, Dictionary<String, String>> RegularSquares { get { return this.myRegularSquareValues; } }
         public Dictionary<String, Dictionary<String, String>> TrainSquares { get { return this.myTrainSquareValues; } }
         public Dictionary<String, Dictionary<String, String>> WaterPowerSquares { get { return this.myWaterPowerSquareValues; } }
+
+        public Dictionary<String, Dictionary<String, String>> TaxSquares { get { return this.myTaxSquareValues; } }
 
         #endregion
 

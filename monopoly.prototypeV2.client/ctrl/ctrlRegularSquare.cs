@@ -143,6 +143,12 @@ namespace monopoly.prototypeV2.client.ctrl
         public void clearAvatars()
         {
             this.myAvatars.Clear();
+            foreach (var pb in this.con.Panel2.Controls.OfType<PictureBox>())
+            {
+                pb.Dispose();
+                this.con.Panel2.Refresh();
+            }
+
 
         }
 

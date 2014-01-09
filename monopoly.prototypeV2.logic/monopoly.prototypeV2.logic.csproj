@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\actions\cActionPrisonOutCard.cs" />
     <Compile Include="classes\actions\cActionBuySquare.cs" />
+    <Compile Include="classes\actions\cActionBuyFree.cs" />
     <Compile Include="classes\actions\cActionEndTurn.cs" />
     <Compile Include="classes\actions\cActionGiveUp.cs" />
     <Compile Include="classes\actions\cActionPayRent.cs" />

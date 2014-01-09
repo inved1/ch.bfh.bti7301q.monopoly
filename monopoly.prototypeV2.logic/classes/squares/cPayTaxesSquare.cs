@@ -13,11 +13,13 @@ namespace monopoly.prototypeV2.logic.classes.squares
 
         private string myName = "";
         private string myColor = "grey"; // default
+        private int myTax;
 
-        public cPayTaxesSquare(String name,String color)
+        public cPayTaxesSquare(String name,String color, int tax)
         {
             this.myName = name;
             this.myColor = color;
+            this.myTax = tax;
         }
 
         public String colorStreet
@@ -31,6 +33,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
         public void playAction()
         {
             throw new NotImplementedException();
+        }
+        public int Tax
+        {
+            get { return this.myTax; }
+            set { this.myTax = value; }
         }
     }
 }

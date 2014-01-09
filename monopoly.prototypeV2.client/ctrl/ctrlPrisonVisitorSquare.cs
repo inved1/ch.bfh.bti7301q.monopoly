@@ -120,6 +120,12 @@ namespace monopoly.prototypeV2.client.ctrl
         public void clearAvatars()
         {
             this.myAvatars.Clear();
+            foreach (var pb in this.Controls.OfType<PictureBox>())
+            {
+                pb.Dispose();
+                this.Refresh();
+            }
+
 
         }
 

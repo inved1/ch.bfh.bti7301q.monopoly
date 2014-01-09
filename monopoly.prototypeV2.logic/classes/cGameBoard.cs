@@ -96,11 +96,24 @@ namespace monopoly.prototypeV2.logic.classes
             }
             this.mySquares.Add(1, new cStartSquare("Start", "grey"));
             this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
-            this.mySquares.Add(5, new cTaxSquare("Einkommenssteuer", "grey"));
+            foreach(KeyValuePair<String,Dictionary<string,string>> entry in this.myConfig.TaxSquares)
+            {
+                if (entry.Key == "1")
+                {
+                    
+                    this.mySquares.Add(5, new cTaxSquare(entry.Value["Name"], entry.Value["Color"], Convert.ToInt32(entry.Value["cost"])));
+                }
+                if (entry.Key == "2")
+                {
+                    this.mySquares.Add(40, new cPayTaxesSquare(entry.Value["Name"], entry.Value["Color"],  Convert.ToInt32(entry.Value["cost"])));
+                }
+            }
+            
             this.mySquares.Add(6, new cTrainStationSquare("Vereinigte Privatbahnen Union", "grey"));
             this.mySquares.Add(8, new cActionSquare("Chance", "grey"));
             this.mySquares.Add(11, new cPrisonVisitorSquare("Gefägniss Besuch", "grey"));
-            this.mySquares.Add(12, new cPrisonSquare("Gefängniss", "orange"));
+            //prison new 99 - for testing
+            this.mySquares.Add(99, new cPrisonSquare("Gefängniss", "orange"));
             this.mySquares.Add(14, new cWaterPowerSquare("Elektrizitätswerke", "grey"));
             this.mySquares.Add(17, new cTrainStationSquare("Vereinigte Bergbahnen AG", "grey"));
             this.mySquares.Add(19, new cActionSquare("Kanzlei", "grey"));
@@ -112,7 +125,7 @@ namespace monopoly.prototypeV2.logic.classes
             this.mySquares.Add(35, new cCommunitySquare("Kanzlei", "grey"));
             this.mySquares.Add(37, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
             this.mySquares.Add(38, new cCommunitySquare("Chance", "grey"));
-            this.mySquares.Add(40, new cPayTaxesSquare("Nachsteuer zahlen", "grey"));
+           
 
 
 

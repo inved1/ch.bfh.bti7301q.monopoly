@@ -214,6 +214,10 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 actions.Add(new cActionEndTurn(this));
             }
+            else if (curSquare.GetType() == typeof(cPrisonSquare ))
+            {
+
+            }
             actions.Add(new cActionGiveUp(this));
             notifyCurPlayer();
         }
@@ -221,8 +225,20 @@ namespace monopoly.prototypeV2.logic.classes
         public void setDefaultActions()
         {
             actions.Clear();
-            actions.Add(new cActionRoll(this));
-            actions.Add(new cActionGiveUp(this));
+            if (curPlayer.inPrison)
+            {
+                actions.Add(new cActionBuyFree(this));
+                if (curPlayer.PrisonFreeCards > 0) {
+                    actions.Add(new cActionPrisonOutCard(this));
+                }
+                actions.Add(new cActionRoll(this));
+                actions.Add(new cActionGiveUp(this));
+            }
+            else
+            {
+                actions.Add(new cActionRoll(this));
+                actions.Add(new cActionGiveUp(this));
+            }
         }
 
         public void determineStartPlayer(int rolledDots)
@@ -289,15 +305,25 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerPaysRent()
         {
             ISquare curSquare = getCurSquare();
-            int rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
+            //check ifts my square
             cPlayer owner = (cPlayer)curSquare.GetType().GetProperty("Owner").GetValue(curSquare);
+            if (owner == curPlayer)
+            {
+                logWriter.WriteLogQueue("Player" + curPlayer.Name + "  owns this property - no need to pay rent. " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
+            }
+            else
+            {
+                int rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
 
-            Debug.WriteLine("owner: " + owner.Name);
-            Debug.WriteLine("oldAmountCurPlayer: " + curPlayer.Amount + ", oldAmountOwner: " + owner.Amount);
-            curPlayer.spendMoney(rent);
-            owner.addMoney(rent);
-            Debug.WriteLine("newAmountCurPlayer: " + curPlayer.Amount + ", newAmountOwner: " + owner.Amount);
-            logWriter.WriteLogQueue("Player " + curPlayer.Name + " paid rent to " + owner.Name + " for " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
+
+                Debug.WriteLine("owner: " + owner.Name);
+                Debug.WriteLine("oldAmountCurPlayer: " + curPlayer.Amount + ", oldAmountOwner: " + owner.Amount);
+                curPlayer.spendMoney(rent);
+                owner.addMoney(rent);
+                Debug.WriteLine("newAmountCurPlayer: " + curPlayer.Amount + ", newAmountOwner: " + owner.Amount);
+                logWriter.WriteLogQueue("Player " + curPlayer.Name + " paid rent to " + owner.Name + " for " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
+            }
+           
             notifyGuis();
         }
 
@@ -305,9 +331,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             ISquare curSquare = getCurSquare();
 
-            // !!! define tax on tax squares !!!
-            //int tax = Convert.ToInt32(curSquare.GetType().GetProperty("Tax").GetValue(curSquare));
-            int tax = 4000;
+            int tax = Convert.ToInt32(curSquare.GetType().GetProperty("Tax").GetValue(curSquare));
             Debug.Write("oldAmount: " + curPlayer.Amount);
             curPlayer.spendMoney(tax);
             Debug.WriteLine(", newAmount: " + curPlayer.Amount);
@@ -353,6 +377,19 @@ namespace monopoly.prototypeV2.logic.classes
             setDefaultActions();
             notifyGuis();
             notifyCurPlayer();
+        }
+        public void playerUsesPrisonOutCard()
+        {
+            curPlayer.PrisonFreeCards = -1;
+
+        }
+
+        public void playerBuysFree()
+        {
+            curPlayer.spendMoney(50);
+            curPlayer.inPrison = false;
+            Debug.WriteLine("SPieler hat sich freigekauft: " + curPlayer.Name);
+            logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich freigekauft.");
         }
 
         public void playerGivesUp()
@@ -448,8 +485,8 @@ namespace monopoly.prototypeV2.logic.classes
         public void notifyCurPlayer()
         {
             
-            //FireEventAsynchronousGUIAction();
-            this.playerObservers[curPlayer].onUpdateGUIActionsEvent(this,new EventArgs() );
+            FireEventAsynchronousGUIAction();
+           //this.playerObservers[curPlayer].onUpdateGUIActionsEvent(this,new EventArgs() );
             
         }
         #endregion

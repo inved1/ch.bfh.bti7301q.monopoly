@@ -91,6 +91,7 @@
         <xs:element ref="RegularSquares"/>
         <xs:element ref="TrainSquares"/>
         <xs:element ref="WaterPowerSquares"/>
+        <xs:element ref="TaxSquares"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,6 +177,23 @@
         <xs:element ref="cost"/>
         <xs:element ref="deposit"/>
         <xs:element ref="rents"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TaxSquares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="TaxSquare"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TaxSquare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Color"/>
+        <xs:element ref="cost"/>
       </xs:sequence>
       <xs:attribute name="id" use="required" type="xs:integer"/>
     </xs:complexType>

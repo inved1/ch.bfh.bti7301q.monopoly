@@ -14,10 +14,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private string myColor = "grey"; // default
         private int myTax = 0;
 
-        public cTaxSquare(string name, string color)
+        public cTaxSquare(string name, string color, int tax)
         {
             this.myName = name;
             this.myColor = color;
+            this.myTax = tax;
         }
 
         public void playAction()
@@ -34,10 +35,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
         public String ctrlName
         { get { return this.myName; } }
 
+
         public int Tax
         {
             get { return this.myTax; }
-            set { this.myTax = value; }
+            set { this.myTax = value; } 
         }
     }
 }

@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientGame_V02));
             this.con1 = new System.Windows.Forms.SplitContainer();
             this.con2 = new System.Windows.Forms.SplitContainer();
             this.tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txt_history = new System.Windows.Forms.TextBox();
-            this.tp_players = new System.Windows.Forms.TabControl();
             this.ctrlStart = new monopoly.prototypeV2.client.ctrl.ctrlStartSquare();
             this.ctrlRegularSquare1 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
@@ -75,6 +73,9 @@
             this.ctrlTrainStationSquare4 = new monopoly.prototypeV2.client.ctrl.ctrlTrainStationSquare();
             this.ctrlActionSquare3 = new monopoly.prototypeV2.client.ctrl.ctrlActionSquare();
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txt_history = new System.Windows.Forms.TextBox();
+            this.tp_players = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
             this.con1.Panel2.SuspendLayout();
@@ -207,41 +208,6 @@
             this.tlp.Size = new System.Drawing.Size(1022, 568);
             this.tlp.TabIndex = 0;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.txt_history);
-            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
-            this.splitContainer1.SplitterDistance = 419;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // txt_history
-            // 
-            this.txt_history.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_history.Location = new System.Drawing.Point(0, 0);
-            this.txt_history.Multiline = true;
-            this.txt_history.Name = "txt_history";
-            this.txt_history.Size = new System.Drawing.Size(234, 417);
-            this.txt_history.TabIndex = 0;
-            // 
-            // tp_players
-            // 
-            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tp_players.Location = new System.Drawing.Point(0, 0);
-            this.tp_players.Name = "tp_players";
-            this.tp_players.SelectedIndex = 0;
-            this.tp_players.Size = new System.Drawing.Size(1262, 198);
-            this.tp_players.TabIndex = 0;
-            // 
             // ctrlStart
             // 
             this.tlp.SetColumnSpan(this.ctrlStart, 2);
@@ -249,6 +215,7 @@
             this.ctrlStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlStart.Location = new System.Drawing.Point(872, 487);
             this.ctrlStart.Name = "ctrlStart";
+            this.ctrlStart.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlStart, 2);
             this.ctrlStart.Size = new System.Drawing.Size(147, 78);
             this.ctrlStart.TabIndex = 0;
@@ -319,6 +286,7 @@
             this.ctrlPrisonVisitorSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonVisitorSquare1.Location = new System.Drawing.Point(3, 487);
             this.ctrlPrisonVisitorSquare1.Name = "ctrlPrisonVisitorSquare1";
+            this.ctrlPrisonVisitorSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlPrisonVisitorSquare1, 2);
             this.ctrlPrisonVisitorSquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlPrisonVisitorSquare1.TabIndex = 5;
@@ -329,6 +297,7 @@
             this.ctrlPrisonSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlPrisonSquare1.Location = new System.Drawing.Point(82, 487);
             this.ctrlPrisonSquare1.Name = "ctrlPrisonSquare1";
+            this.ctrlPrisonSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlPrisonSquare1, 2);
             this.ctrlPrisonSquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlPrisonSquare1.TabIndex = 6;
@@ -412,6 +381,7 @@
             this.ctrlFreeParkSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlFreeParkSquare1.Location = new System.Drawing.Point(3, 3);
             this.ctrlFreeParkSquare1.Name = "ctrlFreeParkSquare1";
+            this.ctrlFreeParkSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlFreeParkSquare1, 2);
             this.ctrlFreeParkSquare1.Size = new System.Drawing.Size(152, 82);
             this.ctrlFreeParkSquare1.TabIndex = 13;
@@ -495,6 +465,7 @@
             this.ctrlGoToPrison1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlGoToPrison1.Location = new System.Drawing.Point(872, 3);
             this.ctrlGoToPrison1.Name = "ctrlGoToPrison1";
+            this.ctrlGoToPrison1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlGoToPrison1, 2);
             this.ctrlGoToPrison1.Size = new System.Drawing.Size(147, 82);
             this.ctrlGoToPrison1.TabIndex = 20;
@@ -565,16 +536,21 @@
             this.ctrlCommunitySquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare1.Location = new System.Drawing.Point(714, 487);
             this.ctrlCommunitySquare1.Name = "ctrlCommunitySquare1";
+            this.ctrlCommunitySquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlCommunitySquare1, 2);
             this.ctrlCommunitySquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlCommunitySquare1.TabIndex = 26;
             // 
             // ctrlTaxSquare1
             // 
+            this.ctrlTaxSquare1.ctrlBackColor = "White";
+            this.ctrlTaxSquare1.ctrlBottomName = null;
+            this.ctrlTaxSquare1.ctrlTopColor = "White";
             this.ctrlTaxSquare1.ctrlTopName = null;
             this.ctrlTaxSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare1.Location = new System.Drawing.Point(556, 487);
             this.ctrlTaxSquare1.Name = "ctrlTaxSquare1";
+            this.ctrlTaxSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlTaxSquare1, 2);
             this.ctrlTaxSquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlTaxSquare1.TabIndex = 27;
@@ -585,6 +561,7 @@
             this.ctrlTrainStationSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare1.Location = new System.Drawing.Point(477, 487);
             this.ctrlTrainStationSquare1.Name = "ctrlTrainStationSquare1";
+            this.ctrlTrainStationSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlTrainStationSquare1, 2);
             this.ctrlTrainStationSquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlTrainStationSquare1.TabIndex = 28;
@@ -595,6 +572,7 @@
             this.ctrlActionSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare1.Location = new System.Drawing.Point(319, 487);
             this.ctrlActionSquare1.Name = "ctrlActionSquare1";
+            this.ctrlActionSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlActionSquare1, 2);
             this.ctrlActionSquare1.Size = new System.Drawing.Size(73, 78);
             this.ctrlActionSquare1.TabIndex = 29;
@@ -606,6 +584,7 @@
             this.ctrlWaterPowerSquare1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare1.Location = new System.Drawing.Point(3, 399);
             this.ctrlWaterPowerSquare1.Name = "ctrlWaterPowerSquare1";
+            this.ctrlWaterPowerSquare1.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlWaterPowerSquare1.Size = new System.Drawing.Size(152, 38);
             this.ctrlWaterPowerSquare1.TabIndex = 30;
             // 
@@ -616,6 +595,7 @@
             this.ctrlTrainStationSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare2.Location = new System.Drawing.Point(3, 267);
             this.ctrlTrainStationSquare2.Name = "ctrlTrainStationSquare2";
+            this.ctrlTrainStationSquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlTrainStationSquare2.Size = new System.Drawing.Size(152, 38);
             this.ctrlTrainStationSquare2.TabIndex = 31;
             // 
@@ -626,6 +606,7 @@
             this.ctrlCommunitySquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare2.Location = new System.Drawing.Point(3, 179);
             this.ctrlCommunitySquare2.Name = "ctrlCommunitySquare2";
+            this.ctrlCommunitySquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlCommunitySquare2.Size = new System.Drawing.Size(152, 38);
             this.ctrlCommunitySquare2.TabIndex = 32;
             // 
@@ -635,6 +616,7 @@
             this.ctrlActionSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare2.Location = new System.Drawing.Point(240, 3);
             this.ctrlActionSquare2.Name = "ctrlActionSquare2";
+            this.ctrlActionSquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlActionSquare2, 2);
             this.ctrlActionSquare2.Size = new System.Drawing.Size(73, 82);
             this.ctrlActionSquare2.TabIndex = 33;
@@ -645,6 +627,7 @@
             this.ctrlTrainStationSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare3.Location = new System.Drawing.Point(477, 3);
             this.ctrlTrainStationSquare3.Name = "ctrlTrainStationSquare3";
+            this.ctrlTrainStationSquare3.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlTrainStationSquare3, 2);
             this.ctrlTrainStationSquare3.Size = new System.Drawing.Size(73, 82);
             this.ctrlTrainStationSquare3.TabIndex = 34;
@@ -655,6 +638,7 @@
             this.ctrlWaterPowerSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlWaterPowerSquare2.Location = new System.Drawing.Point(714, 3);
             this.ctrlWaterPowerSquare2.Name = "ctrlWaterPowerSquare2";
+            this.ctrlWaterPowerSquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tlp.SetRowSpan(this.ctrlWaterPowerSquare2, 2);
             this.ctrlWaterPowerSquare2.Size = new System.Drawing.Size(73, 82);
             this.ctrlWaterPowerSquare2.TabIndex = 35;
@@ -666,6 +650,7 @@
             this.ctrlCommunitySquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlCommunitySquare3.Location = new System.Drawing.Point(872, 179);
             this.ctrlCommunitySquare3.Name = "ctrlCommunitySquare3";
+            this.ctrlCommunitySquare3.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlCommunitySquare3.Size = new System.Drawing.Size(147, 38);
             this.ctrlCommunitySquare3.TabIndex = 36;
             // 
@@ -676,6 +661,7 @@
             this.ctrlTrainStationSquare4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTrainStationSquare4.Location = new System.Drawing.Point(872, 267);
             this.ctrlTrainStationSquare4.Name = "ctrlTrainStationSquare4";
+            this.ctrlTrainStationSquare4.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlTrainStationSquare4.Size = new System.Drawing.Size(147, 38);
             this.ctrlTrainStationSquare4.TabIndex = 37;
             // 
@@ -686,24 +672,66 @@
             this.ctrlActionSquare3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlActionSquare3.Location = new System.Drawing.Point(872, 311);
             this.ctrlActionSquare3.Name = "ctrlActionSquare3";
+            this.ctrlActionSquare3.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlActionSquare3.Size = new System.Drawing.Size(147, 38);
             this.ctrlActionSquare3.TabIndex = 38;
             // 
             // ctrlTaxSquare2
             // 
             this.tlp.SetColumnSpan(this.ctrlTaxSquare2, 2);
+            this.ctrlTaxSquare2.ctrlBackColor = "White";
+            this.ctrlTaxSquare2.ctrlBottomName = null;
+            this.ctrlTaxSquare2.ctrlTopColor = "White";
             this.ctrlTaxSquare2.ctrlTopName = null;
             this.ctrlTaxSquare2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTaxSquare2.Location = new System.Drawing.Point(872, 399);
             this.ctrlTaxSquare2.Name = "ctrlTaxSquare2";
+            this.ctrlTaxSquare2.orientation = System.Windows.Forms.Orientation.Horizontal;
             this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 38);
             this.ctrlTaxSquare2.TabIndex = 39;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.txt_history);
+            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
+            this.splitContainer1.SplitterDistance = 419;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // txt_history
+            // 
+            this.txt_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_history.Location = new System.Drawing.Point(0, 0);
+            this.txt_history.Multiline = true;
+            this.txt_history.Name = "txt_history";
+            this.txt_history.Size = new System.Drawing.Size(234, 417);
+            this.txt_history.TabIndex = 0;
+            // 
+            // tp_players
+            // 
+            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_players.Location = new System.Drawing.Point(0, 0);
+            this.tp_players.Name = "tp_players";
+            this.tp_players.SelectedIndex = 0;
+            this.tp_players.Size = new System.Drawing.Size(1262, 198);
+            this.tp_players.TabIndex = 0;
             // 
             // frmClientGame_V02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1264, 774);
             this.Controls.Add(this.con1);
             this.Name = "frmClientGame_V02";

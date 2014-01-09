@@ -107,8 +107,8 @@ namespace monopoly.prototypeV2.client.form
             this.mySquares.Add(8, new cGUIWrapper(this.ctrlActionSquare1, getSpecificSquare(8)));
             this.mySquares.Add(9, new cGUIWrapper(this.ctrlRegularSquare4, getSpecificSquare(9)));
             this.mySquares.Add(10, new cGUIWrapper(this.ctrlRegularSquare5, getSpecificSquare(10)));
-            this.mySquares.Add(11, new cGUIWrapper(this.ctrlPrisonSquare1, getSpecificSquare(11)));
-            this.mySquares.Add(12, new cGUIWrapper(this.ctrlPrisonVisitorSquare1, getSpecificSquare(12)));
+            this.mySquares.Add(11, new cGUIWrapper(this.ctrlPrisonSquare1, getSpecificSquare(99)));
+            this.mySquares.Add(12, new cGUIWrapper(this.ctrlPrisonVisitorSquare1, getSpecificSquare(11)));
             this.mySquares.Add(13, new cGUIWrapper(this.ctrlRegularSquare6, getSpecificSquare(13)));
             this.mySquares.Add(14, new cGUIWrapper(this.ctrlWaterPowerSquare1, getSpecificSquare(14)));
             this.mySquares.Add(15, new cGUIWrapper(this.ctrlRegularSquare7, getSpecificSquare(15)));

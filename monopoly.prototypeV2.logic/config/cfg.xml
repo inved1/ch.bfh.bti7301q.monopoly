@@ -528,5 +528,17 @@
                 </rents>
             </WaterPowerSquare>            
         </WaterPowerSquares>
+        <TaxSquares>
+          <TaxSquare id='1'>
+            <Name>Steuern1</Name>
+            <Color>red</Color>
+            <cost>3000</cost>
+          </TaxSquare>
+          <TaxSquare id='2'>
+            <Name>Steuern2</Name>
+            <Color>red</Color>
+            <cost>3000</cost>
+          </TaxSquare>
+        </TaxSquares>      
     </Game>
 </Config>
