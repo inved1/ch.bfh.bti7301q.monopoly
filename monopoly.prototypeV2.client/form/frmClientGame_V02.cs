@@ -178,9 +178,14 @@ namespace monopoly.prototypeV2.client.form
                 //orientation
                 if (entry.Key >= 13 && entry.Key <= 21 || entry.Key >= 33 && entry.Key <= 41)
                 {
-                    if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare))
+                    if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare)   )
                     {
                         ctrl.ctrlRegularSquare o = (ctrl.ctrlRegularSquare)entry.Value.GUICtrl;
+                        o.orientation = Orientation.Vertical;
+                    }
+                    if(  entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlTaxSquare))
+                    {
+                        ctrl.ctrlTaxSquare o = (ctrl.ctrlTaxSquare)entry.Value.GUICtrl;
                         o.orientation = Orientation.Vertical;
                     }
                 }
@@ -349,7 +354,7 @@ namespace monopoly.prototypeV2.client.form
                         ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
                         c.setTopInfo(r.ctrlName);
                         c.TopBackColor = r.colorStreet;
-                        c.setBottomInfo(r.PriceHouse.ToString());
+                        c.setBottomInfo(r.CardInfo);
                         c.Location = myTPCardLocations[itmp];
                         t.Controls.Add(c);
                         itmp += 1;

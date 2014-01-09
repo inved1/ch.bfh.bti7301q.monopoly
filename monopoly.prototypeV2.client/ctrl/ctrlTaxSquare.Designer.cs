@@ -36,6 +36,7 @@
             // con
             // 
             this.con.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.con.IsSplitterFixed = true;
             this.con.Location = new System.Drawing.Point(0, 0);
             this.con.Name = "con";
             this.con.Size = new System.Drawing.Size(150, 150);

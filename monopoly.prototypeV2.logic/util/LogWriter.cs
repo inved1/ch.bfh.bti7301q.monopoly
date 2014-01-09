@@ -39,7 +39,7 @@ namespace monopoly.prototypeV2.logic.util
                     {
                         myLogDir = myConfig.Logger["LoggerDirectory"];
                     }
-                    myLogFile = String.Format("{0}_{1}.txt", myConfig.Logger["LoggerFilename"] ,DateTime.Now.ToString("ddMMyyyy"));
+                    myLogFile = String.Format("{0}_{1}_{2}.txt", myConfig.Logger["LoggerFilename"] ,DateTime.Now.ToString("ddMMyyyy"),new Random().Next(0,9999));
 
                 }
                 return instance;

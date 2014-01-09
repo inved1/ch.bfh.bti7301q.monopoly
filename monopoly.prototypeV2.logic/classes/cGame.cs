@@ -192,14 +192,14 @@ namespace monopoly.prototypeV2.logic.classes
             else if (curSquare.GetType() == typeof(cCommunitySquare))
             {
                 cardDeck = gameBoard.getSpecificCardDeck(cCardDeck.cardType.Communitycard);
-                //ICard card = cardDeck.getNextCard();
+                ICard card = cardDeck.getNextCard();
                 // !!! show card somehow !!!
                 actions.Add(new cActionEndTurn(this));
             }
             else if (curSquare.GetType() == typeof(cActionSquare))
             {
                 cardDeck = gameBoard.getSpecificCardDeck(cCardDeck.cardType.Actioncard);
-                //ICard card = cardDeck.getNextCard();
+                ICard card = cardDeck.getNextCard();
                 // !!! show card somehow !!!
                 actions.Add(new cActionEndTurn(this));
             }
@@ -381,7 +381,9 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerUsesPrisonOutCard()
         {
             curPlayer.PrisonFreeCards = -1;
-
+            curPlayer.inPrison = false;
+            Debug.WriteLine("Spieler hat sich Freikarte aus Gefäniss gebraucht: " + curPlayer.Name);
+            logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich Freikarte aus Gefäniss gebraucht.");
         }
 
         public void playerBuysFree()
@@ -464,11 +466,11 @@ namespace monopoly.prototypeV2.logic.classes
 
 
             EventArgs args = new EventArgs();
-            logWriter.WriteLogQueue(" + ");
+           // logWriter.WriteLogQueue(" + ");
             Delegate[] delegates = updateGUIActionEvent.GetInvocationList();
             foreach (Delegate del in delegates)
             {
-                logWriter.WriteLogQueue(del.Method.ToString() + " ");
+                //logWriter.WriteLogQueue(del.Method.ToString() + " ");
                 updateGUIActionEventHandler handler = (updateGUIActionEventHandler)del;
                 handler.BeginInvoke(this, args, null, null);
             }

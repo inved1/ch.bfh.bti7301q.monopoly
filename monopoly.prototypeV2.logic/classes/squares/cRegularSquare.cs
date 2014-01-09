@@ -88,6 +88,17 @@ namespace monopoly.prototypeV2.logic.classes.squares
             }
         }
 
+        public String CardInfo
+        {
+            get
+            {
+                return String.Format("{0},{1}",
+                                        "Miete: " + this.CurrentRent.ToString() + System.Environment.NewLine,
+                                        ""
+                                        );
+            }
+        }
+
         public String ctrlName
         { get { return this.myName; } }
 

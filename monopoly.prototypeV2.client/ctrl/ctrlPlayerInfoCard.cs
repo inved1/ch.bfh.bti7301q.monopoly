@@ -38,9 +38,9 @@ namespace monopoly.prototypeV2.client.ctrl
         private void ctrl_paintBottom(object sender, System.Windows.Forms.PaintEventArgs e)
         {
             int iStart = 2;
-            foreach (String s in this.myTopInfo.Split(new Char[] { ';' }))
+            foreach (String s in this.myBottomInfo.Split(new Char[] { ';' }))
             {
-                e.Graphics.DrawString(this.myTopInfo, new Font("Arial", 8), Brushes.Black, new PointF(iStart, 2));
+                e.Graphics.DrawString(this.myBottomInfo, new Font("Arial", 8), Brushes.Black, new PointF(iStart, 2));
                 iStart += 10;
             }
         }

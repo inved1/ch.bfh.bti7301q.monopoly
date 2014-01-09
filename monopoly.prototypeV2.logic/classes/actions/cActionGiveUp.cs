@@ -25,7 +25,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void runAction()
         {
-
+            this.game.playerGivesUp();
         }
     }
 }
