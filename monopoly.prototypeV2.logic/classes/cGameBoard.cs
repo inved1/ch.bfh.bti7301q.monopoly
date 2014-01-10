@@ -94,37 +94,39 @@ namespace monopoly.prototypeV2.logic.classes
                                                         d));
                 
             }
-            this.mySquares.Add(1, new cStartSquare("Start", "grey"));
-            this.mySquares.Add(3, new cCommunitySquare("Kanzlei", "grey"));
+            this.mySquares.Add(0, new cStartSquare("Start", "grey"));
+            this.mySquares.Add(2, new cCommunitySquare("Kanzlei", "grey"));
             foreach(KeyValuePair<String,Dictionary<string,string>> entry in this.myConfig.TaxSquares)
             {
                 if (entry.Key == "1")
                 {
                     
-                    this.mySquares.Add(5, new cTaxSquare(entry.Value["Name"], entry.Value["Color"], Convert.ToInt32(entry.Value["cost"])));
+                    this.mySquares.Add(4, new cTaxSquare(entry.Value["Name"], entry.Value["Color"], Convert.ToInt32(entry.Value["cost"])));
                 }
                 if (entry.Key == "2")
                 {
-                    this.mySquares.Add(40, new cPayTaxesSquare(entry.Value["Name"], entry.Value["Color"],  Convert.ToInt32(entry.Value["cost"])));
+                    this.mySquares.Add(38, new cPayTaxesSquare(entry.Value["Name"], entry.Value["Color"],  Convert.ToInt32(entry.Value["cost"])));
                 }
             }
             
-            this.mySquares.Add(6, new cTrainStationSquare("Vereinigte Privatbahnen Union", "grey"));
-            this.mySquares.Add(8, new cActionSquare("Chance", "grey"));
-            this.mySquares.Add(11, new cPrisonVisitorSquare("Gefägniss Besuch", "grey"));
+
+            // read from config here !!! todo
+            this.mySquares.Add(5, new cTrainStationSquare("Vereinigte Privatbahnen Union", "grey"));
+            this.mySquares.Add(7, new cActionSquare("Chance", "grey"));
+            this.mySquares.Add(10, new cPrisonVisitorSquare("Gefägniss Besuch", "grey"));
             //prison new 99 - for testing
             this.mySquares.Add(99, new cPrisonSquare("Gefängniss", "orange"));
-            this.mySquares.Add(14, new cWaterPowerSquare("Elektrizitätswerke", "grey"));
-            this.mySquares.Add(17, new cTrainStationSquare("Vereinigte Bergbahnen AG", "grey"));
-            this.mySquares.Add(19, new cActionSquare("Kanzlei", "grey"));
-            this.mySquares.Add(22, new cFreeParkSquare("Freier Parkplatz", "grey"));
-            this.mySquares.Add(24, new cCommunitySquare("Chance", "grey"));
-            this.mySquares.Add(27, new cTrainStationSquare("Überlandbahnen", "grey"));
-            this.mySquares.Add(30, new cWaterPowerSquare("Wasserwerke", "grey"));
-            this.mySquares.Add(32, new cGoToPrisonSquare("Ins Gefängniss", "grey"));
-            this.mySquares.Add(35, new cCommunitySquare("Kanzlei", "grey"));
-            this.mySquares.Add(37, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
-            this.mySquares.Add(38, new cCommunitySquare("Chance", "grey"));
+            this.mySquares.Add(12, new cWaterPowerSquare("Elektrizitätswerke", "grey"));
+            this.mySquares.Add(15, new cTrainStationSquare("Vereinigte Bergbahnen AG", "grey"));
+            this.mySquares.Add(17, new cActionSquare("Kanzlei", "grey"));
+            this.mySquares.Add(20, new cFreeParkSquare("Freier Parkplatz", "grey"));
+            this.mySquares.Add(22, new cCommunitySquare("Chance", "grey"));
+            this.mySquares.Add(25, new cTrainStationSquare("Überlandbahnen", "grey"));
+            this.mySquares.Add(28, new cWaterPowerSquare("Wasserwerke", "grey"));
+            this.mySquares.Add(30, new cGoToPrisonSquare("Ins Gefängniss", "grey"));
+            this.mySquares.Add(33, new cCommunitySquare("Kanzlei", "grey"));
+            this.mySquares.Add(35, new cTrainStationSquare("Vereinigte Schwebebahnen AG", "grey"));
+            this.mySquares.Add(36, new cCommunitySquare("Chance", "grey"));
            
 
 

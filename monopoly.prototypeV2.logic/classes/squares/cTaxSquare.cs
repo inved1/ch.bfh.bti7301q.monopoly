@@ -26,6 +26,12 @@ namespace monopoly.prototypeV2.logic.classes.squares
             throw new NotImplementedException();
         }
 
+        public cPlayer Owner
+        {
+            get { return null; }
+        }
+
+
         public String colorStreet
         {
             get { return this.myColor; }

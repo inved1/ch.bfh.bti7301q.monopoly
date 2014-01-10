@@ -29,6 +29,7 @@
     </Client>
     <Game>
         <GameStartMoney>30000</GameStartMoney>
+        <MoneyStart>2000</MoneyStart>
         <Streets>
             <Street id='1'> 
                 <Color>purple</Color>
@@ -103,7 +104,7 @@
             </Street>
         </Streets>
         <RegularSquares>
-            <RegularSquare id='2'>
+            <RegularSquare id='1'>
                  <Name>Chur Kornplatz</Name>
                  <Color>purple</Color>
                  <cost>1200</cost>
@@ -119,7 +120,7 @@
                      <level id='5'>5000</level>
                  </rents>
              </RegularSquare>
-            <RegularSquare id='4'>
+            <RegularSquare id='3'>
                 <Name>Schaffhausen Vordergasse</Name>
                 <Color>purple</Color>
                 <cost>1200</cost>
@@ -135,7 +136,7 @@
                     <level id='5'>9000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='7'>
+            <RegularSquare id='6'>
                 <Name>Aarau Rathausplatz</Name>
                 <Color>lightblue</Color>
                 <cost>2000</cost>
@@ -151,7 +152,7 @@
                     <level id='5'>11000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='9'>
+            <RegularSquare id='8'>
                 <Name>Neuenburg Place Purry</Name>
                 <Color>lightblue</Color>
                 <cost>2000</cost>
@@ -167,7 +168,7 @@
                     <level id='5'>11000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='10'>
+            <RegularSquare id='9'>
                 <Name>Thun Hauptgasse</Name>
                 <Color>lightblue</Color>
                 <cost>2400</cost>
@@ -183,7 +184,7 @@
                     <level id='5'>12000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='13'>
+            <RegularSquare id='11'>
                 <Name>Basel Steinenvorstadt</Name>
                 <Color>violett</Color>
                 <cost>2800</cost>
@@ -199,7 +200,7 @@
                     <level id='5'>15000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='15'>
+            <RegularSquare id='13'>
                 <Name>Solothurn Hauptgasse</Name>
                 <Color>violett</Color>
                 <cost>2800</cost>
@@ -215,7 +216,7 @@
                     <level id='5'>15000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='16'>
+            <RegularSquare id='14'>
                 <Name>Lugano Via Nassa</Name>
                 <Color>violett</Color>
                 <cost>3200</cost>
@@ -231,7 +232,7 @@
                     <level id='5'>18000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='18'>
+            <RegularSquare id='16'>
                 <Name>Biel Nidaugasse</Name>
                 <Color>orange</Color>
                 <cost>3600</cost>
@@ -247,7 +248,7 @@
                     <level id='5'>19000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='20'>
+            <RegularSquare id='18'>
                 <Name>Freiburg Bahnhofstrasse</Name>
                 <Color>orange</Color>
                 <cost>3600</cost>
@@ -263,7 +264,7 @@
                     <level id='5'>19000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='21'>
+            <RegularSquare id='19'>
                 <Name>La Chaux-de-Fonds Rue Léop. Robert</Name>
                 <Color>orange</Color>
                 <cost>4000</cost>
@@ -279,7 +280,7 @@
                     <level id='5'>20000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='23'>
+            <RegularSquare id='21'>
                 <Name>Winterthur Bahnhofplatz</Name>
                 <Color>red</Color>
                 <cost>4400</cost>
@@ -295,7 +296,7 @@
                     <level id='5'>21000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='25'>
+            <RegularSquare id='23'>
                 <Name>St.Gallen Marktplatz</Name>
                 <Color>red</Color>
                 <cost>4400</cost>
@@ -311,7 +312,7 @@
                     <level id='5'>21000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='26'>
+            <RegularSquare id='24'>
                 <Name>Bern Bundesplatz</Name>
                 <Color>red</Color>
                 <cost>4800</cost>
@@ -327,7 +328,7 @@
                     <level id='5'>22000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='28'>
+            <RegularSquare id='26'>
                 <Name>Luzern Weggisgasse</Name>
                 <Color>yellow</Color>
                 <cost>5200</cost>
@@ -343,7 +344,7 @@
                     <level id='5'>23000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='29'>
+            <RegularSquare id='27'>
                 <Name>Zürich Rennweg</Name>
                 <Color>yellow</Color>
                 <cost>5200</cost>
@@ -359,7 +360,7 @@
                     <level id='5'>23000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='31'>
+            <RegularSquare id='29'>
                 <Name>Lausanne Rue de Bourg</Name>
                 <Color>yellow</Color>
                 <cost>5600</cost>
@@ -375,7 +376,7 @@
                     <level id='5'>24000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='33'>
+            <RegularSquare id='31'>
                 <Name>Basel Freie Strasse</Name>
                 <Color>green</Color>
                 <cost>6000</cost>
@@ -391,7 +392,7 @@
                     <level id='5'>25000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='34'>
+            <RegularSquare id='32'>
                 <Name>Genf Rue de la Croix-d'Or</Name>
                 <Color>green</Color>
                 <cost>6000</cost>
@@ -407,7 +408,7 @@
                     <level id='5'>25500</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='36'>
+            <RegularSquare id='34'>
                 <Name>Bern Spitalgasse</Name>
                 <Color>green</Color>
                 <cost>6400</cost>
@@ -423,7 +424,7 @@
                     <level id='5'>28000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='39'>
+            <RegularSquare id='37'>
                 <Name>Lausanne Place St-François</Name>
                 <Color>blue</Color>
                 <cost>7000</cost>
@@ -439,7 +440,7 @@
                     <level id='5'>30000</level>
                 </rents>
             </RegularSquare>
-            <RegularSquare id='41'>
+            <RegularSquare id='39'>
                 <Name>Zürich Paradeplatz</Name>
                 <Color>blue</Color>
                 <cost>8000</cost>

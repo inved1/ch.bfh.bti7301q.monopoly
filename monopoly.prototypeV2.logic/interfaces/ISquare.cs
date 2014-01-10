@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using monopoly.prototypeV2.logic.classes;
 
 namespace monopoly.prototypeV2.logic.interfaces
 {
@@ -12,7 +13,7 @@ namespace monopoly.prototypeV2.logic.interfaces
 
         String colorStreet { get; set; }
 
-
+        cPlayer Owner { get; }
         void playAction();
     }
 }

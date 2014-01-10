@@ -25,6 +25,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
             set { this.myColor = value; }
         }
 
+        public cPlayer Owner
+        {
+            get { return null; }
+        }
+
         public String ctrlName
         { get { return this.myName; } }
 

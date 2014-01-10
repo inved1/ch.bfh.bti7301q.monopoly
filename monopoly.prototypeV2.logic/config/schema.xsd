@@ -87,6 +87,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="GameStartMoney"/>
+        <xs:element ref="MoneyStart"/>
         <xs:element ref="Streets"/>
         <xs:element ref="RegularSquares"/>
         <xs:element ref="TrainSquares"/>
@@ -96,6 +97,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="GameStartMoney" type="xs:integer"/>
+  <xs:element name="MoneyStart" type="xs:integer"/>
   <xs:element name="Streets">
     <xs:complexType>
       <xs:sequence>

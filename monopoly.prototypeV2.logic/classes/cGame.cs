@@ -292,8 +292,8 @@ namespace monopoly.prototypeV2.logic.classes
             if (checkPlayerPassingStart(tmpCurPos, valueToMove))
             {
                 Debug.Write(", passingStart: true");
-                // !!! define amount for passing start !!!
-                curPlayer.addMoney(9999);
+                curPlayer.addMoney(Convert.ToInt32(cConfig.getInstance.Game["MoneyStart"]));
+           
             }
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " moved to " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             notifyGuis();
@@ -426,7 +426,18 @@ namespace monopoly.prototypeV2.logic.classes
             //this check runs after moving to the new position
             Debug.WriteLine(", prevPos: " + prevPos + ", valueToMove: " + valueToMove);
             Debug.WriteLine("(" + curPlayer.CurPos + " + " + valueToMove + " % 41 < " + prevPos + ")");
-            if (((prevPos + valueToMove) % 41) < prevPos)
+            if ((((prevPos + valueToMove) % 41) < prevPos) && (((prevPos + valueToMove) % 41) != 0 ))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool checkPlayerHitsStart(int prevPos, int valueToMove)
+        {
+            Debug.WriteLine(", prevPos: " + prevPos + ", valueToMove: " + valueToMove);
+            Debug.WriteLine("(" + curPlayer.CurPos + " + " + valueToMove + " % 41 < " + prevPos + ")");
+            if (((prevPos + valueToMove) % 41) == 0)
             {
                 return true;
             }

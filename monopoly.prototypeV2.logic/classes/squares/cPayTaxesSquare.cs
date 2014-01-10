@@ -30,6 +30,11 @@ namespace monopoly.prototypeV2.logic.classes.squares
         public String ctrlName
         { get { return this.myName; } }
 
+        public cPlayer Owner
+        {
+            get { return null; }
+        }
+
         public void playAction()
         {
             throw new NotImplementedException();
