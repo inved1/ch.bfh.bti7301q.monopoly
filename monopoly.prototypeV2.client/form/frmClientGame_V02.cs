@@ -267,6 +267,45 @@ namespace monopoly.prototypeV2.client.form
             action.runAction();
         }
 
+        public void runTrade()
+        {
+
+        }
+
+        public void showBuild(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
+            //IAction action = (IAction)btn.Tag;
+            //action.runAction();
+            frmBuild fBuild = new frmBuild();
+
+            if (fBuild.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                fBuild.Hide();
+                fBuild.Close();
+            }
+            fBuild.Dispose();
+        }
+        public void showTrade(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
+            //IAction action = (IAction)btn.Tag;
+            //action.runAction();
+            frmTrade fTrade = new frmTrade();
+            fTrade.game = this.myGame;
+
+            if (fTrade.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                fTrade.Hide();
+                fTrade.Close();
+            }
+            fTrade.Dispose();
+        }
+
+
+
         delegate void cbGUI(object sender, EventArgs e); //callback
 
         delegate void cbGUIAction(object sender, EventArgs e); //callback actions
@@ -294,6 +333,17 @@ namespace monopoly.prototypeV2.client.form
                     btn.DialogResult = System.Windows.Forms.DialogResult.OK;
                     f.addControl(btn);
                 }
+
+
+                Button bBuild = new Button();
+                bBuild.Text = "Bauen";
+                bBuild.Click += new EventHandler(showBuild);
+                f.addControl(bBuild);
+
+                Button bTrade = new Button();
+                bTrade.Text = "Handeln";
+                bTrade.Click += new EventHandler(showTrade);
+                f.addControl(bTrade);
 
 
                 if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)

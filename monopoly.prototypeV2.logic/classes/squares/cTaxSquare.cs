@@ -13,6 +13,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private string myName = "";
         private string myColor = "grey"; // default
         private int myTax = 0;
+        private cPlayer myOwner;
 
         public cTaxSquare(string name, string color, int tax)
         {
@@ -29,6 +30,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
         public cPlayer Owner
         {
             get { return null; }
+            set { myOwner = value; }
         }
 
 
