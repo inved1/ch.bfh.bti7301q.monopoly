@@ -85,7 +85,7 @@ namespace monopoly.prototypeV2.client.form
             //TcpChannel tcpChannel = new TcpChannel(0);
             //ChannelServices.RegisterChannel(tcpChannel, false);
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 1);
+            this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this);
 
             myTPCardLocations = new List<Point>();
