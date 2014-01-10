@@ -296,7 +296,7 @@ namespace monopoly.prototypeV2.logic.classes
 
             Debug.Write(curPlayer.Name + ", tmpCurPos: " + tmpCurPos);
 
-            curPlayer.CurPos = ((curPlayer.CurPos + valueToMove) % 41) + 1;
+            curPlayer.CurPos = ((curPlayer.CurPos + valueToMove) % 40);
 
             Debug.Write(", curPos: " + curPlayer.CurPos + " (" + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName + ")");
 
@@ -480,7 +480,7 @@ namespace monopoly.prototypeV2.logic.classes
             //this check runs after moving to the new position
             Debug.WriteLine(", prevPos: " + prevPos + ", valueToMove: " + valueToMove);
             Debug.WriteLine("(" + curPlayer.CurPos + " + " + valueToMove + " % 41 < " + prevPos + ")");
-            if ((((prevPos + valueToMove) % 41) < prevPos) && (((prevPos + valueToMove) % 41) != 0 ))
+            if ((((prevPos + valueToMove) % 40) < prevPos) && (((prevPos + valueToMove) % 40) != 0 ))
             {
                 return true;
             }
@@ -491,7 +491,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             Debug.WriteLine(", prevPos: " + prevPos + ", valueToMove: " + valueToMove);
             Debug.WriteLine("(" + curPlayer.CurPos + " + " + valueToMove + " % 41 < " + prevPos + ")");
-            if (((prevPos + valueToMove) % 41) == 0)
+            if (((prevPos + valueToMove) % 40) == 0)
             {
                 return true;
             }
