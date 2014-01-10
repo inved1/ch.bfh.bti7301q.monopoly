@@ -122,8 +122,8 @@ namespace monopoly.prototypeV2.logic.classes
         #region "game control functions"
         public void initGame()
         {
-            try
-            {
+            //try
+            //{
                 this.gameStatus = cGame.eGameStatus.DetermineStartPlayer;
                 notifyGuis();
                 if (this.playerObservers.Count < 1)
@@ -138,18 +138,24 @@ namespace monopoly.prototypeV2.logic.classes
                 logWriter.WriteLogQueue(curPlayer.Name);
                 setDefaultActions();
                 notifyCurPlayer();
-            }
+            /*}
             catch (Exception ex)
             {
                 Debug.WriteLine("catch: curPos: " + curPlayer.CurPos);
                 throw ex;
-            }
+            }*/
 
         }
 
         public void startGame()
         {
             this.gameStatus = cGame.eGameStatus.Running;
+
+            ISquare square = gameBoard.getSpecificSquare(1);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            square = gameBoard.getSpecificSquare(3);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+
             notifyGuis();
             setDefaultActions();
             notifyCurPlayer();
@@ -236,6 +242,11 @@ namespace monopoly.prototypeV2.logic.classes
             }
             else
             {
+                Dictionary<cStreet, Dictionary<ISquare, int>> dic = readSquaresForRealEstate();
+                if (dic.Count > 0)
+                {
+                    Debug.WriteLine("action for buying");
+                }
                 actions.Add(new cActionRoll(this));
                 actions.Add(new cActionGiveUp(this));
             }
@@ -419,6 +430,49 @@ namespace monopoly.prototypeV2.logic.classes
                 return true;
             }
             return false;
+        }
+
+        public Dictionary<cStreet, Dictionary<ISquare, int>> readSquaresForRealEstate()
+        {
+            cStreet street;
+            ISquare square;
+            int priceRealEstate;
+            cPlayer owner;
+            Boolean hasFullStreet;
+            Dictionary<ISquare, int> ownedSquares = new Dictionary<ISquare,int>();
+
+            Dictionary<cStreet, Dictionary<ISquare, int>> squaresForRealEstate = new Dictionary<cStreet, Dictionary<ISquare, int>>();
+            foreach (KeyValuePair<String,cStreet> pair in this.gameBoard.getStreets())
+            {
+                hasFullStreet = true;
+                street = pair.Value;
+                Debug.WriteLine(street.getName());
+                if (!street.getName().Equals("black")) {
+                    foreach (int squareNr in street.getOwnedSquares())
+                    {
+                        square = this.gameBoard.getSpecificSquare(squareNr);
+                        //!!!! check if player has to buy house or hotel!
+                        priceRealEstate = Convert.ToInt32(square.GetType().GetProperty("PriceHouse").GetValue(square));
+                        owner = (cPlayer)square.GetType().GetProperty("Owner").GetValue(square);
+
+                        ownedSquares.Add(square, priceRealEstate);
+
+                        if ((owner == null) || (owner != curPlayer))
+                        {
+                            ownedSquares.Clear();
+                            hasFullStreet = false;
+                            break;
+                        }
+                    }
+                    if (hasFullStreet)
+                    {
+                        squaresForRealEstate.Add(street, ownedSquares);
+                        Debug.WriteLine(squaresForRealEstate);
+                    }
+                }
+                
+            }
+            return squaresForRealEstate;
         }
 
         public bool checkPlayerPassingStart(int prevPos, int valueToMove)

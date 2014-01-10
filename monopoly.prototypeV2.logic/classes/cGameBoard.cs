@@ -141,6 +141,11 @@ namespace monopoly.prototypeV2.logic.classes
 
         }
 
+        public Dictionary<String, cStreet> getStreets()
+        {
+            return this.myStreets;
+        }
+
         public Dictionary<int, ISquare> getSquares()
         {
             return this.mySquares;

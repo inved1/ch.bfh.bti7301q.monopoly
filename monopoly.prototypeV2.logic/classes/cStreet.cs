@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes
 {
     [Serializable]
-    class cStreet
+    public class cStreet
     {
         private String myName;
         private List<int> myOwnedSquares;
@@ -17,6 +17,14 @@ namespace monopoly.prototypeV2.logic.classes
             this.myOwnedSquares = ownedSquares;
         }
 
+        public String getName()
+        {
+            return myName;
+        }
 
+        public List<int> getOwnedSquares()
+        {
+            return this.myOwnedSquares;
+        }
     }
 }
