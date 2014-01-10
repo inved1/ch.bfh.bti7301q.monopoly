@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.actions
 {
     [Serializable]
-    public class cActionBuyFree : IAction
+    public class cActionTrade : IAction
     {
-        const string ACTION_NAME = "Aus dem Gefängniss freikaufen";
+        const string ACTION_NAME = "Handeln";
         private cGame game;
 
-        public cActionBuyFree(cGame game)
+        public cActionTrade(cGame game)
         {
             this.game = game;
         }
@@ -25,7 +25,11 @@ namespace monopoly.prototypeV2.logic.classes.actions
 
         public void runAction()
         {
-            this.game.playerBuysFree();
+            //should not be used here
+        }
+        public void runTrade(ISquare obj, cPlayer owner, cPlayer newOwner, int amount)
+        {
+            this.game.playerTrades(obj, owner,newOwner,amount );
         }
     }
 }

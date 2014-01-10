@@ -13,7 +13,7 @@ namespace monopoly.prototypeV2.logic.interfaces
 
         String colorStreet { get; set; }
 
-        cPlayer Owner { get; }
+        cPlayer Owner { get; set; }
         void playAction();
     }
 }

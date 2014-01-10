@@ -30,6 +30,7 @@ namespace monopoly.prototypeV2.logic.classes
 
 
 
+
         public enum eGameStatus
         {
             NotStarted = 0,
@@ -403,6 +404,16 @@ namespace monopoly.prototypeV2.logic.classes
             curPlayer.inPrison = false;
             Debug.WriteLine("SPieler hat sich freigekauft: " + curPlayer.Name);
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich freigekauft.");
+        }
+
+        public void playerTrades(ISquare obj, cPlayer owner, cPlayer newOwner, int amount)
+        {
+            obj.Owner  = newOwner;
+            owner.addMoney(amount);
+            newOwner.spendMoney(amount);
+            Debug.WriteLine("SPieler "+owner.Name+" hat Objekt "+obj.ctrlName+ " an Spieler"+newOwner.Name +" verkauft");
+            logWriter.WriteLogQueue("SPieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
+
         }
 
         public void playerGivesUp()

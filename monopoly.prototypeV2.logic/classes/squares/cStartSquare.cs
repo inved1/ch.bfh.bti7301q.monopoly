@@ -12,6 +12,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
     {
         private string myName;
         private string myColor = "grey"; // default
+        private cPlayer myOwner;
 
         public cStartSquare(String name, String color)
         {
@@ -28,6 +29,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
         public cPlayer Owner
         {
             get { return null; }
+            set { myOwner = value; }
         }
 
         public String ctrlName
