@@ -7,12 +7,39 @@ using monopoly.prototypeV2.logic.interfaces;
 
 namespace monopoly.prototypeV2.logic.classes
 {
+    [Serializable ]
     class cCommunityCard : ICard
 
     {
-        public void playAction()
+
+
+        private String myText;
+        private string myValue;
+        private String myCommand;
+
+
+        public cCommunityCard(String text, string value,String command)
         {
-            throw new NotImplementedException();
+            this.myText = text;
+            this.myValue = value;
+            this.myCommand = command;
+
+        }
+       
+
+        public string Command
+        {
+            get { return this.myCommand; }
+        }
+
+        public string Value
+        {
+            get { return this.myValue; }
+        }
+
+        public string Text
+        {
+            get { return this.myText; }
         }
     }
 }

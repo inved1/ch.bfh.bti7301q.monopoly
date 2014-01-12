@@ -233,7 +233,7 @@ namespace monopoly.prototypeV2.client.form
         public void showBuild(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent;
             //IAction action = (IAction)btn.Tag;
             //action.runAction();
             frmBuild fBuild = new frmBuild();
@@ -248,7 +248,7 @@ namespace monopoly.prototypeV2.client.form
         public void showTrade(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent;
             //IAction action = (IAction)btn.Tag;
             //action.runAction();
             frmTrade fTrade = new frmTrade();
@@ -422,6 +422,14 @@ namespace monopoly.prototypeV2.client.form
                 }
 
 
+                this.txt_history.Text  = this.myGame.gameMessages.strOutput();
+                this.txt_history.SelectionStart = this.txt_history.Text.Length;
+                this.txt_history.ScrollToCaret();
+
+                this.txtChat.Text = this.myGame.gameChat.strOutput();
+                this.txtChat.SelectionStart = this.txtChat.Text.Length;
+                this.txtChat.ScrollToCaret();
+
 
 
             }
@@ -439,6 +447,15 @@ namespace monopoly.prototypeV2.client.form
             
             this.myGame.initGame();
             this.button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.myGame.gameChat.addMessage(this.myPlayer.Name, this.txt_chatSend.Text);
+            this.txt_chatSend.Text = "";
+            this.txtChat.Text = this.myGame.gameChat.strOutput();
+            this.txtChat.SelectionStart = this.txtChat.Text.Length;
+            this.txtChat.ScrollToCaret();
         }
 
 

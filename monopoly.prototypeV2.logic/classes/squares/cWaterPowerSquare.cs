@@ -14,11 +14,13 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private string myColor = "grey"; // default
         private cPlayer myOwner = null;
         private int myCost = 0;
-
-        public cWaterPowerSquare(string name, string color)
+        private Dictionary<int, int> myMultiplier;
+        public cWaterPowerSquare(string name, string color, int cost,Dictionary<int,int> multiplier)
         {
             this.myName = name;
             this.myColor = color;
+            this.myCost = cost;
+            this.myMultiplier = multiplier;
         }
 
         public void playAction()

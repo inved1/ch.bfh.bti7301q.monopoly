@@ -8,6 +8,11 @@ namespace monopoly.prototypeV2.logic.interfaces
 {
     public interface ICard
     {
-        void playAction();
+
+        String Command { get; }
+
+        String Value { get; }
+
+        String Text { get; }
     }
 }

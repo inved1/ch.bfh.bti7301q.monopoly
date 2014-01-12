@@ -14,11 +14,14 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private string myColor = "grey"; // default
         private cPlayer myOwner = null;
         private int myCost = 0;
+        private Dictionary<int, int> myRents;
 
-        public cTrainStationSquare(string name,string color)
+        public cTrainStationSquare(string name,string color, int cost ,Dictionary<int,int> rents)
         {
             this.myName = name;
             this.myColor = color;
+            this.myCost = cost;
+            this.myRents = rents;
         }
 
         public void playAction()

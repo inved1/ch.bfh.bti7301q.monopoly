@@ -24,6 +24,7 @@ namespace monopoly.prototypeV2.client
         {
             this.flp.Controls.Add(btn);
             btn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            btn.Select();
         }
 
         public void clearControls()

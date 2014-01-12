@@ -12,18 +12,33 @@ namespace monopoly.prototypeV2.logic.classes
     {
 
         private String myText;
-        private Dictionary<String,int> myValue;
+        private string myValue;
+        private String myCommand;
 
-        public cActionCard(String text, Dictionary<String,int> value)
+        public cActionCard(String text, string value,String command)
         {
             this.myText = text;
             this.myValue = value;
+            this.myCommand = command;
 
         }
 
-        public void playAction()
+
+
+        public string Command
         {
-            throw new NotImplementedException();
+            get { return this.myCommand; }
+        }
+
+        public string Value
+        {
+            get { return this.myValue; }
+        }
+
+
+        public string Text
+        {
+            get { return this.myText; }
         }
     }
 }

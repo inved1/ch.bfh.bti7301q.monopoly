@@ -93,6 +93,8 @@
         <xs:element ref="TrainSquares"/>
         <xs:element ref="WaterPowerSquares"/>
         <xs:element ref="TaxSquares"/>
+        <xs:element ref="CommunityCards"/>
+        <xs:element ref="ActionCards"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -200,6 +202,40 @@
       <xs:attribute name="id" use="required" type="xs:integer"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CommunityCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="CommunityCard"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommunityCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Text"/>
+        <xs:element ref="Value"/>
+        <xs:element ref="Command"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ActionCard"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Text"/>
+        <xs:element ref="Value"/>
+        <xs:element ref="Command"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Color" type="xs:NCName"/>
   <xs:element name="Name" type="xs:string"/>
   <xs:element name="cost" type="xs:integer"/>
@@ -220,4 +256,7 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Text" type="xs:string"/>
+  <xs:element name="Value" type="xs:string"/>
+  <xs:element name="Command" type="xs:string"/>
 </xs:schema>

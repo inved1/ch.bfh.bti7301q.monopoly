@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\actions\cActionPlayCard.cs" />
     <Compile Include="classes\actions\cActionGoToPrison.cs" />
     <Compile Include="classes\actions\cActionTrade.cs" />
     <Compile Include="classes\actions\cActionPrisonOutCard.cs" />
@@ -59,6 +60,8 @@
     <Compile Include="classes\cGameBoard.cs" />
     <Compile Include="classes\cHotel.cs" />
     <Compile Include="classes\cHouse.cs" />
+    <Compile Include="classes\cChat.cs" />
+    <Compile Include="classes\cMessage.cs" />
     <Compile Include="classes\cPlayer.cs" />
     <Compile Include="classes\cStreet.cs" />
     <Compile Include="classes\squares\cActionSquare.cs" />

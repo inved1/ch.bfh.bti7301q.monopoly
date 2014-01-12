@@ -25,6 +25,14 @@
         <ClientHistoryNames>
             <ClientHistoryName id='1'>Dani</ClientHistoryName>
             <ClientHistoryName id='2'>Fanky</ClientHistoryName>
+            <ClientHistoryName id='3'>Marco</ClientHistoryName>
+            <ClientHistoryName id='4'>Julien</ClientHistoryName>
+            <ClientHistoryName id='5'>Simon</ClientHistoryName>
+            <ClientHistoryName id='6'>Christian</ClientHistoryName>
+            <ClientHistoryName id='7'>Franziska</ClientHistoryName>
+            <ClientHistoryName id='8'>Christoph</ClientHistoryName>
+            <ClientHistoryName id='9'>Stefan</ClientHistoryName>
+            <ClientHistoryName id='10'>Hans</ClientHistoryName>
         </ClientHistoryNames>
     </Client>
     <Game>
@@ -458,7 +466,7 @@
             </RegularSquare>
         </RegularSquares>
         <TrainSquares>
-            <TrainSquare id='1'>
+            <TrainSquare id='5'>
                 <Name>Vereinigte Schwebebahnen AG</Name>
                 <Color>black</Color>
                 <cost>4000</cost>
@@ -470,7 +478,7 @@
                     <level id='4'>4000</level>
                 </rents>
             </TrainSquare>
-            <TrainSquare id='2'>
+            <TrainSquare id='15'>
                 <Name>Vereinigte Bergbahnen AG</Name>
                 <Color>black</Color>
                 <cost>4000</cost>
@@ -482,7 +490,7 @@
                     <level id='4'>4000</level>
                 </rents>
             </TrainSquare>
-            <TrainSquare id='3'>
+            <TrainSquare id='25'>
                 <Name>Vereinigte Privatebahnen</Name>
                 <Color>black</Color>
                 <cost>4000</cost>
@@ -494,7 +502,7 @@
                     <level id='4'>4000</level>
                 </rents>
             </TrainSquare>
-            <TrainSquare id='4'>
+            <TrainSquare id='35'>
                 <Name>Ueberlandbahnen</Name>
                 <Color>black</Color>
                 <cost>4000</cost>
@@ -508,7 +516,7 @@
             </TrainSquare>            
         </TrainSquares>
         <WaterPowerSquares>
-            <WaterPowerSquare id='1'>
+            <WaterPowerSquare id='12'>
                 <Name>Wasserwerke</Name>
                 <Color>grey</Color>
                 <cost>3000</cost>
@@ -518,7 +526,7 @@
                     <level id='2'>200</level>
                 </rents>
             </WaterPowerSquare>
-            <WaterPowerSquare id='2'>
+            <WaterPowerSquare id='28'>
                 <Name>Elektrizitätswerke</Name>
                 <Color>grey</Color>
                 <cost>3000</cost>
@@ -530,16 +538,170 @@
             </WaterPowerSquare>            
         </WaterPowerSquares>
         <TaxSquares>
-          <TaxSquare id='1'>
+          <TaxSquare id='4'>
             <Name>Steuern1</Name>
             <Color>red</Color>
             <cost>3000</cost>
           </TaxSquare>
-          <TaxSquare id='2'>
+          <TaxSquare id='38' >
             <Name>Steuern2</Name>
             <Color>red</Color>
             <cost>3000</cost>
           </TaxSquare>
         </TaxSquares>      
+        <CommunityCards>
+            <CommunityCard id='1'>
+                <Text>Sofort ohne Busse aus dem Gefännigs heraus. Die Karte kann behalten werden.</Text>
+                <Value>0</Value>
+                <Command>prisonfree</Command>
+            </CommunityCard>
+            <CommunityCard id='2'>
+                <Text>Auf direktem Weg ins Gefängniss.</Text>
+                <Value>0</Value>
+                <Command>gotoprison</Command>
+            </CommunityCard>
+            <CommunityCard id='3'>
+                <Text>Vorwärts auf Start</Text>
+                <Value>0</Value>
+                <Command>movetofield</Command>
+            </CommunityCard>
+            <CommunityCard id='4'>
+                <Text>Vorwärts auf Bahn 2</Text>
+                <Value>15</Value>
+                <Command>movetofield</Command>
+            </CommunityCard>
+            <CommunityCard id='5'>
+                <Text>Vorwärts auf Bern Bundesplatz</Text>
+                <Value>24</Value>
+                <Command>movetofield</Command>
+            </CommunityCard>
+            <CommunityCard id='6'>
+                <Text>Vorwärts auf Basel Steinenvorstadt</Text>
+                <Value>11</Value>
+                <Command>movetofield</Command>
+            </CommunityCard>
+            <CommunityCard id='7'>
+                <Text>Vorwärts auf Zürich Paradeplatz</Text>
+                <Value>39</Value>
+                <Command>movetofield</Command>
+            </CommunityCard>
+            <CommunityCard id='8'>
+                <Text>3 Felder retour</Text>
+                <Value>-3</Value>
+                <Command>move</Command>
+            </CommunityCard>
+            <CommunityCard id='9'>
+                <Text>Die Bank zahlt Dividende 1000.--</Text>
+                <Value>1000</Value>
+                <Command>receive</Command>
+            </CommunityCard>
+            <CommunityCard id='10'>
+                <Text>Rückzahlung einer Anleihe. Du erhälst 3000.--</Text>
+                <Value>3000</Value>
+                <Command>receive</Command>
+            </CommunityCard>
+            <CommunityCard id='11'>
+                <Text>Zahle für Reparaturen 500.-- pro Haus, 2000.-- pro Hotel.</Text>
+                <Value>500;2000</Value>
+                <Command>payrealestates</Command>
+            </CommunityCard>
+            <CommunityCard id='12'>
+                <Text>Polizeibusse für zu schnelles Fahren. Zahle 300.--</Text>
+                <Value>300</Value>
+                <Command>pay</Command>
+            </CommunityCard>
+            <CommunityCard id='13'>
+                <Text>Zahle jedem Spieler 1000.--</Text>
+                <Value>1000</Value>
+                <Command>payplayers</Command>
+            </CommunityCard>            
+        </CommunityCards>
+        <ActionCards>
+            <ActionCard id='1'>
+                <Text>Sofort ohne Busse aus dem Gefännigs heraus. Die Karte kann behalten werden.</Text>
+                <Value>0</Value>
+                <Command>prisonfree</Command>
+            </ActionCard>
+            <ActionCard id='2'>
+                <Text>Vorwärts auf Start.</Text>
+                <Value>0</Value>
+                <Command>movetofield</Command>
+            </ActionCard>
+            <ActionCard id='3'>
+                <Text>Auf direktem Weg ins Gefängniss.</Text>
+                <Value>0</Value>
+                <Command>gotoprison</Command>
+            </ActionCard>
+            <ActionCard id='4'>
+                <Text>Du gewinnst in der Landeslotterie 2000.--</Text>
+                <Value>2000</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='5'>
+                <Text>Du erhälst eine Jahresrente von 2000.--</Text>
+                <Value>2000</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='6'>
+                <Text>Die Bank hat sich zu deinen Gunsten geirrt. Du erhälst 4000.-- zurück.</Text>
+                <Value>4000</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='7'>
+                <Text>Zahle für Schulden 3000.--</Text>
+                <Value>3000</Value>
+                <Command>pay</Command>
+            </ActionCard>
+            <ActionCard id='8'>
+                <Text>Du erhälst Steuerrückvergütung von 400.--</Text>
+                <Value>400</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='9'>
+                <Text>Du machst eine Erbschaft und erhälst 2000.--</Text>
+                <Value>2000</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='10'>
+                <Text>Du machst eine Erfindung und erhälst 900.--</Text>
+                <Value>900</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='11'>
+                <Text>Du hast Geburtstag und erhälst von jedem Spieler 1000.--</Text>
+                <Value>1000</Value>
+                <Command>receivefromplayers</Command>
+            </ActionCard>
+            <ActionCard id='12'>
+                <Text>Du erhälst Zinsvergütung 500.--</Text>
+                <Value>500</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='13'>
+                <Text>Zahle für Spitalkosten 2000.--</Text>
+                <Value>2000</Value>
+                <Command>pay</Command>
+            </ActionCard>
+            <ActionCard id='14'>
+                <Text>Du hast in einer Schönheitskonkurrenz den 2. Preis gewonnen und erhälst 200.--</Text>
+                <Value>200</Value>
+                <Command>receive</Command>
+            </ActionCard>
+            <ActionCard id='15'>
+                <Text>Zahle für Arztrechnung 1000.--</Text>
+                <Value>1000</Value>
+                <Command>pay</Command>
+            </ActionCard>
+            <ActionCard id='16'>
+                <Text>Zahle für Strassenreparatur 800.-- pro Haus und 2300.-- pro Hotel</Text>
+                <Value>800;2300</Value>
+                <Command>payrealestates</Command>
+            </ActionCard>
+            <ActionCard id='17'>
+                <Text></Text>
+                <Value></Value>
+                <Command></Command>
+            </ActionCard>            
+        </ActionCards>
     </Game>
 </Config>

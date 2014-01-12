@@ -32,6 +32,19 @@
             this.con1 = new System.Windows.Forms.SplitContainer();
             this.con2 = new System.Windows.Forms.SplitContainer();
             this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txt_history = new System.Windows.Forms.TextBox();
+            this.txt_myMoney = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tp_players = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txt_chatSend = new System.Windows.Forms.TextBox();
+            this.txtChat = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.ctrlStart = new monopoly.prototypeV2.client.ctrl.ctrlStartSquare();
             this.ctrlRegularSquare1 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
             this.ctrlRegularSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlRegularSquare();
@@ -73,11 +86,6 @@
             this.ctrlTrainStationSquare4 = new monopoly.prototypeV2.client.ctrl.ctrlTrainStationSquare();
             this.ctrlActionSquare3 = new monopoly.prototypeV2.client.ctrl.ctrlActionSquare();
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txt_history = new System.Windows.Forms.TextBox();
-            this.txt_myMoney = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tp_players = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
             this.con1.Panel2.SuspendLayout();
@@ -91,6 +99,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // con1
@@ -210,6 +221,151 @@
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlp.Size = new System.Drawing.Size(1022, 568);
             this.tlp.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tabControl1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.txt_myMoney);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
+            this.splitContainer1.SplitterDistance = 419;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // txt_history
+            // 
+            this.txt_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_history.Location = new System.Drawing.Point(3, 3);
+            this.txt_history.Multiline = true;
+            this.txt_history.Name = "txt_history";
+            this.txt_history.ReadOnly = true;
+            this.txt_history.Size = new System.Drawing.Size(220, 385);
+            this.txt_history.TabIndex = 0;
+            // 
+            // txt_myMoney
+            // 
+            this.txt_myMoney.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txt_myMoney.Location = new System.Drawing.Point(0, 81);
+            this.txt_myMoney.Multiline = true;
+            this.txt_myMoney.Name = "txt_myMoney";
+            this.txt_myMoney.ReadOnly = true;
+            this.txt_myMoney.Size = new System.Drawing.Size(234, 64);
+            this.txt_myMoney.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 54);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Start Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tp_players
+            // 
+            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_players.Location = new System.Drawing.Point(0, 0);
+            this.tp_players.Name = "tp_players";
+            this.tp_players.SelectedIndex = 0;
+            this.tp_players.Size = new System.Drawing.Size(1262, 198);
+            this.tp_players.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(234, 417);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txt_history);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(226, 391);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Spielmeldungen";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.txtChat);
+            this.tabPage2.Controls.Add(this.txt_chatSend);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(226, 391);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Chat";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(187, 362);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "->";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txt_chatSend
+            // 
+            this.txt_chatSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_chatSend.Location = new System.Drawing.Point(3, 362);
+            this.txt_chatSend.Multiline = true;
+            this.txt_chatSend.Name = "txt_chatSend";
+            this.txt_chatSend.Size = new System.Drawing.Size(178, 29);
+            this.txt_chatSend.TabIndex = 0;
+            // 
+            // txtChat
+            // 
+            this.txtChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtChat.Location = new System.Drawing.Point(3, 3);
+            this.txtChat.Multiline = true;
+            this.txtChat.Name = "txtChat";
+            this.txtChat.ReadOnly = true;
+            this.txtChat.Size = new System.Drawing.Size(220, 353);
+            this.txtChat.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(3, 362);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 29);
+            this.textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox2.Location = new System.Drawing.Point(3, 3);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(220, 353);
+            this.textBox2.TabIndex = 1;
             // 
             // ctrlStart
             // 
@@ -693,65 +849,6 @@
             this.ctrlTaxSquare2.Size = new System.Drawing.Size(147, 38);
             this.ctrlTaxSquare2.TabIndex = 39;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.txt_history);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.txt_myMoney);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Size = new System.Drawing.Size(236, 570);
-            this.splitContainer1.SplitterDistance = 419;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // txt_history
-            // 
-            this.txt_history.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_history.Location = new System.Drawing.Point(0, 0);
-            this.txt_history.Multiline = true;
-            this.txt_history.Name = "txt_history";
-            this.txt_history.Size = new System.Drawing.Size(234, 417);
-            this.txt_history.TabIndex = 0;
-            // 
-            // txt_myMoney
-            // 
-            this.txt_myMoney.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_myMoney.Location = new System.Drawing.Point(0, 81);
-            this.txt_myMoney.Multiline = true;
-            this.txt_myMoney.Name = "txt_myMoney";
-            this.txt_myMoney.Size = new System.Drawing.Size(234, 64);
-            this.txt_myMoney.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tp_players
-            // 
-            this.tp_players.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tp_players.Location = new System.Drawing.Point(0, 0);
-            this.tp_players.Name = "tp_players";
-            this.tp_players.SelectedIndex = 0;
-            this.tp_players.Size = new System.Drawing.Size(1262, 198);
-            this.tp_players.TabIndex = 0;
-            // 
             // frmClientGame_V02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -776,11 +873,15 @@
             this.con2.ResumeLayout(false);
             this.tlp.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -836,5 +937,13 @@
         private System.Windows.Forms.TabControl tp_players;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_myMoney;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtChat;
+        private System.Windows.Forms.TextBox txt_chatSend;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

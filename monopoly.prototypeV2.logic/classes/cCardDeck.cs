@@ -13,6 +13,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         private List<ICard> myCards;
         private cardType myType;
+        private cConfig myConfig;
 
         public enum cardType
         {
@@ -24,6 +25,7 @@ namespace monopoly.prototypeV2.logic.classes
         public cCardDeck(cardType t)
         {
             this.myCards = new List<ICard>();
+            this.myConfig = cConfig.getInstance; 
             myType  = t;
             initCards();
         }
@@ -32,43 +34,21 @@ namespace monopoly.prototypeV2.logic.classes
         {
             if (this.myType == cardType.Actioncard)
             {
+                foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.ActionCards)
+                {
+                    this.myCards.Add(new cActionCard(entry.Value["Text"], entry.Value["Value"], entry.Value["Command"]));
+                }
 
-                //tst blubb
-
-                Dictionary<String, int> dic = new Dictionary<string, int>();
-                dic.Add("singel", 100);
-
-                this.myCards.Add(new cActionCard("Advance to Go (Collect $200)", dic));
-                this.myCards.Add(new cActionCard("Bank error in your favor – collect $75", dic));
-                this.myCards.Add(new cActionCard("Doctor's fees – Pay $50", dic));
-                this.myCards.Add(new cActionCard("Get out of jail free – this card may be kept until needed, or sold", dic));
-                this.myCards.Add(new cActionCard("Go to jail – go directly to jail – Do not pass Go, do not collect $200", dic));
-                this.myCards.Add(new cActionCard("It is your birthday Collect $10 from each player", dic));
-                this.myCards.Add(new cActionCard("Grand Opera Night – collect $50 from every player for opening night seats", dic));
-                this.myCards.Add(new cActionCard("Income Tax refund – collect $20", dic));
-                this.myCards.Add(new cActionCard("Life Insurance Matures – collect $100", dic));
-                this.myCards.Add(new cActionCard("Pay Hospital Fees of $100", dic));
-                this.myCards.Add(new cActionCard("Pay School Fees of $50", dic));
-                this.myCards.Add(new cActionCard("Receive $25 Consultancy Fee", dic));
 
             }
             if (this.myType == cardType.Communitycard)
             {
-                Dictionary<String, int> dic = new Dictionary<string, int>();
-                dic.Add("singel", 100);
+                
+                foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.CommunityCards)
+                {
+                    this.myCards.Add(new cCommunityCard(entry.Value["Text"], entry.Value["Value"], entry.Value["Command"]));
+                }
 
-                this.myCards.Add(new cActionCard("Advance to Go (Collect $200)", dic));
-                this.myCards.Add(new cActionCard("Bank error in your favor – collect $75", dic));
-                this.myCards.Add(new cActionCard("Doctor's fees – Pay $50", dic));
-                this.myCards.Add(new cActionCard("Get out of jail free – this card may be kept until needed, or sold", dic));
-                this.myCards.Add(new cActionCard("Go to jail – go directly to jail – Do not pass Go, do not collect $200", dic));
-                this.myCards.Add(new cActionCard("It is your birthday Collect $10 from each player", dic));
-                this.myCards.Add(new cActionCard("Grand Opera Night – collect $50 from every player for opening night seats", dic));
-                this.myCards.Add(new cActionCard("Income Tax refund – collect $20", dic));
-                this.myCards.Add(new cActionCard("Life Insurance Matures – collect $100", dic));
-                this.myCards.Add(new cActionCard("Pay Hospital Fees of $100", dic));
-                this.myCards.Add(new cActionCard("Pay School Fees of $50", dic));
-                this.myCards.Add(new cActionCard("Receive $25 Consultancy Fee", dic));
             }
         }
 
@@ -88,6 +68,8 @@ namespace monopoly.prototypeV2.logic.classes
             if (t == null)
             {
                 initCards();
+                t = this.myCards.First();
+
             }
             this.myCards.Remove(t);
             return this.myCards.First();

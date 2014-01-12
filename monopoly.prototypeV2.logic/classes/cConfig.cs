@@ -37,7 +37,12 @@ namespace monopoly.prototypeV2.logic.classes
         private Dictionary<String, Dictionary<String, String>> myWaterPowerSquareValues;
         private Dictionary<String, String> myTaxSquaresValues;
         private Dictionary<String, Dictionary<String, String>> myTaxSquareValues;
+        private Dictionary<String, String> myCommunityCardsValues;
+        private Dictionary<String, Dictionary<String, String>> myCommunityCardValues;
+        private Dictionary<String, String> myActionCardsValues;
+        private Dictionary<String, Dictionary<String, String>> myActionCardValues;
         
+
         #endregion
 
         #region "constructor"
@@ -65,6 +70,11 @@ namespace monopoly.prototypeV2.logic.classes
             this.myWaterPowerSquareValues = new Dictionary<string, Dictionary<String, String>>();
             this.myTaxSquaresValues = new Dictionary<string, string>();
             this.myTaxSquareValues = new Dictionary<string, Dictionary<String, String>>();
+
+            this.myCommunityCardsValues = new Dictionary<string, string>();
+            this.myCommunityCardValues = new Dictionary<string, Dictionary<string, string>>();
+            this.myActionCardsValues = new Dictionary<string, string>();
+            this.myActionCardValues = new Dictionary<string, Dictionary<string, string>>();
             
 
             this.myFile = Properties.Settings.Default.myCFGFile;
@@ -99,6 +109,11 @@ namespace monopoly.prototypeV2.logic.classes
             fillWaterPowerSqaureValues();
             fillTaxSqauresValues();
             fillTaxSqaureValues();
+            fillCommunityCardsValues();
+            fillCommunityCardValues();
+            fillActionCardsValues();
+            fillActionCardValues();
+
 
         }
         public static cConfig getInstance
@@ -384,6 +399,65 @@ namespace monopoly.prototypeV2.logic.classes
 
         }
 
+        private void fillCommunityCardsValues()
+        {
+            String GameID = this.myGameValues["Game_Id"];
+            DataRow r = this.myDTS.Tables["CommunityCards"].Select(String.Format("Game_Id = {0}", GameID))[0];
+            foreach (DataColumn c in this.myDTS.Tables["CommunityCards"].Columns)
+            {
+                this.myCommunityCardsValues.Add(c.ColumnName, r[c].ToString());
+            }
+        }
+        private void fillCommunityCardValues()
+        {
+            String CommunityCardsID = this.myCommunityCardsValues["CommunityCards_Id"];
+            foreach (DataRow r in this.myDTS.Tables["CommunityCard"].Select(String.Format("CommunityCards_Id = {0}", CommunityCardsID)))
+            {
+
+                String ID = "";
+                Dictionary<String, String> dict = new Dictionary<string, string>();
+                foreach (DataColumn c in this.myDTS.Tables["CommunityCard"].Columns)
+                {
+                    dict.Add(c.ColumnName, r[c].ToString());
+                    if (c.ColumnName.ToLower() == "id") ID = r[c].ToString();
+
+                }
+
+
+                this.myCommunityCardValues.Add(ID, dict);
+            }
+        }
+
+        private void fillActionCardsValues()
+        {
+            String GameID = this.myGameValues["Game_Id"];
+            DataRow r = this.myDTS.Tables["ActionCards"].Select(String.Format("Game_Id = {0}", GameID))[0];
+            foreach (DataColumn c in this.myDTS.Tables["ActionCards"].Columns)
+            {
+                this.myActionCardsValues.Add(c.ColumnName, r[c].ToString());
+            }
+        }
+
+        private void fillActionCardValues()
+        {
+            String ActionCardsID = this.myActionCardsValues["ActionCards_Id"];
+            foreach (DataRow r in this.myDTS.Tables["ActionCard"].Select(String.Format("ActionCards_Id = {0}", ActionCardsID)))
+            {
+
+                String ID = "";
+                Dictionary<String, String> dict = new Dictionary<string, string>();
+                foreach (DataColumn c in this.myDTS.Tables["ActionCard"].Columns)
+                {
+                    dict.Add(c.ColumnName, r[c].ToString());
+                    if (c.ColumnName.ToLower() == "id") ID = r[c].ToString();
+
+                }
+
+
+                this.myActionCardValues.Add(ID, dict);
+            }
+        }
+
         #endregion
 
 
@@ -403,6 +477,10 @@ namespace monopoly.prototypeV2.logic.classes
         public Dictionary<String, Dictionary<String, String>> WaterPowerSquares { get { return this.myWaterPowerSquareValues; } }
 
         public Dictionary<String, Dictionary<String, String>> TaxSquares { get { return this.myTaxSquareValues; } }
+
+        public Dictionary<String, Dictionary<string, string>> CommunityCards { get { return this.myCommunityCardValues; } }
+
+        public Dictionary<String, Dictionary<string, string>> ActionCards { get { return this.myActionCardValues; } }
 
         #endregion
 
