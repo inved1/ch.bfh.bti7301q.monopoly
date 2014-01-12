@@ -19,6 +19,8 @@ namespace monopoly.prototypeV2.logic.classes
         private Dictionary<String, cStreet> myStreets;
         private cConfig myConfig;
         private List<cRegularSquare> myRegularSquares; //easy access 
+        private List<cTrainStationSquare> myTrainStationSquares; // easy access
+        private List<cWaterPowerSquare> myWaterPowerSquares; // and again, easy access
 
         #endregion
 
@@ -72,6 +74,8 @@ namespace monopoly.prototypeV2.logic.classes
         {
             this.mySquares = new Dictionary<int, ISquare>();
             this.myRegularSquares = new List<cRegularSquare>();
+            this.myTrainStationSquares = new List<cTrainStationSquare>();
+            this.myWaterPowerSquares = new List<cWaterPowerSquare>();
        
             foreach (KeyValuePair<string, Dictionary<String, String>> entry in this.myConfig.RegularSquares)
             {
@@ -137,6 +141,14 @@ namespace monopoly.prototypeV2.logic.classes
                 {
                     this.myRegularSquares .Add((cRegularSquare)entry.Value);
                 }
+                else if (entry.Value.GetType() == typeof(cWaterPowerSquare))
+                {
+                    this.myWaterPowerSquares.Add((cWaterPowerSquare)entry.Value);
+                }
+                else if (entry.Value.GetType() == typeof(cTrainStationSquare))
+                {
+                    this.myTrainStationSquares.Add((cTrainStationSquare)entry.Value);
+                }
             }
 
         }
@@ -156,6 +168,46 @@ namespace monopoly.prototypeV2.logic.classes
             return this.myRegularSquares;
         }
 
+        public List<cRegularSquare > getRegularSquaresByPlayer(cPlayer player )
+        {
+            List<cRegularSquare> l = new List<cRegularSquare>();
+            foreach(cRegularSquare entry in this.myRegularSquares )
+            {
+                if (entry.Owner != null)
+                {
+                    if (entry.Owner.Name == player.Name) l.Add(entry);
+                }
+            }
+            List<cRegularSquare> sorted = l.OrderBy(o => o.colorStreet).ToList();
+            return sorted;
+        }
+        public List<cTrainStationSquare> getTrainStationSquaresByPlayer(cPlayer player)
+        {
+            List<cTrainStationSquare> l = new List<cTrainStationSquare>();
+            foreach (cTrainStationSquare  entry in this.myTrainStationSquares)
+            {
+                if (entry.Owner != null)
+                {
+                    if (entry.Owner.Name == player.Name) l.Add(entry);
+                }
+            }
+            List<cTrainStationSquare> sorted = l.OrderBy(o => o.colorStreet).ToList();
+            return sorted;
+        }
+
+        public List<cWaterPowerSquare > getWaterPowerSquaresByPlayer(cPlayer player)
+        {
+            List<cWaterPowerSquare> l = new List<cWaterPowerSquare>();
+            foreach (cWaterPowerSquare entry in this.myWaterPowerSquares)
+            {
+                if (entry.Owner != null)
+                {
+                    if (entry.Owner.Name == player.Name) l.Add(entry);
+                }
+            }
+            List<cWaterPowerSquare> sorted = l.OrderBy(o => o.colorStreet).ToList();
+            return sorted;
+        }
         public ISquare getSpecificSquare(int pos)
         {
             return this.mySquares[pos];

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    public class cRegularSquare : ISquare
+    public class cRegularSquare : ISquare, IComparable ,IBuyable 
     {
         #region "vars"
         private string myName = "";
@@ -133,11 +133,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
             set { this.myRents = value; }
         }
 
-        public int Cost
-        {
-            get { return this.myCost; }
-            set { this.myCost = value; }
-        }
+
         #endregion
 
         #region "functions"
@@ -147,9 +143,27 @@ namespace monopoly.prototypeV2.logic.classes.squares
         {
             throw new NotImplementedException();
         }
+
+        public int CompareTo(object otherRegularSquare)
+        {
+            if (this.myColor == ((cRegularSquare )otherRegularSquare).myColor)
+            {
+                return this.myColor.CompareTo(((cRegularSquare)otherRegularSquare).myColor);
+            }
+            else
+            {
+                return ((cRegularSquare)otherRegularSquare).myColor.CompareTo(this.myColor);
+            }
+        }
         #endregion
 
 
 
+
+        public int price
+        {
+            get { return this.myCost; }
+            set { this.myCost = value; }
+        }
     }
 }

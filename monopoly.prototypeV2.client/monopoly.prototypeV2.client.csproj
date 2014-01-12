@@ -147,12 +147,6 @@
     <Compile Include="form\frmClient.designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\frmClientGame.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\frmClientGame.designer.cs">
-      <DependentUpon>frmClientGame.cs</DependentUpon>
-    </Compile>
     <Compile Include="form\frmClientGame_V02.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\frmClientGame.resx">
-      <DependentUpon>frmClientGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmClientGame_V02.resx">
       <DependentUpon>frmClientGame_V02.cs</DependentUpon>

@@ -8,32 +8,24 @@ using System.Threading.Tasks;
 namespace monopoly.prototypeV2.logic.classes.actions
 {
     [Serializable]
-    public class cActionBuySquare : IAction
+    public class cActionGoToPrison : IAction
     {
-        #region "vars"
-        const string ACTION_NAME = "Kaufen";
-        private cGame game = null;
-        private int price = 0;
-        #endregion
+        const string ACTION_NAME = "Ab ins Gefängniss";
+        private cGame game;
 
-        public cActionBuySquare(cGame game, int price)
+        public cActionGoToPrison(cGame game)
         {
             this.game = game;
-            this.price = price;
         }
 
         public string getName()
         {
             return ACTION_NAME;
         }
-        public int getPrice()
-        {
-            return this.price;
-        }
 
         public void runAction()
         {
-            this.game.playerBuysSquare();
+            this.game.playerGoesToPrison();
         }
     }
 }

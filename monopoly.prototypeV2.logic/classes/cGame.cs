@@ -114,6 +114,18 @@ namespace monopoly.prototypeV2.logic.classes
             get { return gameBoard.getRegularSquares(); }
         }
 
+        public List<cRegularSquare> RegularSquaresByPlayer(cPlayer player)
+        {
+            return gameBoard.getRegularSquaresByPlayer(player); 
+        }
+        public List<cTrainStationSquare> TrainStationSquaresByPlayer(cPlayer player)
+        {
+            return gameBoard.getTrainStationSquaresByPlayer(player);
+        }
+        public List<cWaterPowerSquare > WaterPowerSquaresByPlayer(cPlayer player)
+        {
+            return gameBoard.getWaterPowerSquaresByPlayer(player);
+        }
 
         public List<IAction> Actions
         {
@@ -130,10 +142,6 @@ namespace monopoly.prototypeV2.logic.classes
                 if (this.playerObservers.Count < 1)
                 {
                     throw new Exception("Keine Players registriert");
-                }
-                foreach (cPlayer p in this.playerObservers.Keys)
-                {
-                    logWriter.WriteLogQueue(p.Name + "asdasd");
                 }
                 curPlayer = this.playerObservers.Keys.First();
                 logWriter.WriteLogQueue(curPlayer.Name);
@@ -152,14 +160,19 @@ namespace monopoly.prototypeV2.logic.classes
         {
             this.gameStatus = cGame.eGameStatus.Running;
 
-            ISquare square = gameBoard.getSpecificSquare(1);
+
+            /*ISquare square = gameBoard.getSpecificSquare(1);
             square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
             square = gameBoard.getSpecificSquare(3);
             square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            square = gameBoard.getSpecificSquare(5);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            */
 
             notifyGuis();
             setDefaultActions();
             notifyCurPlayer();
+
 
 
         }
@@ -172,7 +185,7 @@ namespace monopoly.prototypeV2.logic.classes
         public void setNextCurPlayer()
         {
             Debug.Write("oldCurPlayer: " + curPlayer.Name);
-            curPlayer = playerObservers.Keys.ElementAt((playerObservers.IndexOfKey(curPlayer) + 1) % playerObservers.Count);
+            this.curPlayer = playerObservers.Keys.ElementAt((playerObservers.IndexOfKey(curPlayer) + 1) % playerObservers.Count);
             Debug.Write(", newCurPlayer: " + curPlayer.Name);
         }
 
@@ -182,13 +195,12 @@ namespace monopoly.prototypeV2.logic.classes
             actions.Clear();
             cCardDeck cardDeck;
             ISquare curSquare = getCurSquare();
-            if (curSquare.GetType() == typeof(cRegularSquare) ||
-                curSquare.GetType() == typeof(cTrainStationSquare) ||
-                curSquare.GetType() == typeof(cWaterPowerSquare))
+            if (curSquare is IBuyable)
             {
                 if (checkSquareAvailability(curSquare))
                 {
-                    actions.Add(new cActionBuySquare(this));
+                    IBuyable obj = (IBuyable )curSquare;
+                    actions.Add(new cActionBuySquare(this, obj.price));
                 }
                 else
                 {
@@ -223,7 +235,12 @@ namespace monopoly.prototypeV2.logic.classes
             }
             else if (curSquare.GetType() == typeof(cPrisonSquare ))
             {
-
+                //nothing, will never happen (since prison is 99 )
+                actions.Add(new cActionEndTurn(this));
+            }
+            else if(curPlayer.GetType() == typeof(cGoToPrisonSquare ))
+            {
+                actions.Add(new cActionGoToPrison(this));
             }
             actions.Add(new cActionGiveUp(this));
             notifyCurPlayer();
@@ -261,24 +278,24 @@ namespace monopoly.prototypeV2.logic.classes
             }
             else
             {*/
-            curPlayer.RolledInitDots = rolledDots;
-            if (startPlayer == null)
+            this.curPlayer.RolledInitDots = rolledDots;
+            if (this.startPlayer == null)
             {
                 Debug.Write("oldStartPlayer: ");
-                startPlayer = curPlayer;
-                Debug.WriteLine(", newStartPlayer: " + startPlayer.Name);
+                this.startPlayer = this.curPlayer;
+                Debug.WriteLine(", newStartPlayer: " + this.startPlayer.Name);
             }
             else
             {
-                Debug.Write("oldStartPlayer: " + startPlayer.Name + ", startPlayer: " + startPlayer.RolledInitDots + ", curPlayer: " + curPlayer.RolledInitDots);
-                if (curPlayer.RolledInitDots > startPlayer.RolledInitDots)
+                Debug.Write("oldStartPlayer: " + this.startPlayer.Name + ", startPlayer: " + this.startPlayer.RolledInitDots + ", curPlayer: " + this.curPlayer.RolledInitDots);
+                if (this.curPlayer.RolledInitDots > this.startPlayer.RolledInitDots)
                 {
-                    startPlayer = curPlayer;
+                    this.startPlayer = this.curPlayer;
                 }
-                Debug.WriteLine(", newStartPlayer: " + startPlayer.Name);
+                Debug.WriteLine(", newStartPlayer: " + this.startPlayer.Name);
             }
 
-            if (playerObservers.Keys.Last() == curPlayer)
+            if (this.playerObservers.Keys.Last() == this.curPlayer)
             {
                 startGame();
             }
@@ -305,6 +322,12 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 Debug.Write(", passingStart: true");
                 curPlayer.addMoney(Convert.ToInt32(cConfig.getInstance.Game["MoneyStart"]));
+           
+            }
+            if (checkPlayerHitsStart(tmpCurPos, valueToMove))
+            {
+                Debug.Write(", passingStart: true");
+                curPlayer.addMoney(Convert.ToInt32(cConfig.getInstance.Game["MoneyStart"])*2);
            
             }
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " moved to " + gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
@@ -396,6 +419,9 @@ namespace monopoly.prototypeV2.logic.classes
             curPlayer.inPrison = false;
             Debug.WriteLine("Spieler hat sich Freikarte aus Gefäniss gebraucht: " + curPlayer.Name);
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich Freikarte aus Gefäniss gebraucht.");
+            setDefaultActions();
+            notifyGuis();
+            notifyCurPlayer();
         }
 
         public void playerBuysFree()
@@ -404,6 +430,9 @@ namespace monopoly.prototypeV2.logic.classes
             curPlayer.inPrison = false;
             Debug.WriteLine("SPieler hat sich freigekauft: " + curPlayer.Name);
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich freigekauft.");
+            setDefaultActions();
+            notifyGuis();
+            notifyCurPlayer();
         }
 
         public void playerTrades(ISquare obj, cPlayer owner, cPlayer newOwner, int amount)
@@ -414,6 +443,15 @@ namespace monopoly.prototypeV2.logic.classes
             Debug.WriteLine("SPieler "+owner.Name+" hat Objekt "+obj.ctrlName+ " an Spieler"+newOwner.Name +" verkauft");
             logWriter.WriteLogQueue("SPieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
 
+        }
+        public void playerGoesToPrison()
+        {
+            curPlayer.inPrison = true;
+            logWriter.WriteLogQueue("Spieler " + curPlayer.Name + " ist im Gefängniss gelandet");
+            notifyGuis();
+            setNextCurPlayer();
+            setDefaultActions();
+            notifyCurPlayer();
         }
 
         public void playerGivesUp()
@@ -530,10 +568,14 @@ namespace monopoly.prototypeV2.logic.classes
             EventArgs args = new EventArgs();
 
             Delegate[] delegates = updateGUIEvent.GetInvocationList();
+
             foreach (Delegate del in delegates)
             {
+                if (del.Target != null) { 
                 updateGUIEventHandler handler = (updateGUIEventHandler)del;
                 handler.BeginInvoke(this, args, null, null);
+                //handler.Invoke(this, args);
+                }
             }
         }
 
@@ -547,8 +589,11 @@ namespace monopoly.prototypeV2.logic.classes
             foreach (Delegate del in delegates)
             {
                 //logWriter.WriteLogQueue(del.Method.ToString() + " ");
+                if (del.Target != null) { 
                 updateGUIActionEventHandler handler = (updateGUIActionEventHandler)del;
                 handler.BeginInvoke(this, args, null, null);
+                //handler.Invoke(this, args);
+                    }
             }
         }
         public void notifyGuis()

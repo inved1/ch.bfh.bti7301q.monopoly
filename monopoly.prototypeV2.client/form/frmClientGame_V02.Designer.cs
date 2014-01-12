@@ -75,6 +75,8 @@
             this.ctrlTaxSquare2 = new monopoly.prototypeV2.client.ctrl.ctrlTaxSquare();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txt_history = new System.Windows.Forms.TextBox();
+            this.txt_myMoney = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tp_players = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.con1)).BeginInit();
             this.con1.Panel1.SuspendLayout();
@@ -87,6 +89,7 @@
             this.tlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -703,6 +706,11 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.txt_history);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.txt_myMoney);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Size = new System.Drawing.Size(236, 570);
             this.splitContainer1.SplitterDistance = 419;
             this.splitContainer1.TabIndex = 0;
@@ -715,6 +723,25 @@
             this.txt_history.Name = "txt_history";
             this.txt_history.Size = new System.Drawing.Size(234, 417);
             this.txt_history.TabIndex = 0;
+            // 
+            // txt_myMoney
+            // 
+            this.txt_myMoney.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txt_myMoney.Location = new System.Drawing.Point(0, 81);
+            this.txt_myMoney.Multiline = true;
+            this.txt_myMoney.Name = "txt_myMoney";
+            this.txt_myMoney.Size = new System.Drawing.Size(234, 64);
+            this.txt_myMoney.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 54);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Start Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tp_players
             // 
@@ -735,7 +762,9 @@
             this.ClientSize = new System.Drawing.Size(1264, 774);
             this.Controls.Add(this.con1);
             this.Name = "frmClientGame_V02";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MonopolyGame";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmClientGame_V02_FormClosing);
             this.con1.Panel1.ResumeLayout(false);
             this.con1.Panel2.ResumeLayout(false);
@@ -748,6 +777,8 @@
             this.tlp.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -803,5 +834,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txt_history;
         private System.Windows.Forms.TabControl tp_players;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_myMoney;
     }
 }

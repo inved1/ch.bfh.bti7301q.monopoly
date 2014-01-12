@@ -17,9 +17,14 @@ using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Diagnostics;
 using System.Resources;
+using System.Runtime.Remoting;
+using System.Collections;
+using System.Runtime.Serialization.Formatters;
+using monopoly.prototypeV2.logic.classes.actions;
 
 namespace monopoly.prototypeV2.client.form
 {
+    [Serializable ]
     public partial class frmClientGame_V02 : Form, IObserverGUI
     {
 
@@ -79,14 +84,27 @@ namespace monopoly.prototypeV2.client.form
             // TcpChannel tcpChannel = new TcpChannel(0);
             // ChannelServices.RegisterChannel(tcpChannel, false);
 #else
-            TcpChannel tcpChannel = new TcpChannel(0);
+            BinaryServerFormatterSinkProvider serverSinkProvider = new BinaryServerFormatterSinkProvider();
+            serverSinkProvider.TypeFilterLevel = TypeFilterLevel.Full;
+
+            BinaryClientFormatterSinkProvider clientSinkProvider = new BinaryClientFormatterSinkProvider();
+            Hashtable channelProperties = new Hashtable();
+            channelProperties["port"] = 0;
+            TcpChannel tcpChannel = new TcpChannel(channelProperties, clientSinkProvider, serverSinkProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
 #endif
-            //TcpChannel tcpChannel = new TcpChannel(0);
-            //ChannelServices.RegisterChannel(tcpChannel, false);
+
+
+            //RemotingConfiguration.RegisterActivatedClientType(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
+            //this.myGame = new cGame();
             this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this);
+
+            if (this.myGame.playerObservers.Count > 1)
+            {
+                this.button1.Visible = false;
+            }
 
             myTPCardLocations = new List<Point>();
 
@@ -176,7 +194,7 @@ namespace monopoly.prototypeV2.client.form
                 }
 
                 //orientation
-                if (entry.Key >= 12 && entry.Key <= 20 || entry.Key >= 32 && entry.Key <= 40)
+                if (entry.Key >= 11 && entry.Key <= 20 || entry.Key >= 31 && entry.Key <= 40)
                 {
                     if (entry.Value.GUICtrl.GetType() == typeof(ctrl.ctrlRegularSquare)   )
                     {
@@ -196,73 +214,13 @@ namespace monopoly.prototypeV2.client.form
 
         }
 
-        public void updateActions()
-        {
-           
-
-            frmGenericActions f = new frmGenericActions();
-            foreach (IAction action in this.myGame.Actions)
-            {
-                Button btn = new Button();
-                btn.Text = action.getName();
-                btn.AutoSize = true;
-                btn.Tag = action;
-                btn.Click += new EventHandler(runAction);
-                btn.DialogResult = System.Windows.Forms.DialogResult.OK;
-                f.addControl(btn);
-            }
-
-
-            if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-                f.Hide();
-                f.Close(); }
-            f.Dispose();
-            
-        }
-
-        //public void updateAll()
-        //{
-        //    try
-        //    {
-
-
-        //        tp_players.TabPages.Clear();
-            
-        //        foreach(cPlayer p in this.myGame.Players)
-        //        {
-        //            tp_players.TabPages.Add(p.Name);
-
-        //            TabPage t = tp_players.SelectedTab;
-        //        }
-
-        //        foreach(cRegularSquare r in this.myGame.RegularSquares )
-        //        {
-               
-        //            if(r.Owner != null)
-        //            {
-        //                TabPage t = tp_players.TabPages[r.Owner.Name];
-        //                ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
-        //                c.setTopInfo(r.ctrlName);
-        //                c.setBottomInfo(r.PriceHouse.ToString());
-
-        //                t.Controls.Add(c);
-        //            }
-
-        //            tp.TabPages.Add(r.ctrlName);
-        //        }
-        //    }
-        //catch( Exception e)
-        //{
-        //    throw e;
-        //}
-                    
-        //}
+   
 
 
         public void runAction(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmGenericActions f = (frmGenericActions)btn.Parent.Parent;
+            frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent  ;
             IAction action = (IAction)btn.Tag;
             action.runAction();
         }
@@ -313,9 +271,22 @@ namespace monopoly.prototypeV2.client.form
 
         public void onUpdateGUIActionsEvent(object sender, EventArgs e)
         {
+            cGame c = (cGame)sender;
+         //doensnt work !
+            //if (!c.CurPlayer.Equals(this.myPlayer))
+            //{
+            //    return;
+            //}
+
+            //ugly workaround, since only one name is allowed
+            if(c.CurPlayer.Name != this.myPlayer.Name )
+            {
+                return;
+            }
+
             if (this.InvokeRequired) {
                 cbGUIAction d = new cbGUIAction(onUpdateGUIActionsEvent);
-                this.Invoke(d,new object[] {sender,e});
+                this.BeginInvoke(d, new object[] { sender, e });
 
 
             }
@@ -326,8 +297,18 @@ namespace monopoly.prototypeV2.client.form
                 foreach (IAction action in this.myGame.Actions)
                 {
                     Button btn = new Button();
-                    btn.Text = action.getName();
+                    if (action.GetType() == typeof(cActionBuySquare))
+                    {
+                        cActionBuySquare obj = (cActionBuySquare)action;
+                        btn.Text = action.getName() + "\n" + obj.getPrice().ToString();
+                    }
+                    else
+                    {
+                        btn.Text = action.getName();
+                    }
+                    
                     btn.AutoSize = true;
+                    //btn.Size = new Size(80, 120);
                     btn.Tag = action;
                     btn.Click += new EventHandler(runAction);
                     btn.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -359,7 +340,7 @@ namespace monopoly.prototypeV2.client.form
             if(tp_players.InvokeRequired )
             {
                 cbGUI d = new cbGUI(onUpdateGUIEvent);
-                tp_players.Invoke(d, new object[] {sender,e} );
+                tp_players.BeginInvoke (d, new object[] {sender,e} );
             }
             else
             { 
@@ -376,8 +357,15 @@ namespace monopoly.prototypeV2.client.form
 
                 foreach (cPlayer p in this.myGame.Players)
                 {
+
+                    if (p.Name == this.myPlayer.Name )
+                    {
+                        this.txt_myMoney.Text = "Aktueller Kontostand: " + p.Amount.ToString() ;
+                    }
+
                     tp_players.TabPages.Add(p.Name,p.Name );
                     TabPage t = tp_players.SelectedTab;
+                    t.AutoScroll = true;
                     t.Tag = myTPCardLocations;
                     
 
@@ -391,27 +379,51 @@ namespace monopoly.prototypeV2.client.form
                     picBoxAvatar.Image = bmp;
                     sq.addAvatar(picBoxAvatar,p.Avatar );
 
-                }
 
-
-                int itmp = 0;
-                foreach (cRegularSquare r in this.myGame.RegularSquares)
-                {
-
-                    if (r.Owner != null)
+                    int itmp = 0;
+                    foreach (cRegularSquare entry in this.myGame.RegularSquaresByPlayer(p) )
                     {
-                        TabPage t = tp_players.TabPages[r.Owner.Name];
+                        TabPage tp = tp_players.TabPages[entry.Owner.Name];
                         ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
-                        c.setTopInfo(r.ctrlName);
-                        c.TopBackColor = r.colorStreet;
-                        c.setBottomInfo(r.CardInfo);
-                        c.Location = myTPCardLocations[itmp];
+                        c.setTopInfo(entry.ctrlName);
+                        c.TopBackColor = entry.colorStreet;
+                        c.setBottomInfo(entry.CardInfo);
+                        List<Point> pt = (List<Point>)t.Tag;
+                        c.Location = pt[itmp];
+                        t.Controls.Add(c);
+                        itmp += 1;
+                    }
+                    foreach (cWaterPowerSquare entry in this.myGame.WaterPowerSquaresByPlayer(p))
+                    {
+                        TabPage tp = tp_players.TabPages[entry.Owner.Name];
+                        ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
+                        c.setTopInfo(entry.ctrlName);
+                        c.TopBackColor = entry.colorStreet;
+                        c.setBottomInfo("");
+                        List<Point> pt = (List<Point>)t.Tag;
+                        c.Location = pt[itmp];
+                        t.Controls.Add(c);
+                        itmp += 1;
+                    }
+                    foreach (cTrainStationSquare  entry in this.myGame.TrainStationSquaresByPlayer(p))
+                    {
+                        TabPage tp = tp_players.TabPages[entry.Owner.Name];
+                        ctrlPlayerInfoCard c = new ctrl.ctrlPlayerInfoCard();
+                        c.setTopInfo(entry.ctrlName);
+                        c.TopBackColor = entry.colorStreet;
+                        c.setBottomInfo("");
+                        List<Point> pt = (List<Point>)t.Tag;
+                        c.Location = pt[itmp];
                         t.Controls.Add(c);
                         itmp += 1;
                     }
 
-                    //tp.TabPages.Add(r.ctrlName);
+
                 }
+
+
+
+
             }
         }
 
@@ -420,6 +432,13 @@ namespace monopoly.prototypeV2.client.form
             //disconnect observer
 
             this.myGame.removePlayer(this.myPlayer, this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            this.myGame.initGame();
+            this.button1.Enabled = false;
         }
 
 

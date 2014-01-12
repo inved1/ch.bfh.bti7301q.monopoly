@@ -106,7 +106,9 @@ namespace monopoly.prototypeV2.client.ctrl
 
         private void ctrl_paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
-            e.Graphics.DrawString(this.ctrlTopName, new Font("Arial", 8), Brushes.Black, new PointF(2, 2));
+
+            String s = this.ctrlTopName.Substring(0, this.ctrlTopName.IndexOf(" ")) + "\n" + this.ctrlTopName.Substring(this.ctrlTopName.IndexOf(" "));
+            e.Graphics.DrawString(s, new Font("Arial", 8), Brushes.Black, new PointF(2, 2));
         }
 
         protected override void OnPaint(PaintEventArgs e)

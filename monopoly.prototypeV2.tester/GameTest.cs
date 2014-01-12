@@ -44,7 +44,7 @@ namespace monopoly.prototypeV2.tester
             btnRoll.Tag = new cActionRoll(this.game);
             btnRoll.Click += new EventHandler(runAction);
             
-            btnBuySquare.Tag = new cActionBuySquare(this.game);
+            //btnBuySquare.Tag = new cActionBuySquare(this.game);
             btnBuySquare.Click += new EventHandler(runAction);
 
             btnEndTurn.Tag = new cActionEndTurn(this.game);

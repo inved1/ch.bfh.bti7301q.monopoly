@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\actions\cActionGoToPrison.cs" />
     <Compile Include="classes\actions\cActionTrade.cs" />
     <Compile Include="classes\actions\cActionPrisonOutCard.cs" />
     <Compile Include="classes\actions\cActionBuySquare.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="classes\squares\cTrainStationSquare.cs" />
     <Compile Include="classes\squares\cWaterPowerSquare.cs" />
     <Compile Include="interfaces\IAction.cs" />
+    <Compile Include="interfaces\IBuyable.cs" />
     <Compile Include="interfaces\ICard.cs" />
     <Compile Include="interfaces\IObserverAction.cs" />
     <Compile Include="interfaces\IObserverGUI.cs" />

@@ -8,7 +8,7 @@ using monopoly.prototypeV2.logic.interfaces;
 namespace monopoly.prototypeV2.logic.classes.squares
 {
     [Serializable]
-    class cWaterPowerSquare : ISquare
+    public class cWaterPowerSquare : ISquare,IBuyable 
     {
         private string myName = "";
         private string myColor = "grey"; // default
@@ -42,7 +42,8 @@ namespace monopoly.prototypeV2.logic.classes.squares
             set { this.myOwner = value; }
         }
 
-        public int Cost
+
+        public int price
         {
             get { return this.myCost; }
             set { this.myCost = value; }

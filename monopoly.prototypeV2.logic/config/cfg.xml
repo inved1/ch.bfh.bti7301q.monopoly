@@ -13,9 +13,9 @@
         <ServerSharedGameName>sharedGame</ServerSharedGameName>
     </Server>    
     <Client>
-        <ClientLastServer>147.87.46.203:27015</ClientLastServer>
+        <ClientLastServer>192.168.0.5:27015</ClientLastServer>
         <ClientHistoryServers>
-            <ClientHistoryServer id='1'>127.0.0.1:27015</ClientHistoryServer>
+            <ClientHistoryServer id='1'>192.168.0.5:27015</ClientHistoryServer>
             <ClientHistoryServer id='2'>147.87.46.255:27015</ClientHistoryServer>
             <ClientHistoryServer id='3'>147.87.47.252:27015</ClientHistoryServer>
             <ClientHistoryServer id='4'>147.87.46.203:27015</ClientHistoryServer>
@@ -47,7 +47,7 @@
                 </Squares>
             </Street>
             <Street id='3'>
-                <Color>violett</Color>
+                <Color>DarkViolet</Color>
                 <Squares>
                     <ID>11</ID>
                     <ID>13</ID>
@@ -186,7 +186,7 @@
             </RegularSquare>
             <RegularSquare id='11'>
                 <Name>Basel Steinenvorstadt</Name>
-                <Color>violett</Color>
+                <Color>DarkViolet</Color>
                 <cost>2800</cost>
                 <priceHouse>2000</priceHouse>
                 <priceHotel>2000</priceHotel>
@@ -202,7 +202,7 @@
             </RegularSquare>
             <RegularSquare id='13'>
                 <Name>Solothurn Hauptgasse</Name>
-                <Color>violett</Color>
+                <Color>DarkViolet</Color>
                 <cost>2800</cost>
                 <priceHouse>2000</priceHouse>
                 <priceHotel>2000</priceHotel>
@@ -218,7 +218,7 @@
             </RegularSquare>
             <RegularSquare id='14'>
                 <Name>Lugano Via Nassa</Name>
-                <Color>violett</Color>
+                <Color>DarkViolet</Color>
                 <cost>3200</cost>
                 <priceHouse>2000</priceHouse>
                 <priceHotel>2000</priceHotel>

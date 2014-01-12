@@ -30,7 +30,6 @@ namespace monopoly.prototypeV2.server
         {
             InitializeComponent();
             this.myConfig = cConfig.getInstance;
-            this.button2.Enabled = false;
         }
 
         private void init()
@@ -41,20 +40,20 @@ namespace monopoly.prototypeV2.server
 
             this.txtPort.Text = this.myConfig.Server["ServerPort"];
 
-            BinaryServerFormatterSinkProvider tpfProvider = new BinaryServerFormatterSinkProvider();
-            tpfProvider.TypeFilterLevel = TypeFilterLevel.Full;
-            BinaryClientFormatterSinkProvider clientProv = new BinaryClientFormatterSinkProvider();
-            IDictionary props = new Hashtable();
-            props["port"] = Convert.ToInt32(this.txtPort.Text);
-            TcpChannel tcpChannel = new TcpChannel(props, clientProv, tpfProvider);
+
+            BinaryServerFormatterSinkProvider serverSinkProvider = new BinaryServerFormatterSinkProvider();
+            serverSinkProvider.TypeFilterLevel = TypeFilterLevel.Full;
+
+            BinaryClientFormatterSinkProvider clientSinkProvider = new BinaryClientFormatterSinkProvider();
+            Hashtable channelProperties = new Hashtable();
+            channelProperties["port"] = Convert.ToInt32(this.txtPort.Text);
+
+            TcpChannel tcpChannel = new TcpChannel(channelProperties, clientSinkProvider, serverSinkProvider);
             ChannelServices.RegisterChannel(tcpChannel, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(monopoly.prototypeV2.logic.classes.cGame), this.myConfig.Server["ServerSharedGameName"], WellKnownObjectMode.Singleton);
 
-            this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://127.0.0.1:{0}/{1}", this.myConfig.Server["ServerPort"], this.myConfig.Server["ServerSharedGameName"]));
-            this.txtInfo.AppendText(String.Format("Connection to 'tcp://127.0.0.1:{0}/{1}' established\n", this.myConfig.Server["ServerPort"], this.myConfig.Server["ServerSharedGameName"]));
-            this.txtInfo.AppendText("Please start clients now.");
-
+            RemotingConfiguration.RegisterWellKnownServiceType (typeof(monopoly.prototypeV2.logic.classes.cGame), this.myConfig.Server["ServerSharedGameName"],WellKnownObjectMode.Singleton );
             RemotingConfiguration.CustomErrorsMode = CustomErrorsModes.Off;
+            //TypeFilterLevel = TypeFilterLevel.Full; 
             
             w.WriteLogQueue("Server registered");
 
@@ -76,25 +75,8 @@ namespace monopoly.prototypeV2.server
         private void button1_Click(object sender, EventArgs e)
         {
             init();
-            this.button2.Enabled = true;
             this.button1.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //this.WindowState = FormWindowState.Minimized;
-                
-                this.myGame.initGame();
-            }
-            catch (Exception ex)
-            {
-                LogWriter.Instance.WriteLogQueue(ex.Message);
-                throw new Exception("Monopoly Server Exception", ex);
-                               
-            }
-            
-        }
     }
 }
