@@ -238,6 +238,8 @@ namespace monopoly.prototypeV2.client.form
             //action.runAction();
             frmBuild fBuild = new frmBuild();
 
+            //buttons bauen initialisieren
+
             if (fBuild.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 fBuild.Hide();
