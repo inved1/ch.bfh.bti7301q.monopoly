@@ -17,6 +17,8 @@ namespace monopoly.prototypeV2.logic.classes
         private int rolledInitDots = 0;
         private bool isInPrison;
         private int countPrisonFreeCards = 0;
+        private bool myCanBuild;
+        private bool myCanTrade;
 
         public cPlayer(string name, string avatorToken, int curPos)
         {
@@ -25,6 +27,8 @@ namespace monopoly.prototypeV2.logic.classes
             this.avatar = new cAvatar(avatorToken);
             this.amount = Convert.ToInt32( cConfig.getInstance.Game["GameStartMoney"]);
             this.isInPrison = false;
+            this.myCanBuild = false;
+            this.myCanTrade = true;
         }
 
         public string Name
@@ -90,6 +94,16 @@ namespace monopoly.prototypeV2.logic.classes
             }
         }
 
+        public bool canBuild
+        {
+            get { return this.myCanBuild ; }
+        }
+
+        public bool canTrade
+        {
+
+            get { return this.myCanTrade; }
+        }
         public int CompareTo(object otherPlayer)
         {
             if (this.Name == ((cPlayer)otherPlayer).Name)

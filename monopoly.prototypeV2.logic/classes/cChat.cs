@@ -40,10 +40,10 @@ namespace monopoly.prototypeV2.logic.classes
         public string strOutput()
         {
             String r = "";
-            foreach (KeyValuePair<int, string> entry in myMsgs)
-            {
-                r = r + "->" + entry.Value + System.Environment.NewLine; 
-            }
+            //foreach (KeyValuePair<int, string> entry in myMsgs)
+            //{
+            //    r = r + "->" + entry.Value + System.Environment.NewLine; 
+            //}
 
             return r;
         }

@@ -22,7 +22,7 @@ namespace monopoly.prototypeV2.logic.classes.actions
 
         public string getName()
         {
-            return ACTION_NAME;
+            return ACTION_NAME + System.Environment.NewLine + this.card.Text ;
         }
 
         public void runAction()

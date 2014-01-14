@@ -315,16 +315,22 @@ namespace monopoly.prototypeV2.client.form
                     f.addControl(btn);
                 }
 
+                if (this.myGame.CurPlayer.canBuild)
+                {
+                    Button bBuild = new Button();
+                    bBuild.Text = "Bauen";
+                    bBuild.Click += new EventHandler(showBuild);
+                    f.addControl(bBuild);
+                }
 
-                Button bBuild = new Button();
-                bBuild.Text = "Bauen";
-                bBuild.Click += new EventHandler(showBuild);
-                f.addControl(bBuild);
+                if (this.myGame.CurPlayer.canTrade)
+                {
+                    Button bTrade = new Button();
+                    bTrade.Text = "Handeln";
+                    bTrade.Click += new EventHandler(showTrade);
+                    f.addControl(bTrade);
+                }
 
-                Button bTrade = new Button();
-                bTrade.Text = "Handeln";
-                bTrade.Click += new EventHandler(showTrade);
-                f.addControl(bTrade);
 
 
                 if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)

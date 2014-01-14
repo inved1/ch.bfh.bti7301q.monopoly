@@ -32,6 +32,11 @@ namespace monopoly.prototypeV2.client
             this.flp.Controls.Clear();
         }
 
+        private void frmGenericActions_Shown(object sender, EventArgs e)
+        {
+            this.flp.Controls[0].Select();
+        }
+
         /*public void notify(List<IAction> lst)
         {
             foreach (IAction o in lst)

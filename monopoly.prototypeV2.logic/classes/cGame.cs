@@ -356,7 +356,7 @@ namespace monopoly.prototypeV2.logic.classes
             if (owner == this.curPlayer)
             {
                 this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " besitzt dieses Grundstück bereits, keine Miete fällig");
-                logWriter.WriteLogQueue("Player" + this.curPlayer.Name + "  owns this property - no need to pay rent. " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
+                logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " owns this property - no need to pay rent. " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
             else
             {
@@ -384,9 +384,15 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 case "pay":
                     this.curPlayer.spendMoney(Convert.ToInt32(card.Value));
+                    setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
                 case "receive":
                     this.curPlayer.addMoney(Convert.ToInt32(card.Value));
+                    setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
                 case "prisonfree":
                     this.curPlayer.PrisonFreeCards += 1;
@@ -403,6 +409,9 @@ namespace monopoly.prototypeV2.logic.classes
 
                 case "gotoprison":
                     playerGoesToPrison();
+                      setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
 
                 case "receivefromplayers":
@@ -416,6 +425,9 @@ namespace monopoly.prototypeV2.logic.classes
                         }
                     }
                     this.curPlayer.addMoney(sum);
+                    setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
 
                 case "payrealestates":
@@ -430,7 +442,9 @@ namespace monopoly.prototypeV2.logic.classes
                     }
 
                     this.curPlayer.spendMoney(sum);
-
+                    setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
 
                 case "payplayers":
@@ -444,6 +458,9 @@ namespace monopoly.prototypeV2.logic.classes
                         }
                     }
                     this.curPlayer.spendMoney(sum);
+                    setNextCurPlayer();
+                    setDefaultActions();
+                    notifyCurPlayer();
                     break;
                 default:
                     break;

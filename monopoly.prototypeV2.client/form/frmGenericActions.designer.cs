@@ -90,6 +90,7 @@
             this.Name = "frmGenericActions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aktionen";
+            this.Shown += new System.EventHandler(this.frmGenericActions_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

@@ -51,9 +51,9 @@ namespace monopoly.prototypeV2.client
         {
 
             LogWriter w = LogWriter.Instance;
-            w.WriteLogQueue(string.Format("Client connect to {0}", this.cbxServer.SelectedItem.ToString() ));
+            w.WriteLogQueue(string.Format("Client connect to {0}", this.cbxServer.Text.ToString() ));
 
-            frmClientGame_V02 frmClient = new frmClientGame_V02(this.cbxServer.SelectedItem.ToString(), this.cbxPlayer.SelectedItem.ToString(), this.cbxAvatars.SelectedItem.ToString());
+            frmClientGame_V02 frmClient = new frmClientGame_V02(this.cbxServer.Text.ToString(), this.cbxPlayer.Text.ToString(), this.cbxAvatars.Text.ToString());
             frmClient.FormClosed += new FormClosedEventHandler(frmClient_FormClosed);
             frmClient.Show();
             this.Hide();
