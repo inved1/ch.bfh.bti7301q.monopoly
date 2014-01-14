@@ -235,7 +235,7 @@ namespace monopoly.prototypeV2.logic.classes
             else if (curSquare.GetType() == typeof(cTaxSquare))
             {
                 playerPaysTax();
-                actions.Add(new cActionEndTurn(this));
+                //actions.Add(new cActionEndTurn(this));
             }
             else if (curSquare.GetType() == typeof(cStartSquare) ||
                      curSquare.GetType() == typeof(cPrisonVisitorSquare) ||
@@ -409,9 +409,10 @@ namespace monopoly.prototypeV2.logic.classes
 
                 case "gotoprison":
                     playerGoesToPrison();
-                      setNextCurPlayer();
-                    setDefaultActions();
-                    notifyCurPlayer();
+                    //not needed, is in "Playergoestoprison()
+                   // setNextCurPlayer();
+                   // setDefaultActions();
+                   // notifyCurPlayer();
                     break;
 
                 case "receivefromplayers":

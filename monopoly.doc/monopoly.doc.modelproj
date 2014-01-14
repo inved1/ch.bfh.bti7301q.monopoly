@@ -123,6 +123,9 @@
       <SubType>Content</SubType>
       <DependentUpon>v02.classdiagram</DependentUpon>
     </Content>
+    <Content Include="v02.dgml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="v03.classdiagram">
       <SubType>Content</SubType>
     </Content>
