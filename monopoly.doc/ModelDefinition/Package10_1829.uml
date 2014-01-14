@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="91b312e2-abe5-4361-afb1-02c868112092"
   name="util"
@@ -640,72 +640,6 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="17a24686-95e8-4e25-9d40-bab714d0168a"
-            name="LogWriter"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="2849a483-85a8-4b24-a28d-a9903bb3dd08"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.logic%2Fbin%2FDebug%2Fmonopoly.prototypeV2.logic.dll&quot; Namespace%3Dmonopoly.prototypeV2.logic.util Type%3DLogWriter Member%3D.ctor"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="4e58cc10-3848-4da2-a4ad-1be3d1818b01"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="06883e5d-ef50-475f-9697-77036dda8c0f">
-                    <propertyInstance
-                      Id="ae3d9276-04c2-4dbf-b5d0-80737c01762f"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1940d273-3427-4d96-a1cb-6de5c17f5888">
-                    <propertyInstance
-                      Id="9655f102-001d-4cff-8a10-39f30c352ae2"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2329c905-0900-495b-b2bf-306574970db7">
-                    <propertyInstance
-                      Id="4256c7c7-8dbd-4d5f-bba4-88e2d3ea8ef3"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="793df6af-2266-4f34-82a6-d6b500d9323d">
-                    <propertyInstance
-                      Id="a4c98e1f-ee10-4b59-9e0b-06c5d9e47090"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="3db3c4df-4059-463a-9182-71a2c87edb83">
-                    <propertyInstance
-                      Id="c7d59d78-7bfa-46f3-834b-9702bdfc8979"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c057c435-651d-4a5e-b160-8afeb5994275">
-                    <propertyInstance
-                      Id="35f7a1d7-86d0-4860-8774-cb9d8ea286d0"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
             Id="550d4b9e-d3e5-4a4f-9bd2-5b3a9a0e3127"
             name="WriteLogFile"
             visibility="Private"
@@ -764,6 +698,72 @@
                     Id="5697d498-15fe-42cc-bca8-d5445e297120">
                     <propertyInstance
                       Id="a4834174-1d85-4ae2-8c64-a01e9aeceff7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="9d15a481-09dc-4d0b-b89b-2be0338168f7"
+            name="LogWriter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7a0a4d98-53a0-47a7-ac1c-df49a8c89420"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.logic%2Fbin%2FDebug%2Fmonopoly.prototypeV2.logic.dll&quot; Namespace%3Dmonopoly.prototypeV2.logic.util Type%3DLogWriter Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b92c57e4-05da-4ebb-921e-17a461d35083"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31914c1a-6d43-441f-adb2-a2d5f8c9b806">
+                    <propertyInstance
+                      Id="c2b4992a-d8e3-46ae-b5e3-b2f8db850930"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f296b818-c4cf-4374-8507-01dfaba60d60">
+                    <propertyInstance
+                      Id="cfa96cc0-bbf8-4d46-8dc0-de83d4b2a4bd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30bb18ea-ddb5-49be-a9b0-8e385281eaae">
+                    <propertyInstance
+                      Id="7610cd1f-e127-4716-b6cd-c15076b220eb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a954db8-45bf-477d-b28a-3171b27ebd3d">
+                    <propertyInstance
+                      Id="cabb6b0b-9c35-4231-87a9-0b1037029d3e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f46394f-3627-43d5-9f62-50ac7ecfcdd2">
+                    <propertyInstance
+                      Id="e20d7a2d-8e21-4b3c-bd69-1b02b6ecde9f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2372833-bd00-4bc3-8e55-7d53750b9fe4">
+                    <propertyInstance
+                      Id="528a3f39-fbba-408a-93f3-c8e401ef9f8d"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>

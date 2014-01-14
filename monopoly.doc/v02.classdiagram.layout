@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="v02">
+  <logicalClassDesignerModelMoniker Id="bf341ea9-84fe-41a1-ba3c-88145c004550" />
+  <nestedChildShapes>
+    <packageShape Id="4972c6ab-1885-4c6c-a90f-e03f2a4d8e95" absoluteBounds="0.5, 2, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="e4fbc3df-5bfa-4865-aa9a-d0b69d388483" LastKnownName="Properties" />
+    </packageShape>
+    <packageShape Id="99231886-f8f5-4f09-be27-31289e63af21" absoluteBounds="2.5, 0.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="2f08260a-ee51-4665-859e-82364ef932a0" LastKnownName="logic" />
+    </packageShape>
+    <packageShape Id="977978f8-dcdc-4b93-80e3-24c5078264f9" absoluteBounds="2.5, 2, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="39bea4d9-b43e-44de-bc41-5f61ceba5b9f" LastKnownName="classes" />
+    </packageShape>
+    <packageShape Id="1295aca9-6820-412e-8926-5dfcd563612e" absoluteBounds="0.5, 3.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="3572d370-e90d-46b6-81c5-49a68ee47503" LastKnownName="actions" />
+    </packageShape>
+    <packageShape Id="b3f21499-3332-449b-a351-2b8018c10102" absoluteBounds="2.5, 3.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="5ebd5d6f-3292-4c0f-be8e-d515f69ae48a" LastKnownName="squares" />
+    </packageShape>
+    <packageShape Id="8d8cc14d-2717-4346-b2a1-c31b313bb7fc" absoluteBounds="4.5, 0.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="6f827713-7a09-4570-803d-9552158e6d94" LastKnownName="interfaces" />
+    </packageShape>
+    <packageShape Id="e2633342-91d9-4b98-88c8-3de191f4ffff" absoluteBounds="4.5, 2, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="74adfc3a-4a06-4fca-a117-94432be1c788" LastKnownName="Properties" />
+    </packageShape>
+    <packageShape Id="6272f752-2c97-463d-b138-04fb3fc4bba1" absoluteBounds="4.5, 3.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="a17fe176-15d4-48a4-a3d3-b6739fa60792" LastKnownName="util" />
+    </packageShape>
+    <packageShape Id="acd37928-524b-4286-b5aa-6e9ea207f91e" absoluteBounds="0.5, 5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="92e2ed52-43ca-4904-a812-b9b1c2bccc3f" LastKnownName="server" />
+    </packageShape>
+    <packageShape Id="0d361aae-05d9-4774-8edd-d7a0752d8124" absoluteBounds="2.5, 5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="c83c61b9-184b-4aaa-ae31-af8089910595" LastKnownName="Properties" />
+    </packageShape>
+    <packageShape Id="bd27378c-990b-4be6-a2bd-cf2bc9cca491" absoluteBounds="0.5, 6.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="2fd5897c-95f6-498f-be48-d2b2d9d976c2" LastKnownName="client" />
+    </packageShape>
+    <packageShape Id="28df9901-8364-494b-96b5-5786ffb8dc49" absoluteBounds="2.5, 6.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="81dd82c9-af52-4026-8e95-c3ca30ac287d" LastKnownName="classes" />
+    </packageShape>
+    <packageShape Id="d2769b2b-82f4-4336-83cd-5322190da77e" absoluteBounds="4.5, 5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="992dcc5f-d7da-4355-bafd-4bceeaa1a2e7" LastKnownName="ctrl" />
+    </packageShape>
+    <packageShape Id="432e5c35-8569-4306-b15c-41676629d1b4" absoluteBounds="4.5, 6.5, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="6bd38384-b1f8-4fe0-b6e1-51fc54551b0c" LastKnownName="form" />
+    </packageShape>
+    <packageShape Id="29f3773c-61eb-499f-89ed-146d567a1863" absoluteBounds="0.5, 8, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="9ac7424e-6359-44c7-b4dd-2ef983b4317d" LastKnownName="interfaces" />
+    </packageShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>
