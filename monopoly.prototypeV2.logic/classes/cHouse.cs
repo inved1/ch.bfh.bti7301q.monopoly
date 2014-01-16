@@ -10,7 +10,7 @@ namespace monopoly.prototypeV2.logic.classes
 {
 
     [Serializable]
-    class cHouse : IRealEstate
+    public class cHouse : IRealEstate
     {
         private Image myImage = null;
         public   cHouse()

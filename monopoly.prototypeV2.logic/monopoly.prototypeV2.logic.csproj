@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\actions\cActionBuyRealEstate.cs" />
     <Compile Include="classes\actions\cActionPlayCard.cs" />
     <Compile Include="classes\actions\cActionGoToPrison.cs" />
     <Compile Include="classes\actions\cActionTrade.cs" />

@@ -39,7 +39,7 @@ namespace monopoly.prototypeV2.tester
             player = new cPlayer("Player3", "dog", 0);
             player.addMoney(10000);
             this.game.addPlayer(player, null);
-            this.game.CurPlayer = this.game.playerObservers.Keys.First();
+            this.game.CurPlayer = this.game.PlayerObservers.Keys.First();
 
             btnRoll.Tag = new cActionRoll(this.game);
             btnRoll.Click += new EventHandler(runAction);

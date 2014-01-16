@@ -97,6 +97,7 @@ namespace monopoly.prototypeV2.logic.classes
         public bool canBuild
         {
             get { return this.myCanBuild ; }
+            set { this.myCanBuild = value; }
         }
 
         public bool canTrade

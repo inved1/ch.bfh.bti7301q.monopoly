@@ -10,7 +10,7 @@ namespace monopoly.prototypeV2.logic.classes.actions
     [Serializable]
     public class cActionPlayCard : IAction
     {
-        const string ACTION_NAME = "Aktion auf Karte aufführen";
+        const string ACTION_NAME = "Aktion auf Karte ausführen";
         private cGame game;
         private ICard card;
 

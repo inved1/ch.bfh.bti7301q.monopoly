@@ -59,7 +59,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
             get { return this.myCountCurrentHouses; }
             set
             {
-                if ((this.myCountCurrentHouses + value) >= 4)
+                if ((this.myCountCurrentHouses + value) <= 4)
                 {
                     this.myCountCurrentHouses += value;
                     this.CurrentRent = this.myRents[this.myCountCurrentHouses];

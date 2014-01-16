@@ -9,7 +9,7 @@ using System.Drawing;
 namespace monopoly.prototypeV2.logic.classes
 {
     [Serializable]
-    class cHotel : IRealEstate
+    public class cHotel : IRealEstate
     {
         private Image myImage = null;
  

@@ -101,7 +101,7 @@ namespace monopoly.prototypeV2.client.form
             this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this);
 
-            if (this.myGame.playerObservers.Count > 1)
+            if (this.myGame.PlayerObservers.Count > 1)
             {
                 this.button1.Visible = false;
             }
@@ -220,9 +220,16 @@ namespace monopoly.prototypeV2.client.form
         public void runAction(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent  ;
+            //frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent  ;
             IAction action = (IAction)btn.Tag;
             action.runAction();
+        }
+
+        public void runBuild(object sender, EventArgs e, int squareNr)
+        {
+            Button btn = (Button)sender;
+            cActionBuyRealEstate action = (cActionBuyRealEstate)btn.Tag;
+            action.runBuyRealEstate(squareNr);
         }
 
         public void runTrade()
@@ -232,13 +239,17 @@ namespace monopoly.prototypeV2.client.form
 
         public void showBuild(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            frmGenericActions f = (frmGenericActions)btn.Parent.Parent.Parent.Parent;
-            //IAction action = (IAction)btn.Tag;
-            //action.runAction();
             frmBuild fBuild = new frmBuild();
 
-            //buttons bauen initialisieren
+            foreach (KeyValuePair<int, ISquare> pair in this.myGame.SquaresToBuildOnForCurPlayer) {
+                Button btnSquare = new Button();
+                btnSquare.Text = pair.Value.ctrlName;
+                btnSquare.AutoSize = true;
+                btnSquare.Tag = new cActionBuyRealEstate(this.myGame);
+                btnSquare.Click += new EventHandler((s, eArg) => runBuild(s, eArg, pair.Key));
+                btnSquare.DialogResult = System.Windows.Forms.DialogResult.OK;
+                fBuild.addControl(btnSquare);
+            }
 
             if (fBuild.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -263,8 +274,6 @@ namespace monopoly.prototypeV2.client.form
             }
             fTrade.Dispose();
         }
-
-
 
         delegate void cbGUI(object sender, EventArgs e); //callback
 
@@ -310,7 +319,6 @@ namespace monopoly.prototypeV2.client.form
                     }
                     
                     btn.AutoSize = true;
-                    //btn.Size = new Size(80, 120);
                     btn.Tag = action;
                     btn.Click += new EventHandler(runAction);
                     btn.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -429,6 +437,7 @@ namespace monopoly.prototypeV2.client.form
 
                 }
 
+                showRealEstates();
 
                 this.txt_history.Text  = this.myGame.gameMessages.strOutput();
                 this.txt_history.SelectionStart = this.txt_history.Text.Length;
@@ -440,6 +449,44 @@ namespace monopoly.prototypeV2.client.form
 
 
 
+            }
+        }
+
+        public void showRealEstates()
+        {
+            cGUIWrapper wrapper;
+            cRegularSquare regSquare;
+            PictureBox picBox;
+            ctrlRegularSquare ctrlRegSquare;
+
+            foreach (KeyValuePair<int, cGUIWrapper> pair in this.mySquares)
+            {
+                wrapper = pair.Value;
+                if (wrapper.oSquare.GetType() == typeof(cRegularSquare))
+                {
+                    regSquare = (cRegularSquare)wrapper.oSquare;
+                    ctrlRegSquare = (ctrlRegularSquare)wrapper.GUICtrl;
+                    if (regSquare.Houses > 0)
+                    {
+                        cHouse house = new cHouse();
+                        for (int i = 0; i < regSquare.Houses; i++)
+                        {
+                            picBox = new PictureBox();
+                            picBox.Image = house.getImage();
+                            ctrlRegSquare.addRealEstate(picBox, house);
+                        }
+                    }
+                    else if (regSquare.Hotels > 0)
+                    {
+                        cHotel hotel = new cHotel();
+                        for (int i = 0; i < regSquare.Houses; i++)
+                        {
+                            picBox = new PictureBox();
+                            picBox.Image = hotel.getImage();
+                            ctrlRegSquare.addRealEstate(picBox, hotel);
+                        }
+                    }
+                }
             }
         }
 

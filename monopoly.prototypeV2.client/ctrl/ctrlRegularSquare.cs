@@ -150,8 +150,23 @@ namespace monopoly.prototypeV2.client.ctrl
                 pb.Dispose();
                 this.con.Panel2.Refresh();
             }
+        }
 
+        public void addRealEstate(PictureBox picRealEstate, IRealEstate realEstate)
+        {
+            this.myRealEstates.Add(realEstate);
+            picRealEstate.Location = this.myActiveListPositionsRealEstates[this.myRealEstates.Count];
+            this.con.Panel1.Controls.Add(picRealEstate);
+        }
 
+        public void clearRealEstates()
+        {
+            this.myRealEstates.Clear();
+            foreach (var pb in this.con.Panel1.Controls.OfType<PictureBox>())
+            {
+                pb.Dispose();
+                this.con.Panel1.Refresh();
+            }
         }
 
 
