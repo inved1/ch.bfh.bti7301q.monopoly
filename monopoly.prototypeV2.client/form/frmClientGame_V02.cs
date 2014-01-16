@@ -460,7 +460,7 @@ namespace monopoly.prototypeV2.client.form
                         c.setBottomInfo(entry.CardInfo);
                         List<Point> pt = (List<Point>)t.Tag;
                         c.Location = pt[itmp];
-                        t.Controls.Add(c);
+                        tp.Controls.Add(c);
                         itmp += 1;
                     }
                     foreach (cWaterPowerSquare entry in this.myGame.WaterPowerSquaresByPlayer(p))
@@ -472,7 +472,7 @@ namespace monopoly.prototypeV2.client.form
                         c.setBottomInfo("");
                         List<Point> pt = (List<Point>)t.Tag;
                         c.Location = pt[itmp];
-                        t.Controls.Add(c);
+                        tp.Controls.Add(c);
                         itmp += 1;
                     }
                     foreach (cTrainStationSquare  entry in this.myGame.TrainStationSquaresByPlayer(p))
@@ -484,7 +484,7 @@ namespace monopoly.prototypeV2.client.form
                         c.setBottomInfo("");
                         List<Point> pt = (List<Point>)t.Tag;
                         c.Location = pt[itmp];
-                        t.Controls.Add(c);
+                        tp.Controls.Add(c);
                         itmp += 1;
                     }
 

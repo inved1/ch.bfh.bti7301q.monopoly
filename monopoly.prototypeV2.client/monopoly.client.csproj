@@ -241,9 +241,9 @@
     <None Include="Resources\monopoly_Spielbrett.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\monopoly.prototypeV2.logic\monopoly.prototypeV2.logic.csproj">
+    <ProjectReference Include="..\monopoly.prototypeV2.logic\monopoly.logic.csproj">
       <Project>{a686cc82-77c6-48b1-b276-7b706b4acfa4}</Project>
-      <Name>monopoly.prototypeV2.logic</Name>
+      <Name>monopoly.logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
