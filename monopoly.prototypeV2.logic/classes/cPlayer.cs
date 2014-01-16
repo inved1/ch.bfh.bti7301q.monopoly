@@ -19,6 +19,9 @@ namespace monopoly.prototypeV2.logic.classes
         private int countPrisonFreeCards = 0;
         private bool myCanBuild;
         private bool myCanTrade;
+        //used for waterpowersquares
+        private int myLastDice1;
+        private int myLastDice2;
 
         public cPlayer(string name, string avatorToken, int curPos)
         {
@@ -29,6 +32,8 @@ namespace monopoly.prototypeV2.logic.classes
             this.isInPrison = false;
             this.myCanBuild = false;
             this.myCanTrade = true;
+            this.myLastDice1 = 0;
+            this.myLastDice2 = 0;
         }
 
         public string Name
@@ -37,6 +42,17 @@ namespace monopoly.prototypeV2.logic.classes
             set { this.name = value; }
         }
 
+        public int lastDice1
+        {
+            get { return this.myLastDice1; }
+            set { this.myLastDice1 = value; }
+        }
+        public int lastDice2
+        {
+            get { return this.myLastDice2; }
+            set { this.myLastDice2 = value; }
+        }
+        
         public bool inPrison
         {
             get { return this.isInPrison; }

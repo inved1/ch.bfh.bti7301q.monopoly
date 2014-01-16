@@ -13,5 +13,7 @@ namespace monopoly.prototypeV2.logic.interfaces
         void onUpdateGUIEvent(object sender, EventArgs e);
 
         void onUpdateGUIActionsEvent(object sender, EventArgs e);
+
+        void onUpdateGUITradeEvent(object sender, EventArgs e);
     }
 }

@@ -29,8 +29,16 @@ namespace monopoly.prototypeV2.client.ctrl
             int iStart = 2;
             foreach (String s in this.myTopInfo.Split(new Char[] {';' }))
             {
+                if (this.splitContainer1.Panel1.BackColor== Color.Black   )
+                {
+                    e.Graphics.DrawString(this.myTopInfo, new Font("Arial", 8), Brushes.White, new PointF(iStart, 2));
+                    iStart += 10;
+                }
+                else
+                { 
                 e.Graphics.DrawString(this.myTopInfo, new Font("Arial", 8), Brushes.Black, new PointF(iStart , 2));
                 iStart += 10;
+                }
             }
             
         }

@@ -49,7 +49,6 @@
     <Compile Include="classes\actions\cActionBuyFree.cs" />
     <Compile Include="classes\actions\cActionEndTurn.cs" />
     <Compile Include="classes\actions\cActionGiveUp.cs" />
-    <Compile Include="classes\actions\cActionPayRent.cs" />
     <Compile Include="classes\actions\cActionRoll.cs" />
     <Compile Include="classes\actions\cActionPayTax.cs" />
     <Compile Include="classes\cActionCard.cs" />
@@ -61,8 +60,8 @@
     <Compile Include="classes\cGameBoard.cs" />
     <Compile Include="classes\cHotel.cs" />
     <Compile Include="classes\cHouse.cs" />
-    <Compile Include="classes\cChat.cs" />
-    <Compile Include="classes\cMessage.cs" />
+    <Compile Include="classes\cChat_old.cs" />
+    <Compile Include="classes\cMessage_old.cs" />
     <Compile Include="classes\cPlayer.cs" />
     <Compile Include="classes\cStreet.cs" />
     <Compile Include="classes\squares\cActionSquare.cs" />

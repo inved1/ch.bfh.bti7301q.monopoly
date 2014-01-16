@@ -30,7 +30,7 @@ namespace monopoly.prototypeV2.client.ctrl
         public ctrlTaxSquare()
         {
             InitializeComponent();
-            this.Paint += new PaintEventHandler(this.ctrl_paint);
+            this.con.Panel1.Paint += new PaintEventHandler(this.ctrl_paint);
             this.myAvatars = new List<cAvatar>();
             myListAvatarsHorizontal = new List<Point>();
             myListAvatarsVertical = new List<Point>();
@@ -119,7 +119,7 @@ namespace monopoly.prototypeV2.client.ctrl
         public void clearAvatars()
         {
             this.myAvatars.Clear();
-            foreach (var pb in this.Controls.OfType<PictureBox>())
+            foreach (var pb in this.con.Panel2.Controls.OfType<PictureBox>())
             {
                 pb.Dispose();
                 this.Refresh();
@@ -133,8 +133,8 @@ namespace monopoly.prototypeV2.client.ctrl
             get { return System.Windows.Forms.Orientation.Horizontal; }
             set
             {
-
-                this.myActiveListPositionsAvatars = (value == Orientation.Horizontal) ? myListAvatarsHorizontal : myListAvatarsVertical;
+                this.con.Orientation = value;
+                this.myActiveListPositionsAvatars = (value == Orientation.Vertical) ? myListAvatarsHorizontal : myListAvatarsVertical;
 
             }
         }

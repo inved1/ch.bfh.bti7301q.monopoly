@@ -14,7 +14,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         #region "vars"
         private static cGameBoard myInstance;
-        private Dictionary<int,ISquare>  mySquares;
+        public Dictionary<int,ISquare>  mySquares;
         private Dictionary<cCardDeck.cardType, cCardDeck> myCardDecks;
         private Dictionary<String, cStreet> myStreets;
         private cConfig myConfig;
@@ -115,7 +115,7 @@ namespace monopoly.prototypeV2.logic.classes
                     }
                 }
                 this.mySquares.Add(Convert.ToInt32(entry.Value["id"]), new cTrainStationSquare(entry.Value["Name"],
-                                                                    entry.Value["Color"], Convert.ToInt32 (entry.Value["cost"]), d));
+                                                                    entry.Value["Color"], Convert.ToInt32(entry.Value["cost"]), d));
 
             }
             
@@ -132,7 +132,7 @@ namespace monopoly.prototypeV2.logic.classes
                     }
                 }
                 this.mySquares.Add(Convert.ToInt32(entry.Value["id"]), new cWaterPowerSquare(entry.Value["Name"],
-                                                                    entry.Value["Color"], Convert.ToInt32(entry.Value["cost"]), d));
+                                                                    entry.Value["Color"], Convert.ToInt32(entry.Value["cost"]), d ));
             }
 
             this.mySquares.Add(0, new cStartSquare("Start", "grey"));

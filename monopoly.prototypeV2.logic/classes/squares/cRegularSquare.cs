@@ -17,8 +17,8 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private int myPriceHouse = 0;
         private int myPriceHotel = 0;
         private int myCurrentRent = 0;
-        private int myCountCurrentHouses = 0;
-        private int myCountCurrentHotels = 0;
+        private int myCountCurrentHouses =1;
+        private  int myCountCurrentHotels = 1;
         private int myDeposit = 0;
         private int myCost = 0;
         private Dictionary<int, int> myRents;
@@ -37,6 +37,10 @@ namespace monopoly.prototypeV2.logic.classes.squares
             this.myPriceHotel = priceHotel;
             this.myDeposit = deposit;
             this.myRents = rents;
+            this.myCountCurrentHotels = 0;
+            this.myCountCurrentHouses = 0;
+
+            this.myCurrentRent = this.myRents[0];
         }
         public cRegularSquare(string name, String color)//, int cost, int priceHouse, int priceHotel, int deposit, Dictionary<int, int> rents)
         {
@@ -54,38 +58,27 @@ namespace monopoly.prototypeV2.logic.classes.squares
             set { this.myColor = value; }
         }
 
-        public int Houses
+        public  int Houses
         {
             get { return this.myCountCurrentHouses; }
-            set
-            {
-                if ((this.myCountCurrentHouses + value) <= 4)
-                {
-                    this.myCountCurrentHouses += value;
-                    this.CurrentRent = this.myRents[this.myCountCurrentHouses];
-                }
-                else
-                {
-                    throw new Exception("Es ist nicht möglich, mehr als 4 Häuser auf einem Feld zu haben");
-                }
-            }
+           
         }
 
-        public int Hotels
+        public  int Hotels
         {
             get { return this.myCountCurrentHotels; }
-            set
-            {
-                if ((this.myCountCurrentHotels + value) < 2)
-                {
-                    this.myCountCurrentHotels += value;
-                    this.CurrentRent = this.myRents[5];
-                }
-                else
-                {
-                    throw new Exception("Es ist nicht möglich, mehr als ein Hotel auf einem Feld zu haben");
-                }
-            }
+           
+        }
+
+        public void addHouse(int anzahl)
+        {
+            this.myCountCurrentHouses += anzahl;
+            this.myCurrentRent = this.myRents[this.myCountCurrentHouses];
+        }
+        public void addHotel(int anzahl)
+        {
+            this.myCountCurrentHotels  += anzahl;
+            this.myCurrentRent = this.myRents[5];
         }
 
         public String CardInfo
@@ -164,6 +157,12 @@ namespace monopoly.prototypeV2.logic.classes.squares
         {
             get { return this.myCost; }
             set { this.myCost = value; }
+        }
+
+
+        public string TradeString
+        {
+            get { return this.ctrlName; }
         }
     }
 }

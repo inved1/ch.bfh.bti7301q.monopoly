@@ -17,12 +17,17 @@ namespace monopoly.prototypeV2.logic.classes
         #region "vars"
         private cGameBoard gameBoard;
         private List<IAction> actions;
+        private Dictionary<IBuyable,int > myTradeCards;
+
         private cPlayer startPlayer;
         private cPlayer curPlayer;
+        private cPlayer curTradePlayer;
         private cConfig myConfig;
         private LogWriter logWriter;
-        private cMessage myMessages;
-        private cChat myChat;
+        private SortedDictionary<int, string> myChat;
+        public SortedDictionary<int, String> myMsgs;
+        public int myMsgKey = 1;
+        public int myChatKey = 1;
         //private List<cRegularSquare> squaresToBuildOnForCurPlayer;
         private Dictionary<int, ISquare> squaresToBuildOnForCurPlayer;
 
@@ -49,11 +54,12 @@ namespace monopoly.prototypeV2.logic.classes
             this.gameBoard = cGameBoard.getInstance();
 
             this.actions = new List<IAction>();
+            this.myTradeCards = new Dictionary<IBuyable, int>();
             this.logWriter = LogWriter.Instance;
-            this.myMessages = cMessage.getInstance;
-            this.myChat = cChat.getInstance;
+            this.myChat = new SortedDictionary<int, string>();
             this.playerObservers = new SortedList<cPlayer, IObserverGUI>();
             this.squaresToBuildOnForCurPlayer = new Dictionary<int, ISquare>();
+            this.myMsgs = new SortedDictionary<int, string>();
         }
         #endregion
 
@@ -62,14 +68,15 @@ namespace monopoly.prototypeV2.logic.classes
             get { return this.gameBoard; }
         }
 
-        public cMessage gameMessages
+        public void addMsg(String txt)
         {
-            get { return this.myMessages; }
+            addMessage(txt);  
         }
 
-        public cChat gameChat
+
+        public void addChatMsg(string name,string txt)
         {
-            get { return this.myChat; }
+            addChat(name,txt);
         }
 
         public cPlayer StartPlayer
@@ -82,6 +89,12 @@ namespace monopoly.prototypeV2.logic.classes
         {
             get { return this.curPlayer; }
             set { this.curPlayer = value; }
+        }
+
+        public cPlayer CurTradePlayer
+        {
+            get { return this.curTradePlayer; }
+            set { this.curTradePlayer = value; }
         }
 
         public SortedList<cPlayer, IObserverGUI> PlayerObservers
@@ -101,6 +114,9 @@ namespace monopoly.prototypeV2.logic.classes
         public delegate void updateGUIActionEventHandler(object sender, EventArgs e);
         public event updateGUIActionEventHandler updateGUIActionEvent = delegate { };
 
+        public delegate void updateGUITradeEventHandler(object sender, EventArgs e);
+        public event updateGUITradeEventHandler updateGUITradeEvent = delegate { };
+
         public void addPlayer(cPlayer player, IObserverGUI obs)
         {
             if (this.playerObservers.Keys.Count < 8)
@@ -110,6 +126,7 @@ namespace monopoly.prototypeV2.logic.classes
 
                 this.updateGUIEvent += obs.onUpdateGUIEvent;
                 this.updateGUIActionEvent += obs.onUpdateGUIActionsEvent;
+                this.updateGUITradeEvent += obs.onUpdateGUITradeEvent; 
 
             }
             else
@@ -139,6 +156,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             return gameBoard.getRegularSquaresByPlayer(player);
         }
+
         public List<cTrainStationSquare> TrainStationSquaresByPlayer(cPlayer player)
         {
             return gameBoard.getTrainStationSquaresByPlayer(player);
@@ -153,9 +171,58 @@ namespace monopoly.prototypeV2.logic.classes
             get { return actions; }
         }
 
+        public  Dictionary<IBuyable,int > TradeCards
+        {
+            get { return myTradeCards; }
+            
+        }
+        public void addTradeCard(cRegularSquare card, int val, cPlayer player )
+        {
+            this.TradeCards.Add(card,val );
+            this.curTradePlayer = player;
+        }
+
+
+        public string strOutput()
+        {
+            String r = "";
+            if (this.myMsgs != null)
+            {
+                foreach (KeyValuePair<int, string> entry in this.myMsgs)
+                {
+                    r = r + "->" + entry.Value + System.Environment.NewLine;
+                }
+            }
+
+            return r;
+        }
+        public string strChatOutput()
+        {
+            String r = "";
+            if (this.myChat != null)
+            {
+                foreach (KeyValuePair<int, string> entry in this.myChat)
+                {
+                    r = r + "->" + entry.Value + System.Environment.NewLine;
+                }
+            }
+
+            return r;
+        }
+        public void addMessage(String txt)
+        {
+            this.myMsgs.Add(this.myMsgKey , txt);
+            this.myMsgKey  += 1;
+        }
+
+        public void addChat(String name,String txt)
+        {
+            this.myChat.Add(this.myChatKey, name + ": " + txt);
+            this.myChatKey += 1;
+        }
         public Dictionary<int, ISquare> SquaresToBuildOnForCurPlayer
         {
-            get { return squaresToBuildOnForCurPlayer; }
+            get { return this.squaresToBuildOnForCurPlayer; }
         }
 
 
@@ -163,7 +230,7 @@ namespace monopoly.prototypeV2.logic.classes
         #region "game control functions"
         public void initGame()
         {
-            this.myMessages.addMessage("Spiel gestartet - alle Spieler würfeln für die Reihenfolge zu bestimmen");
+            this.addMessage("Spiel gestartet - alle Spieler würfeln für die Reihenfolge zu bestimmen");
 
             this.gameStatus = cGame.eGameStatus.DetermineStartPlayer;
             notifyGuis();
@@ -182,13 +249,13 @@ namespace monopoly.prototypeV2.logic.classes
         {
             this.gameStatus = cGame.eGameStatus.Running;
 
-            this.myMessages.addMessage("Spiel gestartet");
-            ISquare square = gameBoard.getSpecificSquare(1);
-            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
-            square = gameBoard.getSpecificSquare(3);
-            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
-            square = gameBoard.getSpecificSquare(5);
-            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            this.addMessage("Spiel gestartet");
+            //ISquare square = gameBoard.getSpecificSquare(1);
+            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            //square = gameBoard.getSpecificSquare(3);
+            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            //square = gameBoard.getSpecificSquare(5);
+            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
 
             notifyGuis();
             setDefaultActions();
@@ -206,12 +273,14 @@ namespace monopoly.prototypeV2.logic.classes
         public void setNextCurPlayer()
         {
             this.curPlayer = playerObservers.Keys.ElementAt((playerObservers.IndexOfKey(curPlayer) + 1) % playerObservers.Count);
-            this.myMessages.addMessage("Neuer Spieler ist: " + this.curPlayer.Name);
+            this.addMessage("Neuer Spieler ist: " + this.curPlayer.Name);
         }
 
         public void setActionsAfterMoving()
         {
             actions.Clear();
+            myTradeCards.Clear();
+            this.curTradePlayer = null;
             cCardDeck cardDeck;
             ISquare curSquare = getCurSquare();
             if (curSquare is IBuyable)
@@ -290,7 +359,7 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void determineStartPlayer(int rolledDots)
         {
-            this.myMessages.addMessage("Bestimme Startspieler, Spieler " + this.curPlayer.Name + " hat " + rolledDots.ToString() + " gewürfelt");
+            this.addMessage("Bestimme Startspieler, Spieler " + this.curPlayer.Name + " hat " + rolledDots.ToString() + " gewürfelt");
             this.curPlayer.RolledInitDots = rolledDots;
             if (this.startPlayer == null)
             {
@@ -300,7 +369,7 @@ namespace monopoly.prototypeV2.logic.classes
             {
                 if (this.curPlayer.RolledInitDots > this.startPlayer.RolledInitDots)
                 {
-                    this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat mehr gewürfelt als " + this.startPlayer.Name + ", neuer Startspieler");
+                    this.addMessage("Spieler " + this.curPlayer.Name + " hat mehr gewürfelt als " + this.startPlayer.Name + ", neuer Startspieler");
                     this.startPlayer = this.curPlayer;
                 }
             }
@@ -321,7 +390,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             int tmpCurPos = this.curPlayer.CurPos; //remember for checking if player passed start
 
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " zieht von " +
+            this.addMessage("Spieler " + this.curPlayer.Name + " zieht von " +
                                         this.gameBoard.getSpecificSquare(this.curPlayer.CurPos).ctrlName + " auf " +
                                         this.gameBoard.getSpecificSquare(((this.curPlayer.CurPos + valueToMove) % 40)).ctrlName);
 
@@ -329,13 +398,13 @@ namespace monopoly.prototypeV2.logic.classes
 
             if (checkPlayerPassingStart(tmpCurPos, valueToMove))
             {
-                this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat Start passiert");
+                this.addMessage("Spieler " + this.curPlayer.Name + " hat Start passiert");
                 this.curPlayer.addMoney(Convert.ToInt32(cConfig.getInstance.Game["MoneyStart"]));
 
             }
             if (checkPlayerHitsStart(tmpCurPos, valueToMove))
             {
-                this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat Start getroffen");
+                this.addMessage("Spieler " + this.curPlayer.Name + " hat Start getroffen");
                 curPlayer.addMoney(Convert.ToInt32(cConfig.getInstance.Game["MoneyStart"]) * 2);
 
             }
@@ -352,14 +421,29 @@ namespace monopoly.prototypeV2.logic.classes
             cPlayer owner = (cPlayer)curSquare.GetType().GetProperty("Owner").GetValue(curSquare);
             if (owner == this.curPlayer)
             {
-                this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " besitzt dieses Grundstück bereits, keine Miete fällig");
+                this.addMessage("Spieler " + this.curPlayer.Name + " besitzt dieses Grundstück bereits, keine Miete fällig");
                 logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " owns this property - no need to pay rent. " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
             else
             {
-                int rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
-                this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " zahlt Miete [" + rent.ToString() + "] an Spieler " + owner.Name);
-                curPlayer.spendMoney(rent);
+                int rent = 0;
+               
+                if (curSquare.GetType() == typeof(cWaterPowerSquare)){
+                    //need some multiply here
+                    cWaterPowerSquare o = (cWaterPowerSquare)curSquare;
+                    rent = o.multiplier[this.gameBoard.getWaterPowerSquaresByPlayer(this.curPlayer).Count] * (this.curPlayer.lastDice1 + this.curPlayer.lastDice2); 
+                    this.addMessage("Spieler " + this.curPlayer.Name + " muss bei WasserPowerSquare folgenden Betrag zahlen: "+rent.ToString());
+                }
+                if (curSquare.GetType() == typeof(cTrainStationSquare))
+                {
+                    cTrainStationSquare o = (cTrainStationSquare)curSquare;
+                    rent = o.Rents[this.gameBoard.getTrainStationSquaresByPlayer(this.curPlayer).Count]; 
+                }
+
+                rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
+
+                this.addMessage("Spieler " + this.curPlayer.Name + " zahlt Miete [" + rent.ToString() + "] an Spieler " + owner.Name);
+                this.curPlayer.spendMoney(rent);
                 owner.addMoney(rent);
                 logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " paid rent to " + owner.Name + " for " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
@@ -369,7 +453,7 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerCardAction(ICard card)
         {
             int sum = 0;
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " führt Karte [" + card.Text + "] aus");
+            this.addMessage("Spieler " + this.curPlayer.Name + " führt Karte [" + card.Text + "] aus");
             switch (card.Command)
             {
                 case "pay":
@@ -466,7 +550,7 @@ namespace monopoly.prototypeV2.logic.classes
             ISquare curSquare = getCurSquare();
 
             int tax = Convert.ToInt32(curSquare.GetType().GetProperty("Tax").GetValue(curSquare));
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " zahlt Steuern [" + tax.ToString() + "]");
+            this.addMessage("Spieler " + this.curPlayer.Name + " zahlt Steuern [" + tax.ToString() + "]");
             curPlayer.spendMoney(tax);
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " paid tax of " + tax);
             notifyGuis();
@@ -485,7 +569,7 @@ namespace monopoly.prototypeV2.logic.classes
                 this.curPlayer.spendMoney(cost);
                 curSquare.GetType().GetProperty("Owner").SetValue(curSquare, this.curPlayer);
 
-                this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName + " gekauft");         
+                this.addMessage("Spieler " + this.curPlayer.Name + " hat " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName + " gekauft");         
                 logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " has bought " + this.gameBoard.getSpecificSquare(curPlayer.CurPos).ctrlName);
             }
             catch (Exception e)
@@ -501,23 +585,26 @@ namespace monopoly.prototypeV2.logic.classes
         public void playerBuysRealEstate(int squareNr)
         {
             ISquare square = this.gameBoard.getSpecificSquare(squareNr);
-            int houses = Convert.ToInt32(square.GetType().GetProperty("Houses").GetValue(square));
-            int hotels = Convert.ToInt32(square.GetType().GetProperty("Hotels").GetValue(square));
-            if (houses <= 3)
+            //should always be
+            if(square.GetType() == typeof(cRegularSquare ) )
             {
-                square.GetType().GetProperty("Houses").SetValue(square, 1);
+                cRegularSquare o = (cRegularSquare)this.getSpecificSquare(squareNr);
+                if (o.Houses <= 3) {
+                    o.addHouse(1);
+                }
+                else if (o.Houses > 3)
+                {
+                    if (o.Hotels < 1) { o.addHotel(1); }
+                }
+                //this.gameBoard.mySquares[squareNr] = o; 
+
             }
-            else if (hotels < 2)
-            {
-                square.GetType().GetProperty("Hotels").SetValue(square, 1);
-            }
+
 
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat auf dem Grundstück " + square.ctrlName + " eine Immobilie gebaut.");
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat auf dem Grundstück " + square.ctrlName + " eine Immobilie gebaut.");
+            this.addMessage("Spieler " + this.curPlayer.Name + " hat auf dem Grundstück " + square.ctrlName + " eine Immobilie gebaut.");
 
-            // !!!!! DEBUG
-            Debug.WriteLine("houses: " + houses + ", hotels: " + hotels);
-
+                      
             notifyGuis();
             setDefaultActions();
             notifyCurPlayer();
@@ -525,9 +612,9 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void playerEndsTurn()
         {
-            curPlayer.RolledDoubles = 0;
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat seinen Zug beendet");
-            logWriter.WriteLogQueue("Player " + curPlayer.Name + " has ended his turn.");
+            this.curPlayer.RolledDoubles = 0;
+            this.addMessage("Spieler " + this.curPlayer.Name + " hat seinen Zug beendet");
+            logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " has ended his turn.");
             setNextCurPlayer();
             setDefaultActions();
             notifyGuis();
@@ -535,10 +622,11 @@ namespace monopoly.prototypeV2.logic.classes
         }
         public void playerUsesPrisonOutCard()
         {
-            curPlayer.PrisonFreeCards = -1;
-            curPlayer.inPrison = false;
+            this.curPlayer.PrisonFreeCards = -1;
+            this.curPlayer.inPrison = false;
+            this.curPlayer.CurPos = 10; //like prison visitor
             logWriter.WriteLogQueue("Player " + this.curPlayer.Name + " hat sich Freikarte aus Gefäniss gebraucht.");
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat sich Freikarte aus Gefäniss gebraucht.");
+            this.addMessage("Spieler " + this.curPlayer.Name + " hat sich Freikarte aus Gefäniss gebraucht.");
             setDefaultActions();
             notifyGuis();
             notifyCurPlayer();
@@ -546,10 +634,11 @@ namespace monopoly.prototypeV2.logic.classes
 
         public void playerBuysFree()
         {
-            curPlayer.spendMoney(50);
-            curPlayer.inPrison = false;
+            this.curPlayer.spendMoney(50);
+            this.curPlayer.inPrison = false;
+            this.curPlayer.CurPos = 10; //like prison visitor
             logWriter.WriteLogQueue("Player " + curPlayer.Name + " hat sich freigekauft.");
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " hat sich aus dem Gefäniss gekauft.");
+            this.addMessage("Spieler " + this.curPlayer.Name + " hat sich aus dem Gefäniss gekauft.");
             setDefaultActions();
             notifyGuis();
             notifyCurPlayer();
@@ -562,13 +651,14 @@ namespace monopoly.prototypeV2.logic.classes
             newOwner.spendMoney(amount);
             //Debug.WriteLine("SPieler "+owner.Name+" hat Objekt "+obj.ctrlName+ " an Spieler"+newOwner.Name +" verkauft");
             logWriter.WriteLogQueue("SPieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
-            this.myMessages.addMessage("Spieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
+            this.addMessage("Spieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
         }
         public void playerGoesToPrison()
         {
-            curPlayer.inPrison = true;
+            this.curPlayer.inPrison = true;
+            this.curPlayer.CurPos = 99;
             logWriter.WriteLogQueue("Spieler " + this.curPlayer.Name + " ist im Gefängniss gelandet");
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " ist im Gefägniss gelandet");
+            this.addMessage("Spieler " + this.curPlayer.Name + " ist im Gefägniss gelandet");
             notifyGuis();
             setNextCurPlayer();
             setDefaultActions();
@@ -579,7 +669,7 @@ namespace monopoly.prototypeV2.logic.classes
         {
             ISquare square;
             cPlayer owner;
-            this.myMessages.addMessage("Spieler " + this.curPlayer.Name + " gibt auf.");
+            this.addMessage("Spieler " + this.curPlayer.Name + " gibt auf.");
             foreach (KeyValuePair<int, ISquare> pair in gameBoard.getSquares())
             {
                 square = pair.Value;
@@ -609,7 +699,7 @@ namespace monopoly.prototypeV2.logic.classes
             //List<ISquare> ownedSquares = new List<ISquare>();
             Dictionary<int, ISquare> ownedSquares = new Dictionary<int, ISquare>();
 
-            squaresToBuildOnForCurPlayer.Clear();
+            this.squaresToBuildOnForCurPlayer.Clear();
             foreach (KeyValuePair<String, cStreet> pair in this.gameBoard.getStreets())
             {
                 hasFullStreet = true;
@@ -638,7 +728,7 @@ namespace monopoly.prototypeV2.logic.classes
 
                         foreach (KeyValuePair<int, ISquare> innerPair in ownedSquares)
                         {
-                            squaresToBuildOnForCurPlayer.Add(innerPair.Key, innerPair.Value);
+                            this.squaresToBuildOnForCurPlayer.Add(innerPair.Key, innerPair.Value);
                         }
                     }
                 }
@@ -698,6 +788,21 @@ namespace monopoly.prototypeV2.logic.classes
             }
         }
 
+
+        public void FireEventAsynchronousGUITrade()
+        {
+            EventArgs args = new EventArgs();
+            
+            Delegate[] delegates = updateGUITradeEvent.GetInvocationList();
+            foreach (Delegate del in delegates)
+            {
+                if (del.Target != null)
+                {
+                    updateGUITradeEventHandler handler = (updateGUITradeEventHandler)del;
+                    handler.BeginInvoke(this, args, null, null);
+                }
+            }
+        }
         public void FireEventAsynchronousGUIAction()
         {
 
@@ -725,6 +830,10 @@ namespace monopoly.prototypeV2.logic.classes
             //}
         }
 
+        public void notifiyTradePlayer()
+        {
+            FireEventAsynchronousGUITrade(); 
+        }
         public void notifyCurPlayer()
         {
 

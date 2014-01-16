@@ -15,6 +15,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
         private cPlayer myOwner = null;
         private int myCost = 0;
         private Dictionary<int, int> myRents;
+        //private cGameBoard myGameboard;
 
         public cTrainStationSquare(string name,string color, int cost ,Dictionary<int,int> rents)
         {
@@ -22,6 +23,7 @@ namespace monopoly.prototypeV2.logic.classes.squares
             this.myColor = color;
             this.myCost = cost;
             this.myRents = rents;
+            //this.myGameboard = gameboard;
         }
 
         public void playAction()
@@ -49,6 +51,29 @@ namespace monopoly.prototypeV2.logic.classes.squares
         {
             get { return this.myCost; }
             set { this.myCost = value; }
+        }
+
+
+        public Dictionary<int, int> Rents
+        {
+            get { return this.myRents; }
+        }
+        public int CurrentRent
+        {
+            //check if my owner has other cards
+            
+
+            get {
+               // List<cTrainStationSquare> l = this.myGameboard.getTrainStationSquaresByPlayer(this.Owner);
+                //return this.myRents[l.Count];
+                return 0;
+            }
+        }
+
+
+        public string TradeString
+        {
+            get { return this.ctrlName; }
         }
     }
 }

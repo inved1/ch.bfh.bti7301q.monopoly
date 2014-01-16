@@ -71,6 +71,7 @@ namespace monopoly.prototypeV2.client.ctrl
             myListRealEstatesHorizontal.Add(new Point(2, 24));
             myListRealEstatesHorizontal.Add(new Point(2, 46));
             myListRealEstatesHorizontal.Add(new Point(2, 68));
+            myListRealEstatesHorizontal.Add(new Point(2, 90));
 
 
 
@@ -92,6 +93,7 @@ namespace monopoly.prototypeV2.client.ctrl
             myListRealEstatesVertical.Add(new Point(24, 2));
             myListRealEstatesVertical.Add(new Point(46, 2));
             myListRealEstatesVertical.Add(new Point(68, 2));
+            myListRealEstatesVertical.Add(new Point(90, 2));
         }
 
         public String StreetColor
@@ -129,15 +131,16 @@ namespace monopoly.prototypeV2.client.ctrl
             get { return this.con.Orientation; }
             set { 
                 this.con.Orientation = value;
-                this.myActiveListPositionsAvatars = (value == Orientation.Horizontal) ? myListAvatarsHorizontal : myListAvatarsVertical;
-                this.myActiveListPositionsRealEstates = (value == Orientation.Horizontal) ? myListRealEstatesHorizontal : myListRealEstatesVertical;                  
+                this.myActiveListPositionsAvatars = (value == Orientation.Vertical) ? myListAvatarsHorizontal : myListAvatarsVertical;
+                this.myActiveListPositionsRealEstates = (value == Orientation.Vertical) ? myListRealEstatesHorizontal : myListRealEstatesVertical;
+                this.flowLayoutPanel1.FlowDirection = (value == Orientation.Vertical) ? FlowDirection.TopDown : FlowDirection.LeftToRight;
             }
         }
 
         public void addAvatar(PictureBox avatar, cAvatar cAva)
         {
             this.myAvatars.Add(cAva);
-            avatar.Location = this.myActiveListPositionsAvatars[this.myAvatars.Count];
+            avatar.Location = this.myActiveListPositionsAvatars[this.myAvatars.Count-1];
             this.con.Panel2.Controls.Add(avatar);
 
         }
@@ -152,20 +155,26 @@ namespace monopoly.prototypeV2.client.ctrl
             }
         }
 
-        public void addRealEstate(PictureBox picRealEstate, IRealEstate realEstate)
+        public void addRealEstate( IRealEstate realEstate)
         {
+            PictureBox picRealEstate = new PictureBox();
+            picRealEstate.Image = realEstate.getImage();
+            picRealEstate.Size = new Size(picRealEstate.Image.Size.Width, picRealEstate.Image.Size.Height);
             this.myRealEstates.Add(realEstate);
-            picRealEstate.Location = this.myActiveListPositionsRealEstates[this.myRealEstates.Count];
-            this.con.Panel1.Controls.Add(picRealEstate);
+            this.flowLayoutPanel1.Controls.Add(picRealEstate);
+
+            //picRealEstate.Location = this.myActiveListPositionsRealEstates[this.myRealEstates.Count-1];
+            //this.con.Panel1.Controls.Add(picRealEstate);
         }
 
         public void clearRealEstates()
         {
-            this.myRealEstates.Clear();
-            foreach (var pb in this.con.Panel1.Controls.OfType<PictureBox>())
+            //this.myRealEstates.Clear();
+            this.flowLayoutPanel1.Controls.Clear();
+            foreach (var pb in this.flowLayoutPanel1.Controls.OfType<PictureBox>())
             {
                 pb.Dispose();
-                this.con.Panel1.Refresh();
+                this.flowLayoutPanel1.Refresh();
             }
         }
 
@@ -205,5 +214,7 @@ namespace monopoly.prototypeV2.client.ctrl
                 throw new NotImplementedException();
             }
         }
+
+ 
     }
 }

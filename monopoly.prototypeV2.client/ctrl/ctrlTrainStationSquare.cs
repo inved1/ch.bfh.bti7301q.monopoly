@@ -131,6 +131,7 @@ namespace monopoly.prototypeV2.client.ctrl
         }
 
 
+
         public System.Windows.Forms.Orientation orientation
         {
             get { return System.Windows.Forms.Orientation.Horizontal; }

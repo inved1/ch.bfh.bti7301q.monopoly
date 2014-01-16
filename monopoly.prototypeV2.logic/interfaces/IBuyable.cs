@@ -9,5 +9,12 @@ namespace monopoly.prototypeV2.logic.interfaces
     public interface IBuyable
     {
         int price { get; }
+
+        //all buyables have rent...
+        int CurrentRent { get; }
+
+        string TradeString { get; }
+
+        
     }
 }

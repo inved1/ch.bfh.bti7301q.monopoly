@@ -30,6 +30,10 @@ namespace monopoly.prototypeV2.logic.classes
             int dice1 = rnd.Next(1, 6);
             int dice2 = rnd.Next(1, 6);
             int value = dice1 + dice2;
+            this.game.CurPlayer.lastDice1 = dice1;
+            this.game.CurPlayer.lastDice2 = dice2;
+
+            this.game.addMsg("Aktueller Spieler hat [" + dice1.ToString() + "] und [" + dice2.ToString() + "] gewürfelt.");
 
             if (this.game.GameStatus == cGame.eGameStatus.DetermineStartPlayer)
             {
@@ -43,8 +47,11 @@ namespace monopoly.prototypeV2.logic.classes
                 {
                     if (dice1 == dice2)
                     {
+                        this.game.addMsg("Aktueller Spieler hat Pasch gewürfelt und kommt aus dem Gefängniss raus.");
+                        this.game.CurPlayer.RolledDoubles++;
                         this.game.CurPlayer.inPrison = false;
-                        this.game.moveCurPlayer(value);
+                        this.game.CurPlayer.CurPos = 10;
+                        //this.game.moveCurPlayer(value);
                     }
 
                 }
@@ -53,33 +60,22 @@ namespace monopoly.prototypeV2.logic.classes
 
                     if (dice1 == dice2)
                     {
+                        
                         this.game.CurPlayer.RolledDoubles++;
-
-                        //2nd time
-                        //roll 2nd time
-                        dice1 = rnd.Next(1, 6);
-                        dice2 = rnd.Next(1, 6);
-                        value = value + dice1 + dice2;
-                        if (dice1 == dice2)
+                        this.game.addMsg("Aktueller Spieler hat Pasch gewürfelt, [" + this.game.CurPlayer.RolledDoubles.ToString() + "]x Pasch");
+                        if (this.game.CurPlayer.RolledDoubles == 3)
                         {
-                            this.game.CurPlayer.RolledDoubles++;
-
-                            //3rd time
-                            dice1 = rnd.Next(1, 6);
-                            dice2 = rnd.Next(1, 6);
-                            value = value + dice1 + dice2;
-
-                            if (dice1 == dice2)
-                            {
-                                this.game.CurPlayer.RolledDoubles = 0;
-                                // !!! set correct prison sqare !!!
-                                this.game.CurPlayer.CurPos = 99;
-                                this.game.CurPlayer.inPrison = true;
-                            }
+                            this.game.addMsg("Aktueller Spieler hat 3x Pasch gehabt, ab ins Gefängniss");
+                            this.game.CurPlayer.RolledDoubles = 0;
+                            // !!! set correct prison sqare !!!
+                            this.game.CurPlayer.CurPos = 99;
+                            this.game.CurPlayer.inPrison = true;
                         }
+
                     }
-                    this.game.moveCurPlayer(value);
+                    
                 }
+                this.game.moveCurPlayer(value);
 
             }
 

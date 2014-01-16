@@ -21,6 +21,7 @@ using System.Runtime.Remoting;
 using System.Collections;
 using System.Runtime.Serialization.Formatters;
 using monopoly.prototypeV2.logic.classes.actions;
+using System.Drawing.Drawing2D;
 
 namespace monopoly.prototypeV2.client.form
 {
@@ -37,7 +38,8 @@ namespace monopoly.prototypeV2.client.form
         private cGame myGame;
         private cPlayer myPlayer;
         private Dictionary<int, classes.cGUIWrapper> mySquares;
-        private static List<Point> myTPCardLocations;
+        private List<Point> myTPCardLocations;
+        private List<IRealEstate> myRealEstates;
 
         public frmClientGame_V02(String ip, String Port)
         {
@@ -106,7 +108,8 @@ namespace monopoly.prototypeV2.client.form
                 this.button1.Visible = false;
             }
 
-            myTPCardLocations = new List<Point>();
+            this.myTPCardLocations = new List<Point>();
+            this.myRealEstates = new List<IRealEstate>();
 
             for(int i= 0; i<=26;i++){
                 myTPCardLocations.Add(new Point((i*200)+2, 2));
@@ -232,8 +235,11 @@ namespace monopoly.prototypeV2.client.form
             action.runBuyRealEstate(squareNr);
         }
 
-        public void runTrade()
+        public void runTrade(object sender, EventArgs e )
         {
+            Button btn = (Button)sender;
+            IBuyable  action =(IBuyable )btn.Tag;
+            //action.runTrade(); 
 
         }
 
@@ -266,6 +272,9 @@ namespace monopoly.prototypeV2.client.form
             //action.runAction();
             frmTrade fTrade = new frmTrade();
             fTrade.game = this.myGame;
+            fTrade.players = this.myGame.Players;
+            fTrade.sellable = this.myGame.RegularSquaresByPlayer(this.myPlayer);
+
 
             if (fTrade.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -278,6 +287,39 @@ namespace monopoly.prototypeV2.client.form
         delegate void cbGUI(object sender, EventArgs e); //callback
 
         delegate void cbGUIAction(object sender, EventArgs e); //callback actions
+
+        delegate void cbGUITrade(object sender, EventArgs e); //callback trade
+
+
+        public void onUpdateGUITradeEvent(object sender, EventArgs e)
+        {
+            cGame c = (cGame)sender;
+            if (c.CurTradePlayer.Name != this.myPlayer.Name)
+            {
+                return;
+            }
+
+            if (this.InvokeRequired )
+            {
+                cbGUITrade d = new cbGUITrade(onUpdateGUITradeEvent);
+                this.BeginInvoke(d, new object[] { sender, e });
+
+            }
+            else
+            {
+                //show f confirm trade
+                frmTradeConfirm f = new frmTradeConfirm();
+                foreach (KeyValuePair<IBuyable,int> card in this.myGame.TradeCards)
+                {
+
+                    f.Text = "Kaufen ?" + System.Environment.NewLine + card.Key.TradeString + System.Environment.NewLine + card.Value.ToString();  
+
+                    
+                }
+                f.ShowDialog();
+
+            }
+        }
 
 
         public void onUpdateGUIActionsEvent(object sender, EventArgs e)
@@ -333,15 +375,17 @@ namespace monopoly.prototypeV2.client.form
                     f.addControl(bBuild);
                 }
 
-                if (this.myGame.CurPlayer.canTrade)
-                {
-                    Button bTrade = new Button();
-                    bTrade.Text = "Handeln";
-                    bTrade.Click += new EventHandler(showTrade);
-                    f.addControl(bTrade);
-                }
+                //if (this.myGame.CurPlayer.canTrade)
+                //{
+                //    Button bTrade = new Button();
+                //    bTrade.Text = "Handeln";
+                //    bTrade.Click += new EventHandler(showTrade);
+                //    f.addControl(bTrade);
+                //}
 
-
+                //ugly workaround
+                Form  fx = Application.OpenForms["frmGenericActions"];
+                if (fx == null) { 
 
                 if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -349,6 +393,7 @@ namespace monopoly.prototypeV2.client.form
                     f.Close();
                 }
                 f.Dispose();
+                }
             }
         }
         public void onUpdateGUIEvent(object sender, EventArgs e)
@@ -369,6 +414,13 @@ namespace monopoly.prototypeV2.client.form
                 foreach (KeyValuePair<int, cGUIWrapper> entry in this.mySquares)
                 {
                     entry.Value.GUICtrl.clearAvatars();
+                    //not possible at the momn
+                    //if (entry.Value.oSquare.GetType() == typeof(cRegularSquare ))
+                    //{
+                    //    ctrlRegularSquare o = (ctrlRegularSquare)entry.Value.GUICtrl;
+                    //    //o.clearRealEstates();
+                    //}
+                    
                 }
 
                 foreach (cPlayer p in this.myGame.Players)
@@ -380,19 +432,21 @@ namespace monopoly.prototypeV2.client.form
                     }
 
                     tp_players.TabPages.Add(p.Name,p.Name );
-                    TabPage t = tp_players.SelectedTab;
+                    TabPage t = tp_players.TabPages[p.Name]  ;
                     t.AutoScroll = true;
                     t.Tag = myTPCardLocations;
                     
 
 
-
                     rm = Resources.ResourceManager;
                     bmp = (Bitmap)rm.GetObject(p.Avatar.Token);
+                    
 
                     interfaces.IctrlSquare sq = this.mySquares[p.CurPos].GUICtrl;
                     picBoxAvatar = new PictureBox();
-                    picBoxAvatar.Image = bmp;
+                    picBoxAvatar.Image = resizeImage(bmp,new Size(20,20));
+                    picBoxAvatar.Size = new Size(picBoxAvatar.Image.Width, picBoxAvatar.Image.Height);
+                    
                     sq.addAvatar(picBoxAvatar,p.Avatar );
 
 
@@ -436,14 +490,43 @@ namespace monopoly.prototypeV2.client.form
 
 
                 }
+                //list used to dont loose the references of objects...
+                this.myRealEstates.Clear();
+                foreach (cRegularSquare oLogic in this.myGame.RegularSquares)
+                {
+                    //test
+                    if (oLogic.GetType() == typeof(cRegularSquare)) { 
+                        
+                        //ugly workaround, use some linq, because this.mysquares sucks
+                        Int32 j = 0;
+                        j = this.mySquares.FirstOrDefault(x=>x.Value.oSquare.ctrlName  == oLogic.ctrlName  ).Key ;
+                                         
+                        ctrlRegularSquare oGUI = (ctrlRegularSquare)this.mySquares[j].GUICtrl;
 
-                showRealEstates();
+                        oGUI.clearRealEstates();
+                       
+                       
+                        for (int i = 0; i < oLogic.Houses; i++)
+                        {
+                            this.myRealEstates.Add(new cHouse());
+                            oGUI.addRealEstate(this.myRealEstates.Last()); 
+                        }
+                        for (int i = 0; i < oLogic.Hotels ; i++)
+                        {
+                            this.myRealEstates.Add(new cHotel()); 
+                            oGUI.addRealEstate(this.myRealEstates.Last());
+                        }
+                    }
 
-                this.txt_history.Text  = this.myGame.gameMessages.strOutput();
+               }
+
+
+
+                this.txt_history.Text = this.myGame.strOutput();
                 this.txt_history.SelectionStart = this.txt_history.Text.Length;
                 this.txt_history.ScrollToCaret();
 
-                this.txtChat.Text = this.myGame.gameChat.strOutput();
+                this.txtChat.Text = this.myGame.strChatOutput();
                 this.txtChat.SelectionStart = this.txtChat.Text.Length;
                 this.txtChat.ScrollToCaret();
 
@@ -452,43 +535,37 @@ namespace monopoly.prototypeV2.client.form
             }
         }
 
-        public void showRealEstates()
+        //just some nice looking code
+        private static Image resizeImage(Image imgToResize, Size size)
         {
-            cGUIWrapper wrapper;
-            cRegularSquare regSquare;
-            PictureBox picBox;
-            ctrlRegularSquare ctrlRegSquare;
+            int sourceWidth = imgToResize.Width;
+            int sourceHeight = imgToResize.Height;
 
-            foreach (KeyValuePair<int, cGUIWrapper> pair in this.mySquares)
-            {
-                wrapper = pair.Value;
-                if (wrapper.oSquare.GetType() == typeof(cRegularSquare))
-                {
-                    regSquare = (cRegularSquare)wrapper.oSquare;
-                    ctrlRegSquare = (ctrlRegularSquare)wrapper.GUICtrl;
-                    if (regSquare.Houses > 0)
-                    {
-                        cHouse house = new cHouse();
-                        for (int i = 0; i < regSquare.Houses; i++)
-                        {
-                            picBox = new PictureBox();
-                            picBox.Image = house.getImage();
-                            ctrlRegSquare.addRealEstate(picBox, house);
-                        }
-                    }
-                    else if (regSquare.Hotels > 0)
-                    {
-                        cHotel hotel = new cHotel();
-                        for (int i = 0; i < regSquare.Houses; i++)
-                        {
-                            picBox = new PictureBox();
-                            picBox.Image = hotel.getImage();
-                            ctrlRegSquare.addRealEstate(picBox, hotel);
-                        }
-                    }
-                }
-            }
+            float nPercent = 0;
+            float nPercentW = 0;
+            float nPercentH = 0;
+
+            nPercentW = ((float)size.Width / (float)sourceWidth);
+            nPercentH = ((float)size.Height / (float)sourceHeight);
+
+            if (nPercentH < nPercentW)
+                nPercent = nPercentH;
+            else
+                nPercent = nPercentW;
+
+            int destWidth = (int)(sourceWidth * nPercent);
+            int destHeight = (int)(sourceHeight * nPercent);
+
+            Bitmap b = new Bitmap(destWidth, destHeight);
+            Graphics g = Graphics.FromImage((Image)b);
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            g.DrawImage(imgToResize, 0, 0, destWidth, destHeight);
+            g.Dispose();
+
+            return (Image)b;
         }
+    
 
         private void frmClientGame_V02_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -506,9 +583,9 @@ namespace monopoly.prototypeV2.client.form
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.myGame.gameChat.addMessage(this.myPlayer.Name, this.txt_chatSend.Text);
+            this.myGame.addChatMsg(this.myPlayer.Name, this.txt_chatSend.Text);
             this.txt_chatSend.Text = "";
-            this.txtChat.Text = this.myGame.gameChat.strOutput();
+            this.txtChat.Text = this.myGame.strChatOutput ();
             this.txtChat.SelectionStart = this.txtChat.Text.Length;
             this.txtChat.ScrollToCaret();
         }

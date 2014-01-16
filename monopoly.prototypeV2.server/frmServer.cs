@@ -24,7 +24,6 @@ namespace monopoly.prototypeV2.server
     public partial class frmServer : Form
     {
         private cConfig myConfig;
-        private cGame myGame;
 
         public frmServer()
         {

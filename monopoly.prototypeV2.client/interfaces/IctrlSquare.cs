@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using monopoly.prototypeV2.logic.classes;
+using monopoly.prototypeV2.logic.interfaces;
 
 namespace monopoly.prototypeV2.client.interfaces
 {
@@ -21,6 +22,7 @@ namespace monopoly.prototypeV2.client.interfaces
         void addAvatar(PictureBox PBavatar, cAvatar oAvatar);
 
         void clearAvatars();
+
 
         System.Windows.Forms.Orientation orientation { get; set; }
 
