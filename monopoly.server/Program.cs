@@ -1,20 +1,23 @@
-﻿using System;
+﻿using monopoly.server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
-
-
+using System.Windows.Forms;
 
 namespace monopoly.server
 {
-    public class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Der Haupteinstiegspunkt für die Anwendung.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-        
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmServer());
         }
     }
 }

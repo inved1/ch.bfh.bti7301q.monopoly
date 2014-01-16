@@ -7,7 +7,7 @@
   <referencesInternal>
     <reference
       Id="bb0900e2-318b-4b67-af92-a5de33515ba8"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic"
       tag="ViewCode" />
   </referencesInternal>
   <packagedElements>

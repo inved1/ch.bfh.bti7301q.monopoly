@@ -7,7 +7,7 @@
   <referencesInternal>
     <reference
       Id="c3247b8b-8dd0-4ab2-87f3-e0949fc6adbc"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.classes"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.classes"
       tag="ViewCode" />
   </referencesInternal>
   <packagedElements>
@@ -22,7 +22,7 @@
         <referencesInternal>
           <reference
             Id="66bfcc4a-c9cd-478a-968f-cbff57c65720"
-            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -216,7 +216,7 @@
             <referencesInternal>
               <reference
                 Id="9a0e3507-4a8d-410f-9900-97d76440dd13"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3DGUICtrl"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3DGUICtrl"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -296,7 +296,7 @@
             <referencesInternal>
               <reference
                 Id="97770548-0fc3-4185-b1a6-70afb9ed0dd8"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3DoSquare"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3DoSquare"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -377,7 +377,7 @@
             <referencesInternal>
               <reference
                 Id="f9dc9c22-c45e-4735-ac41-0adecf4620f9"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3DmyGUICtrl"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3DmyGUICtrl"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -444,7 +444,7 @@
             <referencesInternal>
               <reference
                 Id="e87d3c04-a0a1-4bd1-a280-6adab58766d4"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3DmySquare"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3DmySquare"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -510,7 +510,7 @@
             <referencesInternal>
               <reference
                 Id="a90664bd-1a20-4141-b9b2-54acc19d8b4f"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.logic%2Fbin%2FDebug%2Fmonopoly.prototypeV2.logic.dll&quot; Namespace%3Dmonopoly.prototypeV2.logic.interfaces Type%3DISquare)])"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.interfaces Type%3DISquare)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -572,7 +572,7 @@
                   <referencesInternal>
                     <reference
                       Id="9464ac23-0203-43e3-af0d-42ab383af21a"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.logic%2Fbin%2FDebug%2Fmonopoly.prototypeV2.logic.dll&quot; Namespace%3Dmonopoly.prototypeV2.logic.interfaces Type%3DISquare)]) ParameterIdentifier%3DoGUIctrl"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.interfaces Type%3DISquare)]) ParameterIdentifier%3DoGUIctrl"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -591,7 +591,7 @@
                   <referencesInternal>
                     <reference
                       Id="69b4a028-43f6-4ec6-8c55-4c5744d17fdb"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.client%2Fbin%2FDebug%2Fmonopoly.prototypeV2.client.exe&quot; Namespace%3Dmonopoly.prototypeV2.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.logic%2Fbin%2FDebug%2Fmonopoly.prototypeV2.logic.dll&quot; Namespace%3Dmonopoly.prototypeV2.logic.interfaces Type%3DISquare)]) ParameterIdentifier%3DoSquare"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.classes Type%3DcGUIWrapper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.client%2Fbin%2FDebug%2Fmonopoly.client.exe&quot; Namespace%3Dmonopoly.client.interfaces Type%3DIctrlSquare)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.interfaces Type%3DISquare)]) ParameterIdentifier%3DoSquare"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>

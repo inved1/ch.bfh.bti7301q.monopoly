@@ -24,7 +24,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="e4fbc3df-5bfa-4865-aa9a-d0b69d388483" name="Properties" visibility="Private">
         <referencesInternal>
-          <reference Id="112763bb-79fd-4c91-a0a3-c03cced341b0" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.Properties" tag="ViewCode">
+          <reference Id="112763bb-79fd-4c91-a0a3-c03cced341b0" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.Properties" tag="ViewCode">
             <elementDefinition Id="ae85caf4-0ae5-4b70-81e3-c7f1a5899031" />
           </reference>
         </referencesInternal>
@@ -34,7 +34,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="2f08260a-ee51-4665-859e-82364ef932a0" name="logic" visibility="Private">
         <referencesInternal>
-          <reference Id="a9abf9f8-e66a-42b1-9fd1-ebaaeca7b2fd" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic" tag="ViewCode">
+          <reference Id="a9abf9f8-e66a-42b1-9fd1-ebaaeca7b2fd" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic" tag="ViewCode">
             <elementDefinition Id="bb0900e2-318b-4b67-af92-a5de33515ba8" />
           </reference>
         </referencesInternal>
@@ -44,7 +44,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="39bea4d9-b43e-44de-bc41-5f61ceba5b9f" name="classes" visibility="Private">
         <referencesInternal>
-          <reference Id="7fd8b699-04ea-44bc-8c6e-7c5d3bdb0732" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.classes" tag="ViewCode">
+          <reference Id="7fd8b699-04ea-44bc-8c6e-7c5d3bdb0732" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.classes" tag="ViewCode">
             <elementDefinition Id="a8263a0a-b66a-43e5-bd0a-b4aa8cbbd225" />
           </reference>
         </referencesInternal>
@@ -54,7 +54,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="3572d370-e90d-46b6-81c5-49a68ee47503" name="actions" visibility="Private">
         <referencesInternal>
-          <reference Id="028b0813-21ab-475e-85d7-aeb60c82d82a" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.classes.actions" tag="ViewCode">
+          <reference Id="028b0813-21ab-475e-85d7-aeb60c82d82a" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.classes.actions" tag="ViewCode">
             <elementDefinition Id="db0e68f8-d999-47ce-80b1-7bd469aac6a4" />
           </reference>
         </referencesInternal>
@@ -64,7 +64,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="5ebd5d6f-3292-4c0f-be8e-d515f69ae48a" name="squares" visibility="Private">
         <referencesInternal>
-          <reference Id="7891b90a-6297-4c4d-aedf-9a77529b4804" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.classes.squares" tag="ViewCode">
+          <reference Id="7891b90a-6297-4c4d-aedf-9a77529b4804" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.classes.squares" tag="ViewCode">
             <elementDefinition Id="8f685816-1089-47db-afa3-a4f0879d8efa" />
           </reference>
         </referencesInternal>
@@ -74,7 +74,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="6f827713-7a09-4570-803d-9552158e6d94" name="interfaces" visibility="Private">
         <referencesInternal>
-          <reference Id="f2d67cf1-d352-4d7a-9d7c-53b30e3e0d90" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.interfaces" tag="ViewCode">
+          <reference Id="f2d67cf1-d352-4d7a-9d7c-53b30e3e0d90" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.interfaces" tag="ViewCode">
             <elementDefinition Id="ec291c2b-8b45-4605-bae2-87a4af98fdf0" />
           </reference>
         </referencesInternal>
@@ -84,7 +84,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="74adfc3a-4a06-4fca-a117-94432be1c788" name="Properties" visibility="Private">
         <referencesInternal>
-          <reference Id="a6a26a09-6a37-4f37-a68e-22d1fb031c7e" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.Properties" tag="ViewCode">
+          <reference Id="a6a26a09-6a37-4f37-a68e-22d1fb031c7e" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.Properties" tag="ViewCode">
             <elementDefinition Id="41ed9c95-11d7-4ccb-b0ca-8306633713ea" />
           </reference>
         </referencesInternal>
@@ -94,7 +94,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="a17fe176-15d4-48a4-a3d3-b6739fa60792" name="util" visibility="Private">
         <referencesInternal>
-          <reference Id="9c59b139-b605-4545-9e5f-014f18ce0ec1" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.logic.util" tag="ViewCode">
+          <reference Id="9c59b139-b605-4545-9e5f-014f18ce0ec1" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.util" tag="ViewCode">
             <elementDefinition Id="8991524c-9c0f-4d85-8168-2c8816fd89b3" />
           </reference>
         </referencesInternal>
@@ -104,7 +104,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="92e2ed52-43ca-4904-a812-b9b1c2bccc3f" name="server" visibility="Private">
         <referencesInternal>
-          <reference Id="1ee702c5-cc32-4a18-895a-d920c70d5baa" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.server" tag="ViewCode">
+          <reference Id="1ee702c5-cc32-4a18-895a-d920c70d5baa" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.server" tag="ViewCode">
             <elementDefinition Id="4ed16b14-cf15-4a36-b1dc-77d0ec034d4d" />
           </reference>
         </referencesInternal>
@@ -114,7 +114,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="c83c61b9-184b-4aaa-ae31-af8089910595" name="Properties" visibility="Private">
         <referencesInternal>
-          <reference Id="c494ada3-d895-4aa0-a927-aea2d264bbeb" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.server.Properties" tag="ViewCode">
+          <reference Id="c494ada3-d895-4aa0-a927-aea2d264bbeb" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.server.Properties" tag="ViewCode">
             <elementDefinition Id="1371f170-9d88-4c67-8880-02a0c4fc6058" />
           </reference>
         </referencesInternal>
@@ -124,7 +124,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="2fd5897c-95f6-498f-be48-d2b2d9d976c2" name="client" visibility="Private">
         <referencesInternal>
-          <reference Id="25e836ce-0ff6-44ee-9caa-9ed4551e0fd1" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client" tag="ViewCode">
+          <reference Id="25e836ce-0ff6-44ee-9caa-9ed4551e0fd1" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client" tag="ViewCode">
             <elementDefinition Id="35ee71a8-6992-4f66-a06b-5e769955af2d" />
           </reference>
         </referencesInternal>
@@ -134,7 +134,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="81dd82c9-af52-4026-8e95-c3ca30ac287d" name="classes" visibility="Private">
         <referencesInternal>
-          <reference Id="1f27bc49-e073-49c0-9e3c-b6dfb2ab2517" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.classes" tag="ViewCode">
+          <reference Id="1f27bc49-e073-49c0-9e3c-b6dfb2ab2517" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.classes" tag="ViewCode">
             <elementDefinition Id="c3247b8b-8dd0-4ab2-87f3-e0949fc6adbc" />
           </reference>
         </referencesInternal>
@@ -144,7 +144,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="992dcc5f-d7da-4355-bafd-4bceeaa1a2e7" name="ctrl" visibility="Private">
         <referencesInternal>
-          <reference Id="0230da9f-2fe6-465e-b846-5968da27d153" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.ctrl" tag="ViewCode">
+          <reference Id="0230da9f-2fe6-465e-b846-5968da27d153" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.ctrl" tag="ViewCode">
             <elementDefinition Id="2330cc47-484c-4851-acf3-8c6f682d9f9e" />
           </reference>
         </referencesInternal>
@@ -154,7 +154,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="6bd38384-b1f8-4fe0-b6e1-51fc54551b0c" name="form" visibility="Private">
         <referencesInternal>
-          <reference Id="7b14cf5a-1b9d-4a27-b819-d6153fb0d09f" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.form" tag="ViewCode">
+          <reference Id="7b14cf5a-1b9d-4a27-b819-d6153fb0d09f" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.form" tag="ViewCode">
             <elementDefinition Id="b0550b95-c7df-433c-99f2-47aac79e3fc2" />
           </reference>
         </referencesInternal>
@@ -164,7 +164,7 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="9ac7424e-6359-44c7-b4dd-2ef983b4317d" name="interfaces" visibility="Private">
         <referencesInternal>
-          <reference Id="0ad919f3-7b4b-43c7-acfe-4d1dd68b93c6" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.client.interfaces" tag="ViewCode">
+          <reference Id="0ad919f3-7b4b-43c7-acfe-4d1dd68b93c6" handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.client.interfaces" tag="ViewCode">
             <elementDefinition Id="adfd85cc-418a-498e-95dd-c57d489ac63f" />
           </reference>
         </referencesInternal>

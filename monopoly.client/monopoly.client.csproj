@@ -4,13 +4,28 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E376B8A6-0F39-4D66-A815-BD1F5501F3C1}</ProjectGuid>
+    <ProjectGuid>{4FB4B321-C987-4834-8BBB-AE70B2858FD8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>monopoly.client</RootNamespace>
     <AssemblyName>monopoly.client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +46,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,14 +62,154 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="classes\cGUIWrapper.cs" />
+    <Compile Include="ctrlGenericAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlGenericAction.designer.cs">
+      <DependentUpon>ctrlGenericAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlGoToPrisonSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlGoToPrisonSquare.Designer.cs">
+      <DependentUpon>ctrlGoToPrisonSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlPlayerInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPlayerInfoCard.Designer.cs">
+      <DependentUpon>ctrlPlayerInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonVisitorSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonVisitorSquare.Designer.cs">
+      <DependentUpon>ctrlPrisonVisitorSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlActionSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlActionSquare.Designer.cs">
+      <DependentUpon>ctrlActionSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlCommunitySquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlCommunitySquare.Designer.cs">
+      <DependentUpon>ctrlCommunitySquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlFreeParkSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlFreeParkSquare.Designer.cs">
+      <DependentUpon>ctrlFreeParkSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlPrisonSquare.Designer.cs">
+      <DependentUpon>ctrlPrisonSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlRegularSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlRegularSquare.Designer.cs">
+      <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlStartSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlStartSquare.Designer.cs">
+      <DependentUpon>ctrlStartSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlTaxSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlTaxSquare.Designer.cs">
+      <DependentUpon>ctrlTaxSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlTrainStationSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlTrainStationSquare.Designer.cs">
+      <DependentUpon>ctrlTrainStationSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrl\ctrlWaterPowerSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrl\ctrlWaterPowerSquare.Designer.cs">
+      <DependentUpon>ctrlWaterPowerSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="form\frmClient.designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frmClientGame_V02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmClientGame_V02.Designer.cs">
+      <DependentUpon>frmClientGame_V02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmBuild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmBuild.designer.cs">
+      <DependentUpon>frmBuild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmTrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmTrade.designer.cs">
+      <DependentUpon>frmTrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmGenericActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmGenericActions.designer.cs">
+      <DependentUpon>frmGenericActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmTradeConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmTradeConfirm.Designer.cs">
+      <DependentUpon>frmTradeConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\IctrlSquare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlGenericAction.resx">
+      <DependentUpon>ctrlGenericAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrl\ctrlPlayerInfoCard.resx">
+      <DependentUpon>ctrlPlayerInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrl\ctrlRegularSquare.resx">
+      <DependentUpon>ctrlRegularSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrl\ctrlTaxSquare.resx">
+      <DependentUpon>ctrlTaxSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmClientGame_V02.resx">
+      <DependentUpon>frmClientGame_V02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmBuild.resx">
+      <DependentUpon>frmBuild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmTrade.resx">
+      <DependentUpon>frmTrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmGenericActions.resx">
+      <DependentUpon>frmGenericActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmTradeConfirm.resx">
+      <DependentUpon>frmTradeConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,7 +218,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="doc\ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +233,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monopoly_Spielbrett.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\monopoly.logic\monopoly.logic.csproj">
+      <Project>{a686cc82-77c6-48b1-b276-7b706b4acfa4}</Project>
+      <Name>monopoly.logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thimble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monopoly_man.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

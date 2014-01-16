@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.logic", "monopoly.prototypeV2.logic\monopoly.logic.csproj", "{A686CC82-77C6-48B1-B276-7B706B4ACFA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.logic", "monopoly.logic\monopoly.logic.csproj", "{A686CC82-77C6-48B1-B276-7B706B4ACFA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.server", "monopoly.prototypeV2.server\monopoly.server.csproj", "{B35F22A3-3C30-4D1F-9346-60525D3B4AC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.server", "monopoly.server\monopoly.server.csproj", "{B35F22A3-3C30-4D1F-9346-60525D3B4AC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.tester", "monopoly.prototypeV2.tester\monopoly.tester.csproj", "{061D9019-C5A1-437D-A177-E51FF9BCDEB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.tester", "monopoly.tester\monopoly.tester.csproj", "{061D9019-C5A1-437D-A177-E51FF9BCDEB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.client", "monopoly.prototypeV2.client\monopoly.client.csproj", "{4FB4B321-C987-4834-8BBB-AE70B2858FD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monopoly.client", "monopoly.client\monopoly.client.csproj", "{4FB4B321-C987-4834-8BBB-AE70B2858FD8}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "monopoly.doc", "monopoly.doc\monopoly.doc.modelproj", "{7C1F3992-FA93-4DA4-817D-51516B1BF5CD}"
 EndProject

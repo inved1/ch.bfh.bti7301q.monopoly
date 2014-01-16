@@ -7,7 +7,7 @@
   <referencesInternal>
     <reference
       Id="1371f170-9d88-4c67-8880-02a0c4fc6058"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.prototypeV2.server.Properties"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.server.Properties"
       tag="ViewCode" />
   </referencesInternal>
   <packagedElements>
@@ -22,7 +22,7 @@
         <referencesInternal>
           <reference
             Id="12221220-3429-4c60-8a15-6fc1607a55b2"
-            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -83,7 +83,7 @@
             <referencesInternal>
               <reference
                 Id="089af823-a85d-4fb3-b9f7-7278f19f14eb"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3Dlogo"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3Dlogo"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -164,7 +164,7 @@
             <referencesInternal>
               <reference
                 Id="b85299c9-1900-401c-b551-974ba868c518"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3DResourceManager"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3DResourceManager"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -245,7 +245,7 @@
             <referencesInternal>
               <reference
                 Id="369e4a03-0a2c-4fbd-88ec-1ecf3a406efa"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3DCulture"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3DCulture"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -326,7 +326,7 @@
             <referencesInternal>
               <reference
                 Id="5508245a-79a5-43cf-bda3-dfb9ac8283a2"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3DresourceMan"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3DresourceMan"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -393,7 +393,7 @@
             <referencesInternal>
               <reference
                 Id="68d1ae2a-3f9d-41c8-8332-a1db2e16557c"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3DresourceCulture"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3DresourceCulture"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -460,7 +460,7 @@
             <referencesInternal>
               <reference
                 Id="0ce88848-0e16-48f6-85c6-e4a1c49bc195"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DResources Member%3D.ctor"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DResources Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -528,7 +528,7 @@
         <referencesInternal>
           <reference
             Id="e5156579-ff99-4aa0-bee3-666e05a3587e"
-            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DSettings"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DSettings"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -666,7 +666,7 @@
             <referencesInternal>
               <reference
                 Id="354bcb47-ade0-4972-b0e7-29277a7cccd3"
-                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DSettings Member%3DDefault"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DSettings Member%3DDefault"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -747,7 +747,7 @@
             <referencesInternal>
               <reference
                 Id="adf87726-0510-4b8a-aa0c-cb985207dd3c"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DSettings Member%3DdefaultInstance"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DSettings Member%3DdefaultInstance"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -813,7 +813,7 @@
             <referencesInternal>
               <reference
                 Id="65252aac-417f-40fc-8556-fe65bee79415"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.prototypeV2.server%2Fbin%2FDebug%2Fmonopoly.prototypeV2.server.exe&quot; Namespace%3Dmonopoly.prototypeV2.server.Properties Type%3DSettings Member%3D.ctor"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.server%2Fbin%2FDebug%2Fmonopoly.server.exe&quot; Namespace%3Dmonopoly.server.Properties Type%3DSettings Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>

@@ -7,54 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using monopoly.server;
+using monopoly.client;
 
 namespace monopoly.tester
 {
-    public partial class frmMain : Form
+    public partial class Form1 : Form
     {
-        
+        private monopoly.server.frmServer srv;
 
-        public frmMain()
+        public Form1()
         {
             InitializeComponent();
-            
+
         }
 
-        private void btnStartServer_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (srv == null)
             {
-                monopoly.server.Program srv = new server.Program();
-                this.txtInfo.Text += "Server gestartet..." + System.Environment.NewLine;
-                
+
+                monopoly.server.frmServer F = new monopoly.server.frmServer();
+                srv = F;
+                F.Show();
+
             }
-            catch (Exception ex)
+            else
             {
-                throw (ex);
+                srv.BringToFront();
             }
-                            
+
         }
 
-        private void btnStartClient_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                this.txtInfo.Text += "Client gestartet..." + System.Environment.NewLine;
-
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            
+            monopoly.client.frmClient c = new monopoly.client.frmClient();
+            c.Show();
         }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            this.txtInfo.Text = "";
-
-        }
-
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{831586B6-392C-45CE-93D1-7E43150B8C89}</ProjectGuid>
+    <ProjectGuid>{A686CC82-77C6-48B1-B276-7B706B4ACFA4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>monopoly.logic</RootNamespace>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,13 +40,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="CommunityCard.cs" />
-    <Compile Include="ICommunityCard.cs" />
+    <Compile Include="classes\actions\cActionBuyRealEstate.cs" />
+    <Compile Include="classes\actions\cActionPlayCard.cs" />
+    <Compile Include="classes\actions\cActionGoToPrison.cs" />
+    <Compile Include="classes\actions\cActionTrade.cs" />
+    <Compile Include="classes\actions\cActionPrisonOutCard.cs" />
+    <Compile Include="classes\actions\cActionBuySquare.cs" />
+    <Compile Include="classes\actions\cActionBuyFree.cs" />
+    <Compile Include="classes\actions\cActionEndTurn.cs" />
+    <Compile Include="classes\actions\cActionGiveUp.cs" />
+    <Compile Include="classes\actions\cActionRoll.cs" />
+    <Compile Include="classes\actions\cActionPayTax.cs" />
+    <Compile Include="classes\cActionCard.cs" />
+    <Compile Include="classes\cAvatar.cs" />
+    <Compile Include="classes\cCardDeck.cs" />
+    <Compile Include="classes\cCommunityCard.cs" />
+    <Compile Include="classes\cConfig.cs" />
+    <Compile Include="classes\cGame.cs" />
+    <Compile Include="classes\cGameBoard.cs" />
+    <Compile Include="classes\cHotel.cs" />
+    <Compile Include="classes\cHouse.cs" />
+    <Compile Include="classes\cChat_old.cs" />
+    <Compile Include="classes\cMessage_old.cs" />
+    <Compile Include="classes\cPlayer.cs" />
+    <Compile Include="classes\cStreet.cs" />
+    <Compile Include="classes\squares\cActionSquare.cs" />
+    <Compile Include="classes\squares\cCommunitySquare.cs" />
+    <Compile Include="classes\squares\cFreeParkSquare.cs" />
+    <Compile Include="classes\squares\cGoToPrisonSquare.cs" />
+    <Compile Include="classes\squares\cPayTaxesSquare.cs" />
+    <Compile Include="classes\squares\cPrisonSquare.cs" />
+    <Compile Include="classes\squares\cPrisonVisitorSquare.cs" />
+    <Compile Include="classes\squares\cRegularSquare.cs" />
+    <Compile Include="classes\squares\cStartSquare.cs" />
+    <Compile Include="classes\squares\cTaxSquare.cs" />
+    <Compile Include="classes\squares\cTrainStationSquare.cs" />
+    <Compile Include="classes\squares\cWaterPowerSquare.cs" />
+    <Compile Include="interfaces\IAction.cs" />
+    <Compile Include="interfaces\IBuyable.cs" />
+    <Compile Include="interfaces\ICard.cs" />
+    <Compile Include="interfaces\IObserverAction.cs" />
+    <Compile Include="interfaces\IObserverGUI.cs" />
+    <Compile Include="interfaces\IRealEstate.cs" />
+    <Compile Include="interfaces\ISquare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="util\LogEntry.cs" />
+    <Compile Include="util\LogWriter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="gameModel.cd" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="config\schema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="doc\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\monopoly_hotel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monopoly_house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
