@@ -331,6 +331,7 @@ namespace monopoly.logic.classes
             else if (curPlayer.GetType() == typeof(cGoToPrisonSquare))
             {
                 actions.Add(new cActionGoToPrison(this));
+                actions.Add(new cActionEndTurn(this));
             }
             actions.Add(new cActionGiveUp(this));
             notifyCurPlayer();
