@@ -77,6 +77,13 @@
     <None Include="compiled\config\schema.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="compiled\debug\config\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="compiled\debug\monopoly.prototypeV2.tester.exe.config" />
+    <None Include="compiled\debug\monopoly.prototypeV2.tester.vshost.exe.config" />
+    <None Include="compiled\debug\monopoly.tester.exe.config" />
+    <None Include="compiled\debug\monopoly.tester.vshost.exe.config" />
     <None Include="compiled\monopoly.prototypeV2.tester.vshost.exe.config" />
     <None Include="compiled\monopoly.prototypeV2.tester.vshost.exe.manifest" />
     <None Include="compiled\monopoly.tester.exe.config" />
@@ -112,6 +119,24 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="compiled\config\cfg.xml" />
+    <Content Include="compiled\debug\config\cfg.xml" />
+    <Content Include="compiled\debug\monopoly.client.exe" />
+    <Content Include="compiled\debug\monopoly.client.pdb" />
+    <Content Include="compiled\debug\monopoly.logic.dll" />
+    <Content Include="compiled\debug\monopoly.logic.pdb" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.client.exe" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.client.pdb" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.logic.dll" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.logic.pdb" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.server.exe" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.server.pdb" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.tester.exe" />
+    <Content Include="compiled\debug\monopoly.prototypeV2.tester.pdb" />
+    <Content Include="compiled\debug\monopoly.server.exe" />
+    <Content Include="compiled\debug\monopoly.server.pdb" />
+    <Content Include="compiled\debug\monopoly.tester.exe" />
+    <Content Include="compiled\debug\monopoly.tester.pdb" />
+    <Content Include="compiled\debug\monopoly.tester.vshost.exe" />
     <Content Include="compiled\monopoly.client.exe" />
     <Content Include="compiled\monopoly.client.pdb" />
     <Content Include="compiled\monopoly.logic.dll" />
