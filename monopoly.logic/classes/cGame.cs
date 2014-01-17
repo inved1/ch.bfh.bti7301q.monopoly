@@ -432,7 +432,7 @@ namespace monopoly.logic.classes
                 if (curSquare.GetType() == typeof(cWaterPowerSquare)){
                     //need some multiply here
                     cWaterPowerSquare o = (cWaterPowerSquare)curSquare;
-                    rent = o.multiplier[this.gameBoard.getWaterPowerSquaresByPlayer(this.curPlayer).Count] * (this.curPlayer.lastDice1 + this.curPlayer.lastDice2); 
+                    rent = o.multiplier[this.gameBoard.getWaterPowerSquaresByPlayer(o.Owner).Count] * (this.curPlayer.lastDice1 + this.curPlayer.lastDice2); 
                     this.addMessage("Spieler " + this.curPlayer.Name + " muss bei WasserPowerSquare folgenden Betrag zahlen: "+rent.ToString());
                 }
                 if (curSquare.GetType() == typeof(cTrainStationSquare))
