@@ -17,7 +17,7 @@ namespace monopoly.logic.classes
         #region "vars"
         private cGameBoard gameBoard;
         private List<IAction> actions;
-        private Dictionary<IBuyable,int > myTradeCards;
+        private Dictionary<cRegularSquare,int > myTradeCards;
 
         private cPlayer startPlayer;
         private cPlayer curPlayer;
@@ -54,7 +54,7 @@ namespace monopoly.logic.classes
             this.gameBoard = cGameBoard.getInstance();
 
             this.actions = new List<IAction>();
-            this.myTradeCards = new Dictionary<IBuyable, int>();
+            this.myTradeCards = new Dictionary<cRegularSquare , int>();
             this.logWriter = LogWriter.Instance;
             this.myChat = new SortedDictionary<int, string>();
             this.playerObservers = new SortedList<cPlayer, IObserverGUI>();
@@ -171,9 +171,9 @@ namespace monopoly.logic.classes
             get { return actions; }
         }
 
-        public  Dictionary<IBuyable,int > TradeCards
+        public  Dictionary<cRegularSquare ,int > TradeCards
         {
-            get { return myTradeCards; }
+            get { return this.myTradeCards; }
             
         }
         public void addTradeCard(cRegularSquare card, int val, cPlayer player )
@@ -645,14 +645,21 @@ namespace monopoly.logic.classes
             notifyCurPlayer();
         }
 
-        public void playerTrades(ISquare obj, cPlayer owner, cPlayer newOwner, int amount)
+        public void playerTrades()
         {
-            obj.Owner = newOwner;
-            owner.addMoney(amount);
-            newOwner.spendMoney(amount);
-            //Debug.WriteLine("SPieler "+owner.Name+" hat Objekt "+obj.ctrlName+ " an Spieler"+newOwner.Name +" verkauft");
-            logWriter.WriteLogQueue("SPieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
-            this.addMessage("Spieler " + owner.Name + " hat Objekt " + obj.ctrlName + " an Spieler" + newOwner.Name + " verkauft");
+            cPlayer newowner = this.curTradePlayer;
+            foreach(KeyValuePair<cRegularSquare,int> entry in this.myTradeCards){
+                cPlayer owner = entry.Key.Owner;
+                entry.Key.Owner = newowner;
+                newowner.spendMoney(entry.Value);
+                owner.addMoney(entry.Value);
+
+                //Debug.WriteLine("SPieler "+owner.Name+" hat Objekt "+obj.ctrlName+ " an Spieler"+newOwner.Name +" verkauft");
+                logWriter.WriteLogQueue("SPieler " + owner.Name + " hat Objekt " + entry.Key.ctrlName + " an Spieler" + newowner.Name + " verkauft");
+                this.addMessage("Spieler " + owner.Name + " hat Objekt " + entry.Key.ctrlName + " an Spieler" + newowner.Name + " verkauft");
+
+            }
+            
         }
         public void playerGoesToPrison()
         {
@@ -720,7 +727,12 @@ namespace monopoly.logic.classes
                         }
                         else
                         {
-                            ownedSquares.Add(squareNr, square);
+                        //prevent from inserting twice.....
+                            if (!ownedSquares.ContainsKey(squareNr))
+                            {
+                                ownedSquares.Add(squareNr, square);
+                            }
+                            
                         }
                     }
                     if (hasFullStreet)

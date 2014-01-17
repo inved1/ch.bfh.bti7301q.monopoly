@@ -27,9 +27,9 @@ namespace monopoly.logic.classes.actions
         {
             //should not be used here
         }
-        public void runTrade(ISquare obj, cPlayer owner, cPlayer newOwner, int amount)
+        public void runTrade()
         {
-            this.game.playerTrades(obj, owner,newOwner,amount );
+            this.game.playerTrades();
         }
     }
 }

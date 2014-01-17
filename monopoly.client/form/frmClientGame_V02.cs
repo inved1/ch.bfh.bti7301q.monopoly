@@ -238,8 +238,8 @@ namespace monopoly.client.form
         public void runTrade(object sender, EventArgs e )
         {
             Button btn = (Button)sender;
-            IBuyable  action =(IBuyable )btn.Tag;
-            //action.runTrade(); 
+            cActionTrade action = (cActionTrade)btn.Tag;
+            action.runTrade(); 
 
         }
 
@@ -309,15 +309,20 @@ namespace monopoly.client.form
             {
                 //show f confirm trade
                 frmTradeConfirm f = new frmTradeConfirm();
-                foreach (KeyValuePair<IBuyable,int> card in this.myGame.TradeCards)
+                foreach (KeyValuePair<cRegularSquare ,int> card in this.myGame.TradeCards)
                 {
 
                     f.Text = "Kaufen ?" + System.Environment.NewLine + card.Key.TradeString + System.Environment.NewLine + card.Value.ToString();  
 
                     
                 }
-                f.ShowDialog();
-
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    this.myGame.playerTrades();
+                    f.Hide();
+                    f.Close();
+                }
+                f.Dispose();
             }
         }
 
@@ -375,13 +380,13 @@ namespace monopoly.client.form
                     f.addControl(bBuild);
                 }
 
-                //if (this.myGame.CurPlayer.canTrade)
-                //{
-                //    Button bTrade = new Button();
-                //    bTrade.Text = "Handeln";
-                //    bTrade.Click += new EventHandler(showTrade);
-                //    f.addControl(bTrade);
-                //}
+                if (this.myGame.CurPlayer.canTrade)
+                {
+                    Button bTrade = new Button();
+                    bTrade.Text = "Handeln";
+                    bTrade.Click += new EventHandler(showTrade);
+                    f.addControl(bTrade);
+                }
 
                 //ugly workaround
                 Form  fx = Application.OpenForms["frmGenericActions"];

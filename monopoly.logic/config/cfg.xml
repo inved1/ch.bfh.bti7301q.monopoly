@@ -13,9 +13,9 @@
         <ServerSharedGameName>sharedGame</ServerSharedGameName>
     </Server>    
     <Client>
-        <ClientLastServer>192.168.0.6:27015</ClientLastServer>
+        <ClientLastServer>147.87.46.163:27015</ClientLastServer>
         <ClientHistoryServers>
-            <ClientHistoryServer id='1'>192.168.0.6:27015</ClientHistoryServer>
+            <ClientHistoryServer id='1'>147.87.46.163:27015</ClientHistoryServer>
             <ClientHistoryServer id='2'>147.87.46.255:27015</ClientHistoryServer>
             <ClientHistoryServer id='3'>147.87.47.252:27015</ClientHistoryServer>
             <ClientHistoryServer id='4'>147.87.46.203:27015</ClientHistoryServer>

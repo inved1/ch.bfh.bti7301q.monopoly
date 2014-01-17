@@ -38,15 +38,19 @@ namespace monopoly.client
   
         public List<cPlayer> players
         {
-            set {   this.myPlayers = value; 
-                    foreach(cPlayer p in value )
-                    {
-                        RadioButton rb = new RadioButton();
-                        rb.Text = p.Name;
-                        rb.Tag = p;
-                        this.groupBox1.Controls.Add(rb);
+            set {   this.myPlayers = value;
+            int x = 20;
+            int y = 20;
+            foreach(cPlayer p in value )
+            {
+                RadioButton rb = new RadioButton();
+                rb.Text = p.Name;
+                rb.Tag = p;
+                rb.Location = new Point(x, y);
+                x += 20;
+                this.groupBox1.Controls.Add(rb);
                         
-                    }
+            }
                 
             }
             get { return this.myPlayers; }
@@ -54,12 +58,19 @@ namespace monopoly.client
 
         public List<cRegularSquare> sellable
         {
+
             set { this.myCards = value;
-            foreach (cRegularSquare c in value)
-            {
+            
+                int x = 20;
+                int y = 20;
+
+                foreach (cRegularSquare c in value)
+                {
                 RadioButton rb = new RadioButton();
                 rb.Text = c.ctrlName;
                 rb.Tag = c;
+                rb.Location = new Point(x, y);
+                x += 20;
                 this.groupBox2.Controls.Add(rb);
                 
                 
