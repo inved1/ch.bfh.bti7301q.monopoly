@@ -382,10 +382,10 @@ namespace monopoly.client.form
 
                 if (this.myGame.CurPlayer.canTrade)
                 {
-                    Button bTrade = new Button();
-                    bTrade.Text = "Handeln";
-                    bTrade.Click += new EventHandler(showTrade);
-                    f.addControl(bTrade);
+                    //Button bTrade = new Button();
+                    //bTrade.Text = "Handeln";
+                    //bTrade.Click += new EventHandler(showTrade);
+                    //f.addControl(bTrade);
                 }
 
                 //ugly workaround
