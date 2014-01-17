@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" GraphDirection="LeftToRight" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@12 @13 Type=(Name=eGameStatus @25))" Category="CodeSchema_Enum" Bounds="-800.632564402991,1116.85234073651,126.726666666667,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="eGameStatus" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Enum" Label="eGameStatus" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cGame.cs&quot; StartLineNumber=42 StartCharacterOffset=8 EndLineNumber=42 EndCharacterOffset=8)" UseManualLocation="True" />
+    <Node Id="(@12 @13 Type=(Name=updateGUIActionEventHandler @25))" Category="CodeSchema_Delegate" Bounds="-800.632564402991,1281.85264073651,217.896666666667,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="updateGUIActionEventHandler" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="updateGUIActionEventHandler" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cGame.cs&quot; StartLineNumber=113 StartCharacterOffset=8 EndLineNumber=113 EndCharacterOffset=8)" UseManualLocation="True" />
+    <Node Id="(@12 @13 Type=(Name=updateGUIEventHandler @25))" Category="CodeSchema_Delegate" Bounds="-800.632564402991,1171.85244073651,183.82,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="updateGUIEventHandler" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="updateGUIEventHandler" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cGame.cs&quot; StartLineNumber=110 StartCharacterOffset=8 EndLineNumber=110 EndCharacterOffset=8)" UseManualLocation="True" />
+    <Node Id="(@12 @13 Type=(Name=updateGUITradeEventHandler @25))" Category="CodeSchema_Delegate" Bounds="-800.632564402991,1226.85254073651,213.73,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="updateGUITradeEventHandler" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="updateGUITradeEventHandler" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cGame.cs&quot; StartLineNumber=116 StartCharacterOffset=8 EndLineNumber=116 EndCharacterOffset=8)" UseManualLocation="True" />
+    <Node Id="(@12 @13 Type=cChat_old)" Category="CodeSchema_Class" Bounds="-444.744032934462,1123.83596237118,112.92,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cChat_old" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cChat_old" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cchat_old.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@12 @13 Type=cMessage_old)" Category="CodeSchema_Class" Bounds="-444.744032934457,1178.83606237118,135.216666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cMessage_old" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cMessage_old" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cmessage_old.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@12 @19 Type=IObserverAction)" Category="CodeSchema_Interface" Bounds="340.326897152001,1371.11505978661,146.11,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IObserverAction" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IObserverAction" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/iobserveraction.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
+    <Node Id="(@5 @7 Type=ctrlPlayerInfoCard)" Category="CodeSchema_Class" Bounds="-560.277131088228,311.730094266829,155.226666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlPlayerInfoCard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlPlayerInfoCard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlplayerinfocard.cs&quot; StartLineNumber=12 StartCharacterOffset=4 EndLineNumber=12 EndCharacterOffset=4)" />
+    <Node Id="(@5 @9 Type=(Name=cbGUI ParentType=frmClientGame_V02))" Category="CodeSchema_Delegate" Bounds="981.463653168976,478.386953901013,88.2666666666664,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPrivate="True" CommonLabel="cbGUI" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="cbGUI" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/form/frmclientgame_v02.cs&quot; StartLineNumber=286 StartCharacterOffset=8 EndLineNumber=286 EndCharacterOffset=8)" />
+    <Node Id="(@5 @9 Type=(Name=cbGUIAction ParentType=frmClientGame_V02))" Category="CodeSchema_Delegate" Bounds="981.463653168975,423.386853901013,122.343333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPrivate="True" CommonLabel="cbGUIAction" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="cbGUIAction" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/form/frmclientgame_v02.cs&quot; StartLineNumber=288 StartCharacterOffset=8 EndLineNumber=288 EndCharacterOffset=8)" />
+    <Node Id="(@5 @9 Type=(Name=cbGUITrade ParentType=frmClientGame_V02))" Category="CodeSchema_Delegate" Bounds="981.463653168974,368.386753901013,118.176666666667,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPrivate="True" CommonLabel="cbGUITrade" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Delegate" Label="cbGUITrade" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/form/frmclientgame_v02.cs&quot; StartLineNumber=290 StartCharacterOffset=8 EndLineNumber=290 EndCharacterOffset=8)" />
+    <Node Id="(@5 @9 Type=frmTradeConfirm)" Category="CodeSchema_Class" Bounds="1155.62031983564,328.386953901013,151.599999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="frmTradeConfirm" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="frmTradeConfirm" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/form/frmtradeconfirm.cs&quot; StartLineNumber=12 StartCharacterOffset=4 EndLineNumber=12 EndCharacterOffset=4)" />
+    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="939.650319835642,288.386553901013,387.57,255.0006" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.client‎.form" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Namespace" Bounds="323.45130558275,342.731181922856,195.663333333333,85.0002" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.client‎.interfaces" UseManualLocation="True" />
+    <Node Id="@14" Category="CodeSchema_Namespace" Bounds="-1053.24403293446,1028.83576237118,896.816666666665,589.017178365333" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.logic‎.classes" UseManualLocation="True" />
+    <Node Id="@16" Category="CodeSchema_Namespace" Bounds="-584.717084119314,1685.80757966372,422.256666666671,305.000599999999" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.logic‎.classes‎.actions" UseManualLocation="True" />
+    <Node Id="@18" Category="CodeSchema_Namespace" Bounds="224.182891040219,1594.99873553858,530.113333333335,360.0007" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.logic‎.classes‎.squares" UseManualLocation="True" />
+    <Node Id="@20" Category="CodeSchema_Namespace" Bounds="320.326897152,1166.11465978661,320.043333333336,250.0005" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.logic‎.interfaces" UseManualLocation="True" />
+    <Node Id="@21" Category="CodeSchema_Namespace" Bounds="-493.360183637471,859.503956232636,291.206666666667,85.0002" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.logic‎.util" UseManualLocation="True" />
+    <Node Id="@23" Category="CodeSchema_Namespace" Bounds="-1580.26840976544,858.18766228078,288.893333333333,85.0002000000004" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.server" UseManualLocation="True" />
+    <Node Id="@24" Category="CodeSchema_Enum" Bounds="-787.872366267793,1452.85284073651,105.313333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="cardType" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Enum" Label="cardType" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/ccarddeck.cs&quot; StartLineNumber=17 StartCharacterOffset=8 EndLineNumber=17 EndCharacterOffset=8)" UseManualLocation="True" />
+    <Node Id="@26" Category="CodeSchema_Class" Bounds="-564.717084119314,1780.80777966372,142.683333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionBuyFree" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionBuyFree" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionbuyfree.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@27" Category="CodeSchema_Class" Bounds="-564.717084119313,1945.80807966372,174.243333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionBuyRealEstate" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionBuyRealEstate" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionbuyrealestate.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" />
+    <Node Id="@28" Category="CodeSchema_Class" Bounds="-564.717084119311,1890.80797966372,156.883333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionBuySquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionBuySquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionbuysquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@29" Category="CodeSchema_Class" Bounds="-301.824032934462,1123.83596237118,125.396666666667,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cActionCard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionCard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cactioncard.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@30" Category="CodeSchema_Class" Bounds="-392.033750785976,1780.80777966372,144.586666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionEndTurn" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionEndTurn" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionendturn.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@31" Category="CodeSchema_Class" Bounds="-1033.24403293446,1181.33597903784,139.08,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionGiveUp" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionGiveUp" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactiongiveup.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@32" Category="CodeSchema_Class" Bounds="-377.833750785979,1890.80797966372,161.913333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionGoToPrison" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionGoToPrison" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cActionGoToPrison.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@33" Category="CodeSchema_Class" Bounds="-404.187084119313,1725.80767966372,137.153333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionPayTax" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionPayTax" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionpaytax.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@34" Category="CodeSchema_Class" Bounds="-564.717084119311,1835.80787966372,146.936666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionPlayCard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionPlayCard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionplaycard.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@35" Category="CodeSchema_Class" Bounds="-360.473750785975,1945.80807966372,178.013333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionPrisonOutCard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionPrisonOutCard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionprisonoutcard.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@36" Category="CodeSchema_Class" Bounds="-1024.02403293446,1237.33597903784,120.64,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionRoll" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionRoll" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactionroll.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@37" Category="CodeSchema_Class" Bounds="244.182891040219,1689.99893553858,137.406666666667,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cActionSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cactionsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@38" Category="CodeSchema_Class" Bounds="-564.717084119308,1725.80767966372,130.529999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cActionTrade" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cActionTrade" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/actions/cactiontrade.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@39" Category="CodeSchema_Class" Bounds="-575.747366267793,1356.85284073651,100.483333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cAvatar" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cAvatar" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cavatar.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@40" Category="CodeSchema_Class" Bounds="-807.872366267793,1412.85274073651,145.313333333333,85.0002" CodeSchemaProperty_IsPublic="True" CommonLabel="cCardDeck" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Icon="CodeSchema_Class" Label="cCardDeck" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/ccarddeck.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@41" Category="CodeSchema_Class" Bounds="-444.744032934459,1233.83616237118,152.813333333334,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cCommunityCard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cCommunityCard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/ccommunitycard.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@42" Category="CodeSchema_Class" Bounds="244.18289104022,1799.99913553858,164.823333333334,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cCommunitySquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cCommunitySquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/ccommunitysquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@43" Category="CodeSchema_Class" Bounds="-576.267366267796,1572.85284073651,101.523333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cconfig.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@44" Category="CodeSchema_Class" Bounds="585.416224373554,1689.99901331636,148.88,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cFreeParkSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cFreeParkSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cfreeparksquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@45" Category="CodeSchema_Class" Bounds="-820.632564402991,1076.85224073651,257.896666666667,250.000500000001" CodeSchemaProperty_IsPublic="True" CommonLabel="cGame" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Icon="CodeSchema_Class" Label="cGame" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cGame.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@46" Category="CodeSchema_Class" Bounds="-1028.08069960113,1521.33597903784,128.753333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cGameBoard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cGameBoard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cgameboard.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@47" Category="CodeSchema_Class" Bounds="425.416224373554,1744.99901331636,164.623333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cGoToPrisonSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cGoToPrisonSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cgotoprisonsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@48" Category="CodeSchema_Class" Bounds="691.831460869486,391.554002278739,132.26,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cGUIWrapper" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cGUIWrapper" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/classes/cguiwrapper.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@49" Category="CodeSchema_Class" Bounds="-444.744032934461,1068.83586237118,95.3433333333346,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cHotel" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cHotel" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/chotel.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@50" Category="CodeSchema_Class" Bounds="-319.400699601123,1068.83586237118,100.253333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cHouse" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cHouse" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/chouse.cs&quot; StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@51" Category="CodeSchema_Class" Bounds="244.18289104022,1744.99903553858,151.233333333334,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cPayTaxesSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cPayTaxesSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cpaytaxessquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@52" Category="CodeSchema_Class" Bounds="-784.482366267791,1356.85284073651,98.5333333333328,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cPlayer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cPlayer" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cplayer.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@53" Category="CodeSchema_Class" Bounds="553.529557706887,1634.99883553858,136.043333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cPrisonSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cPrisonSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cprisonsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@54" Category="CodeSchema_Class" Bounds="244.18289104022,1909.99933553858,169.673333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cPrisonVisitorSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cPrisonVisitorSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cprisonvisitorsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@55" Category="CodeSchema_Class" Bounds="411.589557706886,1689.99893553858,143.826666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cRegularSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cRegularSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cregularsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@56" Category="CodeSchema_Class" Bounds="395.41289104022,1634.99883553858,128.116666666667,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cStartSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cStartSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cstartsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@57" Category="CodeSchema_Class" Bounds="-784.10403293446,1528.85284073651,97.7766666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cStreet" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cStreet" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/cstreet.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@58" Category="CodeSchema_Class" Bounds="244.18289104022,1634.99883553858,121.23,25" CodeSchemaProperty_IsInternal="True" CommonLabel="cTaxSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cTaxSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/ctaxsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@59" Category="CodeSchema_Class" Bounds="244.18289104022,1854.99923553858,166.933333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cTrainStationSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cTrainStationSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/ctrainstationsquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="667.568127536153,351.553902278739,180.786666666667,85.0002" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.client‎.classes" UseManualLocation="True" />
+    <Node Id="@60" Category="CodeSchema_Class" Bounds="-923.803797754895,311.730016489051,148.553333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlActionSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlActionSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlactionsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@61" Category="CodeSchema_Class" Bounds="-923.803797754895,421.730216489051,175.97,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlCommunitySquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlCommunitySquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlcommunitysquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@62" Category="CodeSchema_Class" Bounds="-923.803797754895,366.730116489052,160.026666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlFreeParkSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlFreeParkSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlfreeparksquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@63" Category="CodeSchema_Class" Bounds="-733.777131088229,366.730094266829,175.77,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlGoToPrisonSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlGoToPrisonSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlgotoprisonsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@64" Category="CodeSchema_Class" Bounds="-592.163797754895,256.729916489051,147.19,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlPrisonSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlPrisonSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlprisonsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@65" Category="CodeSchema_Class" Bounds="-923.803797754895,531.730416489051,180.82,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlPrisonVisitorSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlPrisonVisitorSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlprisonvisitorsquare.cs&quot; StartLineNumber=15 StartCharacterOffset=4 EndLineNumber=15 EndCharacterOffset=4)" />
+    <Node Id="@66" Category="CodeSchema_Class" Bounds="-745.250464421562,311.730016489051,154.973333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlRegularSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlRegularSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlregularsquare.cs&quot; StartLineNumber=17 StartCharacterOffset=4 EndLineNumber=17 EndCharacterOffset=4)" />
+    <Node Id="@67" Category="CodeSchema_Class" Bounds="-761.427131088229,256.729916489051,139.263333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlStartSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlStartSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlstartsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@68" Category="CodeSchema_Class" Bounds="-923.803797754895,256.729916489051,132.376666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlTaxSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlTaxSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrltaxsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@69" Category="CodeSchema_Class" Bounds="-717.833797754895,421.730094266829,178.08,24.9999999999998" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlTrainStationSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlTrainStationSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrltrainstationsquare.cs&quot; StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+    <Node Id="@70" Category="CodeSchema_Class" Bounds="-923.803797754895,476.730316489051,179.183333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ctrlWaterPowerSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ctrlWaterPowerSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/ctrl/ctrlwaterpowersquare.cs&quot; StartLineNumber=15 StartCharacterOffset=4 EndLineNumber=15 EndCharacterOffset=4)" />
+    <Node Id="@71" Category="CodeSchema_Class" Bounds="441.116224373553,1854.99901331636,168.036666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="cWaterPowerSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="cWaterPowerSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/classes/squares/cwaterpowersquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@72" Category="CodeSchema_Class" Bounds="959.650319835642,328.386653901013,165.97,195.0004" CodeSchemaProperty_IsPublic="True" CommonLabel="frmClientGame_V02" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Icon="CodeSchema_Class" Label="frmClientGame_V02" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/form/frmclientgame_v02.cs&quot; StartLineNumber=27 StartCharacterOffset=4 EndLineNumber=27 EndCharacterOffset=4)" />
+    <Node Id="@73" Category="CodeSchema_Class" Bounds="-1423.66174309878,898.18776228078,112.286666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="frmServer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="frmServer" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.server/frmserver.cs&quot; StartLineNumber=23 StartCharacterOffset=4 EndLineNumber=23 EndCharacterOffset=4)" />
+    <Node Id="@74" Category="CodeSchema_Interface" Bounds="459.296897152002,1206.11475978661,98.2700000000009,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IAction" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IAction" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/iaction.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@75" Category="CodeSchema_Interface" Bounds="471.306897152002,1261.11485978661,106.013333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IBuyable" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IBuyable" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/ibuyable.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
+    <Node Id="@76" Category="CodeSchema_Interface" Bounds="340.326897152,1206.11490978661,88.9700000000012,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ICard" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ICard" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/icard.cs&quot; StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
+    <Node Id="@77" Category="CodeSchema_Interface" Bounds="362.447972249416,382.731281922856,117.67,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsInternal="True" CommonLabel="IctrlSquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IctrlSquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.client/interfaces/ictrlsquare.cs&quot; StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" />
+    <Node Id="@78" Category="CodeSchema_Interface" Bounds="488.666897152003,1316.11490978661,131.703333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IObserverGUI" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IObserverGUI" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/iobservergui.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@79" Category="CodeSchema_Interface" Bounds="340.326897152001,1316.11495978661,118.34,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IRealEstate" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IRealEstate" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/irealestate.cs&quot; StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" />
+    <Node Id="@8" Category="CodeSchema_Namespace" Bounds="-943.803797754895,216.729816489051,558.753333333333,360.0007" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="monopoly‎.client‎.ctrl" UseManualLocation="True" />
+    <Node Id="@80" Category="CodeSchema_Interface" Bounds="340.326897152002,1261.11490978661,100.98,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ISquare" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ISquare" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/interfaces/isquare.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@81" Category="CodeSchema_Class" Bounds="-329.806850304138,899.504056232636,107.653333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="LogEntry" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="LogEntry" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/util/logentry.cs&quot; StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" />
+    <Node Id="@82" Category="CodeSchema_Class" Bounds="-473.360183637471,899.504056232636,113.553333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="LogWriter" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="LogWriter" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.logic/util/logwriter.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@83" Category="CodeSchema_Class" Bounds="-1560.26840976544,898.18776228078,106.606666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsInternal="True" CommonLabel="Program" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Program" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=&quot;file:///c:/users/daniel inversini/source/repos/ch.bfh.bti7301q.monopoly/monopoly.server/program.cs&quot; StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="(@5 @9 Type=frmTradeConfirm)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@72" Category="Contains" FetchingParent="@10" />
+    <Link Source="@11" Target="@77" Category="Contains" FetchingParent="@11" />
+    <Link Source="@14" Target="(@12 @13 Type=cChat_old)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@12 @13 Type=cMessage_old)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@29" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@31" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@36" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@39" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@40" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@41" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@43" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@45" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@46" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@49" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@50" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@52" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@57" Category="Contains" FetchingParent="@14" />
+    <Link Source="@16" Target="@26" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@27" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@28" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@30" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@32" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@33" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@34" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@35" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@38" Category="Contains" FetchingParent="@16" />
+    <Link Source="@18" Target="@37" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@42" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@44" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@47" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@51" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@53" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@54" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@55" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@56" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@58" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@59" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@71" Category="Contains" FetchingParent="@18" />
+    <Link Source="@20" Target="(@12 @19 Type=IObserverAction)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@74" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@75" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@76" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@78" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@79" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@80" Category="Contains" FetchingParent="@20" />
+    <Link Source="@21" Target="@81" Category="Contains" FetchingParent="@21" />
+    <Link Source="@21" Target="@82" Category="Contains" FetchingParent="@21" />
+    <Link Source="@23" Target="@73" Category="Contains" FetchingParent="@23" />
+    <Link Source="@23" Target="@83" Category="Contains" FetchingParent="@23" />
+    <Link Source="@26" Target="@45" Category="References" Bounds="-646.911876561723,1335.38586925081,149.34533897435,445.421910412906" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@26" Target="@74" Category="Implements" Bounds="-471.585364329614,1235.59311388171,950.420522467703,545.214665782006" Weight="1" />
+    <Link Source="@27" Target="@45" Category="References" Bounds="-653.856320038511,1335.51260232058,172.723206243364,610.295477343132" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@27" Target="@74" Category="Implements" Bounds="-460.932645055829,1236.5155673892,945.502375583735,709.292512274516" Weight="1" />
+    <Link Source="@28" Target="@45" Category="References" Bounds="-652.550845227575,1335.4900295347,162.61502421299,555.31795012901" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@28" Target="@74" Category="Implements" Bounds="-468.115691210883,1236.21772871983,950.974380613321,654.590250943884" Weight="1" />
+    <Link Source="@29" Target="@76" Category="Implements" Bounds="-176.485522241673,1144.59634229035,507.88966735719,66.9755704125273" Weight="1" />
+    <Link Source="@30" Target="@45" Category="References" Bounds="-608.28518049429,1334.47147174502,280.683986821951,446.336307918693" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@30" Target="@74" Category="Implements" Bounds="-301.72705453626,1236.24575191213,784.751474909634,544.562027751588" Weight="1" />
+    <Link Source="@31" Target="@45" Category="References" Bounds="-894.164032934459,1195.88534536964,64.5353742375611,1.9018783890242" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@31" Target="@74" Category="Implements" Bounds="-894.16403293446,1195.00646634004,1344.4622047169,22.629794922351" Weight="1" />
+    <Link Source="@32" Target="@45" Category="References" Bounds="-616.914724941282,1334.69578114615,313.00214189897,556.112198517567" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@32" Target="@74" Category="Implements" Bounds="-282.175080399021,1236.94448815871,769.048278773532,653.863491505" Weight="1" />
+    <Link Source="@33" Target="@45" Category="References" Bounds="-603.737756598794,1334.35126142256,259.830424954464,391.456418241153" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@33" Target="@74" Category="Implements" Bounds="-315.308949933995,1235.83349542264,795.775598907826,489.974184241075" Weight="1" />
+    <Link Source="@34" Target="@45" Category="References" Bounds="-650.262214183529,1335.44902762895,155.137799977522,500.358852034769" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@34" Target="@74" Category="Implements" Bounds="-471.404150766109,1235.91152233722,952.37626116166,599.896357326491" Weight="1" />
+    <Link Source="@34" Target="@76" Category="References" Bounds="-473.858122521064,1236.36766886467,833.971349843807,599.440210799048" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@35" Target="@45" Category="References" Bounds="-617.875089008015,1334.72031498322,339.464154629991,611.0877646805" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@35" Target="@74" Category="Implements" Bounds="-258.287652855131,1237.30817450222,747.010064060155,708.499905161491" Weight="1" />
+    <Link Source="@36" Target="@45" Category="References" Bounds="-904.360278065817,1226.16203108588,74.8645500967619,13.2058851566185" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@36" Target="@52" Category="CodeSchema_Calls" Bounds="-941.84375,1262.3359375,173.101867675781,90.5489501953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14" />
+    <Link Source="@36" Target="@74" Category="Implements" Bounds="-903.384032934459,1219.84765029134,1353.68295343143,28.7090556123176" Weight="1" />
+    <Link Source="@37" Target="@52" Category="References" Bounds="-687.312649827718,1384.57914038931,960.872962074139,305.419795149261" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@37" Target="@80" Category="Implements" Bounds="315.1575456428,1294.96991422338,71.7790254466359,395.029021315193" Weight="1" />
+    <Link Source="@38" Target="@45" Category="References" Bounds="-643.855917996524,1335.32520657911,139.924611965532,390.482473084603" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@38" Target="@74" Category="Implements" Bounds="-475.209787786176,1235.23937917714,951.400168962906,490.568300486571" Weight="1" />
+    <Link Source="@40" Target="@24" Category="Contains" FetchingParent="@40" />
+    <Link Source="@41" Target="@76" Category="Implements" Bounds="-291.930699601126,1220.58322134036,623.263687046751,22.9406218142233" Weight="1" />
+    <Link Source="@42" Target="@52" Category="References" Bounds="-696.959127926206,1385.31921313957,993.602790472661,414.679922399005" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@42" Target="@80" Category="Implements" Bounds="328.084264038416,1295.05166897504,60.1778750423503,504.947466563538" Weight="1" />
+    <Link Source="@44" Target="@52" Category="References" Bounds="-678.988899435337,1382.77992141223,1286.50053610241,307.219091904125" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@44" Target="@80" Category="Implements" Bounds="403.440754626642,1293.7390003871,248.574210155821,396.26001292926" Weight="1" />
+    <Link Source="@45" Target="(@12 @13 Type=(Name=eGameStatus @25))" Category="Contains" FetchingParent="@45" />
+    <Link Source="@45" Target="(@12 @13 Type=(Name=updateGUIActionEventHandler @25))" Category="Contains" FetchingParent="@45" />
+    <Link Source="@45" Target="(@12 @13 Type=(Name=updateGUIEventHandler @25))" Category="Contains" FetchingParent="@45" />
+    <Link Source="@45" Target="(@12 @13 Type=(Name=updateGUITradeEventHandler @25))" Category="Contains" FetchingParent="@45" />
+    <Link Source="@46" Target="@24" Category="References" Bounds="-921.998815599071,1480.43677831967,136.456804383618,40.8992007181762" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@46" Target="@37" Category="CodeSchema_Calls" Bounds="-899.426820880163,1542.32827682771,1134.93186009912,149.947065517206" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@46" Target="@40" Category="References" IsSourceVirtualized="True" Weight="6">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@46" Target="@42" Category="CodeSchema_Calls" Bounds="-905.825077619552,1546.33597903784,1165.74350165609,251.763247823307" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@46" Target="@43" Category="References" Bounds="-899.327834128967,1541.4043778159,314.122027514621,36.9298096706025" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@44" Category="CodeSchema_Calls" Bounds="-899.327366267793,1540.5237283147,1475.79717899475,153.312714491817" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@47" Category="CodeSchema_Calls" Bounds="-899.841016741666,1543.54339108126,1319.31416595477,200.540578681333" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@52" Category="References" Bounds="-947.935668945313,1386.37475585938,173.162414550781,134.961181640625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@53" Category="CodeSchema_Calls" Bounds="-899.327366267793,1538.45178825317,1443.8799691851,103.526243477316" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@54" Category="CodeSchema_Calls" Bounds="-922.128091666154,1546.33597903784,1200.95282602861,361.072049541343" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@55" Category="References" Bounds="-899.327366996576,1541.33867863585,1302.05407661976,151.746295881017" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="19">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@56" Category="CodeSchema_Calls" Bounds="-899.327366267793,1538.97746515331,1285.76882408913,102.688798582679" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@57" Category="References" Bounds="-899.327366267793,1535.95385741218,106.228199704419,3.49471972606761" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@58" Category="CodeSchema_Calls" Bounds="-899.327366267793,1539.60438639067,1134.54617114337,101.65988415694" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@46" Target="@59" Category="References" Bounds="-915.32615623235,1546.33597903784,1185.8840122657,306.411756030516" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="18">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@71" Category="References" Bounds="-907.927754260801,1546.33597903784,1368.50387402115,306.694867998485" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="18">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@46" Target="@80" Category="References" Bounds="-901.902811421005,1284.92293578589,1233.85837986489,237.040225648288" IsSourceVirtualized="True" Weight="10">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@47" Target="@52" Category="References" Bounds="-686.596635584131,1384.53559219418,1154.29632080758,360.463421122178" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@47" Target="@80" Category="Implements" Bounds="395.950683439484,1294.86319014772,108.757088913344,450.135823168641" Weight="1" />
+    <Link Source="@48" Target="@77" Category="References" Bounds="489.114883638528,397.008829362385,202.716577230958,5.3122243709152" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@48" Target="@80" Category="References" Bounds="399.595347435375,416.554002278739,353.088384172314,836.269649923588" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@49" Target="@79" Category="Implements" Bounds="-356.805664053641,1093.83586237118,707.440489487163,219.610885231154" Weight="1" />
+    <Link Source="@50" Target="@79" Category="Implements" Bounds="-235.467556676933,1093.83586237118,592.716538882095,219.157911625807" Weight="1" />
+    <Link Source="@51" Target="@52" Category="References" Bounds="-692.793108826889,1384.96035642749,978.616574811235,360.038679111079" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@51" Target="@80" Category="Implements" Bounds="321.634122421495,1295.01951802739,66.0413236098229,449.979517511183" Weight="1" />
+    <Link Source="@52" Target="@39" Category="References" Bounds="-685.949032934458,1369.35284073651,101.201666666665,0" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@52" Target="@43" Category="CodeSchema_Calls" Bounds="-703.439697265625,1381.85278320313,164.203979492188,183.591064453125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@53" Target="@52" Category="References" Bounds="-677.783145293105,1381.12688583574,1238.36068366499,253.871949702831" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@53" Target="@80" Category="Implements" Bounds="403.257559328441,1293.77386779469,210.579562106697,341.224967743879" Weight="1" />
+    <Link Source="@54" Target="@52" Category="References" Bounds="-703.180383035243,1386.00350415572,1008.1503610352,523.995831382856" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@54" Target="@80" Category="Implements" Bounds="330.210011218186,1295.07437057417,58.563166698205,614.9249649644" Weight="1" />
+    <Link Source="@55" Target="@52" Category="References" Bounds="-681.215813299501,1384.11412474357,1118.9910712661,305.884810795005" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@55" Target="@75" Category="Implements" Bounds="484.692334618501,1295.0743888656,37.5792372756898,394.924546672969" Weight="1" />
+    <Link Source="@55" Target="@80" Category="Implements" Bounds="395.419368151453,1294.91183079749,85.382151762687,395.087104741086" Weight="1" />
+    <Link Source="@56" Target="@52" Category="References" Bounds="-678.725308428051,1382.50488562314,1084.50679133935,252.493949915429" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@56" Target="@80" Category="Implements" Bounds="394.737652163538,1294.96691096339,62.4382633423137,340.031924575187" Weight="1" />
+    <Link Source="@58" Target="@52" Category="References" Bounds="-680.704160276706,1383.93165631163,938.763395625449,251.067179226942" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@58" Target="@80" Category="Implements" Bounds="307.673750370718,1294.88577473303,78.24938554737,340.113060805543" Weight="1" />
+    <Link Source="@59" Target="@52" Category="References" Bounds="-700.395853329191,1385.67229493699,1001.37490643144,469.326940601579" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@59" Target="@75" Category="Implements" Bounds="331.788915765068,1294.658592562,185.556044466554,560.340642976569" Weight="1" />
+    <Link Source="@59" Target="@80" Category="Implements" Bounds="328.979095646895,1295.06442877876,59.5563655615064,559.93480675981" Weight="1" />
+    <Link Source="@6" Target="@48" Category="Contains" FetchingParent="@6" />
+    <Link Source="@60" Target="@39" Category="References" Bounds="-845.651732140258,336.730016489035,313.605494347238,1011.52648591011" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@60" Target="@77" Category="Implements" Bounds="-775.250464421562,328.379918438735,1128.71245086322,63.0621460371762" Weight="1" />
+    <Link Source="@61" Target="@39" Category="References" Bounds="-831.670770933232,446.730216489035,299.182461084426,901.580660960211" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@61" Target="@77" Category="Implements" Bounds="-747.833797754895,397.335585656372,1101.28609777041,34.1650815315009" Weight="1" />
+    <Link Source="@62" Target="@39" Category="References" Bounds="-839.772215508752,391.730116489035,307.493940978367,956.554545433099" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@62" Target="@77" Category="Implements" Bounds="-763.777131088229,380.24215780337,1117.22582317133,14.1311284430601" Weight="1" />
+    <Link Source="@63" Target="@39" Category="References" Bounds="-644.372288827302,391.730094266829,116.26046063076,956.188543539395" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@63" Target="@77" Category="Implements" Bounds="-558.007131088229,380.547839005019,911.456114852722,13.6663423728478" Weight="1" />
+    <Link Source="@64" Target="@39" Category="References" Bounds="-525.370130979396,281.729916489035,6.72251360246855,1066.12310316308" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@64" Target="@77" Category="Implements" Bounds="-445.530042727736,279.021867897464,799.072721962395,107.127801704007" Weight="1" />
+    <Link Source="@65" Target="@39" Category="References" Bounds="-828.729518717234,556.730416489035,295.413166227879,791.690322991412" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@65" Target="@77" Category="Implements" Bounds="-744.067115539638,403.279569378487,1097.57788670682,130.342857338253" Weight="1" />
+    <Link Source="@66" Target="@39" Category="References" Bounds="-666.062345843535,336.730016489035,137.641342234002,1011.20505753789" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@66" Target="@77" Category="Implements" Bounds="-590.277131088229,329.281821002041,943.74416978794,61.528147501387" Weight="1" />
+    <Link Source="@66" Target="@79" Category="References" Bounds="-654.481282807578,336.730016489035,1034.14157189608,973.217022527195" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@67" Target="@39" Category="References" Bounds="-689.906019147365,281.729916489035,161.165753562548,1066.22401137697" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@67" Target="@77" Category="Implements" Bounds="-622.178313363988,277.110633428537,975.683402150711,110.448138111263" Weight="1" />
+    <Link Source="@68" Target="@39" Category="References" Bounds="-853.841911513285,281.729916489035,321.961637889395,1066.5069687484" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@68" Target="@77" Category="Implements" Bounds="-791.427131088229,275.751013189644,1144.91846871799,112.80120940986" Weight="1" />
+    <Link Source="@69" Target="@39" Category="References" Bounds="-627.41312208232,446.730094266829,99.5386693729562,901.177149620887" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@69" Target="@77" Category="Implements" Bounds="-539.753797754895,397.750376431166,893.207970468299,33.1728603274323" Weight="1" />
+    <Link Source="@70" Target="@39" Category="References" Bounds="-829.82770700263,501.730316489035,296.958726025763,846.629797403582" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@70" Target="@77" Category="Implements" Bounds="-744.620464421562,400.308213963352,1098.09355600318,82.2143661518389" Weight="1" />
+    <Link Source="@71" Target="@52" Category="References" Bounds="-695.21973902693,1385.16101355447,1188.72828195434,469.837999761885" IsSourceVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@71" Target="@75" Category="Implements" Bounds="524.343285712124,1295.11485118681,0.773991817236492,559.884162129547" Weight="1" />
+    <Link Source="@71" Target="@80" Category="Implements" Bounds="395.629367508579,1294.89319613908,126.678088501264,560.105817177279" Weight="1" />
+    <Link Source="@72" Target="(@5 @9 Type=(Name=cbGUI ParentType=frmClientGame_V02))" Category="Contains" FetchingParent="@72" />
+    <Link Source="@72" Target="(@5 @9 Type=(Name=cbGUIAction ParentType=frmClientGame_V02))" Category="Contains" FetchingParent="@72" />
+    <Link Source="@72" Target="(@5 @9 Type=(Name=cbGUITrade ParentType=frmClientGame_V02))" Category="Contains" FetchingParent="@72" />
+    <Link Source="@72" Target="@78" Category="Implements" Bounds="565.558185382164,523.387053901013,424.35751305175,784.811068326308" Weight="1" />
+    <Link Source="@73" Target="@43" Category="References" Bounds="-1327.84740646666,1177.98496894244,769.69711600541,390.793440488199" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@73" Target="@82" Category="CodeSchema_Calls" Bounds="-1306.31551742244,926.856903117595,834.893411690579,226.128065824847" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@77" Target="@39" Category="References" Bounds="-507.083664834304,407.731281922856,916.217374713893,942.667697453545" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@8" Target="(@5 @7 Type=ctrlPlayerInfoCard)" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@60" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@61" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@62" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@63" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@64" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@65" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@66" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@67" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@68" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@69" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@70" Category="Contains" FetchingParent="@8" />
+    <Link Source="@80" Target="@52" Category="References" Bounds="-676.981387223269,1277.90768794206,1017.30828437527,86.4939350469115" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@82" Target="@43" Category="References" Bounds="-522.046500426991,924.504056232635,103.440959634042,639.464273993574" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@82" Target="@81" Category="References" Bounds="-359.806850304138,912.004056232635,21,1.13686837721616E-13" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="12">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@83" Target="@73" Category="CodeSchema_Calls" Bounds="-1453.66174309877,910.68776228078,21,1.13686837721616E-13" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
+    <Category Id="CodeSchema_Delegate" Label="Delegate" BasedOn="CodeSchema_Class" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Delegate" NavigationActionLabel="Delegates" />
+    <Category Id="CodeSchema_Enum" Label="Enum" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Enum" NavigationActionLabel="Enums" />
+    <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_Namespace" Label="Namespace" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="Namespaces" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
+    <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Is Final" Description="Flag to indicate the member is 'Final' and cannot be derived from" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPrivate" Label="Is Private" Description="Flag to indicate the scope is Private" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="Weight" Description="Weight" DataType="System.Double" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="ParentType" Label="Parent Type" ValueType="System.Object" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="5" Uri="Assembly=$(4fb4b321-c987-4834-8bbb-ae70b2858fd8.OutputPathUri)" />
+    <Alias n="6" Id="(@5 Namespace=monopoly.client.classes)" />
+    <Alias n="7" Id="Namespace=monopoly.client.ctrl" />
+    <Alias n="8" Id="(@5 @7)" />
+    <Alias n="9" Id="Namespace=monopoly.client.form" />
+    <Alias n="10" Id="(@5 @9)" />
+    <Alias n="11" Id="(@5 Namespace=monopoly.client.interfaces)" />
+    <Alias n="12" Uri="Assembly=$(a686cc82-77c6-48b1-b276-7b706b4acfa4.OutputPathUri)" />
+    <Alias n="13" Id="Namespace=monopoly.logic.classes" />
+    <Alias n="14" Id="(@12 @13)" />
+    <Alias n="15" Id="Namespace=monopoly.logic.classes.actions" />
+    <Alias n="16" Id="(@12 @15)" />
+    <Alias n="17" Id="Namespace=monopoly.logic.classes.squares" />
+    <Alias n="18" Id="(@12 @17)" />
+    <Alias n="19" Id="Namespace=monopoly.logic.interfaces" />
+    <Alias n="20" Id="(@12 @19)" />
+    <Alias n="21" Id="(@12 Namespace=monopoly.logic.util)" />
+    <Alias n="22" Uri="Assembly=$(b35f22a3-3c30-4d1f-9346-60525d3b4ac3.OutputPathUri)" />
+    <Alias n="23" Id="(@22 Namespace=monopoly.server)" />
+    <Alias n="24" Id="(@12 @13 Type=(Name=cardType ParentType=cCardDeck))" />
+    <Alias n="25" Id="ParentType=cGame" />
+    <Alias n="26" Id="(@12 @15 Type=cActionBuyFree)" />
+    <Alias n="27" Id="(@12 @15 Type=cActionBuyRealEstate)" />
+    <Alias n="28" Id="(@12 @15 Type=cActionBuySquare)" />
+    <Alias n="29" Id="(@12 @13 Type=cActionCard)" />
+    <Alias n="30" Id="(@12 @15 Type=cActionEndTurn)" />
+    <Alias n="31" Id="(@12 @13 Type=cActionGiveUp)" />
+    <Alias n="32" Id="(@12 @15 Type=cActionGoToPrison)" />
+    <Alias n="33" Id="(@12 @15 Type=cActionPayTax)" />
+    <Alias n="34" Id="(@12 @15 Type=cActionPlayCard)" />
+    <Alias n="35" Id="(@12 @15 Type=cActionPrisonOutCard)" />
+    <Alias n="36" Id="(@12 @13 Type=cActionRoll)" />
+    <Alias n="37" Id="(@12 @17 Type=cActionSquare)" />
+    <Alias n="38" Id="(@12 @15 Type=cActionTrade)" />
+    <Alias n="39" Id="(@12 @13 Type=cAvatar)" />
+    <Alias n="40" Id="(@12 @13 Type=cCardDeck)" />
+    <Alias n="41" Id="(@12 @13 Type=cCommunityCard)" />
+    <Alias n="42" Id="(@12 @17 Type=cCommunitySquare)" />
+    <Alias n="43" Id="(@12 @13 Type=cConfig)" />
+    <Alias n="44" Id="(@12 @17 Type=cFreeParkSquare)" />
+    <Alias n="45" Id="(@12 @13 Type=cGame)" />
+    <Alias n="46" Id="(@12 @13 Type=cGameBoard)" />
+    <Alias n="47" Id="(@12 @17 Type=cGoToPrisonSquare)" />
+    <Alias n="48" Id="(@5 Namespace=monopoly.client.classes Type=cGUIWrapper)" />
+    <Alias n="49" Id="(@12 @13 Type=cHotel)" />
+    <Alias n="50" Id="(@12 @13 Type=cHouse)" />
+    <Alias n="51" Id="(@12 @17 Type=cPayTaxesSquare)" />
+    <Alias n="52" Id="(@12 @13 Type=cPlayer)" />
+    <Alias n="53" Id="(@12 @17 Type=cPrisonSquare)" />
+    <Alias n="54" Id="(@12 @17 Type=cPrisonVisitorSquare)" />
+    <Alias n="55" Id="(@12 @17 Type=cRegularSquare)" />
+    <Alias n="56" Id="(@12 @17 Type=cStartSquare)" />
+    <Alias n="57" Id="(@12 @13 Type=cStreet)" />
+    <Alias n="58" Id="(@12 @17 Type=cTaxSquare)" />
+    <Alias n="59" Id="(@12 @17 Type=cTrainStationSquare)" />
+    <Alias n="60" Id="(@5 @7 Type=ctrlActionSquare)" />
+    <Alias n="61" Id="(@5 @7 Type=ctrlCommunitySquare)" />
+    <Alias n="62" Id="(@5 @7 Type=ctrlFreeParkSquare)" />
+    <Alias n="63" Id="(@5 @7 Type=ctrlGoToPrisonSquare)" />
+    <Alias n="64" Id="(@5 @7 Type=ctrlPrisonSquare)" />
+    <Alias n="65" Id="(@5 @7 Type=ctrlPrisonVisitorSquare)" />
+    <Alias n="66" Id="(@5 @7 Type=ctrlRegularSquare)" />
+    <Alias n="67" Id="(@5 @7 Type=ctrlStartSquare)" />
+    <Alias n="68" Id="(@5 @7 Type=ctrlTaxSquare)" />
+    <Alias n="69" Id="(@5 @7 Type=ctrlTrainStationSquare)" />
+    <Alias n="70" Id="(@5 @7 Type=ctrlWaterPowerSquare)" />
+    <Alias n="71" Id="(@12 @17 Type=cWaterPowerSquare)" />
+    <Alias n="72" Id="(@5 @9 Type=frmClientGame_V02)" />
+    <Alias n="73" Id="(@22 Namespace=monopoly.server Type=frmServer)" />
+    <Alias n="74" Id="(@12 @19 Type=IAction)" />
+    <Alias n="75" Id="(@12 @19 Type=IBuyable)" />
+    <Alias n="76" Id="(@12 @19 Type=ICard)" />
+    <Alias n="77" Id="(@5 Namespace=monopoly.client.interfaces Type=IctrlSquare)" />
+    <Alias n="78" Id="(@12 @19 Type=IObserverGUI)" />
+    <Alias n="79" Id="(@12 @19 Type=IRealEstate)" />
+    <Alias n="80" Id="(@12 @19 Type=ISquare)" />
+    <Alias n="81" Id="(@12 Namespace=monopoly.logic.util Type=LogEntry)" />
+    <Alias n="82" Id="(@12 Namespace=monopoly.logic.util Type=LogWriter)" />
+    <Alias n="83" Id="(@22 Namespace=monopoly.server Type=Program)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Struct" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Event" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="True">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Target.HasCategory('CodeSchema_Field') And HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="4fb4b321-c987-4834-8bbb-ae70b2858fd8.OutputPathUri" Value="file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.client/bin/Debug/monopoly.client.exe" />
+    <Path Id="a686cc82-77c6-48b1-b276-7b706b4acfa4.OutputPathUri" Value="file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.logic/bin/Debug/monopoly.logic.dll" />
+    <Path Id="b35f22a3-3c30-4d1f-9346-60525d3b4ac3.OutputPathUri" Value="file:///C:/Users/Daniel Inversini/Source/Repos/ch.bfh.bti7301q.monopoly/monopoly.server/bin/Debug/monopoly.server.exe" />
+  </Paths>
+</DirectedGraph>

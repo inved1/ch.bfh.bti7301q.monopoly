@@ -1,0 +1,1166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="04c3f93a-9048-4540-bee6-eb5b701086d7"
+  name="util"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="68bca604-fa4c-42d1-9e8e-251ce84707d2"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dmonopoly.logic.util"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="eaa06a12-7a4a-4e24-8d88-398d9077fad3"
+        name="LogEntry"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9902aacb-bebf-4b70-8182-c7b5acde9fe4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a560512b-23ce-45b2-b3ec-b4f5eea06e23"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24eda602-65b4-4e1c-b345-0d35f3ffe2cf">
+                <propertyInstance
+                  Id="78ee147f-aba4-41a8-aca7-415a63713ce0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="de30afc2-2337-4fd5-a4a9-e613ee5975dc">
+                <propertyInstance
+                  Id="17c0b77b-10ea-4850-954e-ac6640ef1d2e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33ea533f-0427-40ef-8b4c-b5fe8f5db4f2">
+                <propertyInstance
+                  Id="dadfdbb1-5040-4079-bb66-7463ce2f86cf"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bb95a6b7-e9ad-454a-9973-6c84f2e8241d">
+                <propertyInstance
+                  Id="dad08ec0-d255-4527-a35d-7568f781fb10"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bcb96514-66aa-4755-b136-b2de79b3a608">
+                <propertyInstance
+                  Id="75373806-f3eb-4963-9564-802b5de623bf"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="2c2e3f94-74a9-4818-8fab-cd703e3c104c"
+            name="LogDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="edadbbce-fd20-427c-9479-ad450d86500f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry Member%3DLogDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2ba05c2b-5028-45a8-84d8-fa03c2596bac"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d57a1323-8073-4dc1-b572-7a2ff31b82ab">
+                    <propertyInstance
+                      Id="3690bb75-0d6e-40c3-b4ab-cf12a2f6dd27"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd96b5cb-03ca-47a1-8674-260e5b33301d">
+                    <propertyInstance
+                      Id="e3a43b99-e536-4fac-ab15-f6f90dfa4503"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f5e55b7-2600-4ca4-8614-02fc0355a8be">
+                    <propertyInstance
+                      Id="f3d9ff29-80f4-4950-a7fe-dd337ed072d3"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2809ecb-6270-48ca-b10e-37f56670ccc7">
+                    <propertyInstance
+                      Id="7ab2ad58-9f41-464a-ad4e-38bb9f72897c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d38d303a-3af7-4b55-9a1f-b7dc01f29a70">
+                    <propertyInstance
+                      Id="562d3b65-bcc4-4267-a22d-1499315578e6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e7c56f5-6404-429e-bd19-f6f7e416344b">
+                    <propertyInstance
+                      Id="f1f302f6-7b96-413b-844e-df00f01e6217"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63c19a81-2281-4ccd-b324-8aad0eacd0d0">
+                    <propertyInstance
+                      Id="ea90de5d-b7d6-4232-a771-080e831103ee"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="monopoly.doc.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="14de5dd0-64a1-4d2e-8e4b-326582974647"
+            name="LogTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="50d05d12-82b7-4a4c-bd64-30f238d801d2"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry Member%3DLogTime"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e4663be0-fe46-4d18-9cb4-428bb5653756"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35bfa057-d839-4868-b1e0-8865d4c5335f">
+                    <propertyInstance
+                      Id="1daec29b-dd11-4c59-b660-ccbd0782691e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="337c5e86-7a55-46a9-aa83-b42ef7ad1ce6">
+                    <propertyInstance
+                      Id="a9e19053-4dbc-476d-bb91-0d365d8f1c17"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="977086d7-b14b-4ded-a919-d03a5db564fc">
+                    <propertyInstance
+                      Id="566c4c2b-fc8d-4d59-a0ba-c25ee9b7866f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8a2d800-9c64-4715-8c6d-be146ba6fdea">
+                    <propertyInstance
+                      Id="c32be2ca-cc1b-4837-a799-b69e2de6766b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b920c58-e57a-4ff3-8082-895a497708c4">
+                    <propertyInstance
+                      Id="5e5dcb55-4635-4321-a828-fe27c15903e4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd581478-9f20-439c-8d94-1fe26c5a8e9b">
+                    <propertyInstance
+                      Id="1d4e1832-0ecb-4e9f-863a-8190fa86dcb0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9fa7d09e-4927-467d-92f8-f5b8c2727b9e">
+                    <propertyInstance
+                      Id="bcb41e83-788a-4d7f-9417-9cfb7dee3f50"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="monopoly.doc.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0204b353-2d45-48bf-9a78-f26b3ab87fc2"
+            name="Msg"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f45aa6d6-332e-4fb2-af14-1edd02ced493"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry Member%3DMsg"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="43f402e2-1846-4d30-a409-2c5fb213f852"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a53b4273-8e46-47a2-ab0c-f70b847f2e9d">
+                    <propertyInstance
+                      Id="878e9a17-9dd2-41c1-ace4-c9d1a6295362"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5cb0b23-bdad-49ef-a0b2-b527ad797ae2">
+                    <propertyInstance
+                      Id="29db2775-ad0f-475a-a7c0-d3ae838def74"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3624899a-4a96-4786-ad23-350cb1f04247">
+                    <propertyInstance
+                      Id="0c118173-7593-4ac7-958b-fbd3e060035b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="372f5946-f75b-4b9a-b59e-81d11e0b3057">
+                    <propertyInstance
+                      Id="0d411818-24d8-4b03-81bf-9e3b97eb5a28"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3941b12d-ce73-4c0b-ac6f-b7416c5a4cea">
+                    <propertyInstance
+                      Id="3e093dcc-cdb6-41c0-a69b-77ee124a472c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="016f6d7a-4404-4d72-ae00-7fbbd29ccc32">
+                    <propertyInstance
+                      Id="46ac58d6-3bf7-48d9-886f-28eeb5e2fc92"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6418a40-92cc-4119-8572-6d43e4f487ce">
+                    <propertyInstance
+                      Id="5edf22db-3d43-40fd-a1fe-9f863cd35eae"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="monopoly.doc.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8016f2c3-ff7b-4e1a-a298-0b9a7132b89e"
+            name="LogEntry"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b6c6cbe1-0518-4846-b420-55a324b18536"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c6f3aedf-88e0-4cb7-aa21-8127c01e5c0f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82384406-80df-4902-a996-479fd2e0885b">
+                    <propertyInstance
+                      Id="91c2b0c3-1118-41bd-8b78-5ab22a5e7ab9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8e595db-10b9-4d0c-9683-6ff7fd5323fe">
+                    <propertyInstance
+                      Id="a82421b9-4740-40dd-996a-32604d349c21"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35bae58b-952f-426d-bfc9-efe73d9041b5">
+                    <propertyInstance
+                      Id="216cc232-cf29-4489-9dce-67e28b0c8ef6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3092678c-6ec8-467f-b61f-e14fe12b51c1">
+                    <propertyInstance
+                      Id="d02f85e9-b466-4792-a59b-e0d965d018aa"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56e2e812-a903-4033-b2df-c3d9d55c62db">
+                    <propertyInstance
+                      Id="7d1d9bcd-a635-4cc4-a377-f86d484c2868"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b386777-5b34-484f-bbcc-d421a58c95d7">
+                    <propertyInstance
+                      Id="1e963532-e2cb-41d2-b0d0-7ab70e025aa2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec1173cb-53b7-4f5c-928f-e1deb82c5768"
+                  name="msg"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ee56cec5-85f0-4239-85fa-2c894add94a9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogEntry Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dmsg"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="monopoly.doc.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6dd2cfdb-9007-4ea6-b978-eaf175422b4f"
+        name="LogWriter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="629912bc-16ea-4b92-91f6-e65ad022379a"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b99f8d3c-c3ff-49ce-947b-83b941068367"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="40e6ef27-003c-44ff-85d5-7a7645b5693d">
+                <propertyInstance
+                  Id="5fcf52cb-3c07-43f7-a5f9-acde2e00982b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cbc97e81-252a-4fb5-a4e4-c1a1a1096399">
+                <propertyInstance
+                  Id="5fdd55d1-6012-412b-8959-f3751fb669e2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d3de90fa-adca-49ed-9410-9fe076212aea">
+                <propertyInstance
+                  Id="29686caa-3ebc-4ec5-baca-36343951c52b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f221a78a-da61-4042-ab9b-960270fc2deb">
+                <propertyInstance
+                  Id="a02a9982-f0ad-4470-b512-00c282ce33ff"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="99da293d-ab49-4aad-b728-14afc81aa473">
+                <propertyInstance
+                  Id="c5e2ef77-0058-4e34-8fd8-ab15a42eedad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="0b79c795-f4c7-4b3e-975d-b98ad5872d5c"
+            isDerived="false"
+            sourceEndRoleName="LogWriter"
+            targetEndRoleName="Instance"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6dd2cfdb-9007-4ea6-b978-eaf175422b4f"
+              LastKnownName="LogWriter"
+              LastKnownLocation="Package3_0936.uml" />
+            <description>Property Instance references type LogWriter.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58b26c12-b3d4-4667-a119-40baf77102b6"
+                  name="LogWriter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9239fe64-916a-400a-9603-8fa7fae65443"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6cc16599-7d84-408f-b78c-3cb0ad1cc390"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5c64fb57-0d5e-49b0-a512-5aa763582bd3"
+                  name="Instance"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7062d1d0-21eb-4600-9152-6be601b2e3ed"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1c09c152-204c-4ac9-8aae-578bb225982f"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="0d64dd02-0f19-4c78-a533-602b2a840efb"
+            name="Instance"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e74036b2-b165-453f-93f4-329b38225fce"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DInstance"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fc3521c4-5c24-43fe-87ef-4a7f4f3b4bab"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="193b41cc-9622-48e1-b0a5-3a21facea66b">
+                    <propertyInstance
+                      Id="bd57d1ac-d5d3-4b09-a5a9-f4b85eb23045"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e22eab2-814a-436a-950b-91dae77db577">
+                    <propertyInstance
+                      Id="3db9972b-aa51-44bd-aa9a-4913c05f2012"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90b5f9b4-76e5-414c-8523-b8c58a90c2b0">
+                    <propertyInstance
+                      Id="cc7236e0-c534-4c71-bff5-6a866724e1c7"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="beba5de0-2daf-497e-837d-7d0769dec517">
+                    <propertyInstance
+                      Id="98ba407c-3e0c-48da-a657-2cb5cb03f0ce"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82448c1e-1f76-4fa5-962f-f246b3f69bf9">
+                    <propertyInstance
+                      Id="db7af241-0074-488f-89ed-16a02ac7aa70"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12d88659-06b6-41e7-8be0-550d87e2fb16">
+                    <propertyInstance
+                      Id="1822a4e5-a53c-4616-92c8-5661a0b92029"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62dbd008-9df4-45c2-8f07-d756b4bc6140">
+                    <propertyInstance
+                      Id="8b14dbac-572f-415a-abff-e045481eb02a"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6dd2cfdb-9007-4ea6-b978-eaf175422b4f"
+                LastKnownName="LogWriter"
+                LastKnownLocation="Package3_0936.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="807cb0d4-3560-4dc9-b3c4-3f82679bc5d9"
+            name="myConfig"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d854db3b-1379-460e-a8eb-bbda75b7f739"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DmyConfig"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c31a2611-cb6d-4cd5-a54b-17dc1b57cffc"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d13b24e-1899-4244-b001-1e230dcb54b4">
+                    <propertyInstance
+                      Id="be81448e-50c3-43b0-b421-6f33b9fa39dc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91bb4db5-7903-42a4-b9d3-aab99540ddf6">
+                    <propertyInstance
+                      Id="aa31dd19-481a-446f-a2be-682954fd9423"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="baade173-1ad3-4515-96be-87d353c06290">
+                    <propertyInstance
+                      Id="08e89443-b215-412c-bd28-4b08f9984db4"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07863843-c3be-4908-8a72-023ccd7f7630">
+                    <propertyInstance
+                      Id="6e9a2305-208f-41e7-9979-02bf007f12b6"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ce362c3-5a5a-4114-a6c8-164000227ef5">
+                    <propertyInstance
+                      Id="ba836912-127b-4fb7-875c-1c27c649df63"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="7f7476bf-3810-442a-9355-dbb15f1a2a84"
+                LastKnownName="cConfig"
+                LastKnownLocation="Package2_0936.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a6a2a28c-fb33-4f38-8227-bcc7ba7eafdd"
+            name="instance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b4d5e240-9e76-437a-9b87-f4162bdf527d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3Dinstance"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a5eaa689-a4e9-4b08-b0b5-e8dd80168571"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd932aaf-8633-48ab-b484-a7a49f065880">
+                    <propertyInstance
+                      Id="303ef9c4-22a3-49bf-b8ac-6ab330b50fbd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f38ef9bb-e117-42e1-bfe5-41e07de75123">
+                    <propertyInstance
+                      Id="3800ec93-3578-448e-a0a7-3a60e5971951"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="793d0a21-8877-4a17-99a6-32ea7b5e2044">
+                    <propertyInstance
+                      Id="c48f827f-8558-4150-93e8-752608f98727"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b925aa6-5974-44ea-9d32-aa35cd48c13b">
+                    <propertyInstance
+                      Id="5be19ca6-1653-46a1-ad38-c6d40d963198"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84e6a7d0-f390-4650-b51b-9d12e89c38cf">
+                    <propertyInstance
+                      Id="9919d5c1-1e92-46f7-b163-75071fe5e6c9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6dd2cfdb-9007-4ea6-b978-eaf175422b4f"
+                LastKnownName="LogWriter"
+                LastKnownLocation="Package3_0936.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a16ac8bc-ece3-491f-84e4-6ac7335286be"
+            name="myLogDir"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0834bee2-a38d-4eec-87f5-0f184a7ca73f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DmyLogDir"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="738bfd91-10c1-4db1-a029-799efcfb24ed"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e117a62-b74a-4ff2-9e13-e3558d72b6b1">
+                    <propertyInstance
+                      Id="8c25697f-2c40-4dec-8181-84506755f97c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6c71f6b-ea04-4f76-9a4f-fc87dfc3f362">
+                    <propertyInstance
+                      Id="c5d87e85-eb45-42ac-9fe1-37ef4b1fb58a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd8eac06-ef47-443b-b3fc-e3c9d83f48f4">
+                    <propertyInstance
+                      Id="d4ebadeb-db4c-4276-a853-a2c479fc23de"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4913bb01-978a-4396-9528-73806902e50f">
+                    <propertyInstance
+                      Id="fef4da32-7e1a-4a42-9cca-0bbce743471f"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1f3fb96-08e2-4fce-89e3-8f7672ea8ac4">
+                    <propertyInstance
+                      Id="65552a81-2f6a-4a0c-b001-677a6094135a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="monopoly.doc.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c9d9bd3b-2d94-4c46-83f1-9afd2474f946"
+            name="myLogFile"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="04de55f4-f099-4158-accd-11f04f9fcce3"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DmyLogFile"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="82e964b0-286d-414c-9498-69f4a4664dea"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b010fa3-8668-4f97-9509-3cc38e14eb92">
+                    <propertyInstance
+                      Id="6aeb356d-5bc4-4349-b96f-7c2bdea2f0ab"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="890694f8-c9a0-47de-9e12-40b7d7fae8ef">
+                    <propertyInstance
+                      Id="2ea7971c-7c24-4107-b53f-c7258efb51ff"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd1d7a72-f183-42c9-ba30-757570cc008e">
+                    <propertyInstance
+                      Id="6f0dcb7e-ca2e-40e0-a74f-d101b8fc2169"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae65e216-1c67-4bad-a3b0-b55867289d27">
+                    <propertyInstance
+                      Id="a0fbe192-bbd3-40f4-b1d9-7d6e7253b16d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fe0f813-b19c-43b6-94de-f9186331eb00">
+                    <propertyInstance
+                      Id="a1e8c730-4b82-49ab-a17b-18cc203abbad"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="monopoly.doc.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="51d93acc-1f3e-43b7-a3a6-f66a665fb32e"
+            name="myQueue"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7cf7eed5-d449-4edd-ac2b-cf8e0b59b6c7"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DmyQueue"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="29020857-47bd-4375-b7f3-e79529621ae9"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94fad7ee-1408-42b2-9039-715a89599ef9">
+                    <propertyInstance
+                      Id="be3d867b-6dd4-42d7-b7a5-8418d02bd913"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45740fd5-008f-4a5e-9e44-445e9d9a99f3">
+                    <propertyInstance
+                      Id="3e41b309-4cb5-46a0-b8bc-f1c62f7e2668"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70be1896-d8bb-495d-8137-7640f8260a15">
+                    <propertyInstance
+                      Id="73f8bc67-a4ca-43ef-ba23-a60886c041dd"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a6fe0a6-f050-423b-bf8f-07f342374a55">
+                    <propertyInstance
+                      Id="4c07e4f8-2f24-4eb3-a803-9775911ff9d1"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae7829f9-b0db-4494-bc5f-6e57416bc4d1">
+                    <propertyInstance
+                      Id="c994ef30-9bda-4c86-ad06-309d393c76e2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="15f07dc0-7e25-4f21-9f15-2a08c6374555"
+                LastKnownName="Queue&lt;LogEntry‎&gt;"
+                LastKnownLocation="Package8_1829.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="979c73d7-8ab2-42b0-b993-ea44c9de2597"
+            name="LogWriter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="301e0277-f893-4047-996a-0e72fb799b05"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fa1e4e0c-eee0-45ba-8868-a757c88d5c8c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="000c200b-3746-43ba-81d8-763d18dfb2ad">
+                    <propertyInstance
+                      Id="c763cd53-ca55-4a62-a88d-3ce165b78367"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f652d7ca-b12a-4778-aed7-4ee904b9754b">
+                    <propertyInstance
+                      Id="0a2e2784-809b-4ad8-9c4a-9056adef4844"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34c63926-a0b5-41ae-8a93-69f26837d910">
+                    <propertyInstance
+                      Id="f906751d-5c3e-4d65-9e64-113552ecb60f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49cf644a-a3bd-4a4f-809c-25c190363dd1">
+                    <propertyInstance
+                      Id="3a3f4913-2d44-4482-9527-7c2cfb8d9b17"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29e1b6d3-3a70-4454-8919-218f546e49a0">
+                    <propertyInstance
+                      Id="2e2a1cea-2cf6-4c14-8dd0-cdcf65cebb2c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ce64a66-cbf9-485d-910d-8ece8f0588a5">
+                    <propertyInstance
+                      Id="338ca3b5-0ac6-41a1-863c-730537875640"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="801c2600-8e8f-43f8-ad50-b25e4ddcbcc6"
+            name="WriteLogQueue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e76fd3b9-1f2a-4a88-a03d-305ed8fa4433"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3D(Name%3DWriteLogQueue OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a47e5c9c-1d6d-4220-8a48-d8afa2b64e77"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a5ec27f-e9be-40ec-ad9e-136656fb991c">
+                    <propertyInstance
+                      Id="13afa96e-91aa-4491-a7e4-1f4828eb1f91"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6de60a24-586d-4574-99ca-9991c00a7871">
+                    <propertyInstance
+                      Id="9484f4e9-9f22-454b-894a-5424e8abfa64"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5ba73c0-894d-4f62-8c52-517b6e15d79b">
+                    <propertyInstance
+                      Id="72fbac4a-b20b-4bac-ab5f-b89a981d7c0d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5eff539b-6985-40a3-8411-91627c9de45a">
+                    <propertyInstance
+                      Id="d95e0546-fa50-4475-adc7-e02c3d235ec1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ada27971-b8de-4057-82f4-7aef5f253248">
+                    <propertyInstance
+                      Id="fd531305-2dcb-4cc9-8611-338e853f23e0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9db23f0-f754-4643-8623-2ac549204e66">
+                    <propertyInstance
+                      Id="9ce5d97a-7777-4e48-9af7-9861575a4c75"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf1a17a2-2356-4f51-9098-ab6c6082f5db"
+                  name="msg"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="09570b9c-d1f0-4856-868a-e00d57ab1a64"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3D(Name%3DWriteLogQueue OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dmsg"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="monopoly.doc.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f424649d-634e-4a2d-a053-0583984607f3"
+            name="WriteLogFile"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b4629a10-a242-44cf-86b5-7c45b25468c4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDaniel Inversini%2FSource%2FRepos%2Fch.bfh.bti7301q.monopoly%2Fmonopoly.logic%2Fbin%2FDebug%2Fmonopoly.logic.dll&quot; Namespace%3Dmonopoly.logic.util Type%3DLogWriter Member%3DWriteLogFile"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7bc44d08-8931-419e-8ae5-47709ea9ea6b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="459affff-f3ea-4830-bc74-e397d6fadecc">
+                    <propertyInstance
+                      Id="12c127c0-fffc-44b7-9beb-f0a1018756ce"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e4413dd-5491-4cf1-910f-39c32f45702e">
+                    <propertyInstance
+                      Id="ea95af01-930d-42bb-ab13-0860217d21e1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7453be12-33d3-4f49-b519-8c58ecafab4f">
+                    <propertyInstance
+                      Id="c575a6dc-90cc-4203-adf3-0ea19badc0c3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52f4ca4c-9346-40f9-9ca0-0eb713541b81">
+                    <propertyInstance
+                      Id="332227cf-b139-47ff-8dc8-a3303837c83e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f56e0740-bf6f-4821-9bcb-c2072005de88">
+                    <propertyInstance
+                      Id="6eda8bc6-08bf-474e-8d9f-7a9811ca4ce8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f9f965a-8221-41e9-8418-368f58d8fdb1">
+                    <propertyInstance
+                      Id="9f8b26db-9944-49cd-9d56-bd7fa9bdc55f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

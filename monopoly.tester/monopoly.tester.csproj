@@ -74,6 +74,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="compiled\config\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="compiled\monopoly.prototypeV2.tester.vshost.exe.config" />
+    <None Include="compiled\monopoly.prototypeV2.tester.vshost.exe.manifest" />
+    <None Include="compiled\monopoly.tester.exe.config" />
+    <None Include="compiled\monopoly.tester.vshost.exe.config" />
+    <None Include="compiled\monopoly.tester.vshost.exe.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +108,20 @@
       <Project>{b35f22a3-3c30-4d1f-9346-60525d3b4ac3}</Project>
       <Name>monopoly.server</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="compiled\config\cfg.xml" />
+    <Content Include="compiled\monopoly.client.exe" />
+    <Content Include="compiled\monopoly.client.pdb" />
+    <Content Include="compiled\monopoly.logic.dll" />
+    <Content Include="compiled\monopoly.logic.pdb" />
+    <Content Include="compiled\monopoly.prototypeV2.tester.vshost.exe" />
+    <Content Include="compiled\monopoly.server.exe" />
+    <Content Include="compiled\monopoly.server.pdb" />
+    <Content Include="compiled\monopoly.tester.exe" />
+    <Content Include="compiled\monopoly.tester.pdb" />
+    <Content Include="compiled\monopoly.tester.vshost.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

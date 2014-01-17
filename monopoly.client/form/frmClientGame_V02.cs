@@ -97,9 +97,7 @@ namespace monopoly.client.form
 #endif
 
 
-            //RemotingConfiguration.RegisterActivatedClientType(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
             this.myGame = (cGame)System.Activator.GetObject(typeof(cGame), String.Format("tcp://{0}:{1}/SharedGame", this.myIP, this.myPort));
-            //this.myGame = new cGame();
             this.myPlayer = new cPlayer(this.myPlayerName, this.myAvatar, 0);
             this.myGame.addPlayer(this.myPlayer, this);
 

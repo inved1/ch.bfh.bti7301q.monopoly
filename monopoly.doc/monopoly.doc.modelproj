@@ -22,6 +22,16 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="classDiagramPräsiLogik.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="classDiagramPräsiLogik.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>classDiagramPräsiLogik.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="graph_präsi.dgml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Graph_v01.dgml">
       <SubType>Content</SubType>
     </Content>
@@ -49,10 +59,16 @@
     <Content Include="ModelDefinition\Package14_2122.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_0936.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package1_1829.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_2122.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_0936.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_1829.uml">
@@ -61,16 +77,25 @@
     <Content Include="ModelDefinition\Package2_2122.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package3_0936.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package3_1829.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package3_2122.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package4_0936.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package4_1829.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package4_2122.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package5_0936.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package5_1829.uml">
@@ -103,11 +128,21 @@
     <Content Include="ModelDefinition\Package9_2122.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_0936.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1829.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_2122.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="test.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="test.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>test.sequencediagram</DependentUpon>
     </Content>
     <Content Include="UMLClassDiagram_v01.classdiagram">
       <SubType>Content</SubType>

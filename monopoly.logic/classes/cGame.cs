@@ -250,12 +250,12 @@ namespace monopoly.logic.classes
             this.gameStatus = cGame.eGameStatus.Running;
 
             this.addMessage("Spiel gestartet");
-            //ISquare square = gameBoard.getSpecificSquare(1);
-            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
-            //square = gameBoard.getSpecificSquare(3);
-            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
-            //square = gameBoard.getSpecificSquare(5);
-            //square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            ISquare square = gameBoard.getSpecificSquare(1);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            square = gameBoard.getSpecificSquare(3);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
+            square = gameBoard.getSpecificSquare(5);
+            square.GetType().GetProperty("Owner").SetValue(square, curPlayer);
 
             notifyGuis();
             setDefaultActions();
@@ -438,7 +438,7 @@ namespace monopoly.logic.classes
                 if (curSquare.GetType() == typeof(cTrainStationSquare))
                 {
                     cTrainStationSquare o = (cTrainStationSquare)curSquare;
-                    rent = o.Rents[this.gameBoard.getTrainStationSquaresByPlayer(this.curPlayer).Count]; 
+                    rent = o.Rents[this.gameBoard.getTrainStationSquaresByPlayer(o.Owner).Count]; 
                 }
 
                 rent = Convert.ToInt32(curSquare.GetType().GetProperty("CurrentRent").GetValue(curSquare));
